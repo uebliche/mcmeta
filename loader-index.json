@@ -15,9 +15,7 @@
       ]
     },
     "forge": {
-      "loader": [
-        "1.7.2-10.12.2.1161-mc172"
-      ]
+      "loader": []
     },
     "neoforge": {
       "loader": []
