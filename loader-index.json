@@ -1,11 +1,9 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "18w43b",
+  "minecraft": "18w43a",
   "loaders": {
     "fabric": {
-      "loader": [
-        "0.9.3+build.207"
-      ],
+      "loader": [],
       "installer": [
         "1.1.1"
       ]
