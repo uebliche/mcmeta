@@ -15,14 +15,10 @@
       ]
     },
     "forge": {
-      "loader": [
-        "1.21.11-61.0.5"
-      ]
+      "loader": []
     },
     "neoforge": {
-      "loader": [
-        "21.11.24-beta"
-      ]
+      "loader": []
     }
   }
 }

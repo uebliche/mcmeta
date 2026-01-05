@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 15w41b",
-    "minestom versions are not filtered for minecraft 15w41b",
-    "neoforge versions are not filtered for minecraft 15w41b",
+    "forge maven metadata has no versions for minecraft 15w41b",
+    "minestom maven metadata has no versions for minecraft 15w41b",
+    "neoforge maven metadata has no versions for minecraft 15w41b",
     "velocity versions are not filtered for minecraft 15w41b"
   ]
 }
