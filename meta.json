@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "24w20a",
+  "minecraft": "24w19b",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "ok"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 24w20a",
-    "minestom versions are not filtered for minecraft 24w20a",
-    "neoforge versions are not filtered for minecraft 24w20a"
+    "forge versions are not filtered for minecraft 24w19b",
+    "minestom versions are not filtered for minecraft 24w19b",
+    "neoforge versions are not filtered for minecraft 24w19b"
   ]
 }
