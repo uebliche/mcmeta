@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.16-pre4",
+  "minecraft": "1.16-pre3",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -47,34 +47,34 @@
       ],
       "versions": [
         {
-          "version_number": "0.12.0+build.360-1.16",
+          "version_number": "0.11.9+build.358-1.16",
           "game_versions": [
-            "1.16-pre4"
+            "1.16-pre3"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.12.0%2Bbuild.360-1.16/fabric-api-0.12.0%2Bbuild.360-1.16.jar",
-              "sha1": "49abf943d81c2270be07fe0103f02f50197d9f75",
-              "sha512": "2b884cba3917459e9765b22e879a7dbf0e714b795b8f3c0ed56d852dd857e1cbc4290a30fefb5bcdb8fc17144ddb9339d82f4ae1d8427674cdb6b6b38e544b54"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.11.9%2Bbuild.358-1.16/fabric-api-0.11.9%2Bbuild.358-1.16.jar",
+              "sha1": "59b9889123e18d516e36216e1173f60e2afeb321",
+              "sha512": "0b8442dfe0d6584dbeb54e136b65e0855e2773cbaaf8920dc9cbe030d33ab61ca6d0fb49c9fd89dd52956efdb968823aea888f5449a951acbb3f2b6e8e9ffa9e"
             }
           ]
         },
         {
-          "version_number": "0.11.10+build.359-1.16",
+          "version_number": "0.11.8+build.357-1.16",
           "game_versions": [
-            "1.16-pre4"
+            "1.16-pre3"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.11.10%2Bbuild.359-1.16/fabric-api-0.11.10%2Bbuild.359-1.16.jar",
-              "sha1": "ff2abab4ee2b79d0cbb7c3ed9d10d2485f57b35c",
-              "sha512": "f84e5ef978d4ad32f40d705d6ba283530b5f60e4cbc5ed54ae3c3ab725a20f4d411192f6f5754739da9dde65598073f9292dbe6bd0ac29b80f3aa6ce1099ee10"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.11.8%2Bbuild.357-1.16/fabric-api-0.11.8%2Bbuild.357-1.16.jar",
+              "sha1": "f5d7ee609bb01e3867fc6ba7e2ffaee6c1be7855",
+              "sha512": "ff2a53aef50627d3de8d84464257278601a1f04d1f0377c10ea23cdaa96e5c8e3b2dd59eb28754ff7c2b363da1abc0508ffc2b62fdc9cb141de11e09afa70e12"
             }
           ]
         }
