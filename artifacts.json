@@ -1,0 +1,23 @@
+{
+  "schema": "mcmeta/v1",
+  "minecraft": "c0.30_01c",
+  "artifacts": {
+    "minestom": {
+      "type": "maven",
+      "coordinates": [
+        "net.minestom:minestom"
+      ],
+      "versions": [
+        "2026.01.01-1.21.11"
+      ]
+    },
+    "fabric-api": {
+      "type": "modrinth",
+      "project_id": "P7dR8mSH",
+      "loaders": [
+        "fabric"
+      ],
+      "versions": []
+    }
+  }
+}

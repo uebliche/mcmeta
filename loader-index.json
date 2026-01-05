@@ -1,0 +1,28 @@
+{
+  "schema": "mcmeta/v1",
+  "minecraft": "c0.30_01c",
+  "loaders": {
+    "fabric": {
+      "loader": [],
+      "installer": [
+        "1.1.1"
+      ]
+    },
+    "quilt": {
+      "loader": [],
+      "installer": [
+        "0.12.1"
+      ]
+    },
+    "forge": {
+      "loader": [
+        "1.9.4-12.17.0.2317-1.9.4"
+      ]
+    },
+    "neoforge": {
+      "loader": [
+        "26.1.0.0-alpha.4+snapshot-1"
+      ]
+    }
+  }
+}
