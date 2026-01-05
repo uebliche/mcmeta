@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "a1.2.1",
+  "minecraft": "a1.2.0_02",
   "artifacts": {
     "minestom": {
       "type": "maven",
