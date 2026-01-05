@@ -419,6 +419,10 @@ h2 {
   margin-top: 10px;
 }
 
+.health-panel {
+  margin-top: 12px;
+}
+
 .health-item {
   display: flex;
   justify-content: space-between;

@@ -237,7 +237,7 @@
             </div>
           </div>
 
-          <div class="panel">
+          <div class="panel health-panel">
             <h3>Source health</h3>
             <div class="health-grid">
               <div
