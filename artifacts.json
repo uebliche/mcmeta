@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "24w40a",
+  "minecraft": "24w39a",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -47,18 +47,18 @@
       ],
       "versions": [
         {
-          "version_number": "0.105.2+1.21.2",
+          "version_number": "0.105.1+1.21.2",
           "game_versions": [
-            "24w40a"
+            "24w39a"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/RSbTCKnx/fabric-api-0.105.2%2B1.21.2.jar",
-              "sha1": "675cbadba602399d899dd23c61eb99430a223425",
-              "sha512": "b5515524317ea65c3490127ab48282be126206f659971f1c8eb61d46021075630f63e3a5e3f839933aa3d3f0efcb94b14404e43808072107c77bcde0a0fb7cef"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/Y2c6Fhq9/fabric-api-0.105.1%2B1.21.2.jar",
+              "sha1": "6e0f16a1578f5b8d06d8d641e5c3b837df15d2c7",
+              "sha512": "33d16f7a440ce801b54c6a51fc9e8a2273f4bcd6c988a6808d711983ca30d580336d70d4f4e4953bc7d8324c15b1f2cf31d86cd481c2868104392cef23df1934"
             }
           ]
         }
