@@ -446,22 +446,22 @@ const loaderIconList = [
   {
     key: 'fabric',
     label: 'Fabric',
-    src: 'https://github.com/FabricMC.png',
+    src: 'icons/fabric.png',
   },
   {
     key: 'quilt',
     label: 'Quilt',
-    src: 'https://github.com/QuiltMC.png',
+    src: 'icons/quilt.png',
   },
   {
     key: 'forge',
     label: 'Forge',
-    src: 'https://github.com/MinecraftForge.png',
+    src: 'icons/forge.png',
   },
   {
     key: 'neoforge',
     label: 'NeoForge',
-    src: 'https://github.com/neoforged.png',
+    src: 'icons/neoforge.png',
   },
 ];
 
