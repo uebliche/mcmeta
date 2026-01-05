@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.21.7",
+  "minecraft": "1.21.7-rc2",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -45,56 +45,7 @@
       "loaders": [
         "fabric"
       ],
-      "versions": [
-        {
-          "version_number": "0.129.0+1.21.7",
-          "game_versions": [
-            "1.21.7"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "files": [
-            {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/JntuF9Ul/fabric-api-0.129.0%2B1.21.7.jar",
-              "sha1": "60bb50ad1f7d316be9ba662e84089e1affdd44e6",
-              "sha512": "43bf6af145a6b450503a6d7e7ec9a34912bd1494969b5d8861067f0f846cf710805415fb0fbc93c9ae9f5164d45c7649342f84b4f34552b2abdd892fd3b9838e"
-            }
-          ]
-        },
-        {
-          "version_number": "0.128.2+1.21.7",
-          "game_versions": [
-            "1.21.7"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "files": [
-            {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/JIZogEYa/fabric-api-0.128.2%2B1.21.7.jar",
-              "sha1": "cc4edcec406d1d80acba028b50cf51ad021ba0b4",
-              "sha512": "afb9b3d1040689f53dd51341626b04d197e7d057d578a72c7a374a66465e0e07f5b3d52721d71e36be26d197668d3a96ea50dbb85e2bc5835d9d858e31b15966"
-            }
-          ]
-        },
-        {
-          "version_number": "0.128.1+1.21.7",
-          "game_versions": [
-            "1.21.7"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "files": [
-            {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/sLmbxWpX/fabric-api-0.128.1%2B1.21.7.jar",
-              "sha1": "9550cf6ec25c691d083fed87085509c2b1b7581a",
-              "sha512": "ed1d665a9f5228e7689b0d2efeba7445ce86df90f11e29672aa7f5c49d73ac291e300ecbd05d01535f64202618c224cee0211466b2055afd2ab7105ce7bfd327"
-            }
-          ]
-        }
-      ]
+      "versions": []
     }
   }
 }
