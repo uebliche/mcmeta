@@ -1,0 +1,206 @@
+{
+  "schema": "mcmeta/v1",
+  "minecraft": "1.21.11",
+  "artifacts": {
+    "minestom": {
+      "type": "maven",
+      "coordinates": [
+        "net.minestom:minestom"
+      ],
+      "versions": [
+        "2025.12.20-1.21.11"
+      ]
+    },
+    "fabric-api": {
+      "type": "modrinth",
+      "project_id": "P7dR8mSH",
+      "loaders": [
+        "fabric"
+      ],
+      "versions": [
+        {
+          "version_number": "0.141.1+1.21.11",
+          "game_versions": [
+            "1.21.11"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/DdVHbeR1/fabric-api-0.141.1%2B1.21.11.jar",
+              "sha1": "7f51d854b55c8b29fb4dc0d666e550015c742b69",
+              "sha512": "185b45dcbe22923039dfc998c90d6c7196610cf442c284ba3fbc7ee26116b8a20367bf931024fba66bba07bc4378fcbb8b9142c1b1c14ba4200d50a5aba0332f"
+            }
+          ]
+        },
+        {
+          "version_number": "0.141.0+1.21.11",
+          "game_versions": [
+            "1.21.11"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/rvdQiyMk/fabric-api-0.141.0%2B1.21.11.jar",
+              "sha1": "5103ff92ff158129778a2329d4b265580c7ef789",
+              "sha512": "5b39a72d5fd229487149c486ab001886b3275cd942c47eeefc53cbe6f615a6d7547f9437536c5284fd6ef9ed1a190ce698d0243937f99f006329a1a4af7665a1"
+            }
+          ]
+        },
+        {
+          "version_number": "0.140.2+1.21.11",
+          "game_versions": [
+            "1.21.11"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/gB6TkYEJ/fabric-api-0.140.2%2B1.21.11.jar",
+              "sha1": "c115a7e4442bb6f54cb316efa28fb7d41d2e103c",
+              "sha512": "af4465797d80401021a6aefc8c547200e7c0f8cae134299bf3fafbc310fa81f055246b0614fc0e037538f4a844e55aad30abfa3c67460422853dfc426f086d00"
+            }
+          ]
+        },
+        {
+          "version_number": "0.140.0+1.21.11",
+          "game_versions": [
+            "1.21.11"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/5oK85X7C/fabric-api-0.140.0%2B1.21.11.jar",
+              "sha1": "2d5e292f9673d588706e2c79cc4e3e75b21f35d1",
+              "sha512": "f33d3aa6d4da877975eb0f814f9ac8c02f9641e0192402445912ddab43269efcc685ef14d59fd8ee53deb9b6ff4521442e06e1de1fd1284b426711404db5350b"
+            }
+          ]
+        },
+        {
+          "version_number": "0.139.5+1.21.11",
+          "game_versions": [
+            "1.21.11"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/KhCFoeip/fabric-api-0.139.5%2B1.21.11.jar",
+              "sha1": "f69874167e636008887a1c1c4de3afdf1e7f5ddf",
+              "sha512": "852c9e76175b2d51cea191bfcc0005b824de433f1a6de01d672b9e82ca1cab8478b180670bc6c4811744ef4abec8bd2ff3ab0f9c1aa5644713d06f3fbcc278f0"
+            }
+          ]
+        },
+        {
+          "version_number": "0.139.4+1.21.11",
+          "game_versions": [
+            "1.21.11"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/RDb9rvBm/fabric-api-0.139.4%2B1.21.11.jar",
+              "sha1": "c0d3aa489c6c2f8806f236b3580e776da30a1c85",
+              "sha512": "871f5da6dae20095583ac6a871ee13e34151e458a1dac70d3a3de46982464407b0f7af921a3286fede46f27cc2378299ed1c937fd6895f75428445f46d33e4af"
+            }
+          ]
+        }
+      ]
+    },
+    "paper": {
+      "type": "papermc",
+      "project": "paper",
+      "versions": [
+        "88",
+        "87",
+        "86",
+        "85",
+        "82",
+        "81",
+        "80",
+        "79",
+        "78",
+        "77",
+        "76",
+        "75",
+        "74",
+        "73",
+        "72",
+        "71",
+        "70",
+        "69",
+        "68",
+        "67",
+        "66",
+        "65",
+        "64",
+        "63",
+        "62",
+        "61",
+        "60",
+        "59",
+        "58",
+        "57",
+        "56",
+        "55",
+        "54",
+        "53",
+        "52",
+        "51",
+        "49",
+        "48",
+        "47",
+        "46",
+        "45",
+        "44",
+        "43",
+        "42",
+        "39",
+        "38",
+        "37",
+        "35",
+        "34"
+      ]
+    },
+    "velocity": {
+      "type": "papermc",
+      "project": "velocity",
+      "versions": [
+        "3.4.0-SNAPSHOT",
+        "3.3.0-SNAPSHOT",
+        "3.2.0-SNAPSHOT",
+        "3.1.2-SNAPSHOT",
+        "3.1.1",
+        "3.1.1-SNAPSHOT",
+        "3.1.0",
+        "1.1.9",
+        "1.0.10"
+      ]
+    },
+    "folia": {
+      "type": "papermc",
+      "project": "folia",
+      "versions": [
+        "10",
+        "9",
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1"
+      ]
+    }
+  }
+}
