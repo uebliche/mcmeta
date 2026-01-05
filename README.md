@@ -70,3 +70,27 @@ when these secrets are set on the repository:
 - `GRADLE_PUBLISH_SECRET`
 
 The workflow auto-computes `MCMETA_PLUGIN_VERSION` from the date + commit hash.
+
+### Publishing (GitHub Packages)
+
+The same workflow also publishes to GitHub Packages:
+
+- `https://maven.pkg.github.com/uebliche/mcmeta`
+- Uses `GITHUB_TOKEN` with `packages:write` permission.
+
+To consume via Gradle Plugin DSL, add the repo in `settings.gradle.kts`:
+
+```kotlin
+pluginManagement {
+  repositories {
+    maven {
+      url = uri("https://maven.pkg.github.com/uebliche/mcmeta")
+      credentials {
+        username = System.getenv("GITHUB_ACTOR")
+        password = System.getenv("GITHUB_TOKEN")
+      }
+    }
+    gradlePluginPortal()
+  }
+}
+```

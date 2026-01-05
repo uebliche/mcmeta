@@ -1,6 +1,7 @@
 plugins {
   `java-gradle-plugin`
   kotlin("jvm") version "1.9.24"
+  `maven-publish`
   id("com.gradle.plugin-publish") version "1.2.1"
 }
 
@@ -30,6 +31,19 @@ pluginBundle {
   website = "https://github.com/uebliche/mcmeta"
   vcsUrl = "https://github.com/uebliche/mcmeta"
   tags = listOf("minecraft", "modding", "versions", "metadata")
+}
+
+publishing {
+  repositories {
+    maven {
+      name = "GitHubPackages"
+      url = uri("https://maven.pkg.github.com/uebliche/mcmeta")
+      credentials {
+        username = System.getenv("GITHUB_ACTOR") ?: ""
+        password = System.getenv("GITHUB_TOKEN") ?: ""
+      }
+    }
+  }
 }
 
 kotlin {

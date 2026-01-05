@@ -10,10 +10,10 @@ on:
 
 jobs:
   publish:
-    if: ${{ secrets.GRADLE_PUBLISH_KEY != '' && secrets.GRADLE_PUBLISH_SECRET != '' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,10 +30,18 @@ jobs:
       - name: Compute version
         run: echo "MCMETA_PLUGIN_VERSION=$(date -u +'%Y.%m.%d')-${GITHUB_SHA::7}" >> $GITHUB_ENV
 
-      - name: Publish plugin
+      - name: Publish to Gradle Plugin Portal
+        if: ${{ secrets.GRADLE_PUBLISH_KEY != '' && secrets.GRADLE_PUBLISH_SECRET != '' }}
         working-directory: gradle-plugin
         env:
           GRADLE_PUBLISH_KEY: ${{ secrets.GRADLE_PUBLISH_KEY }}
           GRADLE_PUBLISH_SECRET: ${{ secrets.GRADLE_PUBLISH_SECRET }}
           MCMETA_PLUGIN_VERSION: ${{ env.MCMETA_PLUGIN_VERSION }}
         run: ./gradlew publishPlugins
+
+      - name: Publish to GitHub Packages
+        working-directory: gradle-plugin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MCMETA_PLUGIN_VERSION: ${{ env.MCMETA_PLUGIN_VERSION }}
+        run: ./gradlew publish
