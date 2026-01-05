@@ -29,20 +29,22 @@
     </header>
 
     <main class="layout">
-      <aside class="sidebar">
-        <div class="panel">
-          <label class="label" for="search">Search versions</label>
-          <input
-            id="search"
-            v-model="search"
-            type="search"
-            placeholder="1.20, 24w, rc"
-          />
+      <div class="panel search-panel">
+        <div class="search-row">
+          <div>
+            <label class="label" for="search">Search versions</label>
+            <input
+              id="search"
+              v-model="search"
+              type="search"
+              placeholder="1.20, 24w, rc"
+            />
+          </div>
           <label class="toggle">
             <input v-model="includeSnapshots" type="checkbox" />
             <span>Include snapshots</span>
           </label>
-          <div class="stat-row">
+          <div class="stat-row compact">
             <div>
               <div class="stat-label">Versions</div>
               <div class="stat-value">{{ versionCount }}</div>
@@ -53,6 +55,9 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <aside class="sidebar">
         <div class="panel list-panel">
           <div class="version-list">
             <div v-if="filteredVersions.length === 0" class="version-item">
