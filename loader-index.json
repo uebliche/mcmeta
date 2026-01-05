@@ -1,0 +1,30 @@
+{
+  "schema": "mcmeta/v1",
+  "minecraft": "1.14.2 Pre-Release 4",
+  "loaders": {
+    "fabric": {
+      "loader": [
+        "0.9.3+build.207"
+      ],
+      "installer": [
+        "1.1.1"
+      ]
+    },
+    "quilt": {
+      "loader": [],
+      "installer": [
+        "0.12.1"
+      ]
+    },
+    "forge": {
+      "loader": [
+        "1.9.4-12.17.0.2317-1.9.4"
+      ]
+    },
+    "neoforge": {
+      "loader": [
+        "26.1.0.0-alpha.4+snapshot-1"
+      ]
+    }
+  }
+}
