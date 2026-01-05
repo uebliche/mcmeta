@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "rd-132328",
+  "minecraft": "rd-132211",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft rd-132328",
-    "minestom versions are not filtered for minecraft rd-132328",
-    "neoforge versions are not filtered for minecraft rd-132328"
+    "forge versions are not filtered for minecraft rd-132211",
+    "minestom versions are not filtered for minecraft rd-132211",
+    "neoforge versions are not filtered for minecraft rd-132211"
   ]
 }
