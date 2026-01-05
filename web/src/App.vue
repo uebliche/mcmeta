@@ -244,8 +244,11 @@ const rawBase = `https://raw.githubusercontent.com/${repoOwner}/${repoName}`;
 const repoUrl = `https://github.com/${repoOwner}/${repoName}`;
 const cacheKey = 'mcmeta-branches-v2';
 const statusCacheKey = 'mcmeta-loader-status-v1';
+const manifestCacheKey = 'mcmeta-manifest-order-v1';
 const cacheTtlMs = 1000 * 60 * 30;
 const statusWorkers = 6;
+const manifestUrl =
+  'https://piston-meta.mojang.com/mc/game/version_manifest_v2.json';
 
 const search = ref('');
 const includeSnapshots = ref(true);
@@ -255,6 +258,7 @@ const activeTab = ref('overview');
 const overallStatus = ref('idle');
 const lastSync = ref('-');
 const loaderStatus = ref({});
+const manifestOrder = ref({});
 
 const loaderIndex = ref(null);
 const artifacts = ref(null);
@@ -266,7 +270,17 @@ const filteredVersions = computed(() => {
     .map((branch) => branch.name.replace('mc/', ''))
     .filter((version) => (includeSnapshots.value ? true : !isSnapshot(version)))
     .filter((version) => version.toLowerCase().includes(search.value.toLowerCase()));
-  list.sort((a, b) => b.localeCompare(a, undefined, { numeric: true }));
+  const order = manifestOrder.value || {};
+  list.sort((a, b) => {
+    const aKey = order[a];
+    const bKey = order[b];
+    if (aKey !== undefined && bKey !== undefined) {
+      return aKey - bKey;
+    }
+    if (aKey !== undefined) return -1;
+    if (bKey !== undefined) return 1;
+    return b.localeCompare(a, undefined, { numeric: true });
+  });
   return list;
 });
 
@@ -369,10 +383,29 @@ function loadCache() {
   }
 }
 
+function loadManifestCache() {
+  const cached = localStorage.getItem(manifestCacheKey);
+  if (!cached) return null;
+  try {
+    const parsed = JSON.parse(cached);
+    if (Date.now() - parsed.timestamp > cacheTtlMs) return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
 function storeCache(items) {
   localStorage.setItem(
     cacheKey,
     JSON.stringify({ timestamp: Date.now(), items })
+  );
+}
+
+function storeManifestCache(order) {
+  localStorage.setItem(
+    manifestCacheKey,
+    JSON.stringify({ timestamp: Date.now(), order })
   );
 }
 
@@ -408,6 +441,29 @@ async function fetchBranches() {
 
   storeCache(all);
   return { timestamp: Date.now(), items: all };
+}
+
+async function fetchManifestOrder() {
+  const cached = loadManifestCache();
+  if (cached) {
+    manifestOrder.value = cached.order || {};
+    return;
+  }
+  try {
+    const data = await fetchJson(manifestUrl);
+    const order = {};
+    (data.versions || []).forEach((entry, index) => {
+      const key = sanitizeVersion(entry.id);
+      if (key) {
+        order[key] = index;
+      }
+    });
+    manifestOrder.value = order;
+    storeManifestCache(order);
+  } catch (err) {
+    console.warn('manifest fetch failed', err);
+    manifestOrder.value = {};
+  }
 }
 
 function setStatus(text, state = 'neutral') {
@@ -480,6 +536,32 @@ function hasLoader(entry) {
   return loader > 0 || installer > 0;
 }
 
+function sanitizeVersion(value) {
+  let out = '';
+  let prevDash = false;
+  for (const ch of value) {
+    let normalized = null;
+    if (/[a-z0-9]/i.test(ch)) {
+      normalized = ch.toLowerCase();
+    } else if (ch === '.' || ch === '-' || ch === '_') {
+      normalized = ch === '.' ? '.' : '-';
+    } else if (/\s/.test(ch)) {
+      normalized = '-';
+    }
+
+    if (!normalized) continue;
+    if (normalized === '-') {
+      if (prevDash) continue;
+      prevDash = true;
+      out += '-';
+    } else {
+      prevDash = false;
+      out += normalized;
+    }
+  }
+  return out.replace(/^\.+|\.+$/g, '').replace(/^-+|-+$/g, '');
+}
+
 async function ensureLoaderStatuses(versions) {
   const queue = versions.filter((version) => !loaderStatus.value[version]);
   if (!queue.length) return;
@@ -500,6 +582,7 @@ async function init() {
   overallStatus.value = 'loading';
   try {
     loaderStatus.value = loadStatusCache();
+    await fetchManifestOrder();
     const result = await fetchBranches();
     branches.value = result.items;
     lastSync.value = formatTimestamp(result.timestamp);
@@ -520,6 +603,7 @@ async function init() {
 async function refresh() {
   localStorage.removeItem(cacheKey);
   localStorage.removeItem(statusCacheKey);
+  localStorage.removeItem(manifestCacheKey);
   await init();
 }
 
