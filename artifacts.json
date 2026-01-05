@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "23w33a",
+  "minecraft": "23w32a",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -47,18 +47,50 @@
       ],
       "versions": [
         {
-          "version_number": "0.87.1+1.20.2",
+          "version_number": "0.87.0+1.20.2",
           "game_versions": [
-            "23w33a"
+            "23w32a"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/Tt0NzFL1/fabric-api-0.87.1%2B1.20.2.jar",
-              "sha1": "0450c1a25631cc166b0382dec0f45d56149a71a3",
-              "sha512": "66a5294db70de560f54d581549b48a4b97c0f56236edf4a4ea20cb94cc030621c0e03cc2f3fa22471f4eca63d0c1ee18ce4af88426f9379ccdee93ecb462b34a"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/27G0kpIF/fabric-api-0.87.0%2B1.20.2.jar",
+              "sha1": "6ddfe33b3aca7c98e043805d46e02c5fd944a2f6",
+              "sha512": "b38a31ac7eead330c247a1cceb565c2b2d176a328747d71a3f5df61fd00582b96dff78f789bbdcc500528078f29f38dd9d32aaf65a716e04b90fde58c86c1316"
+            }
+          ]
+        },
+        {
+          "version_number": "0.86.3+1.20.2",
+          "game_versions": [
+            "23w32a"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/KIPTaPqJ/fabric-api-0.86.3%2B1.20.2.jar",
+              "sha1": "2dc7c62c027549e9e90638d3e7d6be1b950fc30d",
+              "sha512": "ff72767436fc148f7e37d102163770aa0b6b572f9f86b1a4c99440d5c57ebcf980af284046fc509e7a11ad41d43c1a4bf48ce64e266c45cb35dd9ed7f39f3454"
+            }
+          ]
+        },
+        {
+          "version_number": "0.86.2+1.20.2",
+          "game_versions": [
+            "23w32a"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/sIo7d89K/fabric-api-0.86.2%2B1.20.2.jar",
+              "sha1": "1d0a9195419578ceca63ccfef6720a95cb682818",
+              "sha512": "6bb6db7b45606a7ba3762768061956d96bc14997adbd5d58337dddc7406f5519cc1c11913a6f4153eef832338262c2eb4e7079610bb4aa21f37222f6dcc1bec3"
             }
           ]
         }
