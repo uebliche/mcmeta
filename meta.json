@@ -5,7 +5,7 @@
     "fabric": "ok",
     "fabric-api": "ok",
     "folia": "ok",
-    "forge": "ok",
+    "forge": "partial",
     "minestom": "ok",
     "neoforge": "partial",
     "paper": "ok",
@@ -13,6 +13,7 @@
     "velocity": "partial"
   },
   "notes": [
+    "forge maven metadata has no versions for minecraft 1.21.11",
     "neoforge maven metadata has no versions for minecraft 1.21.11",
     "velocity versions are not filtered for minecraft 1.21.11"
   ]
