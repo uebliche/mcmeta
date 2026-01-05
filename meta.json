@@ -5,7 +5,7 @@
     "fabric": "partial",
     "fabric-api": "ok",
     "folia": "error",
-    "forge": "partial",
+    "forge": "ok",
     "minestom": "partial",
     "neoforge": "partial",
     "paper": "error",
@@ -13,7 +13,6 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge maven metadata has no versions for minecraft 1.6.3",
     "minestom maven metadata has no versions for minecraft 1.6.3",
     "neoforge maven metadata has no versions for minecraft 1.6.3",
     "velocity versions are not filtered for minecraft 1.6.3"
