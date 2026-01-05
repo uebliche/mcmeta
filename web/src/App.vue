@@ -16,6 +16,7 @@
       </div>
       <div class="header-actions">
         <button class="ghost" @click="refresh">Refresh</button>
+        <button class="ghost" @click="goLatest">Latest</button>
         <a
           class="ghost"
           :href="repoUrl"
@@ -601,6 +602,12 @@ async function selectVersion(version) {
     loaderIndex.value = null;
     artifacts.value = null;
     meta.value = null;
+  }
+}
+
+function goLatest() {
+  if (filteredVersions.value.length) {
+    selectVersion(filteredVersions.value[0]);
   }
 }
 
