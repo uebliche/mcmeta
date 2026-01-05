@@ -19,6 +19,22 @@
       ],
       "versions": [
         {
+          "version_number": "0.141.1+26.1",
+          "game_versions": [
+            "26.1-snapshot-1"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/PPiyRYXQ/fabric-api-0.141.1%2B26.1.jar",
+              "sha1": "138c5bdb1762c2465d398563ecf398d0eda5c4da",
+              "sha512": "440f3826752f28536b97a17ce4dd7392d4a7756412a7845d4f31a3ea75f9c6c89d31a407d2433db28ebb1e9031a83a49b2fc710154f46884556fa5e309abf087"
+            }
+          ]
+        },
+        {
           "version_number": "0.141.0+26.1",
           "game_versions": [
             "26.1-snapshot-1"
@@ -99,6 +115,31 @@
           ]
         }
       ]
+    },
+    "paper": {
+      "type": "papermc",
+      "project": "paper",
+      "versions": []
+    },
+    "velocity": {
+      "type": "papermc",
+      "project": "velocity",
+      "versions": [
+        "3.4.0-SNAPSHOT",
+        "3.3.0-SNAPSHOT",
+        "3.2.0-SNAPSHOT",
+        "3.1.2-SNAPSHOT",
+        "3.1.1",
+        "3.1.1-SNAPSHOT",
+        "3.1.0",
+        "1.1.9",
+        "1.0.10"
+      ]
+    },
+    "folia": {
+      "type": "papermc",
+      "project": "folia",
+      "versions": []
     }
   }
 }
