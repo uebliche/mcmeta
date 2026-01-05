@@ -1,16 +1,17 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.14",
+  "minecraft": "1.14 Pre-Release 5",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
-    "forge": "ok",
+    "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
     "quilt": "partial"
   },
   "notes": [
-    "minestom versions are not filtered for minecraft 1.14",
-    "neoforge versions are not filtered for minecraft 1.14"
+    "forge versions are not filtered for minecraft 1.14 Pre-Release 5",
+    "minestom versions are not filtered for minecraft 1.14 Pre-Release 5",
+    "neoforge versions are not filtered for minecraft 1.14 Pre-Release 5"
   ]
 }
