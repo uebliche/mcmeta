@@ -1,16 +1,17 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.7.10",
+  "minecraft": "1.7.10-pre4",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
-    "forge": "ok",
+    "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
     "quilt": "partial"
   },
   "notes": [
-    "minestom versions are not filtered for minecraft 1.7.10",
-    "neoforge versions are not filtered for minecraft 1.7.10"
+    "forge versions are not filtered for minecraft 1.7.10-pre4",
+    "minestom versions are not filtered for minecraft 1.7.10-pre4",
+    "neoforge versions are not filtered for minecraft 1.7.10-pre4"
   ]
 }
