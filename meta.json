@@ -3,7 +3,7 @@
   "minecraft": "19w11b",
   "sources": {
     "fabric": "ok",
-    "fabric-api": "error",
+    "fabric-api": "ok",
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",

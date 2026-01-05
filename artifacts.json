@@ -15,7 +15,24 @@
       "loaders": [
         "fabric"
       ],
-      "versions": []
+      "versions": [
+        {
+          "version_number": "0.2.3.111",
+          "game_versions": [
+            "19w11b"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.2.3.111/fabric-0.2.3.111.jar",
+              "sha1": "2baf507bf550a156ed7f03a86fa07331f81a3889",
+              "sha512": "7d03b697be60b78903b6beed6c1d3e93b2372c02539e6a36366cbbe6a3015805c854b2f3ae8cfd0accf64274a478b2244e09115ca524f61e4d580751acc18015"
+            }
+          ]
+        }
+      ]
     },
     "paper": {
       "type": "papermc",
