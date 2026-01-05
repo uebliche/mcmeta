@@ -1,0 +1,17 @@
+{
+  "schema": "mcmeta/v1",
+  "minecraft": "16w35a",
+  "sources": {
+    "fabric": "partial",
+    "fabric-api": "ok",
+    "forge": "partial",
+    "minestom": "partial",
+    "neoforge": "partial",
+    "quilt": "partial"
+  },
+  "notes": [
+    "forge versions are not filtered for minecraft 16w35a",
+    "minestom versions are not filtered for minecraft 16w35a",
+    "neoforge versions are not filtered for minecraft 16w35a"
+  ]
+}
