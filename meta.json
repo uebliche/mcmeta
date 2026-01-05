@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "19w14a",
+  "minecraft": "3D Shareware v1.34",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 19w14a",
-    "minestom versions are not filtered for minecraft 19w14a",
-    "neoforge versions are not filtered for minecraft 19w14a"
+    "forge versions are not filtered for minecraft 3D Shareware v1.34",
+    "minestom versions are not filtered for minecraft 3D Shareware v1.34",
+    "neoforge versions are not filtered for minecraft 3D Shareware v1.34"
   ]
 }
