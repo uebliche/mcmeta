@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 16w03a",
-    "minestom versions are not filtered for minecraft 16w03a",
-    "neoforge versions are not filtered for minecraft 16w03a",
+    "forge maven metadata has no versions for minecraft 16w03a",
+    "minestom maven metadata has no versions for minecraft 16w03a",
+    "neoforge maven metadata has no versions for minecraft 16w03a",
     "velocity versions are not filtered for minecraft 16w03a"
   ]
 }
