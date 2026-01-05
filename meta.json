@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft a1.2.2b",
-    "minestom versions are not filtered for minecraft a1.2.2b",
-    "neoforge versions are not filtered for minecraft a1.2.2b",
+    "forge maven metadata has no versions for minecraft a1.2.2b",
+    "minestom maven metadata has no versions for minecraft a1.2.2b",
+    "neoforge maven metadata has no versions for minecraft a1.2.2b",
     "velocity versions are not filtered for minecraft a1.2.2b"
   ]
 }
