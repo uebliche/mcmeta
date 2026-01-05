@@ -208,6 +208,15 @@
               </ul>
             </div>
           </div>
+
+          <div class="panel howto">
+            <h3>How to use (Gradle)</h3>
+            <p>
+              Use the local Gradle plugin to load versions from mcmeta and
+              expose them as Gradle properties.
+            </p>
+            <pre class="code">{{ howTo }}</pre>
+          </div>
         </div>
 
         <div v-show="activeTab === 'raw'" class="tab-panel">
@@ -336,6 +345,22 @@ const rawArtifacts = computed(() =>
 const rawMeta = computed(() =>
   meta.value ? JSON.stringify(meta.value, null, 2) : ''
 );
+
+const howTo = `settings.gradle.kts
+pluginManagement {
+  includeBuild("gradle-plugin")
+}
+
+build.gradle.kts
+plugins {
+  id("info.uebliche.mcmeta")
+}
+
+mcmeta {
+  minecraftVersion = "1.21.4"
+}
+
+val fabricLoader = extra["mcmetaFabricLoaderVersion"] as String?`;
 
 const loaderIconList = [
   {

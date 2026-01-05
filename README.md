@@ -22,3 +22,33 @@ npm run build
 ```
 
 GitHub Pages should point to the `main` branch and `/docs` folder.
+
+## Gradle plugin (local include)
+
+A small Gradle plugin is available in `gradle-plugin/`. It loads mcmeta
+versions and exposes them as Gradle extra properties.
+
+Example `settings.gradle.kts`:
+
+```kotlin
+pluginManagement {
+  includeBuild("gradle-plugin")
+}
+```
+
+Example `build.gradle.kts`:
+
+```kotlin
+plugins {
+  id("info.uebliche.mcmeta")
+}
+
+mcmeta {
+  minecraftVersion = "1.21.4"
+}
+
+dependencies {
+  val fabricLoader = extra["mcmetaFabricLoaderVersion"] as String?
+  // use versions in your dependencies
+}
+```

@@ -389,6 +389,12 @@ h2 {
   padding-left: 18px;
 }
 
+.howto p {
+  color: var(--muted);
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
 .code {
   background: #0a0c12;
   border-radius: 12px;
