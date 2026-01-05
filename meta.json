@@ -4,14 +4,18 @@
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
+    "folia": "error",
     "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
-    "quilt": "partial"
+    "paper": "error",
+    "quilt": "partial",
+    "velocity": "partial"
   },
   "notes": [
     "forge versions are not filtered for minecraft 18w32a",
     "minestom versions are not filtered for minecraft 18w32a",
-    "neoforge versions are not filtered for minecraft 18w32a"
+    "neoforge versions are not filtered for minecraft 18w32a",
+    "velocity versions are not filtered for minecraft 18w32a"
   ]
 }
