@@ -1,0 +1,100 @@
+{
+  "schema": "mcmeta/v1",
+  "minecraft": "22w46a",
+  "artifacts": {
+    "minestom": {
+      "type": "maven",
+      "coordinates": [
+        "net.minestom:minestom"
+      ],
+      "versions": [
+        "2026.01.01-1.21.11",
+        "2025.12.20c-1.21.11",
+        "2025.12.20b-1.21.11",
+        "2025.12.20-1.21.11",
+        "2025.12.19-1.21.10",
+        "2025.10.31-1.21.10",
+        "2025.10.18-1.21.10",
+        "2025.10.11-1.21.10",
+        "2025.10.05-1.21.8",
+        "2025.10.04-1.21.8",
+        "2025.09.13-1.21.8",
+        "2025.08.29-1.21.8",
+        "2025.08.26-1.21.8",
+        "2025.08.18-1.21.8",
+        "2025.08.12-1.21.8",
+        "2025.08.11-1.21.8",
+        "2025.07.30-1.21.8",
+        "2025.07.27-1.21.8",
+        "2025.07.26-1.21.8",
+        "2025.07.25-1.21.8",
+        "2025.07.20-1.21.8",
+        "2025.07.17-1.21.8",
+        "2025.07.14-1.21.7",
+        "2025.07.11-1.21.7",
+        "2025.07.10b-1.21.7",
+        "2025.07.10-1.21.7",
+        "2025.07.08-1.21.5",
+        "2025.07.04-1.21.5",
+        "2025.07.03-1.21.5"
+      ]
+    },
+    "fabric-api": {
+      "type": "modrinth",
+      "project_id": "P7dR8mSH",
+      "loaders": [
+        "fabric"
+      ],
+      "versions": [
+        {
+          "version_number": "0.67.0+1.19.3",
+          "game_versions": [
+            "22w46a"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/JDGZPBY3/fabric-api-0.67.0%2B1.19.3.jar",
+              "sha1": "eb2eee709528452b205ec7d884f73ea0f3567576",
+              "sha512": "851020c39dbf5017f6ccabd6280d6eaedaac22e5ee5b200841796d1eee4a166f8dcd1e9de08cb40fd1f9fc2358c2b09a7e4e02ee55c7940fa8ed261209ee5ef2"
+            }
+          ]
+        },
+        {
+          "version_number": "0.66.4+1.19.3",
+          "game_versions": [
+            "22w46a"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/5GqVAvvY/fabric-api-0.66.4%2B1.19.3.jar",
+              "sha1": "8f0c22992b62991efd1ec4890ced46ad4188fcab",
+              "sha512": "76bb32c8eb99f3e2e734be7b72939c807b15394f7a6ae35a25cc1ae069d21dda285c2909534e52d0655df5ce7a8e36e38773fa3814a9d2ffb4bb1cbbda4bce08"
+            }
+          ]
+        },
+        {
+          "version_number": "0.66.3+1.19.3",
+          "game_versions": [
+            "22w46a"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/hFVWjqsX/fabric-api-0.66.3%2B1.19.3.jar",
+              "sha1": "6cfb9d593cedab89103c3dc8c54bc1cec79c161a",
+              "sha512": "7a428319ac4996ca50a82ec5eccf17aaaa6c5407b0d43d899fd9eedfdfd7aafcfbf45633ce2a458b4169209617682e176cdcc895832def65b369a5b60a7bf0ce"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
