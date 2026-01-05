@@ -4,14 +4,18 @@
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
+    "folia": "error",
     "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
-    "quilt": "partial"
+    "paper": "error",
+    "quilt": "partial",
+    "velocity": "partial"
   },
   "notes": [
     "forge versions are not filtered for minecraft 1.14 Pre-Release 3",
     "minestom versions are not filtered for minecraft 1.14 Pre-Release 3",
-    "neoforge versions are not filtered for minecraft 1.14 Pre-Release 3"
+    "neoforge versions are not filtered for minecraft 1.14 Pre-Release 3",
+    "velocity versions are not filtered for minecraft 1.14 Pre-Release 3"
   ]
 }
