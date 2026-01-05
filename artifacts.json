@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "16w15b",
+  "minecraft": "16w15a",
   "artifacts": {
     "minestom": {
       "type": "maven",
