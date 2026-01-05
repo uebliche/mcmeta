@@ -3,7 +3,7 @@ plugins {
   kotlin("jvm") version "1.9.24"
 }
 
-group = "info.uebliche"
+group = "net.uebliche"
 version = "0.1.0"
 
 repositories {
@@ -17,8 +17,8 @@ dependencies {
 gradlePlugin {
   plugins {
     create("mcmeta") {
-      id = "info.uebliche.mcmeta"
-      implementationClass = "io.uebliche.mcmeta.McmetaPlugin"
+      id = "net.uebliche.mcmeta"
+      implementationClass = "net.uebliche.mcmeta.McmetaPlugin"
       displayName = "mcmeta version helper"
       description = "Loads mcmeta versions into Gradle properties."
     }

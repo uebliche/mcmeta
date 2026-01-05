@@ -40,7 +40,7 @@ Example `build.gradle.kts`:
 
 ```kotlin
 plugins {
-  id("info.uebliche.mcmeta")
+  id("net.uebliche.mcmeta")
 }
 
 mcmeta {

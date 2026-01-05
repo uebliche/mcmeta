@@ -21,7 +21,7 @@ pluginManagement {
 
 build.gradle.kts
 plugins {
-  id("info.uebliche.mcmeta")
+  id("net.uebliche.mcmeta")
 }
 
 mcmeta {

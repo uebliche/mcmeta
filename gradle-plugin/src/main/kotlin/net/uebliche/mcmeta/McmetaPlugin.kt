@@ -1,4 +1,4 @@
-package io.uebliche.mcmeta
+package net.uebliche.mcmeta
 
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
