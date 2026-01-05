@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "c0.30_01c",
+  "minecraft": "c0.0.13a",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft c0.30_01c",
-    "minestom versions are not filtered for minecraft c0.30_01c",
-    "neoforge versions are not filtered for minecraft c0.30_01c"
+    "forge versions are not filtered for minecraft c0.0.13a",
+    "minestom versions are not filtered for minecraft c0.0.13a",
+    "neoforge versions are not filtered for minecraft c0.0.13a"
   ]
 }
