@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>mcmeta</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <div class="bg-grid"></div>
+
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Minecraft metadata explorer</p>
+        <h1>mcmeta</h1>
+        <p class="subtitle">
+          Browse loader and artifact metadata per Minecraft version. Data is
+          published to git branches named <span class="mono">mc/&lt;version&gt;</span>.
+        </p>
+      </div>
+      <div class="header-actions">
+        <button id="refresh" class="ghost">Refresh</button>
+        <a class="ghost" id="repo-link" href="https://github.com/uebliche/mcmeta" target="_blank" rel="noreferrer">Repo</a>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="panel">
+          <label class="label" for="search">Search versions</label>
+          <input id="search" type="search" placeholder="1.20, 24w, rc" />
+          <label class="toggle">
+            <input id="show-snapshots" type="checkbox" checked />
+            <span>Include snapshots</span>
+          </label>
+          <div class="stat-row">
+            <div>
+              <div class="stat-label">Versions</div>
+              <div id="version-count" class="stat-value">-</div>
+            </div>
+            <div>
+              <div class="stat-label">Last sync</div>
+              <div id="last-sync" class="stat-value">-</div>
+            </div>
+          </div>
+        </div>
+        <div class="panel list-panel">
+          <div id="version-list" class="version-list"></div>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="panel hero">
+          <div>
+            <h2 id="active-version">Select a version</h2>
+            <p id="active-branch" class="mono">mc/&mdash;</p>
+          </div>
+          <div class="status">
+            <span id="overall-status" class="badge neutral">idle</span>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="overview">Overview</button>
+          <button class="tab" data-tab="raw">Raw JSON</button>
+        </div>
+
+        <div class="tab-panel" data-panel="overview">
+          <div class="grid">
+            <div class="panel">
+              <h3>Loaders</h3>
+              <div id="loader-summary" class="loader-summary"></div>
+            </div>
+            <div class="panel">
+              <h3>Artifacts</h3>
+              <div id="artifact-summary" class="artifact-summary"></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Source health</h3>
+            <div id="source-health" class="health-grid"></div>
+            <div id="meta-notes" class="notes"></div>
+          </div>
+        </div>
+
+        <div class="tab-panel hidden" data-panel="raw">
+          <div class="panel">
+            <h3>loader-index.json</h3>
+            <pre id="raw-loader" class="code"></pre>
+          </div>
+          <div class="panel">
+            <h3>artifacts.json</h3>
+            <pre id="raw-artifacts" class="code"></pre>
+          </div>
+          <div class="panel">
+            <h3>meta.json</h3>
+            <pre id="raw-meta" class="code"></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span class="mono">uebliche/mcmeta</span>
+      <span>Data is updated by mcmeta-harvest</span>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
