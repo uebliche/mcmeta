@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.16-pre3",
+  "minecraft": "1.16-pre2",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -47,34 +47,34 @@
       ],
       "versions": [
         {
-          "version_number": "0.11.9+build.358-1.16",
+          "version_number": "0.11.7+build.356-1.16",
           "game_versions": [
-            "1.16-pre3"
+            "1.16-pre2"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.11.9%2Bbuild.358-1.16/fabric-api-0.11.9%2Bbuild.358-1.16.jar",
-              "sha1": "59b9889123e18d516e36216e1173f60e2afeb321",
-              "sha512": "0b8442dfe0d6584dbeb54e136b65e0855e2773cbaaf8920dc9cbe030d33ab61ca6d0fb49c9fd89dd52956efdb968823aea888f5449a951acbb3f2b6e8e9ffa9e"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.11.7%2Bbuild.356-1.16/fabric-api-0.11.7%2Bbuild.356-1.16.jar",
+              "sha1": "d5f62450fdfb24bcf6fab669b4626a0e22942267",
+              "sha512": "86108aa515d134eb30c68b7c2b39fe42fff3e9c7074a873a71423adc939495f3b9794d6c490d77aa351d8ec1eab6bb0e07104515a49a126753259e404f1d94d7"
             }
           ]
         },
         {
-          "version_number": "0.11.8+build.357-1.16",
+          "version_number": "0.11.6+build.355-1.16",
           "game_versions": [
-            "1.16-pre3"
+            "1.16-pre2"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.11.8%2Bbuild.357-1.16/fabric-api-0.11.8%2Bbuild.357-1.16.jar",
-              "sha1": "f5d7ee609bb01e3867fc6ba7e2ffaee6c1be7855",
-              "sha512": "ff2a53aef50627d3de8d84464257278601a1f04d1f0377c10ea23cdaa96e5c8e3b2dd59eb28754ff7c2b363da1abc0508ffc2b62fdc9cb141de11e09afa70e12"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.11.6%2Bbuild.355-1.16/fabric-api-0.11.6%2Bbuild.355-1.16.jar",
+              "sha1": "7b39d6c929d821c67cfc7c5f5eed690b71baa76a",
+              "sha512": "0c748e7985f4f5cb150ad50314edfdc427e9e575b07b3b3b2dfc6a3e0b6810ebd4962f9f5d7ab776167efed0dcfe4ba867f49ef83590964149c7c86e7e4bbd7e"
             }
           ]
         }
