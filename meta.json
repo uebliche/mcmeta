@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "17w18b",
+  "minecraft": "17w18a",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 17w18b",
-    "minestom versions are not filtered for minecraft 17w18b",
-    "neoforge versions are not filtered for minecraft 17w18b"
+    "forge versions are not filtered for minecraft 17w18a",
+    "minestom versions are not filtered for minecraft 17w18a",
+    "neoforge versions are not filtered for minecraft 17w18a"
   ]
 }
