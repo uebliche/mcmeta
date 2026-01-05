@@ -4,14 +4,18 @@
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
+    "folia": "error",
     "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
-    "quilt": "ok"
+    "paper": "error",
+    "quilt": "ok",
+    "velocity": "partial"
   },
   "notes": [
     "forge versions are not filtered for minecraft 24w12a",
     "minestom versions are not filtered for minecraft 24w12a",
-    "neoforge versions are not filtered for minecraft 24w12a"
+    "neoforge versions are not filtered for minecraft 24w12a",
+    "velocity versions are not filtered for minecraft 24w12a"
   ]
 }
