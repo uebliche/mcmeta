@@ -1,0 +1,17 @@
+{
+  "schema": "mcmeta/v1",
+  "minecraft": "23w40a",
+  "sources": {
+    "fabric": "ok",
+    "fabric-api": "ok",
+    "forge": "partial",
+    "minestom": "partial",
+    "neoforge": "partial",
+    "quilt": "ok"
+  },
+  "notes": [
+    "forge versions are not filtered for minecraft 23w40a",
+    "minestom versions are not filtered for minecraft 23w40a",
+    "neoforge versions are not filtered for minecraft 23w40a"
+  ]
+}
