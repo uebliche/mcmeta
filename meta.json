@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.14 Pre-Release 1",
+  "minecraft": "19w14b",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 1.14 Pre-Release 1",
-    "minestom versions are not filtered for minecraft 1.14 Pre-Release 1",
-    "neoforge versions are not filtered for minecraft 1.14 Pre-Release 1"
+    "forge versions are not filtered for minecraft 19w14b",
+    "minestom versions are not filtered for minecraft 19w14b",
+    "neoforge versions are not filtered for minecraft 19w14b"
   ]
 }
