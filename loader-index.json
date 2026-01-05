@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.16.5-rc1",
+  "minecraft": "20w51a",
   "loaders": {
     "fabric": {
       "loader": [
