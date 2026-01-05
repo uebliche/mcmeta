@@ -5,12 +5,11 @@
     "fabric": "ok",
     "fabric-api": "ok",
     "forge": "ok",
-    "minestom": "partial",
+    "minestom": "ok",
     "neoforge": "partial",
     "quilt": "ok"
   },
   "notes": [
-    "minestom versions are not filtered for minecraft 1.21.11",
     "neoforge versions are not filtered for minecraft 1.21.11"
   ]
 }
