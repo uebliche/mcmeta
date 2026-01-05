@@ -4,12 +4,16 @@
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
+    "folia": "ok",
     "forge": "ok",
     "minestom": "ok",
     "neoforge": "partial",
-    "quilt": "ok"
+    "paper": "ok",
+    "quilt": "ok",
+    "velocity": "partial"
   },
   "notes": [
-    "neoforge versions are not filtered for minecraft 1.21.11"
+    "neoforge versions are not filtered for minecraft 1.21.11",
+    "velocity versions are not filtered for minecraft 1.21.11"
   ]
 }
