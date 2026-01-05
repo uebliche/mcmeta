@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "24w38a",
+  "minecraft": "24w37a",
   "loaders": {
     "fabric": {
       "loader": [
