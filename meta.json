@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft rd-132211",
-    "minestom versions are not filtered for minecraft rd-132211",
-    "neoforge versions are not filtered for minecraft rd-132211",
+    "forge maven metadata has no versions for minecraft rd-132211",
+    "minestom maven metadata has no versions for minecraft rd-132211",
+    "neoforge maven metadata has no versions for minecraft rd-132211",
     "velocity versions are not filtered for minecraft rd-132211"
   ]
 }
