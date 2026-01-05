@@ -1,16 +1,17 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.8.9",
+  "minecraft": "15w49a",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
-    "forge": "ok",
+    "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
     "quilt": "partial"
   },
   "notes": [
-    "minestom versions are not filtered for minecraft 1.8.9",
-    "neoforge versions are not filtered for minecraft 1.8.9"
+    "forge versions are not filtered for minecraft 15w49a",
+    "minestom versions are not filtered for minecraft 15w49a",
+    "neoforge versions are not filtered for minecraft 15w49a"
   ]
 }
