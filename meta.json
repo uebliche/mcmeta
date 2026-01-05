@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft c0.0.13a",
-    "minestom versions are not filtered for minecraft c0.0.13a",
-    "neoforge versions are not filtered for minecraft c0.0.13a",
+    "forge maven metadata has no versions for minecraft c0.0.13a",
+    "minestom maven metadata has no versions for minecraft c0.0.13a",
+    "neoforge maven metadata has no versions for minecraft c0.0.13a",
     "velocity versions are not filtered for minecraft c0.0.13a"
   ]
 }
