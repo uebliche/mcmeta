@@ -60,30 +60,30 @@
       <aside class="sidebar">
         <div class="panel list-panel">
           <div class="version-list">
-            <div v-if="filteredVersions.length === 0" class="version-item">
+            <div v-if="filteredEntries.length === 0" class="version-item">
               No matches
             </div>
             <div
-              v-for="(version, index) in filteredVersions"
-              :key="version"
+              v-for="(entry, index) in filteredEntries"
+              :key="entry.branch"
               class="version-item"
-              :class="{ active: version === activeVersion }"
+              :class="{ active: entry.branch === activeBranch }"
               :style="{ animationDelay: `${index * 0.02}s` }"
-              @click="selectVersion(version)"
+              @click="selectEntry(entry)"
             >
-              <div>{{ version }}</div>
+              <div>{{ entry.label }}</div>
               <div class="version-meta">
-                <span>{{ isSnapshot(version) ? 'snapshot' : 'release' }}</span>
-                <span>mc/{{ version }}</span>
+                <span>{{ entry.badge }}</span>
+                <span>{{ entry.branch }}</span>
               </div>
               <div class="version-icons">
                 <span
                   v-for="icon in loaderIconList"
-                  :key="`${version}-${icon.key}`"
+                  :key="`${entry.branch}-${icon.key}`"
                   class="loader-icon"
                   :class="[
                     icon.key,
-                    loaderStatus[version]?.[icon.key] ? 'on' : 'off',
+                    loaderStatus[entry.branch]?.[icon.key] ? 'on' : 'off',
                   ]"
                   :title="icon.label"
                 >
@@ -98,8 +98,8 @@
       <section class="content">
         <div class="panel hero">
           <div>
-            <h2>{{ activeVersion || 'Select a version' }}</h2>
-            <p class="mono">{{ activeVersion ? `mc/${activeVersion}` : 'mc/—' }}</p>
+            <h2>{{ activeLabel || 'Select a version' }}</h2>
+            <p class="mono">{{ activeBranch || '—' }}</p>
           </div>
           <div class="status">
             <span :class="['badge', overallStatus]">{{ overallStatus }}</span>
@@ -310,7 +310,8 @@ const manifestUrl =
 const search = ref('');
 const includeSnapshots = ref(true);
 const branches = ref([]);
-const activeVersion = ref('');
+const activeBranch = ref('');
+const activeLabel = ref('');
 const activeTab = ref('overview');
 const overallStatus = ref('idle');
 const lastSync = ref('-');
@@ -322,27 +323,58 @@ const loaderIndex = ref(null);
 const artifacts = ref(null);
 const meta = ref(null);
 
-const filteredVersions = computed(() => {
-  let list = branches.value
-    .filter((branch) => branch.name.startsWith('mc/'))
-    .map((branch) => branch.name.replace('mc/', ''))
-    .filter((version) => (includeSnapshots.value ? true : !isSnapshot(version)))
-    .filter((version) => version.toLowerCase().includes(search.value.toLowerCase()));
+const filteredEntries = computed(() => {
+  const searchValue = search.value.toLowerCase();
+  const include = includeSnapshots.value;
   const order = manifestOrder.value || {};
+  const names = branches.value.map((branch) => branch.name);
+  const entries = [];
+
+  if (names.includes('latest')) {
+    entries.push({
+      label: 'latest',
+      branch: 'latest',
+      badge: 'latest',
+    });
+  }
+  if (names.includes('latest-snapshot') && include) {
+    entries.push({
+      label: 'latest-snapshot',
+      branch: 'latest-snapshot',
+      badge: 'snapshot',
+    });
+  }
+
+  let list = names
+    .filter((name) => name.startsWith('mc/'))
+    .map((name) => name.replace('mc/', ''))
+    .map((version) => ({
+      label: version,
+      branch: `mc/${version}`,
+      badge: isSnapshot(version) ? 'snapshot' : 'release',
+    }))
+    .filter((entry) => (include ? true : entry.badge === 'release'));
+
   list.sort((a, b) => {
-    const aKey = order[a];
-    const bKey = order[b];
+    const aKey = order[sanitizeVersion(a.label)];
+    const bKey = order[sanitizeVersion(b.label)];
     if (aKey !== undefined && bKey !== undefined) {
       return aKey - bKey;
     }
     if (aKey !== undefined) return -1;
     if (bKey !== undefined) return 1;
-    return b.localeCompare(a, undefined, { numeric: true });
+    return b.label.localeCompare(a.label, undefined, { numeric: true });
   });
-  return list;
+
+  const all = entries.concat(list);
+  if (!searchValue) return all;
+  return all.filter((entry) => {
+    const hay = `${entry.label} ${entry.branch}`.toLowerCase();
+    return hay.includes(searchValue);
+  });
 });
 
-const versionCount = computed(() => filteredVersions.value.length);
+const versionCount = computed(() => filteredEntries.value.length);
 
 const loaderCards = computed(() => {
   const loaders = loaderIndex.value?.loaders || {};
@@ -580,16 +612,17 @@ function setStatus(text, state = 'neutral') {
   overallStatus.value = state === 'neutral' ? text : state;
 }
 
-async function selectVersion(version) {
-  activeVersion.value = version;
+async function selectEntry(entry) {
+  activeBranch.value = entry.branch;
+  activeLabel.value = entry.label;
   setStatus('loading', 'neutral');
 
   try {
     errorMessage.value = '';
     const [loader, artifactsData, metaData] = await Promise.all([
-      fetchJson(`${rawBase}/mc/${version}/loader-index.json`),
-      fetchJson(`${rawBase}/mc/${version}/artifacts.json`),
-      fetchJson(`${rawBase}/mc/${version}/meta.json`),
+      fetchJson(`${rawBase}/${entry.branch}/loader-index.json`),
+      fetchJson(`${rawBase}/${entry.branch}/artifacts.json`),
+      fetchJson(`${rawBase}/${entry.branch}/meta.json`),
     ]);
 
     loaderIndex.value = loader;
@@ -615,8 +648,13 @@ async function selectVersion(version) {
 }
 
 function goLatest() {
-  if (filteredVersions.value.length) {
-    selectVersion(filteredVersions.value[0]);
+  const latest = filteredEntries.value.find((entry) => entry.branch === 'latest');
+  if (latest) {
+    selectEntry(latest);
+    return;
+  }
+  if (filteredEntries.value.length) {
+    selectEntry(filteredEntries.value[0]);
   }
 }
 
@@ -626,19 +664,20 @@ async function fetchJson(url) {
   return resp.json();
 }
 
-async function fetchLoaderStatus(version) {
-  if (loaderStatus.value[version]) return;
+async function fetchLoaderStatus(entry) {
+  const key = entry.branch;
+  if (loaderStatus.value[key]) return;
   try {
-    const data = await fetchJson(`${rawBase}/mc/${version}/loader-index.json`);
+    const data = await fetchJson(`${rawBase}/${entry.branch}/loader-index.json`);
     const loaders = data.loaders || {};
-    loaderStatus.value[version] = {
+    loaderStatus.value[key] = {
       fabric: hasLoader(loaders.fabric),
       quilt: hasLoader(loaders.quilt),
       forge: hasLoader(loaders.forge),
       neoforge: hasLoader(loaders.neoforge),
     };
   } catch {
-    loaderStatus.value[version] = {
+    loaderStatus.value[key] = {
       fabric: false,
       quilt: false,
       forge: false,
@@ -680,15 +719,15 @@ function sanitizeVersion(value) {
   return out.replace(/^\.+|\.+$/g, '').replace(/^-+|-+$/g, '');
 }
 
-async function ensureLoaderStatuses(versions) {
-  const queue = versions.filter((version) => !loaderStatus.value[version]);
+async function ensureLoaderStatuses(entries) {
+  const queue = entries.filter((entry) => !loaderStatus.value[entry.branch]);
   if (!queue.length) return;
 
   const workers = Array.from({ length: statusWorkers }, async () => {
     while (queue.length) {
-      const version = queue.shift();
-      if (!version) return;
-      await fetchLoaderStatus(version);
+      const entry = queue.shift();
+      if (!entry) return;
+      await fetchLoaderStatus(entry);
     }
   });
 
@@ -706,10 +745,10 @@ async function init() {
     branches.value = result.items;
     lastSync.value = formatTimestamp(result.timestamp);
 
-    await ensureLoaderStatuses(filteredVersions.value);
+    await ensureLoaderStatuses(filteredEntries.value);
 
-    if (filteredVersions.value.length) {
-      await selectVersion(filteredVersions.value[0]);
+    if (filteredEntries.value.length) {
+      await selectEntry(filteredEntries.value[0]);
     } else {
       overallStatus.value = 'empty';
     }
@@ -728,11 +767,12 @@ async function refresh() {
   await init();
 }
 
-watch(filteredVersions, (list) => {
+watch(filteredEntries, (list) => {
   if (!list.length) return;
   ensureLoaderStatuses(list);
-  if (!activeVersion.value || !list.includes(activeVersion.value)) {
-    selectVersion(list[0]);
+  const hasActive = list.some((entry) => entry.branch === activeBranch.value);
+  if (!activeBranch.value || !hasActive) {
+    selectEntry(list[0]);
   }
 });
 
