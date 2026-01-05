@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "16w04a",
+  "minecraft": "16w03a",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 16w04a",
-    "minestom versions are not filtered for minecraft 16w04a",
-    "neoforge versions are not filtered for minecraft 16w04a"
+    "forge versions are not filtered for minecraft 16w03a",
+    "minestom versions are not filtered for minecraft 16w03a",
+    "neoforge versions are not filtered for minecraft 16w03a"
   ]
 }
