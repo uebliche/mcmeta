@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "25w36b",
+  "minecraft": "25w36a",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "ok"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 25w36b",
-    "minestom versions are not filtered for minecraft 25w36b",
-    "neoforge versions are not filtered for minecraft 25w36b"
+    "forge versions are not filtered for minecraft 25w36a",
+    "minestom versions are not filtered for minecraft 25w36a",
+    "neoforge versions are not filtered for minecraft 25w36a"
   ]
 }
