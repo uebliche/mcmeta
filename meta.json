@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "c0.0.11a",
+  "minecraft": "rd-161348",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft c0.0.11a",
-    "minestom versions are not filtered for minecraft c0.0.11a",
-    "neoforge versions are not filtered for minecraft c0.0.11a"
+    "forge versions are not filtered for minecraft rd-161348",
+    "minestom versions are not filtered for minecraft rd-161348",
+    "neoforge versions are not filtered for minecraft rd-161348"
   ]
 }
