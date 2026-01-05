@@ -22,7 +22,9 @@
       "loader": []
     },
     "neoforge": {
-      "loader": []
+      "loader": [
+        "21.2.1-beta"
+      ]
     }
   }
 }
