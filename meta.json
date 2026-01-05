@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 14w30c",
-    "minestom versions are not filtered for minecraft 14w30c",
-    "neoforge versions are not filtered for minecraft 14w30c",
+    "forge maven metadata has no versions for minecraft 14w30c",
+    "minestom maven metadata has no versions for minecraft 14w30c",
+    "neoforge maven metadata has no versions for minecraft 14w30c",
     "velocity versions are not filtered for minecraft 14w30c"
   ]
 }
