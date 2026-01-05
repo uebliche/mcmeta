@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.21.2",
+  "minecraft": "1.21.2-rc2",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "ok"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 1.21.2",
-    "minestom versions are not filtered for minecraft 1.21.2",
-    "neoforge versions are not filtered for minecraft 1.21.2"
+    "forge versions are not filtered for minecraft 1.21.2-rc2",
+    "minestom versions are not filtered for minecraft 1.21.2-rc2",
+    "neoforge versions are not filtered for minecraft 1.21.2-rc2"
   ]
 }
