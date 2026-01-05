@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.21.5-rc1",
+  "minecraft": "1.21.5-pre3",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -47,35 +47,34 @@
       ],
       "versions": [
         {
-          "version_number": "0.119.4+1.21.5",
+          "version_number": "0.119.2+1.21.5",
           "game_versions": [
-            "1.21.5-rc1",
-            "1.21.5-rc2"
+            "1.21.5-pre3"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/sEWxVmfA/fabric-api-0.119.4%2B1.21.5.jar",
-              "sha1": "cab96f4f3b2b128921009b49ba0fd795e7aeafce",
-              "sha512": "546f2658e33f527491efe393a566f104a28990c0c8b40c79b3de80a38d1572a8b440b1f0f4eb835c6d724c9073b0849f356720665e40835052680b3a1fc571a0"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/1pvBRjVJ/fabric-api-0.119.2%2B1.21.5.jar",
+              "sha1": "e404d67449e896ac71e991f13c310ca77e5b220f",
+              "sha512": "3df1be4e3f9a31df31f18e43f10315a649824c063ead110d91dd3467a3bf9950adcb88391d7a4c289dcb836cbdaf11851995cc6c4ac4bad93b30634332406536"
             }
           ]
         },
         {
-          "version_number": "0.119.3+1.21.5",
+          "version_number": "0.119.1+1.21.5",
           "game_versions": [
-            "1.21.5-rc1"
+            "1.21.5-pre3"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/PqEW2QBo/fabric-api-0.119.3%2B1.21.5.jar",
-              "sha1": "19263fc0654e6a791e7971c225bd4ef232d0011e",
-              "sha512": "06864b90e772401b492ce9e97e8896a79ed3e3e1302ce4c7e41b6658e6159e698f2aebd80bef94699b606c368d389841b86d3769185b4a77545021c20b1602c2"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/Mjeis0MF/fabric-api-0.119.1%2B1.21.5.jar",
+              "sha1": "9ae175e569ad6485dc6a41da06a15bcc5cfee54a",
+              "sha512": "65b8f6b7e79c224942496f86a704df073463f8c0c48c55487a1762424e8d94ca8ebc2b12c09885f8f6e7b833ac66bd544ab5d45bf977950d5dd8256a1d8302ef"
             }
           ]
         }
