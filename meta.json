@@ -1,16 +1,17 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.9.4",
+  "minecraft": "1.9.3",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
-    "forge": "ok",
+    "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
     "quilt": "partial"
   },
   "notes": [
-    "minestom versions are not filtered for minecraft 1.9.4",
-    "neoforge versions are not filtered for minecraft 1.9.4"
+    "forge versions are not filtered for minecraft 1.9.3",
+    "minestom versions are not filtered for minecraft 1.9.3",
+    "neoforge versions are not filtered for minecraft 1.9.3"
   ]
 }
