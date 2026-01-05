@@ -5,7 +5,7 @@
     "fabric": "ok",
     "fabric-api": "ok",
     "folia": "error",
-    "forge": "partial",
+    "forge": "ok",
     "minestom": "partial",
     "neoforge": "partial",
     "paper": "ok",
@@ -13,7 +13,6 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge maven metadata has no versions for minecraft 1.14.2",
     "minestom maven metadata has no versions for minecraft 1.14.2",
     "neoforge maven metadata has no versions for minecraft 1.14.2",
     "velocity versions are not filtered for minecraft 1.14.2"
