@@ -6,7 +6,7 @@ This repository is updated by the harvester action in `uebliche/mcmeta-harvest`.
 ## Web UI
 
 The interactive browser is built with Vue + Vite. Source lives in `web/` and the
-static build is emitted into `docs/` for GitHub Pages.
+static build is deployed to the `gh-pages` branch by GitHub Actions.
 
 Local dev:
 
@@ -21,7 +21,7 @@ Build for Pages:
 npm run build
 ```
 
-GitHub Pages should point to the `main` branch and `/docs` folder.
+GitHub Pages should point to the `gh-pages` branch and `/` folder.
 
 ## Gradle plugin (local include)
 
