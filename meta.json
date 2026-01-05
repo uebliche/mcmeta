@@ -5,7 +5,7 @@
     "fabric": "partial",
     "fabric-api": "ok",
     "folia": "error",
-    "forge": "ok",
+    "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
     "paper": "error",
@@ -13,6 +13,7 @@
     "velocity": "partial"
   },
   "notes": [
+    "forge maven metadata has no versions for minecraft 1.5",
     "minestom maven metadata has no versions for minecraft 1.5",
     "neoforge maven metadata has no versions for minecraft 1.5",
     "velocity versions are not filtered for minecraft 1.5"
