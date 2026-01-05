@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "16w14a",
+  "minecraft": "1.RV-Pre1",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 16w14a",
-    "minestom versions are not filtered for minecraft 16w14a",
-    "neoforge versions are not filtered for minecraft 16w14a"
+    "forge versions are not filtered for minecraft 1.RV-Pre1",
+    "minestom versions are not filtered for minecraft 1.RV-Pre1",
+    "neoforge versions are not filtered for minecraft 1.RV-Pre1"
   ]
 }
