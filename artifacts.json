@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "25w36a",
+  "minecraft": "25w35a",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -45,7 +45,56 @@
       "loaders": [
         "fabric"
       ],
-      "versions": []
+      "versions": [
+        {
+          "version_number": "0.133.0+1.21.9",
+          "game_versions": [
+            "25w35a"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/gjoJRErB/fabric-api-0.133.0%2B1.21.9.jar",
+              "sha1": "741a507c53afea444224de21107af46aa9296993",
+              "sha512": "50df1d66cc1e0a42c851e30aa66da364d65e77d375e8605792fd294db6bc1c97a9802ee47957030cdf7d1023bb4b767e790f4c7998c27c5d5ab303a883e79fe7"
+            }
+          ]
+        },
+        {
+          "version_number": "0.132.3+1.21.9",
+          "game_versions": [
+            "25w35a"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/l5NUMVJi/fabric-api-0.132.3%2B1.21.9.jar",
+              "sha1": "75c58283327102182d2d3b10965b1880f7719e38",
+              "sha512": "aa0d1b65bec0d1872d43ee3b092b95e5ac717b26d793d65f155c7dfc33fa8ce90ba9bda3b3a2d4a2bdc41a0f735e8fc269cd4c6f77944ca8a49823ee1aaa0232"
+            }
+          ]
+        },
+        {
+          "version_number": "0.132.2+1.21.9",
+          "game_versions": [
+            "25w35a"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/MLV5nweV/fabric-api-0.132.2%2B1.21.9.jar",
+              "sha1": "621ac480ea271767da6e8ca55cf84cd739777c60",
+              "sha512": "3ea9725f89dff98052ea3616008d775b328ed249eef70bbaeec08ffbd8dd28355dfb8cfbe9be38cdcf15f033f2146ce098f31bb344105ca7797af7dbf88f00c5"
+            }
+          ]
+        }
+      ]
     }
   }
 }
