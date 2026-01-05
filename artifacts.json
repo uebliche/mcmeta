@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "3D Shareware v1.34",
+  "minecraft": "19w13b",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -17,7 +17,25 @@
       "loaders": [
         "fabric"
       ],
-      "versions": []
+      "versions": [
+        {
+          "version_number": "0.2.6.117",
+          "game_versions": [
+            "19w13a",
+            "19w13b"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.2.6.117/fabric-0.2.6.117.jar",
+              "sha1": "290d9c2f13c057d3efab4cf86f98c1b84fb72fb9",
+              "sha512": "d6cb865fed475c346dc3fa0a430540e6ae134db928fe3933d6cabc3302a862dba35d5a6f71080d0e7c4243ae0e260c9e846700aac938d1e888860d1bb9fa2f5f"
+            }
+          ]
+        }
+      ]
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "3D Shareware v1.34",
+  "minecraft": "19w13b",
   "loaders": {
     "fabric": {
       "loader": [
