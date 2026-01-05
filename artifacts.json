@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.16.2-pre1",
+  "minecraft": "20w30a",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -47,34 +47,34 @@
       ],
       "versions": [
         {
-          "version_number": "0.16.3+build.390-1.16",
+          "version_number": "0.16.0+build.386-1.16",
           "game_versions": [
-            "1.16.2-pre1"
+            "20w30a"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.16.3%2Bbuild.390-1.16/fabric-api-0.16.3%2Bbuild.390-1.16.jar",
-              "sha1": "beedfa34607878e9fb6377357316ed6a12cd30a9",
-              "sha512": "ac45410eccc1683fe38c949125397104e8abb09c15b3d941692017b5bfd277c6301032ba0d4ae38da4d3fb5029e2f53c3aef1f0638c18bd5a533e95b3e2b29e1"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.16.0%2Bbuild.386-1.16/fabric-api-0.16.0%2Bbuild.386-1.16.jar",
+              "sha1": "f7e453f4342fdd3cbba98ca4e057efb9efb66d2d",
+              "sha512": "d5cfeb067184e113391a2617ed40ad6aefd1bca52765176d663ca8574fe878b92a1f41815350a6419ac0307426d0cafdb0176286eec0acd8b68294dab31082fb"
             }
           ]
         },
         {
-          "version_number": "0.16.1+build.387-1.16",
+          "version_number": "0.15.2+build.382-1.16",
           "game_versions": [
-            "1.16.2-pre1"
+            "20w30a"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.16.1%2Bbuild.387-1.16/fabric-api-0.16.1%2Bbuild.387-1.16.jar",
-              "sha1": "070a3ea226950f2ee92fab6576709e662496d72f",
-              "sha512": "7dca4b7b21518ebd9d3e8cb56c30bd18bb9e0ad23b26ddcab340e42ea73911d9f465a7fe7b7e6a072d7d8f7c56aa5186660fa71bdb868530257d6b37d44a7a15"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.15.2%2Bbuild.382-1.16/fabric-api-0.15.2%2Bbuild.382-1.16.jar",
+              "sha1": "4d0b1eb0173d6f11e1f1e5dc6da81356fd9b07ef",
+              "sha512": "22643a8a66d6ad7b6a450f3b43827c046e2214e6b438c8f324bab63d80e29b849b7001e208d5f87234d0deb2e8404df02a749f43c2cc9fcb3309acb9e1a0003c"
             }
           ]
         }
