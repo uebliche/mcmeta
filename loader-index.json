@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.20.5-pre1",
+  "minecraft": "24w14a",
   "loaders": {
     "fabric": {
       "loader": [
