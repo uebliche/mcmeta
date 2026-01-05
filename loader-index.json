@@ -18,7 +18,9 @@
       "loader": []
     },
     "neoforge": {
-      "loader": []
+      "loader": [
+        "0.25w14craftmine.5-beta"
+      ]
     }
   }
 }
