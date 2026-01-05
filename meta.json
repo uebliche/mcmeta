@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.7.1",
+  "minecraft": "1.7",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
@@ -10,7 +10,7 @@
     "quilt": "partial"
   },
   "notes": [
-    "minestom versions are not filtered for minecraft 1.7.1",
-    "neoforge versions are not filtered for minecraft 1.7.1"
+    "minestom versions are not filtered for minecraft 1.7",
+    "neoforge versions are not filtered for minecraft 1.7"
   ]
 }
