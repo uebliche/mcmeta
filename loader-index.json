@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.13.2",
+  "minecraft": "1.13.2-pre2",
   "loaders": {
     "fabric": {
       "loader": [],
@@ -16,7 +16,7 @@
     },
     "forge": {
       "loader": [
-        "1.13.2-25.0.223"
+        "1.9.4-12.17.0.2317-1.9.4"
       ]
     },
     "neoforge": {
