@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 17w17b",
-    "minestom versions are not filtered for minecraft 17w17b",
-    "neoforge versions are not filtered for minecraft 17w17b",
+    "forge maven metadata has no versions for minecraft 17w17b",
+    "minestom maven metadata has no versions for minecraft 17w17b",
+    "neoforge maven metadata has no versions for minecraft 17w17b",
     "velocity versions are not filtered for minecraft 17w17b"
   ]
 }
