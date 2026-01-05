@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.21.6-pre2",
+  "minecraft": "1.21.6-pre1",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -45,7 +45,56 @@
       "loaders": [
         "fabric"
       ],
-      "versions": []
+      "versions": [
+        {
+          "version_number": "0.125.3+1.21.6",
+          "game_versions": [
+            "1.21.6-pre1"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/zMhuzBG4/fabric-api-0.125.3%2B1.21.6.jar",
+              "sha1": "90e89ffce581184584649e596f5d6190d77b3de5",
+              "sha512": "c18ee93777e84968376eb4ce7e4824d300089de85e60aedf51cfe4fd24232a317eb012f594f9a942383a485117bc109572ef15f9755ac54592c14ba7b72e0371"
+            }
+          ]
+        },
+        {
+          "version_number": "0.125.2+1.21.6",
+          "game_versions": [
+            "1.21.6-pre1"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/1IkOxieq/fabric-api-0.125.2%2B1.21.6.jar",
+              "sha1": "6868774d9058435ffd8c3e5e171009dee727e99e",
+              "sha512": "63a6690e3a2233e88dd8051c0cb49982dfe134ae4d068e41ab120248e338a8aed3ab89c7ffa004e91cca5b1c5a11c212c9648459e956930a4d25f1e5262da6b3"
+            }
+          ]
+        },
+        {
+          "version_number": "0.125.1+1.21.6",
+          "game_versions": [
+            "1.21.6-pre1"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/lkoxTot4/fabric-api-0.125.1%2B1.21.6.jar",
+              "sha1": "596f5082b4eff8a88d0241eeac81003568303635",
+              "sha512": "998d3296f99df79b0f26490f7dbbfd74b57238c0cc832387b74e7beb8d1ad7a6f179d853112e883e925d5766856f345bcb4f864651548972839a9085225243e5"
+            }
+          ]
+        }
+      ]
     }
   }
 }
