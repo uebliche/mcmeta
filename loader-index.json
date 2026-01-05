@@ -16,12 +16,12 @@
     },
     "forge": {
       "loader": [
-        "1.7.10_pre4-10.12.2.1149-prerelease"
+        "1.7.10-10.13.4.1614-1.7.10"
       ]
     },
     "neoforge": {
       "loader": [
-        "26.1.0.0-alpha.4+snapshot-1"
+        "21.11.24-beta"
       ]
     }
   }
