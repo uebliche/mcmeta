@@ -7,9 +7,7 @@
       "coordinates": [
         "net.minestom:minestom"
       ],
-      "versions": [
-        "2025.12.20-1.21.11"
-      ]
+      "versions": []
     },
     "fabric-api": {
       "type": "modrinth",
@@ -17,7 +15,25 @@
       "loaders": [
         "fabric"
       ],
-      "versions": []
+      "versions": [
+        {
+          "version_number": "0.90.5+1.20.3",
+          "game_versions": [
+            "23w43a",
+            "23w43b"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/jzcdFzPc/fabric-api-0.90.5%2B1.20.3.jar",
+              "sha1": "642c1b5e0de0e733dcb96dd55c0848576e0d9229",
+              "sha512": "ce417011deb17246123991455b52f203d8a39d3e9a53ec693d5484d5f2454c913bf302e5464dbbef532f0dfba2c061e00c7746d2fcfe4b398df66728659cd7fc"
+            }
+          ]
+        }
+      ]
     },
     "paper": {
       "type": "papermc",
