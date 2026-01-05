@@ -3,6 +3,11 @@
 Published metadata per Minecraft version lives on branches `mc/<mcVersion>`.
 This repository is updated by the harvester action in `uebliche/mcmeta-harvest`.
 
+Two convenience branches exist:
+
+- `latest` (newest release from Mojang manifest)
+- `latest-snapshot` (newest non-release, including snapshots/betas)
+
 ## Web UI
 
 The interactive browser is built with Vue + Vite. Source lives in `web/` and the
