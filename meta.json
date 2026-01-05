@@ -13,8 +13,8 @@
     "velocity": "partial"
   },
   "notes": [
-    "minestom versions are not filtered for minecraft 1.7.10",
-    "neoforge versions are not filtered for minecraft 1.7.10",
+    "minestom maven metadata has no versions for minecraft 1.7.10",
+    "neoforge maven metadata has no versions for minecraft 1.7.10",
     "velocity versions are not filtered for minecraft 1.7.10"
   ]
 }
