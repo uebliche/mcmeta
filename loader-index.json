@@ -15,9 +15,7 @@
       ]
     },
     "forge": {
-      "loader": [
-        "1.4.7-6.6.2.534"
-      ]
+      "loader": []
     },
     "neoforge": {
       "loader": []
