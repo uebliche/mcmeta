@@ -265,6 +265,20 @@ input[type="search"] {
   gap: 16px;
 }
 
+.status {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.status-message {
+  max-width: 260px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: right;
+}
+
 h2 {
   font-size: 2rem;
   margin-bottom: 6px;

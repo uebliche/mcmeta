@@ -98,6 +98,7 @@
           </div>
           <div class="status">
             <span :class="['badge', overallStatus]">{{ overallStatus }}</span>
+            <div v-if="errorMessage" class="status-message">{{ errorMessage }}</div>
           </div>
         </div>
 
@@ -310,6 +311,7 @@ const overallStatus = ref('idle');
 const lastSync = ref('-');
 const loaderStatus = ref({});
 const manifestOrder = ref({});
+const errorMessage = ref('');
 
 const loaderIndex = ref(null);
 const artifacts = ref(null);
@@ -578,6 +580,7 @@ async function selectVersion(version) {
   setStatus('loading', 'neutral');
 
   try {
+    errorMessage.value = '';
     const [loader, artifactsData, metaData] = await Promise.all([
       fetchJson(`${rawBase}/mc/${version}/loader-index.json`),
       fetchJson(`${rawBase}/mc/${version}/artifacts.json`),
@@ -599,6 +602,7 @@ async function selectVersion(version) {
   } catch (err) {
     console.error(err);
     overallStatus.value = 'error';
+    errorMessage.value = err?.message || 'Failed to load version data';
     loaderIndex.value = null;
     artifacts.value = null;
     meta.value = null;
@@ -690,6 +694,7 @@ async function ensureLoaderStatuses(versions) {
 async function init() {
   overallStatus.value = 'loading';
   try {
+    errorMessage.value = '';
     loaderStatus.value = loadStatusCache();
     await fetchManifestOrder();
     const result = await fetchBranches();
@@ -706,6 +711,7 @@ async function init() {
   } catch (err) {
     console.error(err);
     overallStatus.value = 'error';
+    errorMessage.value = err?.message || 'Failed to load data';
   }
 }
 
@@ -713,6 +719,7 @@ async function refresh() {
   localStorage.removeItem(cacheKey);
   localStorage.removeItem(statusCacheKey);
   localStorage.removeItem(manifestCacheKey);
+  errorMessage.value = '';
   await init();
 }
 
