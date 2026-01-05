@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 1.8.2-pre5",
-    "minestom versions are not filtered for minecraft 1.8.2-pre5",
-    "neoforge versions are not filtered for minecraft 1.8.2-pre5",
+    "forge maven metadata has no versions for minecraft 1.8.2-pre5",
+    "minestom maven metadata has no versions for minecraft 1.8.2-pre5",
+    "neoforge maven metadata has no versions for minecraft 1.8.2-pre5",
     "velocity versions are not filtered for minecraft 1.8.2-pre5"
   ]
 }
