@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "rd-160052",
+  "minecraft": "rd-20090515",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft rd-160052",
-    "minestom versions are not filtered for minecraft rd-160052",
-    "neoforge versions are not filtered for minecraft rd-160052"
+    "forge versions are not filtered for minecraft rd-20090515",
+    "minestom versions are not filtered for minecraft rd-20090515",
+    "neoforge versions are not filtered for minecraft rd-20090515"
   ]
 }
