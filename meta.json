@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.15-pre4",
+  "minecraft": "1.15-pre3",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "ok"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 1.15-pre4",
-    "minestom versions are not filtered for minecraft 1.15-pre4",
-    "neoforge versions are not filtered for minecraft 1.15-pre4"
+    "forge versions are not filtered for minecraft 1.15-pre3",
+    "minestom versions are not filtered for minecraft 1.15-pre3",
+    "neoforge versions are not filtered for minecraft 1.15-pre3"
   ]
 }
