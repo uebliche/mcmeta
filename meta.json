@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 1.14.4-pre3",
-    "minestom versions are not filtered for minecraft 1.14.4-pre3",
-    "neoforge versions are not filtered for minecraft 1.14.4-pre3",
+    "forge maven metadata has no versions for minecraft 1.14.4-pre3",
+    "minestom maven metadata has no versions for minecraft 1.14.4-pre3",
+    "neoforge maven metadata has no versions for minecraft 1.14.4-pre3",
     "velocity versions are not filtered for minecraft 1.14.4-pre3"
   ]
 }
