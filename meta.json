@@ -4,13 +4,17 @@
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
+    "folia": "ok",
     "forge": "ok",
     "minestom": "partial",
     "neoforge": "partial",
-    "quilt": "ok"
+    "paper": "ok",
+    "quilt": "ok",
+    "velocity": "partial"
   },
   "notes": [
     "minestom versions are not filtered for minecraft 1.20.2",
-    "neoforge versions are not filtered for minecraft 1.20.2"
+    "neoforge versions are not filtered for minecraft 1.20.2",
+    "velocity versions are not filtered for minecraft 1.20.2"
   ]
 }
