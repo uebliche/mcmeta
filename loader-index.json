@@ -19,10 +19,14 @@
       ]
     },
     "forge": {
-      "loader": []
+      "loader": [
+        "1.20.4-49.2.4"
+      ]
     },
     "neoforge": {
-      "loader": []
+      "loader": [
+        "20.4.251"
+      ]
     }
   }
 }
