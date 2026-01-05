@@ -81,7 +81,7 @@
                   ]"
                   :title="icon.label"
                 >
-                  {{ icon.short }}
+                  <img :src="icon.src" :alt="icon.label" loading="lazy" />
                 </span>
               </div>
             </div>
@@ -324,10 +324,26 @@ const rawMeta = computed(() =>
 );
 
 const loaderIconList = [
-  { key: 'fabric', label: 'Fabric', short: 'F' },
-  { key: 'quilt', label: 'Quilt', short: 'Q' },
-  { key: 'forge', label: 'Forge', short: 'G' },
-  { key: 'neoforge', label: 'NeoForge', short: 'N' },
+  {
+    key: 'fabric',
+    label: 'Fabric',
+    src: 'https://github.com/FabricMC.png',
+  },
+  {
+    key: 'quilt',
+    label: 'Quilt',
+    src: 'https://github.com/QuiltMC.png',
+  },
+  {
+    key: 'forge',
+    label: 'Forge',
+    src: 'https://github.com/MinecraftForge.png',
+  },
+  {
+    key: 'neoforge',
+    label: 'NeoForge',
+    src: 'https://github.com/neoforged.png',
+  },
 ];
 
 function isSnapshot(version) {
