@@ -1,16 +1,17 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.18",
+  "minecraft": "1.18-rc4",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
-    "forge": "ok",
+    "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
     "quilt": "ok"
   },
   "notes": [
-    "minestom versions are not filtered for minecraft 1.18",
-    "neoforge versions are not filtered for minecraft 1.18"
+    "forge versions are not filtered for minecraft 1.18-rc4",
+    "minestom versions are not filtered for minecraft 1.18-rc4",
+    "neoforge versions are not filtered for minecraft 1.18-rc4"
   ]
 }
