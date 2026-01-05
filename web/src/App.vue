@@ -70,6 +70,20 @@
                 <span>{{ isSnapshot(version) ? 'snapshot' : 'release' }}</span>
                 <span>mc/{{ version }}</span>
               </div>
+              <div class="version-icons">
+                <span
+                  v-for="icon in loaderIconList"
+                  :key="`${version}-${icon.key}`"
+                  class="loader-icon"
+                  :class="[
+                    icon.key,
+                    loaderStatus[version]?.[icon.key] ? 'on' : 'off',
+                  ]"
+                  :title="icon.label"
+                >
+                  {{ icon.short }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -229,7 +243,9 @@ const apiBase = `https://api.github.com/repos/${repoOwner}/${repoName}`;
 const rawBase = `https://raw.githubusercontent.com/${repoOwner}/${repoName}`;
 const repoUrl = `https://github.com/${repoOwner}/${repoName}`;
 const cacheKey = 'mcmeta-branches-v2';
+const statusCacheKey = 'mcmeta-loader-status-v1';
 const cacheTtlMs = 1000 * 60 * 30;
+const statusWorkers = 6;
 
 const search = ref('');
 const includeSnapshots = ref(true);
@@ -238,6 +254,7 @@ const activeVersion = ref('');
 const activeTab = ref('overview');
 const overallStatus = ref('idle');
 const lastSync = ref('-');
+const loaderStatus = ref({});
 
 const loaderIndex = ref(null);
 const artifacts = ref(null);
@@ -306,6 +323,13 @@ const rawMeta = computed(() =>
   meta.value ? JSON.stringify(meta.value, null, 2) : ''
 );
 
+const loaderIconList = [
+  { key: 'fabric', label: 'Fabric', short: 'F' },
+  { key: 'quilt', label: 'Quilt', short: 'Q' },
+  { key: 'forge', label: 'Forge', short: 'G' },
+  { key: 'neoforge', label: 'NeoForge', short: 'N' },
+];
+
 function isSnapshot(version) {
   return !/^\d+\.\d+(\.\d+)?$/.test(version);
 }
@@ -334,6 +358,20 @@ function storeCache(items) {
     cacheKey,
     JSON.stringify({ timestamp: Date.now(), items })
   );
+}
+
+function loadStatusCache() {
+  const cached = localStorage.getItem(statusCacheKey);
+  if (!cached) return {};
+  try {
+    return JSON.parse(cached) || {};
+  } catch {
+    return {};
+  }
+}
+
+function storeStatusCache(statuses) {
+  localStorage.setItem(statusCacheKey, JSON.stringify(statuses));
 }
 
 async function fetchBranches() {
@@ -398,12 +436,59 @@ async function fetchJson(url) {
   return resp.json();
 }
 
+async function fetchLoaderStatus(version) {
+  if (loaderStatus.value[version]) return;
+  try {
+    const data = await fetchJson(`${rawBase}/mc/${version}/loader-index.json`);
+    const loaders = data.loaders || {};
+    loaderStatus.value[version] = {
+      fabric: hasLoader(loaders.fabric),
+      quilt: hasLoader(loaders.quilt),
+      forge: hasLoader(loaders.forge),
+      neoforge: hasLoader(loaders.neoforge),
+    };
+  } catch {
+    loaderStatus.value[version] = {
+      fabric: false,
+      quilt: false,
+      forge: false,
+      neoforge: false,
+    };
+  }
+}
+
+function hasLoader(entry) {
+  if (!entry) return false;
+  const loader = Array.isArray(entry.loader) ? entry.loader.length : 0;
+  const installer = Array.isArray(entry.installer) ? entry.installer.length : 0;
+  return loader > 0 || installer > 0;
+}
+
+async function ensureLoaderStatuses(versions) {
+  const queue = versions.filter((version) => !loaderStatus.value[version]);
+  if (!queue.length) return;
+
+  const workers = Array.from({ length: statusWorkers }, async () => {
+    while (queue.length) {
+      const version = queue.shift();
+      if (!version) return;
+      await fetchLoaderStatus(version);
+    }
+  });
+
+  await Promise.all(workers);
+  storeStatusCache(loaderStatus.value);
+}
+
 async function init() {
   overallStatus.value = 'loading';
   try {
+    loaderStatus.value = loadStatusCache();
     const result = await fetchBranches();
     branches.value = result.items;
     lastSync.value = formatTimestamp(result.timestamp);
+
+    await ensureLoaderStatuses(filteredVersions.value);
 
     if (filteredVersions.value.length) {
       await selectVersion(filteredVersions.value[0]);
@@ -418,11 +503,13 @@ async function init() {
 
 async function refresh() {
   localStorage.removeItem(cacheKey);
+  localStorage.removeItem(statusCacheKey);
   await init();
 }
 
 watch(filteredVersions, (list) => {
   if (!list.length) return;
+  ensureLoaderStatuses(list);
   if (!activeVersion.value || !list.includes(activeVersion.value)) {
     selectVersion(list[0]);
   }
