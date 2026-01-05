@@ -55,3 +55,13 @@ dependencies {
   // use versions in your dependencies
 }
 ```
+
+### Publishing (Gradle Plugin Portal)
+
+The GitHub Action `Publish Gradle plugin` publishes to the Gradle Plugin Portal
+when these secrets are set on the repository:
+
+- `GRADLE_PUBLISH_KEY`
+- `GRADLE_PUBLISH_SECRET`
+
+The workflow auto-computes `MCMETA_PLUGIN_VERSION` from the date + commit hash.
