@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "a1.0.16",
+  "minecraft": "a1.0.15",
   "sources": {
     "fabric": "partial",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft a1.0.16",
-    "minestom versions are not filtered for minecraft a1.0.16",
-    "neoforge versions are not filtered for minecraft a1.0.16"
+    "forge versions are not filtered for minecraft a1.0.15",
+    "minestom versions are not filtered for minecraft a1.0.15",
+    "neoforge versions are not filtered for minecraft a1.0.15"
   ]
 }
