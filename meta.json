@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft b1.5",
-    "minestom versions are not filtered for minecraft b1.5",
-    "neoforge versions are not filtered for minecraft b1.5",
+    "forge maven metadata has no versions for minecraft b1.5",
+    "minestom maven metadata has no versions for minecraft b1.5",
+    "neoforge maven metadata has no versions for minecraft b1.5",
     "velocity versions are not filtered for minecraft b1.5"
   ]
 }
