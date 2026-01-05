@@ -120,6 +120,9 @@ private class McmetaResolver(
 
     val minestomVersion = artifacts.artifacts?.minestom?.versions?.firstOrNull()
     val fabricApiVersion = artifacts.artifacts?.fabricApi?.versions?.firstOrNull()?.versionNumber
+    val paperVersion = artifacts.artifacts?.paper?.versions?.firstOrNull()
+    val velocityVersion = artifacts.artifacts?.velocity?.versions?.firstOrNull()
+    val foliaVersion = artifacts.artifacts?.folia?.versions?.firstOrNull()
 
     val extra = project.extensions.extraProperties
     extra.set("mcmetaMinecraftVersion", version)
@@ -131,6 +134,9 @@ private class McmetaResolver(
     extra.set("mcmetaNeoForgeVersion", neoforgeLoader)
     extra.set("mcmetaMinestomVersion", minestomVersion)
     extra.set("mcmetaFabricApiVersion", fabricApiVersion)
+    extra.set("mcmetaPaperVersion", paperVersion)
+    extra.set("mcmetaVelocityVersion", velocityVersion)
+    extra.set("mcmetaFoliaVersion", foliaVersion)
 
     extra.set("mcmetaFabricLoaderVersions", loaders?.fabric?.loader ?: emptyList<String>())
     extra.set("mcmetaFabricInstallerVersions", loaders?.fabric?.installer ?: emptyList<String>())
@@ -143,6 +149,9 @@ private class McmetaResolver(
       "mcmetaFabricApiVersions",
       artifacts.artifacts?.fabricApi?.versions?.map { it.versionNumber } ?: emptyList<String>()
     )
+    extra.set("mcmetaPaperVersions", artifacts.artifacts?.paper?.versions ?: emptyList<String>())
+    extra.set("mcmetaVelocityVersions", artifacts.artifacts?.velocity?.versions ?: emptyList<String>())
+    extra.set("mcmetaFoliaVersions", artifacts.artifacts?.folia?.versions ?: emptyList<String>())
   }
 
   private fun isExpired(file: File): Boolean {
@@ -210,6 +219,9 @@ private data class ArtifactFamilies(
   val minestom: MavenArtifact?,
   @SerializedName("fabric-api")
   val fabricApi: ModrinthArtifact?,
+  val paper: ProjectArtifact?,
+  val velocity: ProjectArtifact?,
+  val folia: ProjectArtifact?,
 )
 
 private data class MavenArtifact(
@@ -218,6 +230,10 @@ private data class MavenArtifact(
 
 private data class ModrinthArtifact(
   val versions: List<ModrinthVersion>?,
+)
+
+private data class ProjectArtifact(
+  val versions: List<String>?,
 )
 
 private data class ModrinthVersion(

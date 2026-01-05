@@ -185,6 +185,47 @@
                   </div>
                   <div class="mono">project {{ fabricApi.project_id }}</div>
                 </div>
+                <div v-if="paper" class="artifact-card">
+                  <h4>Paper</h4>
+                  <div class="chips">
+                    <span
+                      v-for="item in paperPreview"
+                      :key="`paper-${item}`"
+                      class="chip"
+                    >
+                      {{ item }}
+                    </span>
+                    <span v-if="paperMore > 0" class="chip">+{{ paperMore }} more</span>
+                  </div>
+                </div>
+                <div v-if="folia" class="artifact-card">
+                  <h4>Folia</h4>
+                  <div class="chips">
+                    <span
+                      v-for="item in foliaPreview"
+                      :key="`folia-${item}`"
+                      class="chip"
+                    >
+                      {{ item }}
+                    </span>
+                    <span v-if="foliaMore > 0" class="chip">+{{ foliaMore }} more</span>
+                  </div>
+                </div>
+                <div v-if="velocity" class="artifact-card">
+                  <h4>Velocity</h4>
+                  <div class="chips">
+                    <span
+                      v-for="item in velocityPreview"
+                      :key="`velocity-${item}`"
+                      class="chip"
+                    >
+                      {{ item }}
+                    </span>
+                    <span v-if="velocityMore > 0" class="chip">
+                      +{{ velocityMore }} more
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -315,6 +356,9 @@ const loaderCards = computed(() => {
 
 const minestom = computed(() => artifacts.value?.artifacts?.minestom || null);
 const fabricApi = computed(() => artifacts.value?.artifacts?.['fabric-api'] || null);
+const paper = computed(() => artifacts.value?.artifacts?.paper || null);
+const folia = computed(() => artifacts.value?.artifacts?.folia || null);
+const velocity = computed(() => artifacts.value?.artifacts?.velocity || null);
 
 const fabricApiPreview = computed(() => {
   const versions = fabricApi.value?.versions || [];
@@ -324,6 +368,36 @@ const fabricApiPreview = computed(() => {
 const fabricApiMore = computed(() => {
   const total = fabricApi.value?.versions?.length || 0;
   return Math.max(total - 8, 0);
+});
+
+const paperPreview = computed(() => {
+  const versions = paper.value?.versions || [];
+  return versions.slice(0, 6);
+});
+
+const paperMore = computed(() => {
+  const total = paper.value?.versions?.length || 0;
+  return Math.max(total - 6, 0);
+});
+
+const foliaPreview = computed(() => {
+  const versions = folia.value?.versions || [];
+  return versions.slice(0, 6);
+});
+
+const foliaMore = computed(() => {
+  const total = folia.value?.versions?.length || 0;
+  return Math.max(total - 6, 0);
+});
+
+const velocityPreview = computed(() => {
+  const versions = velocity.value?.versions || [];
+  return versions.slice(0, 6);
+});
+
+const velocityMore = computed(() => {
+  const total = velocity.value?.versions?.length || 0;
+  return Math.max(total - 6, 0);
 });
 
 const sourceItems = computed(() => {
@@ -360,7 +434,10 @@ mcmeta {
   minecraftVersion = "1.21.4"
 }
 
-val fabricLoader = extra["mcmetaFabricLoaderVersion"] as String?`;
+val fabricLoader = extra["mcmetaFabricLoaderVersion"] as String?
+val paperBuild = extra["mcmetaPaperVersion"] as String?
+val velocityVersion = extra["mcmetaVelocityVersion"] as String?
+val foliaBuild = extra["mcmetaFoliaVersion"] as String?`;
 
 const loaderIconList = [
   {
