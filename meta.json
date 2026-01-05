@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft inf-20100618",
-    "minestom versions are not filtered for minecraft inf-20100618",
-    "neoforge versions are not filtered for minecraft inf-20100618",
+    "forge maven metadata has no versions for minecraft inf-20100618",
+    "minestom maven metadata has no versions for minecraft inf-20100618",
+    "neoforge maven metadata has no versions for minecraft inf-20100618",
     "velocity versions are not filtered for minecraft inf-20100618"
   ]
 }
