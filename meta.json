@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 18w49a",
-    "minestom versions are not filtered for minecraft 18w49a",
-    "neoforge versions are not filtered for minecraft 18w49a",
+    "forge maven metadata has no versions for minecraft 18w49a",
+    "minestom maven metadata has no versions for minecraft 18w49a",
+    "neoforge maven metadata has no versions for minecraft 18w49a",
     "velocity versions are not filtered for minecraft 18w49a"
   ]
 }
