@@ -1,16 +1,17 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "1.18.1",
+  "minecraft": "1.18.1-rc3",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
-    "forge": "ok",
+    "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
     "quilt": "ok"
   },
   "notes": [
-    "minestom versions are not filtered for minecraft 1.18.1",
-    "neoforge versions are not filtered for minecraft 1.18.1"
+    "forge versions are not filtered for minecraft 1.18.1-rc3",
+    "minestom versions are not filtered for minecraft 1.18.1-rc3",
+    "neoforge versions are not filtered for minecraft 1.18.1-rc3"
   ]
 }
