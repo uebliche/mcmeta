@@ -13,9 +13,9 @@
     "velocity": "partial"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 13w38c",
-    "minestom versions are not filtered for minecraft 13w38c",
-    "neoforge versions are not filtered for minecraft 13w38c",
+    "forge maven metadata has no versions for minecraft 13w38c",
+    "minestom maven metadata has no versions for minecraft 13w38c",
+    "neoforge maven metadata has no versions for minecraft 13w38c",
     "velocity versions are not filtered for minecraft 13w38c"
   ]
 }
