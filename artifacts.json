@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "22w18a",
+  "minecraft": "22w17a",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -47,18 +47,34 @@
       ],
       "versions": [
         {
-          "version_number": "0.52.1+1.19",
+          "version_number": "0.52.0+1.19",
           "game_versions": [
-            "22w18a"
+            "22w17a"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.52.1%2B1.19/fabric-api-0.52.1%2B1.19.jar",
-              "sha1": "198d843cf8f9ccef80f9c11ac02354d7542ff64d",
-              "sha512": "e8f2e0717fa2aaa9f6e1e2726e4c6849fb8cbaf6d0e10382144b9b3a2fdf1bb5b6fa3c77941bfe83b456839634b0cdcf7b72d5c3648dc4ca8e0e96236cb52d86"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.52.0%2B1.19/fabric-api-0.52.0%2B1.19.jar",
+              "sha1": "a920ff663427fff46f6b526dad101ceab0d9737d",
+              "sha512": "bd297bf4dda318be79f112f0703a6ee24d45722389becdfaf29af3ce53c1d20fa9e066cf20047375d0144a520fdcddc286c0088df5a8b7e0dd98285826cc1f56"
+            }
+          ]
+        },
+        {
+          "version_number": "0.51.3+1.19",
+          "game_versions": [
+            "22w17a"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.51.3%2B1.19/fabric-api-0.51.3%2B1.19.jar",
+              "sha1": "0a6e9410f5058bbcadaa2bd950b9d0b705acada8",
+              "sha512": "3e9cad7bea4ba0eb6fef740d4d8a76f89791da10ad5031737ab959db82b511594404c4187a48b1f2c754b810781345d71316b89f8f2990c17007255f036f68f8"
             }
           ]
         }
