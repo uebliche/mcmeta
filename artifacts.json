@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "21w11a",
+  "minecraft": "21w10a",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -47,34 +47,34 @@
       ],
       "versions": [
         {
-          "version_number": "0.32.5+1.17",
+          "version_number": "0.32.2+1.17",
           "game_versions": [
-            "21w11a"
+            "21w10a"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.32.5%2B1.17/fabric-api-0.32.5%2B1.17.jar",
-              "sha1": "7dff5fce944b6b2c06113ac7ac0a3abae8d1bfd3",
-              "sha512": "576f28674405756d05be5426998824a8ec98baac83dddc8f0af470241cc38012e544f00bcc9966067b9b13cc41c8471e991562ab15c1953bedde67de6f775f2f"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.32.2%2B1.17/fabric-api-0.32.2%2B1.17.jar",
+              "sha1": "0b905114d81db63b39d94b12df5baa5c5daafb67",
+              "sha512": "ac38f0f10201c326448a1ae96db7858d781f024987d9f9149e4756f7732ed02d3f8d8e6d6da0017a0494d004b50eceb1e6f000921c9046d10faa909263874155"
             }
           ]
         },
         {
-          "version_number": "0.32.4+1.17",
+          "version_number": "0.32.1+1.17",
           "game_versions": [
-            "21w11a"
+            "21w10a"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.32.4%2B1.17/fabric-api-0.32.4%2B1.17.jar",
-              "sha1": "efac518a984806ce4c0dd76e72f153e53333f9ab",
-              "sha512": "0b94df8591400bd927777646f2eda2673918f326a6577d74b946a30821bff1a776e963181f9e00f8af0830240fd1ae2d8c8535f338717837501e4121f2d2028f"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.32.1%2B1.17/fabric-api-0.32.1%2B1.17.jar",
+              "sha1": "9173a7da11f6b448a27574018023caa1351d38c1",
+              "sha512": "53875779ffe30a9816f71bf939733fe96faa2a807a395a9b53aa2ad73593e70909b79112304d45e0224ecdbb20b0e5b842462960be25a47c534645f45b012df2"
             }
           ]
         }
