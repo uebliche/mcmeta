@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "20w14infinite",
+  "minecraft": "20w13b",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "ok"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 20w14infinite",
-    "minestom versions are not filtered for minecraft 20w14infinite",
-    "neoforge versions are not filtered for minecraft 20w14infinite"
+    "forge versions are not filtered for minecraft 20w13b",
+    "minestom versions are not filtered for minecraft 20w13b",
+    "neoforge versions are not filtered for minecraft 20w13b"
   ]
 }
