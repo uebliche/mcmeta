@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "22w07a",
+  "minecraft": "22w06a",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
@@ -10,8 +10,8 @@
     "quilt": "ok"
   },
   "notes": [
-    "forge versions are not filtered for minecraft 22w07a",
-    "minestom versions are not filtered for minecraft 22w07a",
-    "neoforge versions are not filtered for minecraft 22w07a"
+    "forge versions are not filtered for minecraft 22w06a",
+    "minestom versions are not filtered for minecraft 22w06a",
+    "neoforge versions are not filtered for minecraft 22w06a"
   ]
 }
