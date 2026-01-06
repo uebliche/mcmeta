@@ -30,6 +30,22 @@
 
     <main class="layout">
       <div class="panel search-panel">
+        <div class="mode-toggle">
+          <button
+            class="mode-btn"
+            :class="{ active: activeMode === 'game' }"
+            @click="setMode('game')"
+          >
+            Game
+          </button>
+          <button
+            class="mode-btn"
+            :class="{ active: activeMode === 'proxies' }"
+            @click="setMode('proxies')"
+          >
+            Proxies
+          </button>
+        </div>
         <div class="search-row">
           <div>
             <label class="label" for="search">{{ searchLabel }}</label>
@@ -126,7 +142,7 @@
           </div>
         </div>
 
-        <div class="tabs">
+        <div v-if="activeTab !== 'proxies'" class="tabs">
           <button
             class="tab"
             :class="{ active: activeTab === 'overview' }"
@@ -443,6 +459,8 @@ const listCount = computed(() =>
   activeTab.value === 'proxies' ? proxyEntries.value.length : filteredEntries.value.length
 );
 
+const activeMode = computed(() => (activeTab.value === 'proxies' ? 'proxies' : 'game'));
+
 const searchLabel = computed(() =>
   activeTab.value === 'proxies' ? 'Search proxies' : 'Search versions'
 );
@@ -736,6 +754,16 @@ function goLatest() {
 
 function selectProxy(entry) {
   activeProxy.value = entry.key;
+}
+
+function setMode(mode) {
+  if (mode === 'proxies') {
+    activeTab.value = 'proxies';
+    return;
+  }
+  if (activeTab.value === 'proxies') {
+    activeTab.value = 'overview';
+  }
 }
 
 async function fetchJson(url) {

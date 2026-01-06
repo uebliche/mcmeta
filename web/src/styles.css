@@ -131,6 +131,34 @@ h1 {
   grid-area: search;
 }
 
+.mode-toggle {
+  display: inline-flex;
+  gap: 6px;
+  background: var(--panel-soft);
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 12px;
+}
+
+.mode-btn {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
 .sidebar {
   grid-area: sidebar;
 }
