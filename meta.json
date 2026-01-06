@@ -10,7 +10,7 @@
     "minestom": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "partial",
+    "quilt": "error",
     "velocity": "partial"
   },
   "notes": [
