@@ -170,24 +170,31 @@
                   class="loader-card"
                 >
                   <h4>{{ entry.label }}</h4>
-                  <div class="chips">
-                    <span
-                      v-for="item in entry.loader"
-                      :key="`${entry.key}-loader-${item}`"
-                      class="chip"
-                    >
-                      {{ item }}
-                    </span>
-                    <span
-                      v-for="item in entry.installer"
-                      :key="`${entry.key}-installer-${item}`"
-                      class="chip"
-                    >
-                      {{ item }}
-                    </span>
-                    <span v-if="entry.loader.length === 0 && entry.installer.length === 0" class="chip">
-                      n/a
-                    </span>
+                  <div class="loader-row">
+                    <span class="row-label">loader</span>
+                    <div class="chips">
+                      <span
+                        v-for="item in entry.loader"
+                        :key="`${entry.key}-loader-${item}`"
+                        class="chip"
+                      >
+                        {{ item }}
+                      </span>
+                      <span v-if="entry.loader.length === 0" class="chip">n/a</span>
+                    </div>
+                  </div>
+                  <div v-if="entry.hasInstaller" class="loader-row">
+                    <span class="row-label">installer</span>
+                    <div class="chips">
+                      <span
+                        v-for="item in entry.installer"
+                        :key="`${entry.key}-installer-${item}`"
+                        class="chip"
+                      >
+                        {{ item }}
+                      </span>
+                      <span v-if="entry.installer.length === 0" class="chip">n/a</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -480,6 +487,7 @@ const loaderCards = computed(() => {
       ...entry,
       loader: data.loader || [],
       installer: data.installer || [],
+      hasInstaller: entry.key === 'fabric' || entry.key === 'quilt',
     };
   });
 });
