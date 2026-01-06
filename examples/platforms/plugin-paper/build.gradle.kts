@@ -2,30 +2,22 @@ plugins {
   java
 }
 
-// Trigger mcmeta resolution before dependencies are resolved.
-val mcmetaResolver = project.tasks.named("mcmetaResolve")
-
-configurations.configureEach {
-  if (isCanBeResolved) {
-    incoming.beforeResolve {
-      mcmetaResolver.get().execute()
-    }
-  }
-}
-
 dependencies {
   implementation(project(":common"))
 
   val extra = project.extensions.extraProperties
+  val mcVersion = providers.gradleProperty("mcmeta.minecraftVersion").orElse("1.21.4").get()
   val paperVersion = extra.get("mcmetaPaperVersion") as String?
-  if (paperVersion.isNullOrBlank()) {
-    throw IllegalStateException("mcmeta: paper version missing")
+  val resolved = when {
+    paperVersion.isNullOrBlank() -> "${mcVersion}-R0.1-SNAPSHOT"
+    paperVersion.contains("-") -> paperVersion
+    else -> "${mcVersion}-R0.1-SNAPSHOT"
   }
-  compileOnly("io.papermc.paper:paper-api:$paperVersion")
+  compileOnly("io.papermc.paper:paper-api:$resolved")
 }
 
 java {
   toolchain {
-    languageVersion.set(JavaLanguageVersion.of(17))
+    languageVersion.set(JavaLanguageVersion.of(21))
   }
 }

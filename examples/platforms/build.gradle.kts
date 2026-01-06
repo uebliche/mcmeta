@@ -20,6 +20,9 @@ subprojects {
   apply(plugin = "net.uebliche.mcmeta")
   extensions.configure<McmetaExtension>("mcmeta") {
     minecraftVersion = mcVersion.get()
+    autoLoad = false
     enableManifoldPreprocessor = false
   }
+
+  extensions.getByType<McmetaExtension>().resolveNow(this)
 }

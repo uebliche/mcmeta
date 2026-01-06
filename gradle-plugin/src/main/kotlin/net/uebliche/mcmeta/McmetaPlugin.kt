@@ -25,6 +25,10 @@ open class McmetaExtension {
   var autoLoad: Boolean = true
   var enableManifoldPreprocessor: Boolean = false
   var manifoldPreprocessorVersion: String? = null
+
+  fun resolveNow(project: Project) {
+    McmetaResolver(project, this).resolve()
+  }
 }
 
 class McmetaPlugin : Plugin<Project> {

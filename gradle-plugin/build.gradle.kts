@@ -52,7 +52,3 @@ publishing {
     }
   }
 }
-
-kotlin {
-  jvmToolchain(11)
-}
