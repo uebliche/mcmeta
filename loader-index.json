@@ -1,20 +1,12 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "26.1-snapshot-1",
+  "minecraft": "proxy/velocity-3.0.0",
   "loaders": {
     "fabric": {
-      "loader": [
-        "0.18.4"
-      ],
-      "installer": [
-        "1.1.1"
-      ]
+      "loader": []
     },
     "quilt": {
-      "loader": [],
-      "installer": [
-        "0.12.1"
-      ]
+      "loader": []
     },
     "forge": {
       "loader": []

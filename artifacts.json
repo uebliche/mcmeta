@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "26.1-snapshot-1",
+  "minecraft": "proxy/velocity-3.0.0",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -15,104 +15,7 @@
       "loaders": [
         "fabric"
       ],
-      "versions": [
-        {
-          "version_number": "0.141.1+26.1",
-          "game_versions": [
-            "26.1-snapshot-1"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "files": [
-            {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/PPiyRYXQ/fabric-api-0.141.1%2B26.1.jar",
-              "sha1": "138c5bdb1762c2465d398563ecf398d0eda5c4da",
-              "sha512": "440f3826752f28536b97a17ce4dd7392d4a7756412a7845d4f31a3ea75f9c6c89d31a407d2433db28ebb1e9031a83a49b2fc710154f46884556fa5e309abf087"
-            }
-          ]
-        },
-        {
-          "version_number": "0.141.0+26.1",
-          "game_versions": [
-            "26.1-snapshot-1"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "files": [
-            {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/z3e7vr3z/fabric-api-0.141.0%2B26.1.jar",
-              "sha1": "973218f14ec826f34b970d0e9cce5a37d2928fca",
-              "sha512": "ee49ca63d739e8e000f9a22ea7ef197ea76c9ca01fd26743b3156bbd4b42e4330e0f0bed28c8648e6cec88c15d14fee3bf8590c7e9e7a2a7c27585b103e6f3e6"
-            }
-          ]
-        },
-        {
-          "version_number": "0.140.3+26.1",
-          "game_versions": [
-            "26.1-snapshot-1"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "files": [
-            {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/5veGhabU/fabric-api-0.140.3%2B26.1.jar",
-              "sha1": "e1f80f449b84fe26e1edcc1e468eac12d7e11ccc",
-              "sha512": "00b30ed1205d72425557b6d10f3b163880760d42ebf701c3c371380e1022edf4dfebf21eb2b6b25679e6e6c3582ff740a8d2f8716034b2b41f768b65a0698c09"
-            }
-          ]
-        },
-        {
-          "version_number": "0.140.2+26.1",
-          "game_versions": [
-            "26.1-snapshot-1"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "files": [
-            {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/lSzh3zVT/fabric-api-0.140.2%2B26.1.jar",
-              "sha1": "6f42d8084fcdaed62f0b81d33e4b8ded7c7360e3",
-              "sha512": "e30451aadd8c18d6e0737179cf7b42b56b2cf280b0302e16ac4fccdc089ee7400a16d54b4e1c7c7be917a6f3aa94e32c6a8234192d79b6456ac04dabbdebbd01"
-            }
-          ]
-        },
-        {
-          "version_number": "0.140.1+26.1",
-          "game_versions": [
-            "26.1-snapshot-1"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "files": [
-            {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/ORdkcFQa/fabric-api-0.140.1%2B26.1.jar",
-              "sha1": "3e13f01db72dfb43324bdd2cce81b31b1c324c5d",
-              "sha512": "b807245429b502c27652e4cef92f757542b15de8308cd1acd185b92c8b576ebc377aafe47c7cd84a3994c15df24b27b59072599d6b4dce4ffc0cf9a0deb551c0"
-            }
-          ]
-        },
-        {
-          "version_number": "0.140.0+26.1",
-          "game_versions": [
-            "26.1-snapshot-1"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "files": [
-            {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/uvxV23TB/fabric-api-0.140.0%2B26.1.jar",
-              "sha1": "37c212ead253e2c9ea0882b44b41444b502bebc7",
-              "sha512": "d7d5202ad0f03f40091d90393c75147251017a5e99dbef717c1df16e8d4f1ac7f96df948049d7a9e7ce4c100ef6538b35020282111dc5793eed55f8266d03c11"
-            }
-          ]
-        }
-      ]
+      "versions": []
     },
     "paper": {
       "type": "papermc",
@@ -143,69 +46,6 @@
             "range": {
               "newest": "3.4.0-SNAPSHOT",
               "oldest": "3.1.0"
-            }
-          },
-          {
-            "api": "1.1.0",
-            "versions": [
-              "1.1.9"
-            ],
-            "range": {
-              "newest": "1.1.9",
-              "oldest": "1.1.9"
-            }
-          },
-          {
-            "api": "1.0.0",
-            "versions": [
-              "1.0.10"
-            ],
-            "range": {
-              "newest": "1.0.10",
-              "oldest": "1.0.10"
-            }
-          }
-        ]
-      },
-      "bungeecord": {
-        "type": "maven",
-        "project": "bungeecord",
-        "groups": [
-          {
-            "api": "1.21",
-            "versions": [
-              "1.21-R0.4",
-              "1.21-R0.3",
-              "1.21-R0.2",
-              "1.21-R0.1"
-            ],
-            "range": {
-              "newest": "1.21-R0.4",
-              "oldest": "1.21-R0.1"
-            }
-          },
-          {
-            "api": "1.20",
-            "versions": [
-              "1.20-R0.2",
-              "1.20-R0.1"
-            ],
-            "range": {
-              "newest": "1.20-R0.2",
-              "oldest": "1.20-R0.1"
-            }
-          },
-          {
-            "api": "1.16",
-            "versions": [
-              "1.16-R0.4",
-              "1.16-R0.3",
-              "1.16-R0.2",
-              "1.16-R0.1"
-            ],
-            "range": {
-              "newest": "1.16-R0.4",
-              "oldest": "1.16-R0.1"
             }
           }
         ]
