@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "proxy/bungeecord-1.21",
+  "minecraft": "proxy/bungeecord-1.20",
   "loaders": {
     "fabric": {
       "loader": []
