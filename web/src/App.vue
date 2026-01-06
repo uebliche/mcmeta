@@ -152,13 +152,6 @@
           </button>
           <button
             class="tab"
-            :class="{ active: activeTab === 'proxies' }"
-            @click="activeTab = 'proxies'"
-          >
-            Proxies
-          </button>
-          <button
-            class="tab"
             :class="{ active: activeTab === 'raw' }"
             @click="activeTab = 'raw'"
           >
