@@ -379,6 +379,15 @@
         }
       ]
     },
+    "manifold": {
+      "type": "maven",
+      "coordinates": [
+        "systems.manifold:manifold"
+      ],
+      "versions": [
+        "2025.1.31"
+      ]
+    },
     "paper": {
       "type": "papermc",
       "project": "paper",
