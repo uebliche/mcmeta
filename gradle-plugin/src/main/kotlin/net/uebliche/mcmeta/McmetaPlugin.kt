@@ -74,12 +74,20 @@ private class McmetaResolver(
 
     val cacheFile = File(cacheDir, "$sanitized.json")
 
-    val payload = if (cacheFile.exists() && !isExpired(cacheFile)) {
-      cacheFile.readText()
-    } else {
-      val data = fetchData(sanitized)
-      cacheFile.writeText(data)
-      data
+    var payload: String? = if (cacheFile.exists()) cacheFile.readText() else null
+    val expired = cacheFile.exists() && isExpired(cacheFile)
+    if (payload == null || expired) {
+      try {
+        val data = fetchData(sanitized)
+        cacheFile.writeText(data)
+        payload = data
+      } catch (err: Exception) {
+        if (payload != null) {
+          project.logger.warn("mcmeta: fetch failed, using cached data: ${err.message}")
+        } else {
+          throw IllegalStateException("mcmeta: unable to fetch data and no cache available", err)
+        }
+      }
     }
 
     val bundle = gson.fromJson(payload, McmetaBundle::class.java)
@@ -243,12 +251,20 @@ private class McmetaResolver(
   private fun loadManifest(): MojangManifest? {
     return try {
       val cacheFile = File(cacheDir, "manifest.json")
-      val payload = if (cacheFile.exists() && !isExpired(cacheFile)) {
-        cacheFile.readText()
-      } else {
-        val text = fetchText(extension.manifestUrl)
-        cacheFile.writeText(text)
-        text
+      var payload: String? = if (cacheFile.exists()) cacheFile.readText() else null
+      val expired = cacheFile.exists() && isExpired(cacheFile)
+      if (payload == null || expired) {
+        try {
+          val text = fetchText(extension.manifestUrl)
+          cacheFile.writeText(text)
+          payload = text
+        } catch (err: Exception) {
+          if (payload != null) {
+            project.logger.warn("mcmeta: manifest fetch failed, using cached data: ${err.message}")
+          } else {
+            return null
+          }
+        }
       }
       gson.fromJson(payload, MojangManifest::class.java)
     } catch (err: Exception) {
