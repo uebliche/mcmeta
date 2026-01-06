@@ -13,6 +13,11 @@ Proxy branches (Velocity):
 - `proxy/velocity-<api>`
 - `proxy/velocity-latest`
 
+Proxy branches (BungeeCord):
+
+- `proxy/bungeecord-<api>`
+- `proxy/bungeecord-latest`
+
 ## Web UI
 
 The interactive browser is built with Vue + Vite. Source lives in `web/` and the

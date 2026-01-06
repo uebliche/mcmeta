@@ -122,12 +122,15 @@ private class McmetaResolver(
     val fabricApiVersion = artifacts.artifacts?.fabricApi?.versions?.firstOrNull()?.versionNumber
     val paperVersion = artifacts.artifacts?.paper?.versions?.firstOrNull()
     val velocityGroups = artifacts.artifacts?.proxies?.velocity?.groups ?: emptyList()
+    val bungeecordGroups = artifacts.artifacts?.proxies?.bungeecord?.groups ?: emptyList()
     val velocityVersions = if (velocityGroups.isNotEmpty()) {
       velocityGroups.flatMap { it.versions ?: emptyList() }
     } else {
       artifacts.artifacts?.velocity?.versions ?: emptyList()
     }
     val velocityVersion = velocityVersions.firstOrNull()
+    val bungeecordVersions = bungeecordGroups.flatMap { it.versions ?: emptyList() }
+    val bungeecordVersion = bungeecordVersions.firstOrNull()
     val foliaVersion = artifacts.artifacts?.folia?.versions?.firstOrNull()
 
     val extra = project.extensions.extraProperties
@@ -165,6 +168,20 @@ private class McmetaResolver(
     extra.set(
       "mcmetaVelocityVersionRanges",
       velocityGroups.mapNotNull { group ->
+        val range = group.range ?: return@mapNotNull null
+        group.api to range
+      }.toMap()
+    )
+    extra.set("mcmetaBungeeCordVersion", bungeecordVersion)
+    extra.set("mcmetaBungeeCordVersions", bungeecordVersions)
+    extra.set("mcmetaBungeeCordApiVersions", bungeecordGroups.mapNotNull { it.api })
+    extra.set(
+      "mcmetaBungeeCordVersionGroups",
+      bungeecordGroups.associate { group -> group.api to (group.versions ?: emptyList()) }
+    )
+    extra.set(
+      "mcmetaBungeeCordVersionRanges",
+      bungeecordGroups.mapNotNull { group ->
         val range = group.range ?: return@mapNotNull null
         group.api to range
       }.toMap()
@@ -257,6 +274,7 @@ private data class ProjectArtifact(
 
 private data class Proxies(
   val velocity: ProxyArtifact?,
+  val bungeecord: ProxyArtifact?,
 )
 
 private data class ProxyArtifact(
