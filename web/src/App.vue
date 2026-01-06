@@ -248,6 +248,10 @@
                     </span>
                   </div>
                   <div class="mono">{{ (minestom.coordinates || []).join(', ') }}</div>
+                  <p class="muted">
+                    Hinweis: Verwende moeglichst die neueste Version, aeltere
+                    Releases koennen bekannte Bugs haben.
+                  </p>
                 </div>
               </div>
             </div>
