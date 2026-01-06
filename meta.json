@@ -2,7 +2,6 @@
   "schema": "mcmeta/v1",
   "minecraft": "1.21.10",
   "sources": {
-    "bungeecord": "ok",
     "fabric": "ok",
     "fabric-api": "ok",
     "folia": "error",
@@ -10,8 +9,7 @@
     "minestom": "ok",
     "neoforge": "ok",
     "paper": "ok",
-    "quilt": "ok",
-    "velocity": "partial"
+    "quilt": "ok"
   },
   "notes": [
     "velocity versions are not filtered for minecraft 1.21.10"
