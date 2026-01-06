@@ -43,9 +43,9 @@ class McmetaPlugin : Plugin<Project> {
     }
 
     project.tasks.register("mcmetaResolve") {
-      group = "mcmeta"
-      description = "Loads mcmeta versions into project properties."
-      doLast {
+      it.group = "mcmeta"
+      it.description = "Loads mcmeta versions into project properties."
+      it.doLast {
         if (extension.minecraftVersion.isBlank()) {
           throw IllegalStateException("mcmeta.minecraftVersion must be set")
         }
