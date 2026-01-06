@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "proxy/velocity-1.1.0",
+  "minecraft": "proxy/velocity-1.0.0",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -33,13 +33,13 @@
         "project": "velocity",
         "groups": [
           {
-            "api": "1.1.0",
+            "api": "1.0.0",
             "versions": [
-              "1.1.9"
+              "1.0.10"
             ],
             "range": {
-              "newest": "1.1.9",
-              "oldest": "1.1.9"
+              "newest": "1.0.10",
+              "oldest": "1.0.10"
             }
           }
         ]
