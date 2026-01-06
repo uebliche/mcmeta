@@ -19,7 +19,7 @@
     },
     "neoforge": {
       "loader": [
-        "21.9.16-beta"
+        "21.11.25-beta"
       ]
     }
   }
