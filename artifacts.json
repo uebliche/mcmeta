@@ -10,6 +10,13 @@
       ],
       "versions": []
     },
+    "manifold": {
+      "type": "maven",
+      "coordinates": [
+        "systems.manifold:manifold"
+      ],
+      "versions": []
+    },
     "paper": {
       "type": "papermc",
       "project": "paper",
