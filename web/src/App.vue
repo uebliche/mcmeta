@@ -529,12 +529,10 @@ const foliaMore = computed(() => {
 
 const sourceItems = computed(() => {
   const sources = meta.value?.sources || {};
-  return Object.keys(sources)
-    .filter((name) => name !== 'velocity' && name !== 'bungeecord')
-    .map((name) => ({
-      name,
-      status: sources[name],
-    }));
+  return Object.keys(sources).map((name) => ({
+    name,
+    status: sources[name],
+  }));
 });
 
 const metaNotes = computed(() => meta.value?.notes || []);
