@@ -16,7 +16,7 @@ loom {
 }
 
 afterEvaluate {
-  val extra = rootProject.extensions.extraProperties
+  val extra = project.extensions.extraProperties
   val loader = extra.get("mcmetaFabricLoaderVersion") as String?
   val fabricApi = extra.get("mcmetaFabricApiVersion") as String?
   if (loader.isNullOrBlank()) {

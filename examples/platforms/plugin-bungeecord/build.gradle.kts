@@ -7,7 +7,7 @@ dependencies {
 }
 
 afterEvaluate {
-  val extra = rootProject.extensions.extraProperties
+  val extra = project.extensions.extraProperties
   val bungeeVersion = extra.get("mcmetaBungeeCordVersion") as String?
   if (bungeeVersion.isNullOrBlank()) {
     throw IllegalStateException("mcmeta: bungeecord version missing")

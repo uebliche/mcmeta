@@ -7,7 +7,7 @@ dependencies {
 }
 
 afterEvaluate {
-  val extra = rootProject.extensions.extraProperties
+  val extra = project.extensions.extraProperties
   val velocityVersion = extra.get("mcmetaVelocityVersion") as String?
   if (velocityVersion.isNullOrBlank()) {
     throw IllegalStateException("mcmeta: velocity version missing")

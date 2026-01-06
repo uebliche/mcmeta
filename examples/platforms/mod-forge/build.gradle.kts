@@ -14,7 +14,7 @@ dependencies {
 }
 
 afterEvaluate {
-  val extra = rootProject.extensions.extraProperties
+  val extra = project.extensions.extraProperties
   val forgeVersion = extra.get("mcmetaForgeVersion") as String?
   if (forgeVersion.isNullOrBlank()) {
     throw IllegalStateException("mcmeta: forge version missing")

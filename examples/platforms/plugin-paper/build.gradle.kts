@@ -7,7 +7,7 @@ dependencies {
 }
 
 afterEvaluate {
-  val extra = rootProject.extensions.extraProperties
+  val extra = project.extensions.extraProperties
   val paperVersion = extra.get("mcmetaPaperVersion") as String?
   if (paperVersion.isNullOrBlank()) {
     throw IllegalStateException("mcmeta: paper version missing")
