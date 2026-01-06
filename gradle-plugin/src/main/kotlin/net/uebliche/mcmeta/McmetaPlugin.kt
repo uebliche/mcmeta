@@ -116,7 +116,7 @@ private class McmetaResolver(
     val forgeLoader = loaders?.forge?.loader?.firstOrNull()
     val neoforgeLoader = loaders?.neoforge?.loader?.firstOrNull()
 
-    val minestomVersion = artifacts.artifacts?.minestom?.versions?.firstOrNull()
+    val minestomVersion = artifacts.runtimes?.minestom?.versions?.firstOrNull()
     val fabricApiVersion = artifacts.artifacts?.fabricApi?.versions?.firstOrNull()?.versionNumber
     val paperVersion = artifacts.artifacts?.paper?.versions?.firstOrNull()
     val velocityGroups = artifacts.artifacts?.proxies?.velocity?.groups ?: emptyList()
@@ -147,7 +147,7 @@ private class McmetaResolver(
     extra.set("mcmetaQuiltLoaderVersions", loaders?.quilt?.loader ?: emptyList<String>())
     extra.set("mcmetaForgeVersions", loaders?.forge?.loader ?: emptyList<String>())
     extra.set("mcmetaNeoForgeVersions", loaders?.neoforge?.loader ?: emptyList<String>())
-    extra.set("mcmetaMinestomVersions", artifacts.artifacts?.minestom?.versions ?: emptyList<String>())
+    extra.set("mcmetaMinestomVersions", artifacts.runtimes?.minestom?.versions ?: emptyList<String>())
     extra.set(
       "mcmetaFabricApiVersions",
       artifacts.artifacts?.fabricApi?.versions?.map { it.versionNumber } ?: emptyList<String>()
@@ -241,16 +241,20 @@ private data class LoaderFamily(
 
 private data class Artifacts(
   val artifacts: ArtifactFamilies?,
+  val runtimes: RuntimeFamilies?,
 )
 
 private data class ArtifactFamilies(
-  val minestom: MavenArtifact?,
   @SerializedName("fabric-api")
   val fabricApi: ModrinthArtifact?,
   val paper: ProjectArtifact?,
   val velocity: ProjectArtifact?,
   val folia: ProjectArtifact?,
   val proxies: Proxies?,
+)
+
+private data class RuntimeFamilies(
+  val minestom: MavenArtifact?,
 )
 
 private data class MavenArtifact(

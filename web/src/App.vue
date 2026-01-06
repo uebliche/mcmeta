@@ -186,22 +186,6 @@
             <div class="panel">
               <h3>Artifacts</h3>
               <div class="artifact-summary">
-                <div v-if="minestom" class="artifact-card">
-                  <h4>Minestom</h4>
-                  <div class="chips">
-                    <span
-                      v-for="item in minestom.versions"
-                      :key="`minestom-${item}`"
-                      class="chip"
-                    >
-                      {{ item }}
-                    </span>
-                    <span v-if="!minestom.versions || minestom.versions.length === 0" class="chip">
-                      n/a
-                    </span>
-                  </div>
-                  <div class="mono">{{ (minestom.coordinates || []).join(', ') }}</div>
-                </div>
                 <div v-if="fabricApi" class="artifact-card">
                   <h4>Fabric API</h4>
                   <div class="chips">
@@ -243,6 +227,27 @@
                     </span>
                     <span v-if="foliaMore > 0" class="chip">+{{ foliaMore }} more</span>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <h3>Server runtimes</h3>
+              <div class="artifact-summary">
+                <div v-if="minestom" class="artifact-card">
+                  <h4>Minestom</h4>
+                  <div class="chips">
+                    <span
+                      v-for="item in minestom.versions"
+                      :key="`minestom-${item}`"
+                      class="chip"
+                    >
+                      {{ item }}
+                    </span>
+                    <span v-if="!minestom.versions || minestom.versions.length === 0" class="chip">
+                      n/a
+                    </span>
+                  </div>
+                  <div class="mono">{{ (minestom.coordinates || []).join(', ') }}</div>
                 </div>
               </div>
             </div>
@@ -474,7 +479,8 @@ const loaderCards = computed(() => {
   });
 });
 
-const minestom = computed(() => artifacts.value?.artifacts?.minestom || null);
+const runtimes = computed(() => artifacts.value?.runtimes || null);
+const minestom = computed(() => runtimes.value?.minestom || null);
 const fabricApi = computed(() => artifacts.value?.artifacts?.['fabric-api'] || null);
 const paper = computed(() => artifacts.value?.artifacts?.paper || null);
 const folia = computed(() => artifacts.value?.artifacts?.folia || null);
