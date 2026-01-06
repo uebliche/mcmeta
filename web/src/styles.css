@@ -392,6 +392,37 @@ h2 {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.proxy-groups {
+  display: grid;
+  gap: 12px;
+}
+
+.proxy-card {
+  background: var(--panel-soft);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.proxy-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.proxy-range {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
 .loader-card h4,
 .artifact-card h4 {
   font-size: 0.9rem;

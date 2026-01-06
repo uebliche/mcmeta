@@ -121,7 +121,13 @@ private class McmetaResolver(
     val minestomVersion = artifacts.artifacts?.minestom?.versions?.firstOrNull()
     val fabricApiVersion = artifacts.artifacts?.fabricApi?.versions?.firstOrNull()?.versionNumber
     val paperVersion = artifacts.artifacts?.paper?.versions?.firstOrNull()
-    val velocityVersion = artifacts.artifacts?.velocity?.versions?.firstOrNull()
+    val velocityGroups = artifacts.artifacts?.proxies?.velocity?.groups ?: emptyList()
+    val velocityVersions = if (velocityGroups.isNotEmpty()) {
+      velocityGroups.flatMap { it.versions ?: emptyList() }
+    } else {
+      artifacts.artifacts?.velocity?.versions ?: emptyList()
+    }
+    val velocityVersion = velocityVersions.firstOrNull()
     val foliaVersion = artifacts.artifacts?.folia?.versions?.firstOrNull()
 
     val extra = project.extensions.extraProperties
@@ -150,7 +156,19 @@ private class McmetaResolver(
       artifacts.artifacts?.fabricApi?.versions?.map { it.versionNumber } ?: emptyList<String>()
     )
     extra.set("mcmetaPaperVersions", artifacts.artifacts?.paper?.versions ?: emptyList<String>())
-    extra.set("mcmetaVelocityVersions", artifacts.artifacts?.velocity?.versions ?: emptyList<String>())
+    extra.set("mcmetaVelocityVersions", velocityVersions)
+    extra.set("mcmetaVelocityApiVersions", velocityGroups.mapNotNull { it.api })
+    extra.set(
+      "mcmetaVelocityVersionGroups",
+      velocityGroups.associate { group -> group.api to (group.versions ?: emptyList()) }
+    )
+    extra.set(
+      "mcmetaVelocityVersionRanges",
+      velocityGroups.mapNotNull { group ->
+        val range = group.range ?: return@mapNotNull null
+        group.api to range
+      }.toMap()
+    )
     extra.set("mcmetaFoliaVersions", artifacts.artifacts?.folia?.versions ?: emptyList<String>())
   }
 
@@ -222,6 +240,7 @@ private data class ArtifactFamilies(
   val paper: ProjectArtifact?,
   val velocity: ProjectArtifact?,
   val folia: ProjectArtifact?,
+  val proxies: Proxies?,
 )
 
 private data class MavenArtifact(
@@ -234,6 +253,25 @@ private data class ModrinthArtifact(
 
 private data class ProjectArtifact(
   val versions: List<String>?,
+)
+
+private data class Proxies(
+  val velocity: ProxyArtifact?,
+)
+
+private data class ProxyArtifact(
+  val groups: List<ProxyGroup>?,
+)
+
+private data class ProxyGroup(
+  val api: String,
+  val versions: List<String>?,
+  val range: ProxyRange?,
+)
+
+private data class ProxyRange(
+  val newest: String?,
+  val oldest: String?,
 )
 
 private data class ModrinthVersion(

@@ -117,6 +117,13 @@
           </button>
           <button
             class="tab"
+            :class="{ active: activeTab === 'proxies' }"
+            @click="activeTab = 'proxies'"
+          >
+            Proxies
+          </button>
+          <button
+            class="tab"
             :class="{ active: activeTab === 'raw' }"
             @click="activeTab = 'raw'"
           >
@@ -218,21 +225,6 @@
                     <span v-if="foliaMore > 0" class="chip">+{{ foliaMore }} more</span>
                   </div>
                 </div>
-                <div v-if="velocity" class="artifact-card">
-                  <h4>Velocity</h4>
-                  <div class="chips">
-                    <span
-                      v-for="item in velocityPreview"
-                      :key="`velocity-${item}`"
-                      class="chip"
-                    >
-                      {{ item }}
-                    </span>
-                    <span v-if="velocityMore > 0" class="chip">
-                      +{{ velocityMore }} more
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -264,6 +256,42 @@
               expose them as Gradle properties.
             </p>
             <pre class="code">{{ howTo }}</pre>
+          </div>
+        </div>
+
+        <div v-show="activeTab === 'proxies'" class="tab-panel">
+          <div class="panel">
+            <h3>Velocity</h3>
+            <div v-if="velocityGroups.length" class="proxy-groups">
+              <div
+                v-for="group in velocityGroups"
+                :key="group.api"
+                class="proxy-card"
+              >
+                <div class="proxy-head">
+                  <div>
+                    <h4>API {{ group.api }}</h4>
+                    <p class="proxy-range">
+                      {{ group.range?.newest }} – {{ group.range?.oldest }}
+                    </p>
+                  </div>
+                  <span class="chip">{{ group.versions.length }} versions</span>
+                </div>
+                <div class="chips">
+                  <span
+                    v-for="item in group.versions.slice(0, 8)"
+                    :key="`${group.api}-${item}`"
+                    class="chip"
+                  >
+                    {{ item }}
+                  </span>
+                  <span v-if="group.versions.length > 8" class="chip">
+                    +{{ group.versions.length - 8 }} more
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div v-else class="muted">No proxy data.</div>
           </div>
         </div>
 
@@ -398,7 +426,9 @@ const minestom = computed(() => artifacts.value?.artifacts?.minestom || null);
 const fabricApi = computed(() => artifacts.value?.artifacts?.['fabric-api'] || null);
 const paper = computed(() => artifacts.value?.artifacts?.paper || null);
 const folia = computed(() => artifacts.value?.artifacts?.folia || null);
-const velocity = computed(() => artifacts.value?.artifacts?.velocity || null);
+const proxies = computed(() => artifacts.value?.artifacts?.proxies || null);
+const velocityProxy = computed(() => proxies.value?.velocity || null);
+const velocityGroups = computed(() => velocityProxy.value?.groups || []);
 
 const fabricApiPreview = computed(() => {
   const versions = fabricApi.value?.versions || [];
@@ -430,15 +460,7 @@ const foliaMore = computed(() => {
   return Math.max(total - 6, 0);
 });
 
-const velocityPreview = computed(() => {
-  const versions = velocity.value?.versions || [];
-  return versions.slice(0, 6);
-});
-
-const velocityMore = computed(() => {
-  const total = velocity.value?.versions?.length || 0;
-  return Math.max(total - 6, 0);
-});
+ 
 
 const sourceItems = computed(() => {
   const sources = meta.value?.sources || {};
