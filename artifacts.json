@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "proxy/velocity-latest",
+  "minecraft": "proxy/bungeecord-1.21",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -28,24 +28,21 @@
       "versions": []
     },
     "proxies": {
-      "velocity": {
-        "type": "papermc",
-        "project": "velocity",
+      "bungeecord": {
+        "type": "maven",
+        "project": "bungeecord",
         "groups": [
           {
-            "api": "3.0.0",
+            "api": "1.21",
             "versions": [
-              "3.4.0-SNAPSHOT",
-              "3.3.0-SNAPSHOT",
-              "3.2.0-SNAPSHOT",
-              "3.1.2-SNAPSHOT",
-              "3.1.1",
-              "3.1.1-SNAPSHOT",
-              "3.1.0"
+              "1.21-R0.4",
+              "1.21-R0.3",
+              "1.21-R0.2",
+              "1.21-R0.1"
             ],
             "range": {
-              "newest": "3.4.0-SNAPSHOT",
-              "oldest": "3.1.0"
+              "newest": "1.21-R0.4",
+              "oldest": "1.21-R0.1"
             }
           }
         ]

@@ -1,7 +1,7 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "proxy/velocity-latest",
+  "minecraft": "proxy/bungeecord-1.21",
   "sources": {
-    "velocity": "ok"
+    "bungeecord": "ok"
   }
 }
