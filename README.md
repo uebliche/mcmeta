@@ -8,6 +8,11 @@ Two convenience branches exist:
 - `latest` (newest release from Mojang manifest)
 - `latest-snapshot` (newest non-release, including snapshots/betas)
 
+Proxy branches (Velocity):
+
+- `proxy/velocity-<api>`
+- `proxy/velocity-latest`
+
 ## Web UI
 
 The interactive browser is built with Vue + Vite. Source lives in `web/` and the
