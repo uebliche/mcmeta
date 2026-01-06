@@ -32,12 +32,11 @@ val publishEnabled = providers.gradleProperty("mcmetaPublish").isPresent ||
 
 if (publishEnabled) {
   apply(plugin = "com.gradle.plugin-publish")
-  extensions.configure("pluginBundle") {
-    withGroovyBuilder {
-      "website"("https://github.com/uebliche/mcmeta")
-      "vcsUrl"("https://github.com/uebliche/mcmeta")
-      "tags"(listOf("minecraft", "modding", "versions", "metadata"))
-    }
+  val pluginBundle = extensions.findByName("pluginBundle")
+  if (pluginBundle is groovy.lang.GroovyObject) {
+    pluginBundle.setProperty("website", "https://github.com/uebliche/mcmeta")
+    pluginBundle.setProperty("vcsUrl", "https://github.com/uebliche/mcmeta")
+    pluginBundle.setProperty("tags", listOf("minecraft", "modding", "versions", "metadata"))
   }
 }
 
