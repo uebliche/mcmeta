@@ -5,16 +5,10 @@
     "fabric": {
       "loader": [
         "0.18.4"
-      ],
-      "installer": [
-        "1.1.1"
       ]
     },
     "quilt": {
-      "loader": [],
-      "installer": [
-        "0.12.1"
-      ]
+      "loader": []
     },
     "forge": {
       "loader": [
