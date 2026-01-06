@@ -71,6 +71,35 @@ dependencies {
 }
 ```
 
+### Example project
+
+Platform examples live in:
+
+- `examples/platforms`
+
+### Manifold preprocessor (optional)
+
+Enable Manifold preprocessor support to get numeric symbols for all Mojang
+versions (including snapshots) and a `MC_VER` value for the requested
+Minecraft version. This allows expressions like:
+
+```java
+#if MC_VER >= MC_1_20_5
+// code for 1.20.5+
+#endif
+```
+
+Gradle example:
+
+```kotlin
+mcmeta {
+  minecraftVersion = "1.21.4"
+  enableManifoldPreprocessor = true
+  // optional override
+  // manifoldPreprocessorVersion = "2025.1.22"
+}
+```
+
 ### Publishing (Gradle Plugin Portal)
 
 The GitHub Action `Publish Gradle plugin` publishes to the Gradle Plugin Portal

@@ -4,6 +4,9 @@ import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.JavaVersion
+import org.gradle.api.tasks.SourceSetContainer
+import org.gradle.api.tasks.compile.JavaCompile
 import java.io.File
 import java.net.HttpURLConnection
 import java.net.URL
@@ -20,6 +23,8 @@ open class McmetaExtension {
   var manifestUrl: String = DEFAULT_MANIFEST
   var cacheMinutes: Long = 30
   var autoLoad: Boolean = true
+  var enableManifoldPreprocessor: Boolean = false
+  var manifoldPreprocessorVersion: String? = null
 }
 
 class McmetaPlugin : Plugin<Project> {
@@ -55,6 +60,7 @@ private class McmetaResolver(
   private val extension: McmetaExtension,
 ) {
   private val gson = Gson()
+  private val cacheDir = File(project.gradle.gradleUserHomeDir, "caches/mcmeta").apply { mkdirs() }
 
   fun resolve() {
     val sanitized = sanitizeVersion(extension.minecraftVersion)
@@ -62,8 +68,6 @@ private class McmetaResolver(
       throw IllegalStateException("mcmeta: invalid minecraftVersion")
     }
 
-    val cacheDir = File(project.gradle.gradleUserHomeDir, "caches/mcmeta")
-    cacheDir.mkdirs()
     val cacheFile = File(cacheDir, "$sanitized.json")
 
     val payload = if (cacheFile.exists() && !isExpired(cacheFile)) {
@@ -75,7 +79,12 @@ private class McmetaResolver(
     }
 
     val bundle = gson.fromJson(payload, McmetaBundle::class.java)
-    applyBundle(bundle, sanitized)
+    val loaderIndex = gson.fromJson(gson.toJson(bundle.loaderIndex), LoaderIndex::class.java)
+    val artifacts = gson.fromJson(gson.toJson(bundle.artifacts), Artifacts::class.java)
+    applyBundle(loaderIndex, artifacts, sanitized)
+    if (extension.enableManifoldPreprocessor) {
+      configureManifoldPreprocessor(artifacts, extension.minecraftVersion)
+    }
   }
 
   private fun fetchData(version: String): String {
@@ -106,10 +115,7 @@ private class McmetaResolver(
     }
   }
 
-  private fun applyBundle(bundle: McmetaBundle, version: String) {
-    val loaderIndex = gson.fromJson(gson.toJson(bundle.loaderIndex), LoaderIndex::class.java)
-    val artifacts = gson.fromJson(gson.toJson(bundle.artifacts), Artifacts::class.java)
-
+  private fun applyBundle(loaderIndex: LoaderIndex, artifacts: Artifacts, version: String) {
     val loaders = loaderIndex.loaders
     val fabricLoader = loaders?.fabric?.loader?.firstOrNull()
     val quiltLoader = loaders?.quilt?.loader?.firstOrNull()
@@ -186,6 +192,149 @@ private class McmetaResolver(
     extra.set("mcmetaFoliaVersions", artifacts.artifacts?.folia?.versions ?: emptyList<String>())
   }
 
+  private fun configureManifoldPreprocessor(artifacts: Artifacts, requestedVersion: String) {
+    val manifoldVersion = extension.manifoldPreprocessorVersion?.takeIf { it.isNotBlank() }
+      ?: artifacts.artifacts?.manifold?.versions?.firstOrNull()
+    if (manifoldVersion.isNullOrBlank()) {
+      project.logger.warn("mcmeta: manifold preprocessor enabled but no manifold version found")
+      return
+    }
+
+    val manifest = loadManifest() ?: run {
+      project.logger.warn("mcmeta: failed to load Mojang manifest for preprocessor symbols")
+      return
+    }
+
+    val symbols = buildPreprocessorSymbols(manifest, requestedVersion)
+    if (symbols.isEmpty()) {
+      project.logger.warn("mcmeta: no preprocessor symbols generated for $requestedVersion")
+      return
+    }
+    if (!symbols.containsKey("MC_VER")) {
+      project.logger.warn("mcmeta: requested version not found in manifest, MC_VER not set")
+    }
+
+    project.dependencies.add(
+      "annotationProcessor",
+      "systems.manifold:manifold-preprocessor:$manifoldVersion"
+    )
+    project.dependencies.add(
+      "testAnnotationProcessor",
+      "systems.manifold:manifold-preprocessor:$manifoldVersion"
+    )
+
+    val hasModuleInfo = hasModuleInfo()
+
+    project.tasks.withType(JavaCompile::class.java).configureEach { task ->
+      val args = buildCompilerArgs(symbols, hasModuleInfo, task.classpath.asPath)
+      val compilerArgs = task.options.compilerArgs
+      args.forEach { arg ->
+        if (!compilerArgs.contains(arg)) {
+          compilerArgs.add(arg)
+        }
+      }
+    }
+  }
+
+  private fun loadManifest(): MojangManifest? {
+    return try {
+      val cacheFile = File(cacheDir, "manifest.json")
+      val payload = if (cacheFile.exists() && !isExpired(cacheFile)) {
+        cacheFile.readText()
+      } else {
+        val text = fetchText(extension.manifestUrl)
+        cacheFile.writeText(text)
+        text
+      }
+      gson.fromJson(payload, MojangManifest::class.java)
+    } catch (err: Exception) {
+      project.logger.warn("mcmeta: manifest fetch failed: ${err.message}")
+      null
+    }
+  }
+
+  private fun buildCompilerArgs(
+    symbols: Map<String, Int>,
+    hasModuleInfo: Boolean,
+    classpath: String,
+  ): List<String> {
+    val args = ArrayList<String>()
+    args.add("-Xplugin:Manifold")
+    if (JavaVersion.current() != JavaVersion.VERSION_1_8 && hasModuleInfo) {
+      args.add("--module-path")
+      args.add(classpath)
+    }
+    val sorted = symbols.entries.sortedBy { it.key }
+    for ((key, value) in sorted) {
+      args.add("-A${key}=${value}")
+    }
+    return args
+  }
+
+  private fun buildPreprocessorSymbols(
+    manifest: MojangManifest,
+    requestedVersion: String,
+  ): Map<String, Int> {
+    val versions = manifest.versions ?: return emptyMap()
+    val total = versions.size
+    val out = LinkedHashMap<String, Int>()
+    val requestedSanitized = sanitizeVersion(requestedVersion)
+    var requestedRank: Int? = null
+
+    versions.forEachIndexed { index, version ->
+      val rank = total - index
+      val constName = "MC_${toConstName(version.id)}"
+      if (!out.containsKey(constName)) {
+        out[constName] = rank
+      }
+      if (version.id == requestedVersion || sanitizeVersion(version.id) == requestedSanitized) {
+        requestedRank = rank
+      }
+    }
+
+    if (requestedRank != null) {
+      out["MC_VER"] = requestedRank!!
+    }
+
+    return out
+  }
+
+  private fun toConstName(value: String): String {
+    val out = StringBuilder()
+    var prevUnderscore = false
+    for (ch in value) {
+      val normalized = when {
+        ch.isLetterOrDigit() -> ch.uppercaseChar()
+        else -> '_'
+      }
+      if (normalized == '_') {
+        if (prevUnderscore) continue
+        prevUnderscore = true
+      } else {
+        prevUnderscore = false
+      }
+      out.append(normalized)
+    }
+    return out.toString().trim('_')
+  }
+
+  private fun hasModuleInfo(): Boolean {
+    val sourceSets = project.extensions.findByType(SourceSetContainer::class.java) ?: return false
+    return sourceSets.any { sourceSet ->
+      sourceSet.allJava.files.any { it.name == "module-info.java" }
+    }
+  }
+
+  private fun fetchText(url: String): String {
+    val connection = URL(url).openConnection() as HttpURLConnection
+    connection.connectTimeout = 10_000
+    connection.readTimeout = 10_000
+    connection.setRequestProperty("User-Agent", "mcmeta-gradle/0.1")
+    connection.inputStream.bufferedReader().use { reader ->
+      return reader.readText()
+    }
+  }
+
   private fun isExpired(file: File): Boolean {
     val ttl = Duration.ofMinutes(extension.cacheMinutes)
     val age = System.currentTimeMillis() - file.lastModified()
@@ -225,6 +374,14 @@ private data class McmetaBundle(
   val loaderIndex: Any,
   val artifacts: Any,
   val meta: Any,
+)
+
+private data class MojangManifest(
+  val versions: List<MojangVersion>?,
+)
+
+private data class MojangVersion(
+  val id: String,
 )
 
 private data class LoaderIndex(

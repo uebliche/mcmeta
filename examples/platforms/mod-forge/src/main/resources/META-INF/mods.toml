@@ -1,0 +1,9 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="mcmeta_example_forge"
+version="1.0.0"
+displayName="mcmeta Forge Example"
+description='''Example Forge mod using mcmeta plugin'''

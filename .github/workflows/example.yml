@@ -1,0 +1,26 @@
+name: Example matrix
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  platforms:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        mc: ["1.21.11", "1.21.4", "1.20.1"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+      - name: Build platform examples
+        run: ./examples/platforms/gradlew -p examples/platforms build -Pmcmeta.minecraftVersion=${{ matrix.mc }}
