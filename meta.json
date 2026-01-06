@@ -2,7 +2,6 @@
   "schema": "mcmeta/v1",
   "minecraft": "b1.0.2",
   "sources": {
-    "bungeecord": "ok",
     "fabric": "error",
     "fabric-api": "ok",
     "folia": "error",
@@ -10,8 +9,7 @@
     "minestom": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "error",
-    "velocity": "partial"
+    "quilt": "error"
   },
   "notes": [
     "forge maven metadata has no versions for minecraft b1.0.2",
