@@ -3,14 +3,14 @@
   "minecraft": "1.7.10-pre4",
   "sources": {
     "bungeecord": "ok",
-    "fabric": "partial",
+    "fabric": "error",
     "fabric-api": "ok",
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "partial",
+    "quilt": "error",
     "velocity": "partial"
   },
   "notes": [
