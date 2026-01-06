@@ -9,19 +9,26 @@ minecraft {
   mappings("official", mcVersion.get())
 }
 
-dependencies {
-  implementation(project(":common"))
+// Trigger mcmeta resolution before dependencies are resolved.
+val mcmetaResolver = project.tasks.named("mcmetaResolve")
+
+configurations.configureEach {
+  if (isCanBeResolved) {
+    incoming.beforeResolve {
+      mcmetaResolver.get().execute()
+    }
+  }
 }
 
-afterEvaluate {
+dependencies {
+  implementation(project(":common"))
+
   val extra = project.extensions.extraProperties
   val forgeVersion = extra.get("mcmetaForgeVersion") as String?
   if (forgeVersion.isNullOrBlank()) {
     throw IllegalStateException("mcmeta: forge version missing")
   }
-  dependencies {
-    implementation("net.minecraftforge:forge:$forgeVersion")
-  }
+  implementation("net.minecraftforge:forge:$forgeVersion")
 }
 
 java {

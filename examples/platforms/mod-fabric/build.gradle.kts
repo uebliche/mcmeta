@@ -5,29 +5,36 @@ plugins {
 
 val mcVersion = providers.gradleProperty("mcmeta.minecraftVersion").orElse("1.21.4")
 
+// Trigger mcmeta resolution before dependencies are resolved.
+val mcmetaResolver = project.tasks.named("mcmetaResolve")
+
 dependencies {
   minecraft("com.mojang:minecraft:${mcVersion.get()}")
   mappings(loom.officialMojangMappings())
   implementation(project(":common"))
-}
 
-loom {
-  splitEnvironmentSourceSets()
-}
-
-afterEvaluate {
   val extra = project.extensions.extraProperties
   val loader = extra.get("mcmetaFabricLoaderVersion") as String?
   val fabricApi = extra.get("mcmetaFabricApiVersion") as String?
   if (loader.isNullOrBlank()) {
     throw IllegalStateException("mcmeta: fabric loader version missing")
   }
-  dependencies {
-    modImplementation("net.fabricmc:fabric-loader:$loader")
-    if (!fabricApi.isNullOrBlank()) {
-      modImplementation("net.fabricmc.fabric-api:fabric-api:$fabricApi")
+  modImplementation("net.fabricmc:fabric-loader:$loader")
+  if (!fabricApi.isNullOrBlank()) {
+    modImplementation("net.fabricmc.fabric-api:fabric-api:$fabricApi")
+  }
+}
+
+configurations.configureEach {
+  if (isCanBeResolved) {
+    incoming.beforeResolve {
+      mcmetaResolver.get().execute()
     }
   }
+}
+
+loom {
+  splitEnvironmentSourceSets()
 }
 
 java {
