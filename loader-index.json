@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "proxy/velocity-1.0.0",
+  "minecraft": "proxy/velocity-latest",
   "loaders": {
     "fabric": {
       "loader": []
