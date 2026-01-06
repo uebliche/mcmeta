@@ -2,7 +2,6 @@
   "schema": "mcmeta/v1",
   "minecraft": "1.5.1",
   "sources": {
-    "bungeecord": "ok",
     "fabric": "error",
     "fabric-api": "ok",
     "folia": "error",
@@ -10,8 +9,7 @@
     "minestom": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "error",
-    "velocity": "partial"
+    "quilt": "error"
   },
   "notes": [
     "minestom maven metadata has no versions for minecraft 1.5.1",
