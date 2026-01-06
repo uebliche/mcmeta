@@ -170,31 +170,15 @@
                   class="loader-card"
                 >
                   <h4>{{ entry.label }}</h4>
-                  <div class="loader-row">
-                    <span class="row-label">loader</span>
-                    <div class="chips">
-                      <span
-                        v-for="item in entry.loader"
-                        :key="`${entry.key}-loader-${item}`"
-                        class="chip"
-                      >
-                        {{ item }}
-                      </span>
-                      <span v-if="entry.loader.length === 0" class="chip">n/a</span>
-                    </div>
-                  </div>
-                  <div v-if="entry.hasInstaller" class="loader-row">
-                    <span class="row-label">installer</span>
-                    <div class="chips">
-                      <span
-                        v-for="item in entry.installer"
-                        :key="`${entry.key}-installer-${item}`"
-                        class="chip"
-                      >
-                        {{ item }}
-                      </span>
-                      <span v-if="entry.installer.length === 0" class="chip">n/a</span>
-                    </div>
+                  <div class="chips">
+                    <span
+                      v-for="item in entry.loader"
+                      :key="`${entry.key}-loader-${item}`"
+                      class="chip"
+                    >
+                      {{ item }}
+                    </span>
+                    <span v-if="entry.loader.length === 0" class="chip">n/a</span>
                   </div>
                 </div>
               </div>
@@ -486,8 +470,6 @@ const loaderCards = computed(() => {
     return {
       ...entry,
       loader: data.loader || [],
-      installer: data.installer || [],
-      hasInstaller: entry.key === 'fabric' || entry.key === 'quilt',
     };
   });
 });
@@ -798,8 +780,7 @@ async function fetchLoaderStatus(entry) {
 function hasLoader(entry) {
   if (!entry) return false;
   const loader = Array.isArray(entry.loader) ? entry.loader.length : 0;
-  const installer = Array.isArray(entry.installer) ? entry.installer.length : 0;
-  return loader > 0 || installer > 0;
+  return loader > 0;
 }
 
 function sanitizeVersion(value) {

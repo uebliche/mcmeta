@@ -112,9 +112,7 @@ private class McmetaResolver(
 
     val loaders = loaderIndex.loaders
     val fabricLoader = loaders?.fabric?.loader?.firstOrNull()
-    val fabricInstaller = loaders?.fabric?.installer?.firstOrNull()
     val quiltLoader = loaders?.quilt?.loader?.firstOrNull()
-    val quiltInstaller = loaders?.quilt?.installer?.firstOrNull()
     val forgeLoader = loaders?.forge?.loader?.firstOrNull()
     val neoforgeLoader = loaders?.neoforge?.loader?.firstOrNull()
 
@@ -136,9 +134,7 @@ private class McmetaResolver(
     val extra = project.extensions.extraProperties
     extra.set("mcmetaMinecraftVersion", version)
     extra.set("mcmetaFabricLoaderVersion", fabricLoader)
-    extra.set("mcmetaFabricInstallerVersion", fabricInstaller)
     extra.set("mcmetaQuiltLoaderVersion", quiltLoader)
-    extra.set("mcmetaQuiltInstallerVersion", quiltInstaller)
     extra.set("mcmetaForgeVersion", forgeLoader)
     extra.set("mcmetaNeoForgeVersion", neoforgeLoader)
     extra.set("mcmetaMinestomVersion", minestomVersion)
@@ -148,9 +144,7 @@ private class McmetaResolver(
     extra.set("mcmetaFoliaVersion", foliaVersion)
 
     extra.set("mcmetaFabricLoaderVersions", loaders?.fabric?.loader ?: emptyList<String>())
-    extra.set("mcmetaFabricInstallerVersions", loaders?.fabric?.installer ?: emptyList<String>())
     extra.set("mcmetaQuiltLoaderVersions", loaders?.quilt?.loader ?: emptyList<String>())
-    extra.set("mcmetaQuiltInstallerVersions", loaders?.quilt?.installer ?: emptyList<String>())
     extra.set("mcmetaForgeVersions", loaders?.forge?.loader ?: emptyList<String>())
     extra.set("mcmetaNeoForgeVersions", loaders?.neoforge?.loader ?: emptyList<String>())
     extra.set("mcmetaMinestomVersions", artifacts.artifacts?.minestom?.versions ?: emptyList<String>())
@@ -243,7 +237,6 @@ private data class LoaderFamilies(
 
 private data class LoaderFamily(
   val loader: List<String>?,
-  val installer: List<String>?,
 )
 
 private data class Artifacts(
