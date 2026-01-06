@@ -3,16 +3,10 @@
   "minecraft": "14w02b",
   "loaders": {
     "fabric": {
-      "loader": [],
-      "installer": [
-        "1.1.1"
-      ]
+      "loader": []
     },
     "quilt": {
-      "loader": [],
-      "installer": [
-        "0.12.1"
-      ]
+      "loader": []
     },
     "forge": {
       "loader": []
