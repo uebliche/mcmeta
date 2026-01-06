@@ -2,13 +2,6 @@
   "schema": "mcmeta/v1",
   "minecraft": "23w51b",
   "artifacts": {
-    "minestom": {
-      "type": "maven",
-      "coordinates": [
-        "net.minestom:minestom"
-      ],
-      "versions": []
-    },
     "fabric-api": {
       "type": "modrinth",
       "project_id": "P7dR8mSH",
@@ -210,6 +203,15 @@
           }
         ]
       }
+    }
+  },
+  "runtimes": {
+    "minestom": {
+      "type": "maven",
+      "coordinates": [
+        "net.minestom:minestom"
+      ],
+      "versions": []
     }
   }
 }
