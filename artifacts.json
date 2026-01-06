@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "proxy/bungeecord-1.20",
+  "minecraft": "proxy/bungeecord-1.16",
   "artifacts": {
     "minestom": {
       "type": "maven",
@@ -33,14 +33,16 @@
         "project": "bungeecord",
         "groups": [
           {
-            "api": "1.20",
+            "api": "1.16",
             "versions": [
-              "1.20-R0.2",
-              "1.20-R0.1"
+              "1.16-R0.4",
+              "1.16-R0.3",
+              "1.16-R0.2",
+              "1.16-R0.1"
             ],
             "range": {
-              "newest": "1.20-R0.2",
-              "oldest": "1.20-R0.1"
+              "newest": "1.16-R0.4",
+              "oldest": "1.16-R0.1"
             }
           }
         ]
