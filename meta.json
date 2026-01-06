@@ -6,6 +6,7 @@
     "fabric-api": "ok",
     "folia": "error",
     "forge": "ok",
+    "manifold": "ok",
     "minestom": "partial",
     "neoforge": "partial",
     "paper": "ok",
