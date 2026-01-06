@@ -321,6 +321,14 @@
             </div>
             <div v-else class="muted">No proxy data.</div>
           </div>
+          <div class="panel howto">
+            <h3>How to use (Proxies)</h3>
+            <p>
+              These proxy branches publish API version lines and their version ranges.
+              Use the newest API line unless you target older Minecraft versions.
+            </p>
+            <pre class="code">{{ proxyHowTo }}</pre>
+          </div>
         </div>
 
         <div v-show="activeTab === 'raw'" class="tab-panel">
@@ -565,6 +573,26 @@ val fabricLoader = extra["mcmetaFabricLoaderVersion"] as String?
 val paperBuild = extra["mcmetaPaperVersion"] as String?
 val velocityVersion = extra["mcmetaVelocityVersion"] as String?
 val foliaBuild = extra["mcmetaFoliaVersion"] as String?`;
+
+const proxyHowTo = `settings.gradle.kts
+pluginManagement {
+  includeBuild("gradle-plugin")
+}
+
+build.gradle.kts
+plugins {
+  id("net.uebliche.mcmeta")
+}
+
+// Use any mc version to load proxy data.
+mcmeta {
+  minecraftVersion = "1.21.4"
+}
+
+val velocityLatest = extra["mcmetaVelocityVersion"] as String?
+val velocityApiLines = extra["mcmetaVelocityApiVersions"] as List<*>
+val bungeeLatest = extra["mcmetaBungeeCordVersion"] as String?
+val bungeeApiLines = extra["mcmetaBungeeCordApiVersions"] as List<*>`;
 
 const loaderIconList = [
   {
