@@ -117,6 +117,7 @@ private class McmetaResolver(
     val neoforgeLoader = loaders?.neoforge?.loader?.firstOrNull()
 
     val minestomVersion = artifacts.runtimes?.minestom?.versions?.firstOrNull()
+    val manifoldVersion = artifacts.artifacts?.manifold?.versions?.firstOrNull()
     val fabricApiVersion = artifacts.artifacts?.fabricApi?.versions?.firstOrNull()?.versionNumber
     val paperVersion = artifacts.artifacts?.paper?.versions?.firstOrNull()
     val velocityGroups = artifacts.artifacts?.proxies?.velocity?.groups ?: emptyList()
@@ -138,6 +139,7 @@ private class McmetaResolver(
     extra.set("mcmetaForgeVersion", forgeLoader)
     extra.set("mcmetaNeoForgeVersion", neoforgeLoader)
     extra.set("mcmetaMinestomVersion", minestomVersion)
+    extra.set("mcmetaManifoldVersion", manifoldVersion)
     extra.set("mcmetaFabricApiVersion", fabricApiVersion)
     extra.set("mcmetaPaperVersion", paperVersion)
     extra.set("mcmetaVelocityVersion", velocityVersion)
@@ -148,6 +150,7 @@ private class McmetaResolver(
     extra.set("mcmetaForgeVersions", loaders?.forge?.loader ?: emptyList<String>())
     extra.set("mcmetaNeoForgeVersions", loaders?.neoforge?.loader ?: emptyList<String>())
     extra.set("mcmetaMinestomVersions", artifacts.runtimes?.minestom?.versions ?: emptyList<String>())
+    extra.set("mcmetaManifoldVersions", artifacts.artifacts?.manifold?.versions ?: emptyList<String>())
     extra.set(
       "mcmetaFabricApiVersions",
       artifacts.artifacts?.fabricApi?.versions?.map { it.versionNumber } ?: emptyList<String>()
@@ -247,6 +250,7 @@ private data class Artifacts(
 private data class ArtifactFamilies(
   @SerializedName("fabric-api")
   val fabricApi: ModrinthArtifact?,
+  val manifold: MavenArtifact?,
   val paper: ProjectArtifact?,
   val velocity: ProjectArtifact?,
   val folia: ProjectArtifact?,

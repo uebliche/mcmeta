@@ -202,6 +202,22 @@
                   </div>
                   <div class="mono">project {{ fabricApi.project_id }}</div>
                 </div>
+                <div v-if="manifold" class="artifact-card">
+                  <h4>Manifold</h4>
+                  <div class="chips">
+                    <span
+                      v-for="item in manifold.versions"
+                      :key="`manifold-${item}`"
+                      class="chip"
+                    >
+                      {{ item }}
+                    </span>
+                    <span v-if="!manifold.versions || manifold.versions.length === 0" class="chip">
+                      n/a
+                    </span>
+                  </div>
+                  <div class="mono">{{ (manifold.coordinates || []).join(', ') }}</div>
+                </div>
                 <div v-if="paper" class="artifact-card">
                   <h4>Paper</h4>
                   <div class="chips">
@@ -494,6 +510,7 @@ const loaderCards = computed(() => {
 const runtimes = computed(() => artifacts.value?.runtimes || null);
 const minestom = computed(() => runtimes.value?.minestom || null);
 const fabricApi = computed(() => artifacts.value?.artifacts?.['fabric-api'] || null);
+const manifold = computed(() => artifacts.value?.artifacts?.manifold || null);
 const paper = computed(() => artifacts.value?.artifacts?.paper || null);
 const folia = computed(() => artifacts.value?.artifacts?.folia || null);
 const proxies = computed(() => artifacts.value?.artifacts?.proxies || null);
