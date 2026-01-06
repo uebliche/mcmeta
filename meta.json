@@ -2,6 +2,7 @@
   "schema": "mcmeta/v1",
   "minecraft": "14w06a",
   "sources": {
+    "bungeecord": "ok",
     "fabric": "partial",
     "fabric-api": "ok",
     "folia": "error",
