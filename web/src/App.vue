@@ -231,7 +231,7 @@
               </div>
             </div>
             <div class="panel">
-              <h3>Server runtimes</h3>
+              <h3>Server reimplementations</h3>
               <div class="artifact-summary">
                 <div v-if="minestom" class="artifact-card">
                   <h4>Minestom</h4>
