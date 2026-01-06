@@ -32,22 +32,22 @@
       <div class="panel search-panel">
         <div class="search-row">
           <div>
-            <label class="label" for="search">Search versions</label>
+            <label class="label" for="search">{{ searchLabel }}</label>
             <input
               id="search"
               v-model="search"
               type="search"
-              placeholder="1.20, 24w, rc"
+              :placeholder="searchPlaceholder"
             />
           </div>
-          <label class="toggle">
+          <label v-if="activeTab !== 'proxies'" class="toggle">
             <input v-model="includeSnapshots" type="checkbox" />
             <span>Include snapshots</span>
           </label>
           <div class="stat-row compact">
             <div>
-              <div class="stat-label">Versions</div>
-              <div class="stat-value">{{ versionCount }}</div>
+              <div class="stat-label">{{ countLabel }}</div>
+              <div class="stat-value">{{ listCount }}</div>
             </div>
             <div>
               <div class="stat-label">Last sync</div>
@@ -59,7 +59,7 @@
 
       <aside class="sidebar">
         <div class="panel list-panel">
-          <div class="version-list">
+          <div class="version-list" v-if="activeTab !== 'proxies'">
             <div v-if="filteredEntries.length === 0" class="version-item">
               No matches
             </div>
@@ -89,6 +89,25 @@
                 >
                   <img :src="icon.src" :alt="icon.label" loading="lazy" />
                 </span>
+              </div>
+            </div>
+          </div>
+          <div class="version-list" v-else>
+            <div v-if="proxyEntries.length === 0" class="version-item">
+              No proxies
+            </div>
+            <div
+              v-for="(entry, index) in proxyEntries"
+              :key="entry.key"
+              class="version-item"
+              :class="{ active: entry.key === activeProxy }"
+              :style="{ animationDelay: `${index * 0.02}s` }"
+              @click="selectProxy(entry)"
+            >
+              <div>{{ entry.label }}</div>
+              <div class="version-meta">
+                <span>proxy</span>
+                <span>{{ entry.groups.length }} groups</span>
               </div>
             </div>
           </div>
@@ -261,10 +280,10 @@
 
         <div v-show="activeTab === 'proxies'" class="tab-panel">
           <div class="panel">
-            <h3>Velocity</h3>
-            <div v-if="velocityGroups.length" class="proxy-groups">
+            <h3>{{ activeProxyLabel }}</h3>
+            <div v-if="activeProxyGroups.length" class="proxy-groups">
               <div
-                v-for="group in velocityGroups"
+                v-for="group in activeProxyGroups"
                 :key="group.api"
                 class="proxy-card"
               >
@@ -340,6 +359,7 @@ const includeSnapshots = ref(true);
 const branches = ref([]);
 const activeBranch = ref('');
 const activeLabel = ref('');
+const activeProxy = ref('');
 const activeTab = ref('overview');
 const overallStatus = ref('idle');
 const lastSync = ref('-');
@@ -402,7 +422,38 @@ const filteredEntries = computed(() => {
   });
 });
 
-const versionCount = computed(() => filteredEntries.value.length);
+const proxyEntries = computed(() => {
+  const list = [];
+  const proxyMap = proxies.value || {};
+  for (const [key, value] of Object.entries(proxyMap)) {
+    if (!value) continue;
+    const groups = value.groups || [];
+    list.push({
+      key,
+      label: formatProxyName(key),
+      groups,
+    });
+  }
+  const searchValue = search.value.toLowerCase();
+  if (!searchValue) return list;
+  return list.filter((entry) => entry.label.toLowerCase().includes(searchValue));
+});
+
+const listCount = computed(() =>
+  activeTab.value === 'proxies' ? proxyEntries.value.length : filteredEntries.value.length
+);
+
+const searchLabel = computed(() =>
+  activeTab.value === 'proxies' ? 'Search proxies' : 'Search versions'
+);
+
+const searchPlaceholder = computed(() =>
+  activeTab.value === 'proxies' ? 'Velocity' : '1.20, 24w, rc'
+);
+
+const countLabel = computed(() =>
+  activeTab.value === 'proxies' ? 'Proxies' : 'Versions'
+);
 
 const loaderCards = computed(() => {
   const loaders = loaderIndex.value?.loaders || {};
@@ -427,8 +478,11 @@ const fabricApi = computed(() => artifacts.value?.artifacts?.['fabric-api'] || n
 const paper = computed(() => artifacts.value?.artifacts?.paper || null);
 const folia = computed(() => artifacts.value?.artifacts?.folia || null);
 const proxies = computed(() => artifacts.value?.artifacts?.proxies || null);
-const velocityProxy = computed(() => proxies.value?.velocity || null);
-const velocityGroups = computed(() => velocityProxy.value?.groups || []);
+const activeProxyEntry = computed(
+  () => proxyEntries.value.find((entry) => entry.key === activeProxy.value) || null
+);
+const activeProxyGroups = computed(() => activeProxyEntry.value?.groups || []);
+const activeProxyLabel = computed(() => activeProxyEntry.value?.label || 'Proxy');
 
 const fabricApiPreview = computed(() => {
   const versions = fabricApi.value?.versions || [];
@@ -680,6 +734,10 @@ function goLatest() {
   }
 }
 
+function selectProxy(entry) {
+  activeProxy.value = entry.key;
+}
+
 async function fetchJson(url) {
   const resp = await fetch(url, { cache: 'no-store' });
   if (!resp.ok) throw new Error(`Failed to fetch ${url}`);
@@ -741,6 +799,14 @@ function sanitizeVersion(value) {
   return out.replace(/^\.+|\.+$/g, '').replace(/^-+|-+$/g, '');
 }
 
+function formatProxyName(value) {
+  if (!value) return 'Proxy';
+  return value
+    .split(/[-_]/)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
 async function ensureLoaderStatuses(entries) {
   const queue = entries.filter((entry) => !loaderStatus.value[entry.branch]);
   if (!queue.length) return;
@@ -795,6 +861,23 @@ watch(filteredEntries, (list) => {
   const hasActive = list.some((entry) => entry.branch === activeBranch.value);
   if (!activeBranch.value || !hasActive) {
     selectEntry(list[0]);
+  }
+});
+
+watch(proxyEntries, (list) => {
+  if (!list.length) {
+    activeProxy.value = '';
+    return;
+  }
+  if (!activeProxy.value || !list.some((entry) => entry.key === activeProxy.value)) {
+    activeProxy.value = list[0].key;
+  }
+});
+
+watch(activeTab, (tab) => {
+  if (tab !== 'proxies') return;
+  if (!activeProxy.value && proxyEntries.value.length) {
+    activeProxy.value = proxyEntries.value[0].key;
   }
 });
 
