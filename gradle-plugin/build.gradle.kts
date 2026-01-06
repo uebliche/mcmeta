@@ -2,7 +2,7 @@ plugins {
   `java-gradle-plugin`
   kotlin("jvm") version "1.9.24"
   `maven-publish`
-  id("com.gradle.plugin-publish") version "1.2.1"
+  id("com.gradle.plugin-publish") version "1.2.1" apply false
 }
 
 group = "net.uebliche"
@@ -27,10 +27,18 @@ gradlePlugin {
   }
 }
 
-pluginBundle {
-  website = "https://github.com/uebliche/mcmeta"
-  vcsUrl = "https://github.com/uebliche/mcmeta"
-  tags = listOf("minecraft", "modding", "versions", "metadata")
+val publishEnabled = providers.gradleProperty("mcmetaPublish").isPresent ||
+  (System.getenv("MCMETA_PUBLISH") == "1")
+
+if (publishEnabled) {
+  apply(plugin = "com.gradle.plugin-publish")
+  extensions.configure("pluginBundle") {
+    withGroovyBuilder {
+      "website"("https://github.com/uebliche/mcmeta")
+      "vcsUrl"("https://github.com/uebliche/mcmeta")
+      "tags"(listOf("minecraft", "modding", "versions", "metadata"))
+    }
+  }
 }
 
 publishing {
