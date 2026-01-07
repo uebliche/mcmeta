@@ -7,10 +7,17 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
     "quilt": "ok"
   },
+  "jdk": 21,
+  "release_time": "2024-10-11T12:32:27+00:00",
+  "protocol_version": 1073742039,
+  "data_version": 4075,
+  "resource_pack_format": 42,
+  "data_pack_format": 57,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.21.2-pre3",
     "minestom maven metadata has no versions for minecraft 1.21.2-pre3",
