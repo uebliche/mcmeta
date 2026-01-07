@@ -7,10 +7,17 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
     "quilt": "error"
   },
+  "jdk": 8,
+  "release_time": "2019-06-03T14:34:20+00:00",
+  "protocol_version": 486,
+  "data_version": 1964,
+  "resource_pack_format": 4,
+  "data_pack_format": 4,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.14.3-pre1",
     "minestom maven metadata has no versions for minecraft 1.14.3-pre1",
