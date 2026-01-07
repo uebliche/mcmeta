@@ -7,10 +7,17 @@
     "folia": "error",
     "forge": "ok",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "ok",
     "quilt": "ok"
   },
+  "jdk": 17,
+  "release_time": "2022-07-27T09:25:33+00:00",
+  "protocol_version": 760,
+  "data_version": 3117,
+  "resource_pack_format": 9,
+  "data_pack_format": 10,
   "notes": [
     "minestom maven metadata has no versions for minecraft 1.19.1",
     "neoforge maven metadata has no versions for minecraft 1.19.1"
