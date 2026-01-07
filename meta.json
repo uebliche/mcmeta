@@ -7,13 +7,17 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
     "quilt": "error"
   },
+  "jdk": 8,
+  "release_time": "2009-05-30T22:00:00+00:00",
   "notes": [
     "forge maven metadata has no versions for minecraft c0.0.13a",
     "minestom maven metadata has no versions for minecraft c0.0.13a",
+    "mojang downloads incomplete",
     "neoforge maven metadata has no versions for minecraft c0.0.13a"
   ]
 }
