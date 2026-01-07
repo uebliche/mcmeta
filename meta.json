@@ -7,10 +7,16 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
     "quilt": "ok"
   },
+  "release_time": "2025-05-06T12:57:57+00:00",
+  "protocol_version": 1073742073,
+  "data_version": 4427,
+  "resource_pack_format": 60,
+  "data_pack_format": 76,
   "notes": [
     "forge maven metadata has no versions for minecraft 25w19a",
     "minestom maven metadata has no versions for minecraft 25w19a",
