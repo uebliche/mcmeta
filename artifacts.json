@@ -48,15 +48,6 @@
         }
       ]
     },
-    "manifold": {
-      "type": "maven",
-      "coordinates": [
-        "systems.manifold:manifold"
-      ],
-      "versions": [
-        "2025.1.31"
-      ]
-    },
     "paper": {
       "type": "papermc",
       "project": "paper",
@@ -141,26 +132,6 @@
             "range": {
               "newest": "3.4.0-SNAPSHOT",
               "oldest": "3.1.0"
-            }
-          },
-          {
-            "api": "1.1.0",
-            "versions": [
-              "1.1.9"
-            ],
-            "range": {
-              "newest": "1.1.9",
-              "oldest": "1.1.9"
-            }
-          },
-          {
-            "api": "1.0.0",
-            "versions": [
-              "1.0.10"
-            ],
-            "range": {
-              "newest": "1.0.10",
-              "oldest": "1.0.10"
             }
           }
         ]
