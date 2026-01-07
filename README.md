@@ -18,25 +18,9 @@ Proxy branches (BungeeCord):
 - `proxy/bungeecord-<api>`
 - `proxy/bungeecord-latest`
 
-## Web UI
+## Web viewer
 
-The interactive browser is built with Vue + Vite. Source lives in `web/` and the
-static build is deployed to the `gh-pages` branch by GitHub Actions.
-
-Local dev:
-
-```sh
-npm install
-npm run dev
-```
-
-Build for Pages:
-
-```sh
-npm run build
-```
-
-GitHub Pages should point to the `gh-pages` branch and `/` folder.
+The web viewer now lives in the uebliche docs under `/mcmeta/viewer`.
 
 ## Gradle plugin (local include)
 
