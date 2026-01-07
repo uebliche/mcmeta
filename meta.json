@@ -6,13 +6,9 @@
     "fabric-api": "ok",
     "folia": "ok",
     "forge": "ok",
-    "manifold": "ok",
     "minestom": "ok",
     "neoforge": "ok",
     "paper": "ok",
     "quilt": "ok"
-  },
-  "notes": [
-    "velocity versions are not filtered for minecraft 1.21.5"
-  ]
+  }
 }
