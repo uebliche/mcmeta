@@ -7,12 +7,16 @@
     "folia": "error",
     "forge": "ok",
     "minestom": "partial",
+    "mojang": "partial",
     "neoforge": "partial",
     "paper": "ok",
     "quilt": "error"
   },
+  "jdk": 8,
+  "release_time": "2015-07-27T10:31:28+00:00",
   "notes": [
     "minestom maven metadata has no versions for minecraft 1.8.8",
+    "mojang server metadata missing",
     "neoforge maven metadata has no versions for minecraft 1.8.8"
   ]
 }
