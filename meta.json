@@ -7,13 +7,16 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
     "quilt": "error"
   },
+  "release_time": "2009-05-16T11:48:00+00:00",
   "notes": [
     "forge maven metadata has no versions for minecraft rd-161348",
     "minestom maven metadata has no versions for minecraft rd-161348",
+    "mojang downloads incomplete",
     "neoforge maven metadata has no versions for minecraft rd-161348"
   ]
 }
