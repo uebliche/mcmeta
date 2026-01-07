@@ -7,8 +7,15 @@
     "folia": "error",
     "forge": "ok",
     "minestom": "ok",
+    "mojang": "ok",
     "neoforge": "ok",
     "paper": "ok",
     "quilt": "ok"
-  }
+  },
+  "jdk": 21,
+  "release_time": "2025-06-30T09:32:16+00:00",
+  "protocol_version": 772,
+  "data_version": 4438,
+  "resource_pack_format": 64,
+  "data_pack_format": 81
 }
