@@ -1,11 +1,9 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "26.1-snapshot-1",
+  "minecraft": "26.1-snapshot-2",
   "loaders": {
     "fabric": {
-      "loader": [
-        "0.18.4"
-      ]
+      "loader": []
     },
     "quilt": {
       "loader": []
