@@ -7,13 +7,17 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
     "quilt": "error"
   },
+  "jdk": 21,
+  "release_time": "2010-11-09T22:00:01+00:00",
   "notes": [
     "forge maven metadata has no versions for minecraft a1.2.2b",
     "minestom maven metadata has no versions for minecraft a1.2.2b",
+    "mojang downloads incomplete",
     "neoforge maven metadata has no versions for minecraft a1.2.2b"
   ]
 }
