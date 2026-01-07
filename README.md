@@ -27,6 +27,9 @@ The web viewer now lives in the uebliche docs under `/mcmeta/viewer`.
 A small Gradle plugin is available in `gradle-plugin/`. It loads mcmeta
 versions and exposes them as Gradle extra properties.
 
+The `includeBuild("gradle-plugin")` line only points Gradle at the local
+plugin build. The plugin ID is still `net.uebliche.mcmeta`.
+
 Example `settings.gradle.kts`:
 
 ```kotlin
