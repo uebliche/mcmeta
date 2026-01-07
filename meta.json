@@ -11,8 +11,5 @@
     "neoforge": "ok",
     "paper": "ok",
     "quilt": "ok"
-  },
-  "notes": [
-    "velocity versions are not filtered for minecraft 1.21.11"
-  ]
+  }
 }
