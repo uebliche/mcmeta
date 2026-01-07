@@ -3,9 +3,7 @@
   "minecraft": "1.21.11",
   "loaders": {
     "fabric": {
-      "loader": [
-        "0.18.4"
-      ]
+      "loader": []
     },
     "quilt": {
       "loader": [

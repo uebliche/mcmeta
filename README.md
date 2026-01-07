@@ -7,6 +7,9 @@ Files:
 - artifacts.json
 - meta.json
 
+## Runtime
+- JDK: 21
+
 ## Proxies
 - Velocity: 1 api lines (latest: 3.0.0)
   - API 3.0.0: 3.4.0-SNAPSHOT..3.4.0-SNAPSHOT
@@ -16,11 +19,12 @@ Files:
   - API 1.16: 1.16-R0.1..1.16-R0.4
 
 ## Sources
-- Fabric: ok
+- Fabric: error
 - Fabric-api: ok
 - Folia: ok
 - Forge: ok
 - Minestom: ok
+- Mojang: partial
 - Neoforge: ok
 - Paper: ok
 - Quilt: ok
