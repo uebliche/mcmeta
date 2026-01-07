@@ -23,6 +23,7 @@ Files:
 - Folia: error
 - Forge: partial
 - Minestom: partial
+- Mojang: partial
 - Neoforge: partial
 - Paper: error
 - Quilt: ok
