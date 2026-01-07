@@ -7,6 +7,9 @@ Files:
 - artifacts.json
 - meta.json
 
+## Runtime
+- JDK: 16
+
 ## Proxies
 - Velocity: 2 api lines (latest: 3.0.0)
   - API 3.0.0: 3.1.0..3.4.0-SNAPSHOT
@@ -22,6 +25,7 @@ Files:
 - Folia: error
 - Forge: ok
 - Minestom: partial
+- Mojang: ok
 - Neoforge: partial
 - Paper: ok
 - Quilt: ok
