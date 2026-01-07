@@ -7,13 +7,17 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
     "quilt": "error"
   },
+  "jdk": 8,
+  "release_time": "2016-05-03T09:28:11+00:00",
   "notes": [
     "forge maven metadata has no versions for minecraft 1.9.3-pre3",
     "minestom maven metadata has no versions for minecraft 1.9.3-pre3",
+    "mojang server metadata missing",
     "neoforge maven metadata has no versions for minecraft 1.9.3-pre3"
   ]
 }
