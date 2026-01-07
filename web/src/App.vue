@@ -565,8 +565,9 @@ plugins {
   id("net.uebliche.mcmeta")
 }
 
+val mcVersion = providers.gradleProperty("mcmeta.minecraftVersion").orElse("1.21.4")
 mcmeta {
-  minecraftVersion = "1.21.4"
+  minecraftVersion = mcVersion.get()
 }
 
 val fabricLoader = extra["mcmetaFabricLoaderVersion"] as String?

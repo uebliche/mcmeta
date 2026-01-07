@@ -20,11 +20,4 @@ versions):
 ./gradlew build -Pmcmeta.minecraftVersion=1.21.4
 ```
 
-Plugin versions can be overridden if needed:
-
-```sh
-./gradlew build \
-  -Pmcmeta.minecraftVersion=1.21.4 \
-  -PfabricLoomVersion=1.6.12 \
-  -PforgeGradleVersion=6.0.29
-```
+The build uses the mcmeta plugin outputs to resolve loader versions.
