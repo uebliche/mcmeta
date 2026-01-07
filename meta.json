@@ -6,7 +6,6 @@
     "fabric-api": "ok",
     "folia": "error",
     "forge": "partial",
-    "manifold": "ok",
     "minestom": "partial",
     "neoforge": "partial",
     "paper": "error",
@@ -15,7 +14,6 @@
   "notes": [
     "forge maven metadata has no versions for minecraft 1.17-pre1",
     "minestom maven metadata has no versions for minecraft 1.17-pre1",
-    "neoforge maven metadata has no versions for minecraft 1.17-pre1",
-    "velocity versions are not filtered for minecraft 1.17-pre1"
+    "neoforge maven metadata has no versions for minecraft 1.17-pre1"
   ]
 }
