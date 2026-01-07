@@ -123,6 +123,31 @@
           }
         ]
       }
+    },
+    "minecraft": {
+      "version_json": {
+        "url": "https://piston-meta.mojang.com/v1/packages/2e1d962be5f0ee5e8053d77fadb5095a17c7defd/1.20.5-pre4.json"
+      },
+      "client": {
+        "url": "https://piston-data.mojang.com/v1/objects/65c8e74e25a8c2e566188baa9090c0febd07b054/client.jar",
+        "sha1": "65c8e74e25a8c2e566188baa9090c0febd07b054",
+        "size": 26562232
+      },
+      "server": {
+        "url": "https://piston-data.mojang.com/v1/objects/2793397cf42243a69fca37ff0887e8560a36c583/server.jar",
+        "sha1": "2793397cf42243a69fca37ff0887e8560a36c583",
+        "size": 51416154
+      },
+      "client_mappings": {
+        "url": "https://piston-data.mojang.com/v1/objects/2095250984c38854d8739e2a73480b6b61586de4/client.txt",
+        "sha1": "2095250984c38854d8739e2a73480b6b61586de4",
+        "size": 9420425
+      },
+      "server_mappings": {
+        "url": "https://piston-data.mojang.com/v1/objects/46a6bd05da5e85e57e4a3fa089ae6bffafd28219/server.txt",
+        "sha1": "46a6bd05da5e85e57e4a3fa089ae6bffafd28219",
+        "size": 7281914
+      }
     }
   },
   "runtimes": {
