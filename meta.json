@@ -7,13 +7,16 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
     "quilt": "error"
   },
+  "release_time": "2009-12-21T22:00:00+00:00",
   "notes": [
     "forge maven metadata has no versions for minecraft c0.30_01c",
     "minestom maven metadata has no versions for minecraft c0.30_01c",
+    "mojang downloads incomplete",
     "neoforge maven metadata has no versions for minecraft c0.30_01c"
   ]
 }
