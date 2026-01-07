@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "3D Shareware v1.34",
+  "minecraft": "26.1-snapshot-2",
   "artifacts": {
     "fabric-api": {
       "type": "modrinth",
@@ -8,7 +8,24 @@
       "loaders": [
         "fabric"
       ],
-      "versions": []
+      "versions": [
+        {
+          "version_number": "0.141.2+26.1",
+          "game_versions": [
+            "26.1-snapshot-2"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/sMoLaQCd/fabric-api-0.141.2%2B26.1.jar",
+              "sha1": "d9962b5ca656775c74351b30960ee25f0297a41c",
+              "sha512": "8e8dc982e80a78a74cba9eed870ee72c6dd50b381cc55a02c9749d3a41f3317a9ae6c8d8a50383c146dee7ee3bc530d61dc20b905a30e01279960838cbc31cfd"
+            }
+          ]
+        }
+      ]
     },
     "paper": {
       "type": "papermc",
@@ -109,17 +126,17 @@
     },
     "minecraft": {
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/5b59564acaa4cc153b6f934e566226642ed978ab/3D%20Shareware%20v1.34.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/fff9c832e266d274b723b83fd18a0b64a5ee3ef7/26.1-snapshot-2.json"
       },
       "client": {
-        "url": "https://piston-data.mojang.com/v1/objects/44db7d7bcd5a1bee6f54f6a623f26a1b3d1e293f/client.jar",
-        "sha1": "44db7d7bcd5a1bee6f54f6a623f26a1b3d1e293f",
-        "size": 18879423
+        "url": "https://piston-data.mojang.com/v1/objects/2443ba7d3c92457e00e75a4363a601461ebd3ed4/client.jar",
+        "sha1": "2443ba7d3c92457e00e75a4363a601461ebd3ed4",
+        "size": 37283304
       },
       "server": {
-        "url": "https://piston-data.mojang.com/v1/objects/ffd306fc2aaa884755c5a6bf9fbd87aed26dd78f/server.jar",
-        "sha1": "ffd306fc2aaa884755c5a6bf9fbd87aed26dd78f",
-        "size": 35878156
+        "url": "https://piston-data.mojang.com/v1/objects/165c30e5076a13848404f41692ff1e0126d0a6f3/server.jar",
+        "sha1": "165c30e5076a13848404f41692ff1e0126d0a6f3",
+        "size": 60053273
       }
     }
   },
