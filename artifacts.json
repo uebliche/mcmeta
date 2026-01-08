@@ -20,6 +20,11 @@
       "project": "folia",
       "versions": []
     },
+    "purpur": {
+      "type": "purpur",
+      "project": "purpur",
+      "versions": []
+    },
     "proxies": {
       "bungeecord": {
         "type": "maven",
