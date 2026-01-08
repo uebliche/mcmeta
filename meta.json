@@ -10,6 +10,7 @@
     "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
+    "purpur": "error",
     "quilt": "error"
   },
   "jdk": 21,

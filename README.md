@@ -29,6 +29,7 @@ Files:
 - Mojang: partial
 - Neoforge: partial
 - Paper: error
+- Purpur: error
 - Quilt: error
 
 ## Notes
