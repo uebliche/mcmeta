@@ -54,7 +54,48 @@ dependencies {
   val paperBuild = extra["mcmetaPaperVersion"] as String?
   val velocityVersion = extra["mcmetaVelocityVersion"] as String?
   val foliaBuild = extra["mcmetaFoliaVersion"] as String?
+  val jdk = extra["mcmetaJdkVersion"] as Int?
   // use versions in your dependencies
+}
+```
+
+### Optional: auto repositories + dependencies
+
+Enable repository and dependency wiring explicitly in the extension:
+
+```kotlin
+mcmeta {
+  minecraftVersion = "1.21.4"
+  repositories {
+    all()
+  }
+  dependencies {
+    enabled = true
+    fabricLoader = true
+    fabricApi = true
+    neoForge = true
+    paperApi = true
+    velocityApi = true
+    velocityAnnotationProcessor = true
+  }
+}
+```
+
+Override dependency configurations if your project uses custom names:
+
+```kotlin
+mcmeta {
+  dependencies {
+    enabled = true
+    fabricLoader = true
+    configurations {
+      fabricLoader = "modImplementation"
+      fabricApi = "modImplementation"
+      paperApi = "compileOnly"
+      velocityApi = "compileOnly"
+      velocityAnnotationProcessor = "annotationProcessor"
+    }
+  }
 }
 ```
 

@@ -2,11 +2,13 @@ package net.uebliche.mcmeta
 
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
+import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.JavaVersion
 import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.api.tasks.compile.JavaCompile
+import org.gradle.api.artifacts.repositories.MavenArtifactRepository
 import java.io.File
 import java.net.HttpURLConnection
 import java.net.URL
@@ -21,13 +23,25 @@ open class McmetaExtension {
   var repo: String = DEFAULT_REPO
   var rawBase: String = DEFAULT_RAW_BASE
   var manifestUrl: String = DEFAULT_MANIFEST
+  var loomBranch: String = "loom/latest"
   var cacheMinutes: Long = 30
   var autoLoad: Boolean = true
   var enableManifoldPreprocessor: Boolean = false
   var manifoldPreprocessorVersion: String? = null
+  val repositories = McmetaRepositories()
+  val dependencies = McmetaDependencies()
 
   fun resolveNow(project: Project) {
     McmetaResolver(project, this).resolve()
+    applyOptions(project, this)
+  }
+
+  fun repositories(action: Action<McmetaRepositories>) {
+    action.execute(repositories)
+  }
+
+  fun dependencies(action: Action<McmetaDependencies>) {
+    action.execute(dependencies)
   }
 }
 
@@ -36,14 +50,11 @@ class McmetaPlugin : Plugin<Project> {
     val extension = project.extensions.create("mcmeta", McmetaExtension::class.java)
 
     project.afterEvaluate {
-      if (!extension.autoLoad) return@afterEvaluate
-      if (extension.minecraftVersion.isBlank()) {
-        project.logger.warn("mcmeta: minecraftVersion is empty")
-        return@afterEvaluate
+      if (extension.autoLoad) {
+        val resolver = McmetaResolver(project, extension)
+        resolver.resolve()
       }
-
-      val resolver = McmetaResolver(project, extension)
-      resolver.resolve()
+      applyOptions(project, extension)
     }
 
     project.tasks.register("mcmetaResolve") {
@@ -54,9 +65,188 @@ class McmetaPlugin : Plugin<Project> {
           throw IllegalStateException("mcmeta.minecraftVersion must be set")
         }
         McmetaResolver(project, extension).resolve()
+        applyOptions(project, extension)
       }
     }
   }
+}
+
+open class McmetaRepositories {
+  var enabled: Boolean = false
+  var includeMavenCentral: Boolean = true
+  var fabric: Boolean = false
+  var neoforged: Boolean = false
+  var paper: Boolean = false
+  var velocity: Boolean = false
+  var velocitySnapshots: Boolean = false
+  var devAuth: Boolean = false
+
+  fun all() {
+    enabled = true
+    includeMavenCentral = true
+    fabric = true
+    neoforged = true
+    paper = true
+    velocity = true
+    velocitySnapshots = true
+    devAuth = true
+  }
+}
+
+open class McmetaDependencyConfigurations {
+  var fabricLoader: String = "modImplementation"
+  var fabricApi: String = "modImplementation"
+  var neoForge: String = "implementation"
+  var paperApi: String = "compileOnly"
+  var velocityApi: String = "compileOnly"
+  var velocityAnnotationProcessor: String = "annotationProcessor"
+}
+
+open class McmetaDependencies {
+  var enabled: Boolean = false
+  var fabricLoader: Boolean = false
+  var fabricApi: Boolean = false
+  var neoForge: Boolean = false
+  var paperApi: Boolean = false
+  var velocityApi: Boolean = false
+  var velocityAnnotationProcessor: Boolean = false
+  val configurations = McmetaDependencyConfigurations()
+  var paperApiVersion: String? = null
+  var velocityApiVersion: String? = null
+
+  fun all() {
+    enabled = true
+    fabricLoader = true
+    fabricApi = true
+    neoForge = true
+    paperApi = true
+    velocityApi = true
+    velocityAnnotationProcessor = true
+  }
+
+  fun configurations(action: Action<McmetaDependencyConfigurations>) {
+    action.execute(configurations)
+  }
+}
+
+private fun applyOptions(project: Project, extension: McmetaExtension) {
+  configureRepositories(project, extension.repositories)
+  configureDependencies(project, extension)
+}
+
+private fun configureRepositories(project: Project, options: McmetaRepositories) {
+  if (!options.enabled) return
+  if (options.includeMavenCentral) {
+    project.repositories.mavenCentral()
+  }
+  if (options.fabric) {
+    addRepo(project, "Fabric", "https://maven.fabricmc.net/")
+  }
+  if (options.neoforged) {
+    addRepo(project, "NeoForged", "https://maven.neoforged.net/releases")
+  }
+  if (options.paper) {
+    addRepo(project, "PaperMC", "https://repo.papermc.io/repository/maven-public/")
+  }
+  if (options.velocity) {
+    addRepo(project, "Velocity", "https://repo.velocitypowered.com/releases/") { repo ->
+      repo.content { it.includeGroup("com.velocitypowered") }
+    }
+  }
+  if (options.velocitySnapshots) {
+    addRepo(project, "VelocitySnapshots", "https://repo.velocitypowered.com/snapshots/") { repo ->
+      repo.content { it.includeGroup("com.velocitypowered") }
+    }
+  }
+  if (options.devAuth) {
+    addRepo(
+      project,
+      "DevAuth",
+      "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1"
+    )
+  }
+}
+
+private fun addRepo(
+  project: Project,
+  name: String,
+  url: String,
+  configure: (MavenArtifactRepository) -> Unit = {},
+) {
+  val existing = project.repositories.filterIsInstance<MavenArtifactRepository>()
+    .any { it.url.toString().trimEnd('/') == url.trimEnd('/') }
+  if (existing) return
+  val repo = project.repositories.maven { maven ->
+    maven.name = name
+    maven.url = project.uri(url)
+  }
+  configure(repo)
+}
+
+private fun configureDependencies(project: Project, extension: McmetaExtension) {
+  val options = extension.dependencies
+  if (!options.enabled) return
+  if (!ensureResolved(project, extension)) return
+
+  if (options.fabricLoader) {
+    val version = extraString(project, "mcmetaFabricLoaderVersion")
+    addDependency(project, options.configurations.fabricLoader, "net.fabricmc:fabric-loader:$version", "fabric-loader")
+  }
+  if (options.fabricApi) {
+    val version = extraString(project, "mcmetaFabricApiVersion")
+    addDependency(project, options.configurations.fabricApi, "net.fabricmc.fabric-api:fabric-api:$version", "fabric-api")
+  }
+  if (options.neoForge) {
+    val version = extraString(project, "mcmetaNeoForgeVersion")
+    addDependency(project, options.configurations.neoForge, "net.neoforged:neoforge:$version", "neoforge")
+  }
+  if (options.paperApi) {
+    val version = options.paperApiVersion?.takeIf { it.isNotBlank() }
+      ?: "${extension.minecraftVersion}-R0.1-SNAPSHOT"
+    addDependency(project, options.configurations.paperApi, "io.papermc.paper:paper-api:$version", "paper-api")
+  }
+  if (options.velocityApi) {
+    val version = options.velocityApiVersion?.takeIf { it.isNotBlank() }
+      ?: extraString(project, "mcmetaVelocityVersion")
+    addDependency(project, options.configurations.velocityApi, "com.velocitypowered:velocity-api:$version", "velocity-api")
+  }
+  if (options.velocityAnnotationProcessor) {
+    val version = options.velocityApiVersion?.takeIf { it.isNotBlank() }
+      ?: extraString(project, "mcmetaVelocityVersion")
+    addDependency(
+      project,
+      options.configurations.velocityAnnotationProcessor,
+      "com.velocitypowered:velocity-api:$version",
+      "velocity-api (annotation processor)"
+    )
+  }
+}
+
+private fun ensureResolved(project: Project, extension: McmetaExtension): Boolean {
+  val extra = project.extensions.extraProperties
+  if (extra.has("mcmetaMinecraftVersion")) return true
+  McmetaResolver(project, extension).resolve()
+  return extra.has("mcmetaMinecraftVersion")
+}
+
+private fun extraString(project: Project, key: String): String? {
+  val extra = project.extensions.extraProperties
+  if (!extra.has(key)) return null
+  val value = extra.get(key)
+  return value?.toString()
+}
+
+private fun addDependency(project: Project, configuration: String, notation: String, label: String) {
+  if (notation.endsWith(":null") || notation.endsWith(":")) {
+    project.logger.warn("mcmeta: ${label} version missing; skipping dependency")
+    return
+  }
+  val config = project.configurations.findByName(configuration)
+  if (config == null) {
+    project.logger.warn("mcmeta: configuration '${configuration}' missing; skipping ${label}")
+    return
+  }
+  project.dependencies.add(configuration, notation)
 }
 
 private class McmetaResolver(
@@ -67,9 +257,13 @@ private class McmetaResolver(
   private val cacheDir = File(project.gradle.gradleUserHomeDir, "caches/mcmeta").apply { mkdirs() }
 
   fun resolve() {
-    val sanitized = sanitizeVersion(extension.minecraftVersion)
+    val resolvedVersion = resolveRequestedVersion()
+    val sanitized = sanitizeVersion(resolvedVersion)
     if (sanitized.isBlank()) {
       throw IllegalStateException("mcmeta: invalid minecraftVersion")
+    }
+    if (extension.minecraftVersion.isBlank()) {
+      extension.minecraftVersion = resolvedVersion
     }
 
     val cacheFile = File(cacheDir, "$sanitized.json")
@@ -93,10 +287,35 @@ private class McmetaResolver(
     val bundle = gson.fromJson(payload, McmetaBundle::class.java)
     val loaderIndex = gson.fromJson(gson.toJson(bundle.loaderIndex), LoaderIndex::class.java)
     val artifacts = gson.fromJson(gson.toJson(bundle.artifacts), Artifacts::class.java)
-    applyBundle(loaderIndex, artifacts, sanitized)
+    val meta = gson.fromJson(gson.toJson(bundle.meta), MetaV1::class.java)
+    applyBundle(loaderIndex, artifacts, meta, sanitized)
+    applyLoom(fetchLoomIndex())
     if (extension.enableManifoldPreprocessor) {
       configureManifoldPreprocessor(artifacts, extension.minecraftVersion)
     }
+  }
+
+  private fun resolveRequestedVersion(): String {
+    val requested = extension.minecraftVersion.trim()
+    if (requested.isNotEmpty()) {
+      return requested
+    }
+    val manifest = loadManifest() ?: throw IllegalStateException(
+      "mcmeta: minecraftVersion not set and manifest unavailable"
+    )
+    val latestRelease = manifest.latest?.release
+    if (!latestRelease.isNullOrBlank()) {
+      project.logger.lifecycle("mcmeta: minecraftVersion not set; using latest release ${latestRelease}")
+      return latestRelease
+    }
+    val fallback = manifest.versions
+      ?.mapNotNull { it.id }
+      ?.firstOrNull { it.matches(Regex("^[0-9]+\\.[0-9]+(\\.[0-9]+)?$")) }
+    if (!fallback.isNullOrBlank()) {
+      project.logger.lifecycle("mcmeta: minecraftVersion not set; using latest stable ${fallback}")
+      return fallback
+    }
+    throw IllegalStateException("mcmeta: unable to determine latest stable Minecraft version")
   }
 
   private fun fetchData(version: String): String {
@@ -117,6 +336,36 @@ private class McmetaResolver(
     )
   }
 
+  private fun fetchLoomIndex(): LoomIndex? {
+    val branch = extension.loomBranch.trim()
+    if (branch.isEmpty()) {
+      return null
+    }
+    val cacheFile = File(cacheDir, "loom-index.json")
+    var payload: String? = if (cacheFile.exists()) cacheFile.readText() else null
+    val expired = cacheFile.exists() && isExpired(cacheFile)
+    if (payload == null || expired) {
+      try {
+        val url = "${extension.rawBase}/${extension.repo}/${branch}/loom-index.json"
+        payload = fetchText(url)
+        cacheFile.writeText(payload)
+      } catch (err: Exception) {
+        if (payload != null) {
+          project.logger.warn("mcmeta: loom fetch failed, using cached data: ${err.message}")
+        } else {
+          project.logger.warn("mcmeta: loom fetch failed: ${err.message}")
+          return null
+        }
+      }
+    }
+    return try {
+      gson.fromJson(payload, LoomIndex::class.java)
+    } catch (err: Exception) {
+      project.logger.warn("mcmeta: loom parse failed: ${err.message}")
+      null
+    }
+  }
+
   private fun fetchJson(url: String): Any {
     val connection = URL(url).openConnection() as HttpURLConnection
     connection.connectTimeout = 10_000
@@ -127,7 +376,12 @@ private class McmetaResolver(
     }
   }
 
-  private fun applyBundle(loaderIndex: LoaderIndex, artifacts: Artifacts, version: String) {
+  private fun applyBundle(
+    loaderIndex: LoaderIndex,
+    artifacts: Artifacts,
+    meta: MetaV1,
+    version: String,
+  ) {
     val loaders = loaderIndex.loaders
     val fabricLoader = loaders?.fabric?.loader?.firstOrNull()
     val quiltLoader = loaders?.quilt?.loader?.firstOrNull()
@@ -149,6 +403,7 @@ private class McmetaResolver(
     val bungeecordVersions = bungeecordGroups.flatMap { it.versions ?: emptyList() }
     val bungeecordVersion = bungeecordVersions.firstOrNull()
     val foliaVersion = artifacts.artifacts?.folia?.versions?.firstOrNull()
+    val purpurVersion = artifacts.artifacts?.purpur?.versions?.firstOrNull()
 
     val extra = project.extensions.extraProperties
     extra.set("mcmetaMinecraftVersion", version)
@@ -162,6 +417,8 @@ private class McmetaResolver(
     extra.set("mcmetaPaperVersion", paperVersion)
     extra.set("mcmetaVelocityVersion", velocityVersion)
     extra.set("mcmetaFoliaVersion", foliaVersion)
+    extra.set("mcmetaPurpurVersion", purpurVersion)
+    extra.set("mcmetaJdkVersion", meta.jdk)
 
     extra.set("mcmetaFabricLoaderVersions", loaders?.fabric?.loader ?: emptyList<String>())
     extra.set("mcmetaQuiltLoaderVersions", loaders?.quilt?.loader ?: emptyList<String>())
@@ -202,6 +459,48 @@ private class McmetaResolver(
       }.toMap()
     )
     extra.set("mcmetaFoliaVersions", artifacts.artifacts?.folia?.versions ?: emptyList<String>())
+    extra.set("mcmetaPurpurVersions", artifacts.artifacts?.purpur?.versions ?: emptyList<String>())
+  }
+
+  private fun applyLoom(loom: LoomIndex?) {
+    if (loom == null) return
+    val extra = project.extensions.extraProperties
+
+    val fabric = loom.fabric
+    if (!fabric?.latest.isNullOrBlank()) {
+      extra.set("mcmetaFabricLoomVersion", fabric?.latest)
+    }
+    if (!fabric?.stable.isNullOrBlank()) {
+      extra.set("mcmetaFabricLoomStableVersion", fabric?.stable)
+    }
+    if (!fabric?.snapshot.isNullOrBlank()) {
+      extra.set("mcmetaFabricLoomSnapshotVersion", fabric?.snapshot)
+    }
+    if (!fabric?.versions.isNullOrEmpty()) {
+      extra.set("mcmetaFabricLoomVersions", fabric?.versions ?: emptyList<String>())
+    }
+    if (!fabric?.latest.isNullOrBlank()) {
+      val isSnapshot = fabric?.latest?.contains("SNAPSHOT", ignoreCase = true) == true
+      extra.set("mcmetaFabricLoomIsSnapshot", isSnapshot)
+    }
+
+    val quilt = loom.quilt
+    if (!quilt?.latest.isNullOrBlank()) {
+      extra.set("mcmetaQuiltLoomVersion", quilt?.latest)
+    }
+    if (!quilt?.stable.isNullOrBlank()) {
+      extra.set("mcmetaQuiltLoomStableVersion", quilt?.stable)
+    }
+    if (!quilt?.snapshot.isNullOrBlank()) {
+      extra.set("mcmetaQuiltLoomSnapshotVersion", quilt?.snapshot)
+    }
+    if (!quilt?.versions.isNullOrEmpty()) {
+      extra.set("mcmetaQuiltLoomVersions", quilt?.versions ?: emptyList<String>())
+    }
+    if (!quilt?.latest.isNullOrBlank()) {
+      val isSnapshot = quilt?.latest?.contains("SNAPSHOT", ignoreCase = true) == true
+      extra.set("mcmetaQuiltLoomIsSnapshot", isSnapshot)
+    }
   }
 
   private fun configureManifoldPreprocessor(artifacts: Artifacts, requestedVersion: String) {
@@ -398,10 +697,24 @@ private data class McmetaBundle(
 
 private data class MojangManifest(
   val versions: List<MojangVersion>?,
+  val latest: MojangLatest?,
+)
+
+private data class MetaV1(
+  val schema: String?,
+  val minecraft: String?,
+  val sources: Map<String, String>?,
+  val notes: List<String>?,
+  val jdk: Int?,
 )
 
 private data class MojangVersion(
   val id: String,
+)
+
+private data class MojangLatest(
+  val release: String?,
+  val snapshot: String?,
 )
 
 private data class LoaderIndex(
@@ -431,6 +744,7 @@ private data class ArtifactFamilies(
   val paper: ProjectArtifact?,
   val velocity: ProjectArtifact?,
   val folia: ProjectArtifact?,
+  val purpur: ProjectArtifact?,
   val proxies: Proxies?,
 )
 
@@ -473,4 +787,16 @@ private data class ProxyRange(
 private data class ModrinthVersion(
   @SerializedName("version_number")
   val versionNumber: String,
+)
+
+private data class LoomIndex(
+  val fabric: LoomEntry?,
+  val quilt: LoomEntry?,
+)
+
+private data class LoomEntry(
+  val latest: String?,
+  val stable: String?,
+  val snapshot: String?,
+  val versions: List<String>?,
 )
