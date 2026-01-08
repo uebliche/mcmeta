@@ -2,7 +2,7 @@
   "schema": "mcmeta/v1",
   "minecraft": "1.21.11",
   "sources": {
-    "fabric": "error",
+    "fabric": "ok",
     "fabric-api": "ok",
     "folia": "ok",
     "forge": "ok",
