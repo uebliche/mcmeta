@@ -3,7 +3,9 @@
   "minecraft": "26.1-snapshot-2",
   "loaders": {
     "fabric": {
-      "loader": []
+      "loader": [
+        "0.18.4"
+      ]
     },
     "quilt": {
       "loader": []

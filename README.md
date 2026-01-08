@@ -21,7 +21,7 @@ Files:
   - API 1.16: 1.16-R0.1..1.16-R0.4
 
 ## Sources
-- Fabric: error
+- Fabric: ok
 - Fabric-api: ok
 - Folia: error
 - Forge: partial
