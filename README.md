@@ -3,11 +3,10 @@
 This branch contains generated Fabric/Quilt Loom versions.
 
 ## Fabric Loom
-- Latest: 1.15.0-alpha.25
-- Stable: 1.15.0-alpha.25
-- Snapshot: 0.3.0-SNAPSHOT
+- Latest: 1.14-SNAPSHOT
+- Stable: 1.14.10
+- Snapshot: 1.14-SNAPSHOT
 
 ## Quilt Loom
 - Latest: 1.14.2
 - Stable: 1.14.2
-
