@@ -1,7 +1,0 @@
-{
-  "schema": "mcmeta/v1",
-  "minecraft": "proxy/bungeecord-latest",
-  "sources": {
-    "bungeecord": "ok"
-  }
-}
