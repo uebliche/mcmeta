@@ -79,7 +79,6 @@ open class McmetaRepositories {
   var paper: Boolean = false
   var velocity: Boolean = false
   var velocitySnapshots: Boolean = false
-  var devAuth: Boolean = false
 
   fun all() {
     enabled = true
@@ -89,7 +88,6 @@ open class McmetaRepositories {
     paper = true
     velocity = true
     velocitySnapshots = true
-    devAuth = true
   }
 }
 
@@ -157,13 +155,6 @@ private fun configureRepositories(project: Project, options: McmetaRepositories)
     addRepo(project, "VelocitySnapshots", "https://repo.velocitypowered.com/snapshots/") { repo ->
       repo.content { it.includeGroup("com.velocitypowered") }
     }
-  }
-  if (options.devAuth) {
-    addRepo(
-      project,
-      "DevAuth",
-      "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1"
-    )
   }
 }
 
