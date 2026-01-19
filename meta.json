@@ -10,7 +10,24 @@
     "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
+  },
+  "yarn": {
+    "latest": "25w44a+build.7",
+    "versions": [
+      "25w44a+build.7",
+      "25w44a+build.6",
+      "25w44a+build.5",
+      "25w44a+build.4",
+      "25w44a+build.3",
+      "25w44a+build.2",
+      "25w44a+build.12",
+      "25w44a+build.11",
+      "25w44a+build.10",
+      "25w44a+build.1"
+    ]
   },
   "release_time": "2025-10-28T14:02:28+00:00",
   "protocol_version": 1073742100,
