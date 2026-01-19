@@ -7,10 +7,30 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "25w09b+build.7",
+    "versions": [
+      "25w09b+build.7",
+      "25w09b+build.6",
+      "25w09b+build.5",
+      "25w09b+build.4",
+      "25w09b+build.3",
+      "25w09b+build.2",
+      "25w09b+build.1"
+    ]
+  },
+  "release_time": "2025-02-27T11:07:08+00:00",
+  "protocol_version": 1073742061,
+  "data_version": 4318,
+  "resource_pack_format": 53,
+  "data_pack_format": 69,
   "notes": [
     "forge maven metadata has no versions for minecraft 25w09b",
     "minestom maven metadata has no versions for minecraft 25w09b",
