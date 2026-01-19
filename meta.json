@@ -10,7 +10,15 @@
     "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "error"
+    "purpur": "error",
+    "quilt": "error",
+    "yarn": "ok"
+  },
+  "yarn": {
+    "latest": "3D Shareware v1.34.2",
+    "versions": [
+      "3D Shareware v1.34.2"
+    ]
   },
   "release_time": "2019-04-01T11:18:08+00:00",
   "protocol_version": 1,
