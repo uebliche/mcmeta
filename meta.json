@@ -7,10 +7,26 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "25w03a+build.3",
+    "versions": [
+      "25w03a+build.3",
+      "25w03a+build.2",
+      "25w03a+build.1"
+    ]
+  },
+  "release_time": "2025-01-15T14:28:04+00:00",
+  "protocol_version": 1073742054,
+  "data_version": 4304,
+  "resource_pack_format": 48,
+  "data_pack_format": 63,
   "notes": [
     "forge maven metadata has no versions for minecraft 25w03a",
     "minestom maven metadata has no versions for minecraft 25w03a",
