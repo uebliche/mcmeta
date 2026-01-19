@@ -299,71 +299,72 @@
         "2"
       ]
     },
-    "proxies": {
-      "velocity": {
-        "type": "papermc",
-        "project": "velocity",
-        "groups": [
-          {
-            "api": "3.0.0",
-            "versions": [
-              "3.4.0-SNAPSHOT",
-              "3.3.0-SNAPSHOT"
-            ],
-            "range": {
-              "newest": "3.4.0-SNAPSHOT",
-              "oldest": "3.3.0-SNAPSHOT"
-            }
-          }
-        ]
-      },
-      "bungeecord": {
-        "type": "maven",
-        "project": "bungeecord",
-        "groups": [
-          {
-            "api": "1.21",
-            "versions": [
-              "1.21-R0.4",
-              "1.21-R0.3",
-              "1.21-R0.2",
-              "1.21-R0.1"
-            ],
-            "range": {
-              "newest": "1.21-R0.4",
-              "oldest": "1.21-R0.1"
-            }
-          },
-          {
-            "api": "1.20",
-            "versions": [
-              "1.20-R0.2",
-              "1.20-R0.1"
-            ],
-            "range": {
-              "newest": "1.20-R0.2",
-              "oldest": "1.20-R0.1"
-            }
-          },
-          {
-            "api": "1.16",
-            "versions": [
-              "1.16-R0.4",
-              "1.16-R0.3",
-              "1.16-R0.2",
-              "1.16-R0.1"
-            ],
-            "range": {
-              "newest": "1.16-R0.4",
-              "oldest": "1.16-R0.1"
-            }
-          }
-        ]
-      }
+    "purpur": {
+      "type": "purpur",
+      "project": "purpur",
+      "versions": [
+        "2233",
+        "2232",
+        "2231",
+        "2230",
+        "2229",
+        "2228",
+        "2227",
+        "2226",
+        "2225",
+        "2224",
+        "2223",
+        "2222",
+        "2221",
+        "2220",
+        "2219",
+        "2218",
+        "2217",
+        "2216",
+        "2215",
+        "2214",
+        "2213",
+        "2212",
+        "2211",
+        "2210",
+        "2209",
+        "2208",
+        "2207",
+        "2206",
+        "2205",
+        "2204",
+        "2203",
+        "2202",
+        "2201",
+        "2200",
+        "2199",
+        "2198",
+        "2197",
+        "2196",
+        "2195",
+        "2194",
+        "2193",
+        "2192",
+        "2191",
+        "2190",
+        "2189",
+        "2188",
+        "2187",
+        "2186",
+        "2185",
+        "2184",
+        "2183",
+        "2182",
+        "2181",
+        "2180",
+        "2179",
+        "2178",
+        "2177"
+      ]
     },
     "minecraft": {
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/64a5b26f71ddcf8961547d368858727c35f27afe/1.20.6.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/32e430c8f6c71bc2c3ccd008fa7050b6b740d85e/1.20.6.json"
       },
       "client": {
         "url": "https://piston-data.mojang.com/v1/objects/05b6f1c6b46a29d6ea82b4e0d42190e42402030f/client.jar",
