@@ -7,13 +7,18 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "error"
+    "purpur": "error",
+    "quilt": "error",
+    "yarn": "error"
   },
+  "release_time": "2013-04-23T21:51:22+00:00",
   "notes": [
     "forge maven metadata has no versions for minecraft 13w16b",
     "minestom maven metadata has no versions for minecraft 13w16b",
+    "mojang server metadata missing",
     "neoforge maven metadata has no versions for minecraft 13w16b"
   ]
 }
