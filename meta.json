@@ -10,9 +10,32 @@
     "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
   "jdk": 16,
+  "yarn": {
+    "latest": "1.17.1-pre1+build.19",
+    "versions": [
+      "1.17.1-pre1+build.19",
+      "1.17.1-pre1+build.18",
+      "1.17.1-pre1+build.17",
+      "1.17.1-pre1+build.16",
+      "1.17.1-pre1+build.15",
+      "1.17.1-pre1+build.14",
+      "1.17.1-pre1+build.13",
+      "1.17.1-pre1+build.12",
+      "1.17.1-pre1+build.11",
+      "1.17.1-pre1+build.10",
+      "1.17.1-pre1+build.9",
+      "1.17.1-pre1+build.5",
+      "1.17.1-pre1+build.4",
+      "1.17.1-pre1+build.3",
+      "1.17.1-pre1+build.2",
+      "1.17.1-pre1+build.1"
+    ]
+  },
   "release_time": "2021-06-18T12:24:40+00:00",
   "protocol_version": 1073741860,
   "data_version": 2725,
