@@ -7,13 +7,18 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "error"
+    "purpur": "error",
+    "quilt": "error",
+    "yarn": "error"
   },
+  "release_time": "2017-05-03T14:50:23+00:00",
   "notes": [
     "forge maven metadata has no versions for minecraft 17w18a",
     "minestom maven metadata has no versions for minecraft 17w18a",
+    "mojang server metadata missing",
     "neoforge maven metadata has no versions for minecraft 17w18a"
   ]
 }
