@@ -7,10 +7,40 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "21w17a+build.9",
+    "versions": [
+      "21w17a+build.9",
+      "21w17a+build.8",
+      "21w17a+build.7",
+      "21w17a+build.22",
+      "21w17a+build.21",
+      "21w17a+build.20",
+      "21w17a+build.2",
+      "21w17a+build.19",
+      "21w17a+build.18",
+      "21w17a+build.17",
+      "21w17a+build.16",
+      "21w17a+build.15",
+      "21w17a+build.14",
+      "21w17a+build.13",
+      "21w17a+build.12",
+      "21w17a+build.11",
+      "21w17a+build.10"
+    ]
+  },
+  "release_time": "2021-04-28T13:54:05+00:00",
+  "protocol_version": 1073741849,
+  "data_version": 2712,
+  "resource_pack_format": 7,
+  "data_pack_format": 7,
   "notes": [
     "forge maven metadata has no versions for minecraft 21w17a",
     "minestom maven metadata has no versions for minecraft 21w17a",
