@@ -1,22 +1,51 @@
-# mcmeta proxy data
+# mcmeta data for Minecraft 1.19.2
 
-This branch contains generated proxy metadata for `1.19.2`.
+This branch contains generated metadata for Minecraft 1.19.2.
 
 Files:
 - loader-index.json
 - artifacts.json
 - meta.json
 
-## Runtime
+## Meta
+- Schema: mcmeta/v1
+- Minecraft: 1.19.2
 - JDK: 17
-
-## Proxies
-- Velocity: 1 api lines (latest: 3.0.0)
-  - API 3.0.0: 3.1.2-SNAPSHOT..3.4.0-SNAPSHOT
-- BungeeCord: 3 api lines (latest: 1.21)
-  - API 1.21: 1.21-R0.1..1.21-R0.4
-  - API 1.20: 1.20-R0.1..1.20-R0.2
-  - API 1.16: 1.16-R0.1..1.16-R0.4
+- Release time: 2022-08-05T11:57:05+00:00
+- Protocol version: 760
+- Data version: 3120
+- Resource pack format: 9
+- Data pack format: 10
+- Yarn latest: 1.19.2+build.28
+- Yarn versions: 28
+  - 1.19.2+build.28
+  - 1.19.2+build.27
+  - 1.19.2+build.26
+  - 1.19.2+build.25
+  - 1.19.2+build.24
+  - 1.19.2+build.23
+  - 1.19.2+build.22
+  - 1.19.2+build.21
+  - 1.19.2+build.20
+  - 1.19.2+build.19
+  - 1.19.2+build.18
+  - 1.19.2+build.17
+  - 1.19.2+build.16
+  - 1.19.2+build.15
+  - 1.19.2+build.14
+  - 1.19.2+build.13
+  - 1.19.2+build.12
+  - 1.19.2+build.11
+  - 1.19.2+build.10
+  - 1.19.2+build.9
+  - 1.19.2+build.8
+  - 1.19.2+build.7
+  - 1.19.2+build.6
+  - 1.19.2+build.5
+  - 1.19.2+build.4
+  - 1.19.2+build.3
+  - 1.19.2+build.2
+  - 1.19.2+build.1
 
 ## Sources
 - Fabric: ok
@@ -27,10 +56,573 @@ Files:
 - Mojang: ok
 - Neoforge: partial
 - Paper: ok
+- Purpur: ok
 - Quilt: ok
+- Yarn: ok
 
 ## Notes
 - minestom maven metadata has no versions for minecraft 1.19.2
 - neoforge maven metadata has no versions for minecraft 1.19.2
+
+## Loader index
+- Schema: mcmeta/v1
+- Minecraft: 1.19.2
+- Fabric versions: 1
+  - 0.18.4
+- Quilt versions: 1
+  - 0.30.0-beta.0
+- Forge versions: 1
+  - 1.19.2-43.5.2
+- NeoForge versions: 0
+  - n/a
+
+## Artifacts index
+- Schema: mcmeta/v1
+- Minecraft: 1.19.2
+
+### Fabric API (Modrinth)
+- Type: modrinth
+- Project id: P7dR8mSH
+- Loaders: 1
+  - fabric
+- Versions: 22
+  - 0.77.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/6g95K303/fabric-api-0.77.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/6g95K303/fabric-api-0.77.0%2B1.19.2.jar)
+        - sha1: 558cd912d95c9dec513eb87cc813d3a68aa93fa5
+        - sha512: 1b8f180fe24a971b1a28758f1fa2cb4afa7f52d8bac6c9e68e6dcf0c4fc6cf2024becb1dabfa17e5a24b7c47aecd945af3531d1b3c72319d986011f1d0067338
+  - 0.76.1+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/fO05PwUR/fabric-api-0.76.1%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/fO05PwUR/fabric-api-0.76.1%2B1.19.2.jar)
+        - sha1: 1f4ea036c5cdc7931a663deb85abc279d00c81c5
+        - sha512: e2954043f33415b3d2cc56cb1c05dadd0ffe13eb865aa9e9c5063b66021dc110a891d80a3b31773c8c8a5ba34db51af077c71d2867d97570b304ee8525a769dd
+  - 0.76.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/hfsU4hXq/fabric-api-0.76.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/hfsU4hXq/fabric-api-0.76.0%2B1.19.2.jar)
+        - sha1: f29a349b29324338ebe3acaa2914637008be15f4
+        - sha512: 4524c26af66bf266eb076bfd1682fa06d36f0b8ee7af46fc070447e2fb31885aa3d212a5a7dbfaebf57ba69e939cbd2d6e500055c246640cd0d5845c7712d625
+  - 0.75.1+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/6iOab8Tp/fabric-api-0.75.1%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/6iOab8Tp/fabric-api-0.75.1%2B1.19.2.jar)
+        - sha1: 8c39ce0a82cb2b5f9e909f47a61d7825e29ccf05
+        - sha512: df9727346b1b645364dd9f847e362162aff47731fc4868e9a9c3d7402efd3276e004ed9d73809a4e80ddf0d7551dba49cec7e9abcac46ec9d7639f2491b5685a
+  - 0.75.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/VOZ8sKAb/fabric-api-0.75.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/VOZ8sKAb/fabric-api-0.75.0%2B1.19.2.jar)
+        - sha1: f088148f1fa5229902201c2e035c67442c90e276
+        - sha512: 5879866d0390b52202eb79d37d36705121ee0c9499c764432751336949649407378104248190e08ba1dcfe7e09af5fed1992fc6b5462d7f7a406891decd13ef6
+  - 0.73.2+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/wRYBRKfJ/fabric-api-0.73.2%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/wRYBRKfJ/fabric-api-0.73.2%2B1.19.2.jar)
+        - sha1: 7a351ef5e53b4e708172ea0e3b56527a2fd7ffce
+        - sha512: 2d26ac60a61dc00dec356157088fc7844228d60179ae0ff98f123eab127a4b3b109dcc30a8763a2484b12d3dd2f3c040e35c61e1a28145c3102d8871476fe621
+  - 0.73.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/6XyLcjn4/fabric-api-0.73.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/6XyLcjn4/fabric-api-0.73.0%2B1.19.2.jar)
+        - sha1: ff72eca059050bb6d13dbc4e9f140a7e4749612e
+        - sha512: dc1de5b42d76267ff5483e586fa8dd8a6a6d03a3c8451a832dc379b8047cc6378c2cdfd6fd399c34b5c27bd0dcac9c7b358960a16809058fa5914e62fb8a2621
+  - 0.72.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/qbOkGdTB/fabric-api-0.72.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/qbOkGdTB/fabric-api-0.72.0%2B1.19.2.jar)
+        - sha1: 2c4c698167e23e30a5132a2ef3523a3b0e704352
+        - sha512: 17ca188cb8edd753ca0d2208ddd131c5721bc739214a29b865888b577d5c6871c23ce5bd474525f920348c6a0149660eefc9835eadc58b7029febd0153ba46f7
+  - 0.71.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/QL74kcxU/fabric-api-0.71.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/QL74kcxU/fabric-api-0.71.0%2B1.19.2.jar)
+        - sha1: 3f2a4b23c5ee54e632c03c2af9b4817b7ca2dd3c
+        - sha512: 5cea3989b4fc36824e4c4f904bff8bb8687cd2cf46ec7b7e7a6c669751b0daf661ea1c109a5be70dffd7ace4eeae2b3c1c53adda90013bf6b6bb328651e93a12
+  - 0.70.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/mrB7EiW4/fabric-api-0.70.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/mrB7EiW4/fabric-api-0.70.0%2B1.19.2.jar)
+        - sha1: af9d3dc8c1adee121e284d3ca429abfd06f23374
+        - sha512: 39aef9d1413458ad31e57094c27415fba4ced4076d9a21782d043612a692d2a206fdea94a1eb79fbcd492502e4a0bf29b068e6f4f71c5c49d588846fe15de208
+  - 0.69.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/25Hm7c3j/fabric-api-0.69.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/25Hm7c3j/fabric-api-0.69.0%2B1.19.2.jar)
+        - sha1: 91ccd8078d374160dcbe176512b203fbd3a5e923
+        - sha512: 783b081479f2de98075a328b36e535cd60d30245dd8d579d631130401923101444a602dc15bcb433a6f5785e2a5e6422188061fa30c6ab6fff28d238ccc4eb38
+  - 0.68.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/BXfHW8Ww/fabric-api-0.68.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/BXfHW8Ww/fabric-api-0.68.0%2B1.19.2.jar)
+        - sha1: bb4d02f261723dd81effd117df9437bfa20dc728
+        - sha512: bfe8b60875794c60b589754f9f6abefdd97581463d31dc4d2ac68a0735aea060e925964ba5bfdbb14dcab1ec9f426fb8aebba86ca28bd0dfd052052b435786e7
+  - 0.67.1+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/gdGDJ2bh/fabric-api-0.67.1%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/gdGDJ2bh/fabric-api-0.67.1%2B1.19.2.jar)
+        - sha1: 1f21538bb3d1ef459627b37cbec84008f51be36d
+        - sha512: 6dca8eb1695aebb9c47df7a86031e1a6438d91d8068d62f8176656739be9ef7f08c12868398b9a7a28a4f45c98cf85b086acb97dd67f112e97e9191dc6dc41b3
+  - 0.67.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/gugCMs27/fabric-api-0.67.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/gugCMs27/fabric-api-0.67.0%2B1.19.2.jar)
+        - sha1: 7f8fe33471586644676caa2ff28a765228617b85
+        - sha512: a21f7dbcb0b56a7dd0d6456e3038fad9b7a814681ad81eca71350c38e8b3385592436159c8719688805a03b62236eda6d01f723cff73958121effd0179c10bc9
+  - 0.66.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/8rIblgME/fabric-api-0.66.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/8rIblgME/fabric-api-0.66.0%2B1.19.2.jar)
+        - sha1: bb8b91dde3d3140a3b8e83b0d2631d9e9e73e2ff
+        - sha512: afaa80ad396c16da7cbac30a1b63b8d7c6d10856c07053c6c28d083cd203be0d133aa5fed5da43b1c8abb1a96bc58b32e1ac948a5edcf3f0d18358527eb26f72
+  - 0.64.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/9nx74dYD/fabric-api-0.64.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/9nx74dYD/fabric-api-0.64.0%2B1.19.2.jar)
+        - sha1: be9700fc86ae93f21b0a8775a5824eaaedff05a7
+        - sha512: 64c21c31f2a292046bb8eb6e9203e8904d472c39fe6d5e2b46027bd40c0ae711e047ad5266805dae85def15a856d0f56489c3ce28973f963c955a9fabaf17831
+  - 0.63.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/hjQL60eb/fabric-api-0.63.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/hjQL60eb/fabric-api-0.63.0%2B1.19.2.jar)
+        - sha1: 2cb0e1c7db68751eb01a992d77284ac0c9353194
+        - sha512: e238d166434cf895e587569312520fc0f2bf5cc46deeb86707db54de4468ff40f6cb10bb99f8ef2d68e5c7bff045b4919657edb509dc9272e10df12d9ea7478c
+  - 0.62.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/uLpYu4FP/fabric-api-0.62.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/uLpYu4FP/fabric-api-0.62.0%2B1.19.2.jar)
+        - sha1: 25a4d08f232706a10ef0835f3d5844ce2ddd2ad1
+        - sha512: 67514f6f8a3755831ddce54cd33e548f52c70b101014b65056512a77a682079ac7f1dff3bfa1e6fcc15248c963a45091bee83b010fd434715c70ecfeb6431eea
+  - 0.61.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/XV9QDCar/fabric-api-0.61.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/XV9QDCar/fabric-api-0.61.0%2B1.19.2.jar)
+        - sha1: 33bcdba60c1f4b201f8033da1a287de970928101
+        - sha512: 491de6e3cf06711a525f08dbcf97e168e152ad50d9531be5260c3d5507fbc4defcb07f862412078738c6a6705f52bbdd4c4556bc4589b52ae2a03a3b7c5d3527
+  - 0.60.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/0.60.0%2B1.19.2/fabric-api-0.60.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/0.60.0%2B1.19.2/fabric-api-0.60.0%2B1.19.2.jar)
+        - sha1: f50871a5552f12055b9d3f569ae4d1e914cda227
+        - sha512: 8dd02890e3dbe8a87c07706ec8afd77b4fdf67e0e091a2b59cb34f4500bbb2499b9415e1fc94bd3cfb6371d9ebde59f7bfdf5c4d98beac62f54e26e59208b5d7
+  - 0.59.0+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/0.59.0%2B1.19.2/fabric-api-0.59.0%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/0.59.0%2B1.19.2/fabric-api-0.59.0%2B1.19.2.jar)
+        - sha1: d2254514b5c41fae491839045769601c51c546db
+        - sha512: 82d170de030fb9fcf196b2060c47fe7fe16cb60ae5aad6e881282727e2cdd667a47b1622a2b3a53cfb1bbc07f826f9010f5704ff4f33e73380d48ffe46d97955
+  - 0.58.6+1.19.2
+    - Game versions: 1
+      - 1.19.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/0.58.6%2B1.19.2/fabric-api-0.58.6%2B1.19.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/0.58.6%2B1.19.2/fabric-api-0.58.6%2B1.19.2.jar)
+        - sha1: 8e73d8015382496f93f5215fe6b16c41f1d230a2
+        - sha512: b7b82233fc34320e5486d7ba1071c70e142d49514e31d56d5d9042bfe0d9e8fd0d02f4b6553d5420c7eec5dc03f41195d98dec0cd4b12323af178d59ffda2099
+
+### Paper
+- Type: papermc
+- Project: paper
+- Versions: 189
+  - 307
+  - 306
+  - 305
+  - 304
+  - 303
+  - 302
+  - 301
+  - 300
+  - 299
+  - 298
+  - 297
+  - 296
+  - 295
+  - 294
+  - 293
+  - 292
+  - 291
+  - 290
+  - 289
+  - 288
+  - 287
+  - 286
+  - 285
+  - 284
+  - 283
+  - 282
+  - 281
+  - 280
+  - 279
+  - 278
+  - 277
+  - 276
+  - 275
+  - 274
+  - 273
+  - 272
+  - 271
+  - 270
+  - 269
+  - 268
+  - 267
+  - 266
+  - 265
+  - 264
+  - 263
+  - 262
+  - 261
+  - 260
+  - 259
+  - 258
+  - 257
+  - 256
+  - 255
+  - 254
+  - 253
+  - 246
+  - 245
+  - 244
+  - 243
+  - 242
+  - 241
+  - 240
+  - 239
+  - 238
+  - 237
+  - 236
+  - 235
+  - 234
+  - 233
+  - 232
+  - 231
+  - 230
+  - 229
+  - 228
+  - 227
+  - 226
+  - 225
+  - 224
+  - 223
+  - 222
+  - 221
+  - 220
+  - 219
+  - 218
+  - 217
+  - 216
+  - 215
+  - 214
+  - 213
+  - 212
+  - 211
+  - 210
+  - 209
+  - 208
+  - 207
+  - 206
+  - 205
+  - 204
+  - 203
+  - 202
+  - 201
+  - 200
+  - 199
+  - 198
+  - 197
+  - 196
+  - 195
+  - 194
+  - 193
+  - 192
+  - 191
+  - 190
+  - 189
+  - 188
+  - 187
+  - 186
+  - 185
+  - 184
+  - 183
+  - 182
+  - 181
+  - 180
+  - 179
+  - 178
+  - 177
+  - 176
+  - 175
+  - 174
+  - 173
+  - 172
+  - 171
+  - 170
+  - 169
+  - 167
+  - 166
+  - 165
+  - 164
+  - 163
+  - 162
+  - 161
+  - 160
+  - 159
+  - 158
+  - 157
+  - 156
+  - 155
+  - 154
+  - 153
+  - 152
+  - 151
+  - 150
+  - 149
+  - 148
+  - 147
+  - 146
+  - 145
+  - 144
+  - 143
+  - 142
+  - 141
+  - 140
+  - 139
+  - 138
+  - 137
+  - 136
+  - 135
+  - 134
+  - 133
+  - 132
+  - 131
+  - 130
+  - 129
+  - 128
+  - 127
+  - 126
+  - 125
+  - 124
+  - 123
+  - 122
+  - 121
+  - 120
+  - 119
+  - 118
+  - 117
+  - 116
+  - 115
+  - 114
+  - 113
+  - 112
+
+### Folia
+- Type: papermc
+- Project: folia
+- Versions: 0
+  - n/a
+
+### Purpur
+- Type: purpur
+- Project: purpur
+- Versions: 107
+  - 1858
+  - 1857
+  - 1856
+  - 1855
+  - 1854
+  - 1853
+  - 1852
+  - 1851
+  - 1850
+  - 1849
+  - 1848
+  - 1847
+  - 1846
+  - 1845
+  - 1844
+  - 1843
+  - 1842
+  - 1841
+  - 1840
+  - 1839
+  - 1838
+  - 1837
+  - 1836
+  - 1835
+  - 1834
+  - 1833
+  - 1832
+  - 1831
+  - 1830
+  - 1829
+  - 1828
+  - 1827
+  - 1826
+  - 1825
+  - 1824
+  - 1823
+  - 1822
+  - 1821
+  - 1820
+  - 1819
+  - 1818
+  - 1817
+  - 1816
+  - 1815
+  - 1814
+  - 1813
+  - 1812
+  - 1811
+  - 1810
+  - 1809
+  - 1808
+  - 1807
+  - 1806
+  - 1805
+  - 1804
+  - 1803
+  - 1802
+  - 1801
+  - 1800
+  - 1799
+  - 1798
+  - 1797
+  - 1796
+  - 1795
+  - 1794
+  - 1793
+  - 1792
+  - 1791
+  - 1790
+  - 1789
+  - 1788
+  - 1787
+  - 1786
+  - 1785
+  - 1784
+  - 1783
+  - 1782
+  - 1781
+  - 1780
+  - 1779
+  - 1778
+  - 1777
+  - 1776
+  - 1775
+  - 1774
+  - 1773
+  - 1772
+  - 1771
+  - 1770
+  - 1769
+  - 1768
+  - 1767
+  - 1766
+  - 1765
+  - 1764
+  - 1763
+  - 1762
+  - 1761
+  - 1760
+  - 1759
+  - 1758
+  - 1757
+  - 1756
+  - 1755
+  - 1754
+  - 1753
+  - 1752
+
+### Minecraft downloads
+- Version JSON:
+  - Url: [https://piston-meta.mojang.com/v1/packages/ed548106acf3ac7e8205a6ee8fd2710facfa164f/1.19.2.json](https://piston-meta.mojang.com/v1/packages/ed548106acf3ac7e8205a6ee8fd2710facfa164f/1.19.2.json)
+- Client jar:
+  - Url: [https://piston-data.mojang.com/v1/objects/055b30d860ead928cba3849ba920c88b6950b654/client.jar](https://piston-data.mojang.com/v1/objects/055b30d860ead928cba3849ba920c88b6950b654/client.jar)
+  - sha1: 055b30d860ead928cba3849ba920c88b6950b654
+  - Size: 21644740
+- Server jar:
+  - Url: [https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar](https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar)
+  - sha1: f69c284232d7c7580bd89a5a4931c3581eae1378
+  - Size: 45609512
+- Client mappings:
+  - Url: [https://piston-data.mojang.com/v1/objects/8e8c9be5dc27802caba47053d4fdea328f7f89bd/client.txt](https://piston-data.mojang.com/v1/objects/8e8c9be5dc27802caba47053d4fdea328f7f89bd/client.txt)
+  - sha1: 8e8c9be5dc27802caba47053d4fdea328f7f89bd
+  - Size: 7236064
+- Server mappings:
+  - Url: [https://piston-data.mojang.com/v1/objects/ed5e6e8334ad67f5af0150beed0f3d156d74bd57/server.txt](https://piston-data.mojang.com/v1/objects/ed5e6e8334ad67f5af0150beed0f3d156d74bd57/server.txt)
+  - sha1: ed5e6e8334ad67f5af0150beed0f3d156d74bd57
+  - Size: 5584686
+
+## Runtimes
+### Minestom
+- Type: maven
+- Coordinates: 1
+  - net.minestom:minestom
+- Versions: 0
+  - n/a
 
 Generated by mcmeta-harvest.
