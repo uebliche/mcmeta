@@ -7,10 +7,28 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "jdk": 17,
+  "yarn": {
+    "latest": "1.20-pre4+build.4",
+    "versions": [
+      "1.20-pre4+build.4",
+      "1.20-pre4+build.3",
+      "1.20-pre4+build.2",
+      "1.20-pre4+build.1"
+    ]
+  },
+  "release_time": "2023-05-19T13:13:45+00:00",
+  "protocol_version": 1073741961,
+  "data_version": 3457,
+  "resource_pack_format": 15,
+  "data_pack_format": 15,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.20-pre4",
     "minestom maven metadata has no versions for minecraft 1.20-pre4",
