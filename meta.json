@@ -7,10 +7,25 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "24w05b+build.2",
+    "versions": [
+      "24w05b+build.2",
+      "24w05b+build.1"
+    ]
+  },
+  "release_time": "2024-02-01T12:55:14+00:00",
+  "protocol_version": 1073741999,
+  "data_version": 3811,
+  "resource_pack_format": 25,
+  "data_pack_format": 30,
   "notes": [
     "forge maven metadata has no versions for minecraft 24w05b",
     "minestom maven metadata has no versions for minecraft 24w05b",
