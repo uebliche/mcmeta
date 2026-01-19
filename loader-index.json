@@ -18,9 +18,7 @@
       ]
     },
     "neoforge": {
-      "loader": [
-        "20.3.8-beta"
-      ]
+      "loader": []
     }
   }
 }
