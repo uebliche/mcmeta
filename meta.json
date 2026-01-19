@@ -7,13 +7,18 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "error"
+    "purpur": "error",
+    "quilt": "error",
+    "yarn": "error"
   },
+  "release_time": "2015-09-02T14:46:40+00:00",
   "notes": [
     "forge maven metadata has no versions for minecraft 15w36a",
     "minestom maven metadata has no versions for minecraft 15w36a",
+    "mojang server metadata missing",
     "neoforge maven metadata has no versions for minecraft 15w36a"
   ]
 }
