@@ -7,10 +7,28 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "24w36a+build.6",
+    "versions": [
+      "24w36a+build.6",
+      "24w36a+build.5",
+      "24w36a+build.4",
+      "24w36a+build.3",
+      "24w36a+build.2"
+    ]
+  },
+  "release_time": "2024-09-04T12:44:12+00:00",
+  "protocol_version": 1073742032,
+  "data_version": 4063,
+  "resource_pack_format": 37,
+  "data_pack_format": 52,
   "notes": [
     "forge maven metadata has no versions for minecraft 24w36a",
     "minestom maven metadata has no versions for minecraft 24w36a",
