@@ -10,9 +10,27 @@
     "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
   "jdk": 21,
+  "yarn": {
+    "latest": "1.21.9-pre1+build.12",
+    "versions": [
+      "1.21.9-pre1+build.12",
+      "1.21.9-pre1+build.11",
+      "1.21.9-pre1+build.10",
+      "1.21.9-pre1+build.9",
+      "1.21.9-pre1+build.8",
+      "1.21.9-pre1+build.7",
+      "1.21.9-pre1+build.6",
+      "1.21.9-pre1+build.5",
+      "1.21.9-pre1+build.4",
+      "1.21.9-pre1+build.3",
+      "1.21.9-pre1+build.2"
+    ]
+  },
   "release_time": "2025-09-16T12:10:12+00:00",
   "protocol_version": 1073742093,
   "data_version": 4549,
