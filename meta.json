@@ -10,7 +10,9 @@
     "mojang": "partial",
     "neoforge": "partial",
     "paper": "ok",
-    "quilt": "error"
+    "purpur": "error",
+    "quilt": "error",
+    "yarn": "error"
   },
   "jdk": 8,
   "release_time": "2017-08-03T12:40:39+00:00",
