@@ -436,72 +436,67 @@
         "1"
       ]
     },
-    "proxies": {
-      "velocity": {
-        "type": "papermc",
-        "project": "velocity",
-        "groups": [
-          {
-            "api": "3.0.0",
-            "versions": [
-              "3.4.0-SNAPSHOT",
-              "3.3.0-SNAPSHOT",
-              "3.2.0-SNAPSHOT"
-            ],
-            "range": {
-              "newest": "3.4.0-SNAPSHOT",
-              "oldest": "3.2.0-SNAPSHOT"
-            }
-          }
-        ]
-      },
-      "bungeecord": {
-        "type": "maven",
-        "project": "bungeecord",
-        "groups": [
-          {
-            "api": "1.21",
-            "versions": [
-              "1.21-R0.4",
-              "1.21-R0.3",
-              "1.21-R0.2",
-              "1.21-R0.1"
-            ],
-            "range": {
-              "newest": "1.21-R0.4",
-              "oldest": "1.21-R0.1"
-            }
-          },
-          {
-            "api": "1.20",
-            "versions": [
-              "1.20-R0.2",
-              "1.20-R0.1"
-            ],
-            "range": {
-              "newest": "1.20-R0.2",
-              "oldest": "1.20-R0.1"
-            }
-          },
-          {
-            "api": "1.16",
-            "versions": [
-              "1.16-R0.4",
-              "1.16-R0.3",
-              "1.16-R0.2",
-              "1.16-R0.1"
-            ],
-            "range": {
-              "newest": "1.16-R0.4",
-              "oldest": "1.16-R0.1"
-            }
-          }
-        ]
-      }
+    "purpur": {
+      "type": "purpur",
+      "project": "purpur",
+      "versions": [
+        "1985",
+        "1984",
+        "1983",
+        "1982",
+        "1981",
+        "1980",
+        "1979",
+        "1978",
+        "1977",
+        "1976",
+        "1975",
+        "1974",
+        "1973",
+        "1972",
+        "1971",
+        "1970",
+        "1969",
+        "1968",
+        "1967",
+        "1966",
+        "1965",
+        "1964",
+        "1963",
+        "1962",
+        "1961",
+        "1960",
+        "1959",
+        "1958",
+        "1957",
+        "1956",
+        "1955",
+        "1954",
+        "1953",
+        "1952",
+        "1951",
+        "1950",
+        "1949",
+        "1948",
+        "1947",
+        "1946",
+        "1945",
+        "1944",
+        "1943",
+        "1942",
+        "1941",
+        "1940",
+        "1939",
+        "1938",
+        "1937",
+        "1936",
+        "1935",
+        "1934"
+      ]
     },
     "minecraft": {
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/507dbbcd0fc089ac40bcd40af6deab831cf9d63c/1.19.4.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/3f48d9a9a1757e4aedba654792905835a08dfedb/1.19.4.json"
       },
       "client": {
         "url": "https://piston-data.mojang.com/v1/objects/958928a560c9167687bea0cefeb7375da1e552a8/client.jar",
