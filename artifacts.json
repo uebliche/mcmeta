@@ -586,70 +586,73 @@
         "1"
       ]
     },
-    "proxies": {
-      "velocity": {
-        "type": "papermc",
-        "project": "velocity",
-        "groups": [
-          {
-            "api": "3.0.0",
-            "versions": [
-              "3.4.0-SNAPSHOT"
-            ],
-            "range": {
-              "newest": "3.4.0-SNAPSHOT",
-              "oldest": "3.4.0-SNAPSHOT"
-            }
-          }
-        ]
-      },
-      "bungeecord": {
-        "type": "maven",
-        "project": "bungeecord",
-        "groups": [
-          {
-            "api": "1.21",
-            "versions": [
-              "1.21-R0.4",
-              "1.21-R0.3",
-              "1.21-R0.2",
-              "1.21-R0.1"
-            ],
-            "range": {
-              "newest": "1.21-R0.4",
-              "oldest": "1.21-R0.1"
-            }
-          },
-          {
-            "api": "1.20",
-            "versions": [
-              "1.20-R0.2",
-              "1.20-R0.1"
-            ],
-            "range": {
-              "newest": "1.20-R0.2",
-              "oldest": "1.20-R0.1"
-            }
-          },
-          {
-            "api": "1.16",
-            "versions": [
-              "1.16-R0.4",
-              "1.16-R0.3",
-              "1.16-R0.2",
-              "1.16-R0.1"
-            ],
-            "range": {
-              "newest": "1.16-R0.4",
-              "oldest": "1.16-R0.1"
-            }
-          }
-        ]
-      }
+    "purpur": {
+      "type": "purpur",
+      "project": "purpur",
+      "versions": [
+        "2416",
+        "2415",
+        "2414",
+        "2413",
+        "2412",
+        "2411",
+        "2410",
+        "2409",
+        "2408",
+        "2407",
+        "2406",
+        "2405",
+        "2404",
+        "2403",
+        "2402",
+        "2401",
+        "2400",
+        "2399",
+        "2398",
+        "2397",
+        "2396",
+        "2395",
+        "2394",
+        "2393",
+        "2392",
+        "2391",
+        "2390",
+        "2389",
+        "2388",
+        "2387",
+        "2386",
+        "2385",
+        "2384",
+        "2383",
+        "2382",
+        "2381",
+        "2380",
+        "2379",
+        "2378",
+        "2377",
+        "2376",
+        "2375",
+        "2374",
+        "2373",
+        "2372",
+        "2371",
+        "2370",
+        "2369",
+        "2368",
+        "2367",
+        "2366",
+        "2365",
+        "2364",
+        "2363",
+        "2362",
+        "2361",
+        "2360",
+        "2359"
+      ]
     },
     "minecraft": {
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/9c6b5e3eb9b4211e4e4299a1f361f20cd8bd9d89/1.21.4.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/4bc3f1bd374cc6f9a8c494893000218fe5a0451b/1.21.4.json"
       },
       "client": {
         "url": "https://piston-data.mojang.com/v1/objects/a7e5a6024bfd3cd614625aa05629adf760020304/client.jar",
