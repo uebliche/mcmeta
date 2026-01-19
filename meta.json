@@ -7,10 +7,25 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "jdk": 17,
+  "yarn": {
+    "latest": "1.18-rc4+build.1",
+    "versions": [
+      "1.18-rc4+build.1"
+    ]
+  },
+  "release_time": "2021-11-29T13:43:42+00:00",
+  "protocol_version": 1073741884,
+  "data_version": 2859,
+  "resource_pack_format": 8,
+  "data_pack_format": 8,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.18-rc4",
     "minestom maven metadata has no versions for minecraft 1.18-rc4",
