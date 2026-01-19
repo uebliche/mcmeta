@@ -7,10 +7,32 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "22w15a+build.9",
+    "versions": [
+      "22w15a+build.9",
+      "22w15a+build.8",
+      "22w15a+build.7",
+      "22w15a+build.6",
+      "22w15a+build.5",
+      "22w15a+build.4",
+      "22w15a+build.3",
+      "22w15a+build.2",
+      "22w15a+build.1"
+    ]
+  },
+  "release_time": "2022-04-13T15:41:17+00:00",
+  "protocol_version": 1073741903,
+  "data_version": 3089,
+  "resource_pack_format": 9,
+  "data_pack_format": 10,
   "notes": [
     "forge maven metadata has no versions for minecraft 22w15a",
     "minestom maven metadata has no versions for minecraft 22w15a",
