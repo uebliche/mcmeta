@@ -185,70 +185,45 @@
       "project": "folia",
       "versions": []
     },
-    "proxies": {
-      "velocity": {
-        "type": "papermc",
-        "project": "velocity",
-        "groups": [
-          {
-            "api": "3.0.0",
-            "versions": [
-              "3.4.0-SNAPSHOT"
-            ],
-            "range": {
-              "newest": "3.4.0-SNAPSHOT",
-              "oldest": "3.4.0-SNAPSHOT"
-            }
-          }
-        ]
-      },
-      "bungeecord": {
-        "type": "maven",
-        "project": "bungeecord",
-        "groups": [
-          {
-            "api": "1.21",
-            "versions": [
-              "1.21-R0.4",
-              "1.21-R0.3",
-              "1.21-R0.2",
-              "1.21-R0.1"
-            ],
-            "range": {
-              "newest": "1.21-R0.4",
-              "oldest": "1.21-R0.1"
-            }
-          },
-          {
-            "api": "1.20",
-            "versions": [
-              "1.20-R0.2",
-              "1.20-R0.1"
-            ],
-            "range": {
-              "newest": "1.20-R0.2",
-              "oldest": "1.20-R0.1"
-            }
-          },
-          {
-            "api": "1.16",
-            "versions": [
-              "1.16-R0.4",
-              "1.16-R0.3",
-              "1.16-R0.2",
-              "1.16-R0.1"
-            ],
-            "range": {
-              "newest": "1.16-R0.4",
-              "oldest": "1.16-R0.1"
-            }
-          }
-        ]
-      }
+    "purpur": {
+      "type": "purpur",
+      "project": "purpur",
+      "versions": [
+        "2535",
+        "2534",
+        "2533",
+        "2532",
+        "2531",
+        "2530",
+        "2529",
+        "2528",
+        "2527",
+        "2526",
+        "2525",
+        "2524",
+        "2523",
+        "2522",
+        "2521",
+        "2520",
+        "2519",
+        "2518",
+        "2517",
+        "2516",
+        "2515",
+        "2514",
+        "2513",
+        "2512",
+        "2511",
+        "2510",
+        "2509",
+        "2508",
+        "2507",
+        "2506"
+      ]
     },
     "minecraft": {
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/8ba1c37f8dc7864d6cade5dff700cd66832eeec0/1.21.10.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/adc0600a73fa3aa83b159b9eb0c6e2fb8231dede/1.21.10.json"
       },
       "client": {
         "url": "https://piston-data.mojang.com/v1/objects/d3bdf582a7fa723ce199f3665588dcfe6bf9aca8/client.jar",
