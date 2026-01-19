@@ -7,10 +7,24 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "22w16a+build.3",
+    "versions": [
+      "22w16a+build.3"
+    ]
+  },
+  "release_time": "2022-04-20T14:37:07+00:00",
+  "protocol_version": 1073741904,
+  "data_version": 3091,
+  "resource_pack_format": 9,
+  "data_pack_format": 10,
   "notes": [
     "forge maven metadata has no versions for minecraft 22w16a",
     "minestom maven metadata has no versions for minecraft 22w16a",
