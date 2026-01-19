@@ -7,10 +7,36 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "23w35a+build.9",
+    "versions": [
+      "23w35a+build.9",
+      "23w35a+build.8",
+      "23w35a+build.7",
+      "23w35a+build.6",
+      "23w35a+build.5",
+      "23w35a+build.4",
+      "23w35a+build.3",
+      "23w35a+build.2",
+      "23w35a+build.14",
+      "23w35a+build.13",
+      "23w35a+build.12",
+      "23w35a+build.11",
+      "23w35a+build.10"
+    ]
+  },
+  "release_time": "2023-08-30T11:24:35+00:00",
+  "protocol_version": 1073741971,
+  "data_version": 3571,
+  "resource_pack_format": 17,
+  "data_pack_format": 17,
   "notes": [
     "forge maven metadata has no versions for minecraft 23w35a",
     "minestom maven metadata has no versions for minecraft 23w35a",
