@@ -10,7 +10,26 @@
     "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
+  },
+  "yarn": {
+    "latest": "25w41a+build.9",
+    "versions": [
+      "25w41a+build.9",
+      "25w41a+build.8",
+      "25w41a+build.7",
+      "25w41a+build.6",
+      "25w41a+build.5",
+      "25w41a+build.4",
+      "25w41a+build.3",
+      "25w41a+build.2",
+      "25w41a+build.12",
+      "25w41a+build.11",
+      "25w41a+build.10",
+      "25w41a+build.1"
+    ]
   },
   "release_time": "2025-10-09T13:41:35+00:00",
   "protocol_version": 1073742097,
