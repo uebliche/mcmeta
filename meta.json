@@ -7,10 +7,24 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "error"
+    "purpur": "error",
+    "quilt": "error",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "19w11a.1",
+    "versions": [
+      "19w11a.1"
+    ]
+  },
+  "release_time": "2019-03-13T13:59:29+00:00",
+  "protocol_version": 464,
+  "data_version": 1937,
+  "resource_pack_format": 4,
+  "data_pack_format": 4,
   "notes": [
     "forge maven metadata has no versions for minecraft 19w11a",
     "minestom maven metadata has no versions for minecraft 19w11a",
