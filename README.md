@@ -1,6 +1,6 @@
-# mcmeta data for Minecraft 3D Shareware v1.34
+# mcmeta data for Minecraft 26.1-snapshot-3
 
-This branch contains generated metadata for Minecraft 3D Shareware v1.34.
+This branch contains generated metadata for Minecraft 26.1-snapshot-3.
 
 Files:
 - loader-index.json
@@ -9,15 +9,11 @@ Files:
 
 ## Meta
 - Schema: mcmeta/v1
-- Minecraft: 3D Shareware v1.34
-- Release time: 2019-04-01T11:18:08+00:00
-- Protocol version: 1
-- Data version: 1943
-- Resource pack format: 4
-- Data pack format: 4
-- Yarn latest: 3D Shareware v1.34.2
-- Yarn versions: 1
-  - 3D Shareware v1.34.2
+- Minecraft: 26.1-snapshot-3
+- JDK: 21
+- Release time: 2026-01-13T12:47:34+00:00
+- Protocol version: 1073742113
+- Data version: 4767
 
 ## Sources
 - Fabric: ok
@@ -25,21 +21,21 @@ Files:
 - Folia: error
 - Forge: partial
 - Minestom: partial
-- Mojang: ok
+- Mojang: partial
 - Neoforge: partial
 - Paper: error
 - Purpur: error
 - Quilt: error
-- Yarn: ok
+- Yarn: error
 
 ## Notes
-- forge maven metadata has no versions for minecraft 3D Shareware v1.34
-- minestom maven metadata has no versions for minecraft 3D Shareware v1.34
-- neoforge maven metadata has no versions for minecraft 3D Shareware v1.34
+- forge maven metadata has no versions for minecraft 26.1-snapshot-3
+- minestom maven metadata has no versions for minecraft 26.1-snapshot-3
+- neoforge maven metadata has no versions for minecraft 26.1-snapshot-3
 
 ## Loader index
 - Schema: mcmeta/v1
-- Minecraft: 3D Shareware v1.34
+- Minecraft: 26.1-snapshot-3
 - Fabric versions: 1
   - 0.18.4
 - Quilt versions: 0
@@ -51,15 +47,32 @@ Files:
 
 ## Artifacts index
 - Schema: mcmeta/v1
-- Minecraft: 3D Shareware v1.34
+- Minecraft: 26.1-snapshot-3
 
 ### Fabric API (Modrinth)
 - Type: modrinth
 - Project id: P7dR8mSH
 - Loaders: 1
   - fabric
-- Versions: 0
-  - n/a
+- Versions: 2
+  - 0.142.0+26.1
+    - Game versions: 1
+      - 26.1-snapshot-3
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/3CDayPF9/fabric-api-0.142.0%2B26.1.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/3CDayPF9/fabric-api-0.142.0%2B26.1.jar)
+        - sha1: 82f670158294205cf84bf54d303eb62db4666488
+        - sha512: 947ec7a06d8dfcb3c4adb24c2a47163d6ffc2829aee2b7e57381976047a298231ed5196aed83d372102f9f06820c90018cbee5a4effede7752ee9582baf609ca
+  - 0.141.3+26.1
+    - Game versions: 1
+      - 26.1-snapshot-3
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/Lwa1Q6e4/fabric-api-0.141.3%2B26.1.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/Lwa1Q6e4/fabric-api-0.141.3%2B26.1.jar)
+        - sha1: 0eacb38cf776ed9374d8c25c83fb24d056490606
+        - sha512: 3d042bc70072e2704734ad25d802ee20d56f107e9cea2f2474b08c9a3f7976f88a9cebf877258369689ee65928a1b8df994e861d0244ed190a35cfe56a439185
 
 ### Paper
 - Type: papermc
@@ -81,15 +94,15 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/5b59564acaa4cc153b6f934e566226642ed978ab/3D%20Shareware%20v1.34.json](https://piston-meta.mojang.com/v1/packages/5b59564acaa4cc153b6f934e566226642ed978ab/3D%20Shareware%20v1.34.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/4cc909f0660a57a897fb6cb2a1e6604696b5aca4/26.1-snapshot-3.json](https://piston-meta.mojang.com/v1/packages/4cc909f0660a57a897fb6cb2a1e6604696b5aca4/26.1-snapshot-3.json)
 - Client jar:
-  - Url: [https://piston-data.mojang.com/v1/objects/44db7d7bcd5a1bee6f54f6a623f26a1b3d1e293f/client.jar](https://piston-data.mojang.com/v1/objects/44db7d7bcd5a1bee6f54f6a623f26a1b3d1e293f/client.jar)
-  - sha1: 44db7d7bcd5a1bee6f54f6a623f26a1b3d1e293f
-  - Size: 18879423
+  - Url: [https://piston-data.mojang.com/v1/objects/7d4a5d1026cbd2fec3db1c801cf9d25e0e558285/client.jar](https://piston-data.mojang.com/v1/objects/7d4a5d1026cbd2fec3db1c801cf9d25e0e558285/client.jar)
+  - sha1: 7d4a5d1026cbd2fec3db1c801cf9d25e0e558285
+  - Size: 37362626
 - Server jar:
-  - Url: [https://piston-data.mojang.com/v1/objects/ffd306fc2aaa884755c5a6bf9fbd87aed26dd78f/server.jar](https://piston-data.mojang.com/v1/objects/ffd306fc2aaa884755c5a6bf9fbd87aed26dd78f/server.jar)
-  - sha1: ffd306fc2aaa884755c5a6bf9fbd87aed26dd78f
-  - Size: 35878156
+  - Url: [https://piston-data.mojang.com/v1/objects/430ae0858fe2663346745a7be773cebc68a79e31/server.jar](https://piston-data.mojang.com/v1/objects/430ae0858fe2663346745a7be773cebc68a79e31/server.jar)
+  - sha1: 430ae0858fe2663346745a7be773cebc68a79e31
+  - Size: 60097393
 
 ## Runtimes
 ### Minestom
