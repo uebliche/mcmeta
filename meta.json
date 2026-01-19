@@ -2,7 +2,7 @@
   "schema": "mcmeta/v1",
   "minecraft": "1.16.4-pre2",
   "sources": {
-    "fabric": "error",
+    "fabric": "ok",
     "fabric-api": "ok",
     "folia": "error",
     "forge": "partial",
@@ -10,9 +10,17 @@
     "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
   "jdk": 8,
+  "yarn": {
+    "latest": "1.16.4-pre2+build.1",
+    "versions": [
+      "1.16.4-pre2+build.1"
+    ]
+  },
   "release_time": "2020-10-22T15:32:17+00:00",
   "protocol_version": 1073741826,
   "data_version": 2582,
