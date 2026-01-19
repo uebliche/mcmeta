@@ -10,9 +10,19 @@
     "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
   "jdk": 17,
+  "yarn": {
+    "latest": "1.19.3-pre3+build.3",
+    "versions": [
+      "1.19.3-pre3+build.3",
+      "1.19.3-pre3+build.2",
+      "1.19.3-pre3+build.1"
+    ]
+  },
   "release_time": "2022-11-29T14:28:08+00:00",
   "protocol_version": 1073741935,
   "data_version": 3213,
