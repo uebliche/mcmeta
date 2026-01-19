@@ -7,10 +7,26 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "20w14infinite+build.4",
+    "versions": [
+      "20w14infinite+build.4",
+      "20w14infinite+build.3",
+      "20w14infinite+build.1"
+    ]
+  },
+  "release_time": "2020-04-01T12:47:08+00:00",
+  "protocol_version": 709,
+  "data_version": 2522,
+  "resource_pack_format": 5,
+  "data_pack_format": 5,
   "notes": [
     "forge maven metadata has no versions for minecraft 20w14infinite",
     "minestom maven metadata has no versions for minecraft 20w14infinite",
