@@ -7,10 +7,33 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "19w37a+build.9",
+    "versions": [
+      "19w37a+build.9",
+      "19w37a+build.8",
+      "19w37a+build.7",
+      "19w37a+build.6",
+      "19w37a+build.5",
+      "19w37a+build.4",
+      "19w37a+build.3",
+      "19w37a+build.2",
+      "19w37a+build.10",
+      "19w37a+build.1"
+    ]
+  },
+  "release_time": "2019-09-11T11:46:44+00:00",
+  "protocol_version": 553,
+  "data_version": 2204,
+  "resource_pack_format": 4,
+  "data_pack_format": 4,
   "notes": [
     "forge maven metadata has no versions for minecraft 19w37a",
     "minestom maven metadata has no versions for minecraft 19w37a",
