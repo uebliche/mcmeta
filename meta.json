@@ -10,7 +10,21 @@
     "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
+  },
+  "yarn": {
+    "latest": "25w37a+build.7",
+    "versions": [
+      "25w37a+build.7",
+      "25w37a+build.6",
+      "25w37a+build.5",
+      "25w37a+build.4",
+      "25w37a+build.3",
+      "25w37a+build.2",
+      "25w37a+build.1"
+    ]
   },
   "release_time": "2025-09-09T13:24:21+00:00",
   "protocol_version": 1073742092,
