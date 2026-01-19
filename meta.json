@@ -7,10 +7,29 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "19w45b+build.6",
+    "versions": [
+      "19w45b+build.6",
+      "19w45b+build.5",
+      "19w45b+build.4",
+      "19w45b+build.3",
+      "19w45b+build.2",
+      "19w45b+build.1"
+    ]
+  },
+  "release_time": "2019-11-08T12:42:44+00:00",
+  "protocol_version": 562,
+  "data_version": 2215,
+  "resource_pack_format": 4,
+  "data_pack_format": 4,
   "notes": [
     "forge maven metadata has no versions for minecraft 19w45b",
     "minestom maven metadata has no versions for minecraft 19w45b",
