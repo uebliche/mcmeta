@@ -7,10 +7,24 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "22w13oneblockatatime+build.1",
+    "versions": [
+      "22w13oneblockatatime+build.1"
+    ]
+  },
+  "release_time": "2022-04-01T11:56:58+00:00",
+  "protocol_version": 1073741901,
+  "data_version": 3076,
+  "resource_pack_format": 8,
+  "data_pack_format": 9,
   "notes": [
     "forge maven metadata has no versions for minecraft 22w13oneblockatatime",
     "minestom maven metadata has no versions for minecraft 22w13oneblockatatime",
