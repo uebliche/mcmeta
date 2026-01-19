@@ -7,10 +7,25 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "jdk": 17,
+  "yarn": {
+    "latest": "1.19-rc2+build.1",
+    "versions": [
+      "1.19-rc2+build.1"
+    ]
+  },
+  "release_time": "2022-06-03T11:47:25+00:00",
+  "protocol_version": 1073741915,
+  "data_version": 3104,
+  "resource_pack_format": 9,
+  "data_pack_format": 10,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.19-rc2",
     "minestom maven metadata has no versions for minecraft 1.19-rc2",
