@@ -7,10 +7,27 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "20w20a+build.4",
+    "versions": [
+      "20w20a+build.4",
+      "20w20a+build.3",
+      "20w20a+build.2",
+      "20w20a+build.1"
+    ]
+  },
+  "release_time": "2020-05-13T15:11:43+00:00",
+  "protocol_version": 716,
+  "data_version": 2536,
+  "resource_pack_format": 5,
+  "data_pack_format": 5,
   "notes": [
     "forge maven metadata has no versions for minecraft 20w20a",
     "minestom maven metadata has no versions for minecraft 20w20a",

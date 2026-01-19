@@ -38,91 +38,34 @@
       "project": "folia",
       "versions": []
     },
-    "proxies": {
-      "velocity": {
-        "type": "papermc",
-        "project": "velocity",
-        "groups": [
-          {
-            "api": "3.0.0",
-            "versions": [
-              "3.4.0-SNAPSHOT",
-              "3.3.0-SNAPSHOT",
-              "3.2.0-SNAPSHOT",
-              "3.1.2-SNAPSHOT",
-              "3.1.1",
-              "3.1.1-SNAPSHOT",
-              "3.1.0"
-            ],
-            "range": {
-              "newest": "3.4.0-SNAPSHOT",
-              "oldest": "3.1.0"
-            }
-          },
-          {
-            "api": "1.1.0",
-            "versions": [
-              "1.1.9"
-            ],
-            "range": {
-              "newest": "1.1.9",
-              "oldest": "1.1.9"
-            }
-          },
-          {
-            "api": "1.0.0",
-            "versions": [
-              "1.0.10"
-            ],
-            "range": {
-              "newest": "1.0.10",
-              "oldest": "1.0.10"
-            }
-          }
-        ]
+    "purpur": {
+      "type": "purpur",
+      "project": "purpur",
+      "versions": []
+    },
+    "minecraft": {
+      "version_json": {
+        "url": "https://piston-meta.mojang.com/v1/packages/4e5118f80f061490e54d843216780dabdaaf59fd/20w20a.json"
       },
-      "bungeecord": {
-        "type": "maven",
-        "project": "bungeecord",
-        "groups": [
-          {
-            "api": "1.21",
-            "versions": [
-              "1.21-R0.4",
-              "1.21-R0.3",
-              "1.21-R0.2",
-              "1.21-R0.1"
-            ],
-            "range": {
-              "newest": "1.21-R0.4",
-              "oldest": "1.21-R0.1"
-            }
-          },
-          {
-            "api": "1.20",
-            "versions": [
-              "1.20-R0.2",
-              "1.20-R0.1"
-            ],
-            "range": {
-              "newest": "1.20-R0.2",
-              "oldest": "1.20-R0.1"
-            }
-          },
-          {
-            "api": "1.16",
-            "versions": [
-              "1.16-R0.4",
-              "1.16-R0.3",
-              "1.16-R0.2",
-              "1.16-R0.1"
-            ],
-            "range": {
-              "newest": "1.16-R0.4",
-              "oldest": "1.16-R0.1"
-            }
-          }
-        ]
+      "client": {
+        "url": "https://piston-data.mojang.com/v1/objects/2b171fb288bfd9c845f99015cbccf1d38bdaef65/client.jar",
+        "sha1": "2b171fb288bfd9c845f99015cbccf1d38bdaef65",
+        "size": 17232973
+      },
+      "server": {
+        "url": "https://piston-data.mojang.com/v1/objects/f06a943eb107494688b4447b97514af6d7311623/server.jar",
+        "sha1": "f06a943eb107494688b4447b97514af6d7311623",
+        "size": 37553093
+      },
+      "client_mappings": {
+        "url": "https://piston-data.mojang.com/v1/objects/cad8997307226fc77c2ed972f424a734bddb8014/client.txt",
+        "sha1": "cad8997307226fc77c2ed972f424a734bddb8014",
+        "size": 5425187
+      },
+      "server_mappings": {
+        "url": "https://piston-data.mojang.com/v1/objects/9a40a5d3760d3bcd5568abb1ec154b2220487551/server.txt",
+        "sha1": "9a40a5d3760d3bcd5568abb1ec154b2220487551",
+        "size": 4163525
       }
     }
   },
