@@ -20,49 +20,24 @@
       "project": "folia",
       "versions": []
     },
-    "proxies": {
-      "bungeecord": {
-        "type": "maven",
-        "project": "bungeecord",
-        "groups": [
-          {
-            "api": "1.21",
-            "versions": [
-              "1.21-R0.4",
-              "1.21-R0.3",
-              "1.21-R0.2",
-              "1.21-R0.1"
-            ],
-            "range": {
-              "newest": "1.21-R0.4",
-              "oldest": "1.21-R0.1"
-            }
-          },
-          {
-            "api": "1.20",
-            "versions": [
-              "1.20-R0.2",
-              "1.20-R0.1"
-            ],
-            "range": {
-              "newest": "1.20-R0.2",
-              "oldest": "1.20-R0.1"
-            }
-          },
-          {
-            "api": "1.16",
-            "versions": [
-              "1.16-R0.4",
-              "1.16-R0.3",
-              "1.16-R0.2",
-              "1.16-R0.1"
-            ],
-            "range": {
-              "newest": "1.16-R0.4",
-              "oldest": "1.16-R0.1"
-            }
-          }
-        ]
+    "purpur": {
+      "type": "purpur",
+      "project": "purpur",
+      "versions": []
+    },
+    "minecraft": {
+      "version_json": {
+        "url": "https://piston-meta.mojang.com/v1/packages/20116297638f7c70cd046e25a6ac90fee4cae61a/1.6.json"
+      },
+      "client": {
+        "url": "https://launcher.mojang.com/v1/objects/5ead8f822527ed5957245be136daad9e322cab4f/client.jar",
+        "sha1": "5ead8f822527ed5957245be136daad9e322cab4f",
+        "size": 4720746
+      },
+      "server": {
+        "url": "https://launcher.mojang.com/v1/objects/ee6d5161ac28eef285df571dc1235d48f03c3e88/server.jar",
+        "sha1": "ee6d5161ac28eef285df571dc1235d48f03c3e88",
+        "size": 6129989
       }
     }
   },
