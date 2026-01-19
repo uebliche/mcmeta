@@ -2,22 +2,36 @@
   "schema": "mcmeta/v1",
   "minecraft": "1.21.2-pre2",
   "sources": {
-    "fabric": "error",
-    "fabric-api": "error",
+    "fabric": "ok",
+    "fabric-api": "ok",
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
-    "mojang": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "error"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
   "jdk": 21,
+  "yarn": {
+    "latest": "1.21.2-pre2+build.4",
+    "versions": [
+      "1.21.2-pre2+build.4",
+      "1.21.2-pre2+build.3",
+      "1.21.2-pre2+build.2",
+      "1.21.2-pre2+build.1"
+    ]
+  },
   "release_time": "2024-10-10T12:59:14+00:00",
+  "protocol_version": 1073742038,
+  "data_version": 4074,
+  "resource_pack_format": 41,
+  "data_pack_format": 57,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.21.2-pre2",
     "minestom maven metadata has no versions for minecraft 1.21.2-pre2",
-    "mojang server metadata missing",
     "neoforge maven metadata has no versions for minecraft 1.21.2-pre2"
   ]
 }

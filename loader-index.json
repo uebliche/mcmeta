@@ -3,10 +3,14 @@
   "minecraft": "1.21.2-pre2",
   "loaders": {
     "fabric": {
-      "loader": []
+      "loader": [
+        "0.18.4"
+      ]
     },
     "quilt": {
-      "loader": []
+      "loader": [
+        "0.30.0-beta.0"
+      ]
     },
     "forge": {
       "loader": []
