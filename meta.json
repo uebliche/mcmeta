@@ -10,9 +10,22 @@
     "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
   "jdk": 8,
+  "yarn": {
+    "latest": "1.16.2-rc1+build.6",
+    "versions": [
+      "1.16.2-rc1+build.6",
+      "1.16.2-rc1+build.5",
+      "1.16.2-rc1+build.4",
+      "1.16.2-rc1+build.3",
+      "1.16.2-rc1+build.2",
+      "1.16.2-rc1+build.1"
+    ]
+  },
   "release_time": "2020-08-07T14:35:39+00:00",
   "protocol_version": 749,
   "data_version": 2576,
