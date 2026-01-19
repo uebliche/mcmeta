@@ -10,7 +10,15 @@
     "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
+  },
+  "yarn": {
+    "latest": "25w34a+build.1",
+    "versions": [
+      "25w34a+build.1"
+    ]
   },
   "release_time": "2025-08-19T12:09:50+00:00",
   "protocol_version": 1073742087,
