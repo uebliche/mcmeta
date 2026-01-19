@@ -1,21 +1,31 @@
-# mcmeta proxy data
+# mcmeta data for Minecraft 25w10a
 
-This branch contains generated proxy metadata for `25w10a`.
+This branch contains generated metadata for Minecraft 25w10a.
 
 Files:
 - loader-index.json
 - artifacts.json
 - meta.json
 
-## Proxies
-- Velocity: 3 api lines (latest: 3.0.0)
-  - API 3.0.0: 3.1.0..3.4.0-SNAPSHOT
-  - API 1.1.0: 1.1.9..1.1.9
-  - API 1.0.0: 1.0.10..1.0.10
-- BungeeCord: 3 api lines (latest: 1.21)
-  - API 1.21: 1.21-R0.1..1.21-R0.4
-  - API 1.20: 1.20-R0.1..1.20-R0.2
-  - API 1.16: 1.16-R0.1..1.16-R0.4
+## Meta
+- Schema: mcmeta/v1
+- Minecraft: 25w10a
+- Release time: 2025-03-05T13:11:13+00:00
+- Protocol version: 1073742062
+- Data version: 4319
+- Resource pack format: 54
+- Data pack format: 70
+- Yarn latest: 25w10a+build.9
+- Yarn versions: 9
+  - 25w10a+build.9
+  - 25w10a+build.8
+  - 25w10a+build.7
+  - 25w10a+build.6
+  - 25w10a+build.5
+  - 25w10a+build.4
+  - 25w10a+build.3
+  - 25w10a+build.2
+  - 25w10a+build.1
 
 ## Sources
 - Fabric: ok
@@ -23,13 +33,112 @@ Files:
 - Folia: error
 - Forge: partial
 - Minestom: partial
+- Mojang: ok
 - Neoforge: partial
 - Paper: error
+- Purpur: error
 - Quilt: ok
+- Yarn: ok
 
 ## Notes
 - forge maven metadata has no versions for minecraft 25w10a
 - minestom maven metadata has no versions for minecraft 25w10a
 - neoforge maven metadata has no versions for minecraft 25w10a
+
+## Loader index
+- Schema: mcmeta/v1
+- Minecraft: 25w10a
+- Fabric versions: 1
+  - 0.18.4
+- Quilt versions: 1
+  - 0.30.0-beta.0
+- Forge versions: 0
+  - n/a
+- NeoForge versions: 0
+  - n/a
+
+## Artifacts index
+- Schema: mcmeta/v1
+- Minecraft: 25w10a
+
+### Fabric API (Modrinth)
+- Type: modrinth
+- Project id: P7dR8mSH
+- Loaders: 1
+  - fabric
+- Versions: 3
+  - 0.118.5+1.21.5
+    - Game versions: 1
+      - 25w10a
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/tj2V7jtU/fabric-api-0.118.5%2B1.21.5.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/tj2V7jtU/fabric-api-0.118.5%2B1.21.5.jar)
+        - sha1: 0c746906897773d19fa1f2111ee9bd4b6e38dc4f
+        - sha512: 08a683df64f42cffb6c3664cb580511883199f036fffb5e8cf0ab11e9a95936dc1acc9cd59cfdd9430a07fad0a9d2998e583f5572f2599ae7f55e40b4d0915c0
+  - 0.118.4+1.21.5
+    - Game versions: 1
+      - 25w10a
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/2mivyLFn/fabric-api-0.118.4%2B1.21.5.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/2mivyLFn/fabric-api-0.118.4%2B1.21.5.jar)
+        - sha1: ba257aee83e446faa2d787e525f378de8241b4fe
+        - sha512: c5f2aec6c8cf8ef3ff11581aee2d4c7aea1e7496684986f9e3a4ed0fdcccaa710fa37ec367f05b3276335170f6b60695cd04d51e374dc172195ef3f02cd34cd7
+  - 0.118.3+1.21.5
+    - Game versions: 1
+      - 25w10a
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/I09re1h6/fabric-api-0.118.3%2B1.21.5.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/I09re1h6/fabric-api-0.118.3%2B1.21.5.jar)
+        - sha1: c36591ca2e08b77d2651e0e086d15c20ec8c19e5
+        - sha512: 0411f554a99ffc673347e3c02c0aa50783e1023c055d73929841d6ed0b48402f0238c33d8e40284989d80f29c24605f3a925b134111135af91c5e78d2eace295
+
+### Paper
+- Type: papermc
+- Project: paper
+- Versions: 0
+  - n/a
+
+### Folia
+- Type: papermc
+- Project: folia
+- Versions: 0
+  - n/a
+
+### Purpur
+- Type: purpur
+- Project: purpur
+- Versions: 0
+  - n/a
+
+### Minecraft downloads
+- Version JSON:
+  - Url: [https://piston-meta.mojang.com/v1/packages/d07289a97d41dd9c46628f0164c92ff662071e02/25w10a.json](https://piston-meta.mojang.com/v1/packages/d07289a97d41dd9c46628f0164c92ff662071e02/25w10a.json)
+- Client jar:
+  - Url: [https://piston-data.mojang.com/v1/objects/77fd403d0e8e091571f914891ec359db196a4252/client.jar](https://piston-data.mojang.com/v1/objects/77fd403d0e8e091571f914891ec359db196a4252/client.jar)
+  - sha1: 77fd403d0e8e091571f914891ec359db196a4252
+  - Size: 28912878
+- Server jar:
+  - Url: [https://piston-data.mojang.com/v1/objects/0177c3a044813dc7d10b43b14b7f47224bd43067/server.jar](https://piston-data.mojang.com/v1/objects/0177c3a044813dc7d10b43b14b7f47224bd43067/server.jar)
+  - sha1: 0177c3a044813dc7d10b43b14b7f47224bd43067
+  - Size: 57231428
+- Client mappings:
+  - Url: [https://piston-data.mojang.com/v1/objects/78b6ff754335c4c3dba82ab3f94471d076578d47/client.txt](https://piston-data.mojang.com/v1/objects/78b6ff754335c4c3dba82ab3f94471d076578d47/client.txt)
+  - sha1: 78b6ff754335c4c3dba82ab3f94471d076578d47
+  - Size: 10624886
+- Server mappings:
+  - Url: [https://piston-data.mojang.com/v1/objects/218c144d03dfb0db51a15e4a05ff793703e5a54a/server.txt](https://piston-data.mojang.com/v1/objects/218c144d03dfb0db51a15e4a05ff793703e5a54a/server.txt)
+  - sha1: 218c144d03dfb0db51a15e4a05ff793703e5a54a
+  - Size: 7996462
+
+## Runtimes
+### Minestom
+- Type: maven
+- Coordinates: 1
+  - net.minestom:minestom
+- Versions: 0
+  - n/a
 
 Generated by mcmeta-harvest.
