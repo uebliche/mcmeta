@@ -7,10 +7,27 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "yarn": {
+    "latest": "24w14potato+build.4",
+    "versions": [
+      "24w14potato+build.4",
+      "24w14potato+build.3",
+      "24w14potato+build.2",
+      "24w14potato+build.1"
+    ]
+  },
+  "release_time": "2024-04-01T11:07:19+00:00",
+  "protocol_version": 1073742007,
+  "data_version": 3824,
+  "resource_pack_format": 30,
+  "data_pack_format": 36,
   "notes": [
     "forge maven metadata has no versions for minecraft 24w14potato",
     "minestom maven metadata has no versions for minecraft 24w14potato",
