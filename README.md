@@ -51,6 +51,7 @@ mcmeta {
 
 dependencies {
   val fabricLoader = extra["mcmetaFabricLoaderVersion"] as String?
+  val yarnMappings = extra["mcmetaYarnVersion"] as String?
   val paperBuild = extra["mcmetaPaperVersion"] as String?
   val velocityVersion = extra["mcmetaVelocityVersion"] as String?
   val foliaBuild = extra["mcmetaFoliaVersion"] as String?

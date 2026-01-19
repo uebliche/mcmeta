@@ -395,6 +395,8 @@ private class McmetaResolver(
     val bungeecordVersion = bungeecordVersions.firstOrNull()
     val foliaVersion = artifacts.artifacts?.folia?.versions?.firstOrNull()
     val purpurVersion = artifacts.artifacts?.purpur?.versions?.firstOrNull()
+    val yarnLatest = meta.yarn?.latest
+    val yarnVersions = meta.yarn?.versions ?: emptyList()
 
     val extra = project.extensions.extraProperties
     extra.set("mcmetaMinecraftVersion", version)
@@ -410,6 +412,8 @@ private class McmetaResolver(
     extra.set("mcmetaFoliaVersion", foliaVersion)
     extra.set("mcmetaPurpurVersion", purpurVersion)
     extra.set("mcmetaJdkVersion", meta.jdk)
+    extra.set("mcmetaYarnVersion", yarnLatest)
+    extra.set("mcmetaYarnVersions", yarnVersions)
 
     extra.set("mcmetaFabricLoaderVersions", loaders?.fabric?.loader ?: emptyList<String>())
     extra.set("mcmetaQuiltLoaderVersions", loaders?.quilt?.loader ?: emptyList<String>())
@@ -697,6 +701,7 @@ private data class MetaV1(
   val sources: Map<String, String>?,
   val notes: List<String>?,
   val jdk: Int?,
+  val yarn: YarnMeta?,
 )
 
 private data class MojangVersion(
@@ -744,6 +749,11 @@ private data class RuntimeFamilies(
 )
 
 private data class MavenArtifact(
+  val versions: List<String>?,
+)
+
+private data class YarnMeta(
+  val latest: String?,
   val versions: List<String>?,
 )
 
