@@ -37,7 +37,7 @@ Files:
 - Minestom: partial
 - Mojang: ok
 - Neoforge: partial
-- Paper: ok
+- Paper: partial
 - Purpur: ok
 - Quilt: error
 - Yarn: ok
@@ -46,6 +46,7 @@ Files:
 - forge maven metadata has no versions for minecraft 1.14.1
 - minestom maven metadata has no versions for minecraft 1.14.1
 - neoforge maven metadata has no versions for minecraft 1.14.1
+- paper-api maven metadata has no versions for 1.14.1
 
 ## Loader index
 - Schema: mcmeta/v1
