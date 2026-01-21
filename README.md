@@ -46,7 +46,7 @@ Files:
 - Quilt versions: 1
   - 0.30.0-beta.0
 - Forge versions: 1
-  - 1.21.1-52.1.9
+  - 1.21.1-52.1.10
 - NeoForge versions: 1
   - 21.1.218
 
@@ -298,7 +298,8 @@ Files:
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 128
+- Versions: 129
+  - 1.21.1-R0.1-SNAPSHOT
   - 133
   - 132
   - 131
@@ -486,7 +487,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/3023950d1da012351919dbbce1ebec648f15f472/1.21.1.json](https://piston-meta.mojang.com/v1/packages/3023950d1da012351919dbbce1ebec648f15f472/1.21.1.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/59292d2118e2f06f836d8bdc8248225f914e1ee9/1.21.1.json](https://piston-meta.mojang.com/v1/packages/59292d2118e2f06f836d8bdc8248225f914e1ee9/1.21.1.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar](https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar)
   - sha1: 30c73b1c5da787909b2f73340419fdf13b9def88
