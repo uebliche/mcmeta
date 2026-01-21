@@ -107,7 +107,8 @@ Files:
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 46
+- Versions: 47
+  - 1.21.6-R0.1-SNAPSHOT
   - 48
   - 47
   - 46
@@ -188,7 +189,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/4c5e41e38e8145b32fa9ff00eab3ed8797e1cef7/1.21.6.json](https://piston-meta.mojang.com/v1/packages/4c5e41e38e8145b32fa9ff00eab3ed8797e1cef7/1.21.6.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/304c31345602396fc385ee7dff173f6988bd0af3/1.21.6.json](https://piston-meta.mojang.com/v1/packages/304c31345602396fc385ee7dff173f6988bd0af3/1.21.6.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/740a125b83dd3447feaa3c5e891ead7fbb21ae28/client.jar](https://piston-data.mojang.com/v1/objects/740a125b83dd3447feaa3c5e891ead7fbb21ae28/client.jar)
   - sha1: 740a125b83dd3447feaa3c5e891ead7fbb21ae28
