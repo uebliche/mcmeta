@@ -293,7 +293,8 @@ Files:
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 169
+- Versions: 170
+  - 1.18.2-R0.1-SNAPSHOT
   - 388
   - 387
   - 386
