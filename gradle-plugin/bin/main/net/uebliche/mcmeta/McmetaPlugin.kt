@@ -274,7 +274,7 @@ private fun resolveNeoForgeVersion(project: Project, mcVersion: String): String 
     throw IllegalStateException("No NeoForge version matching prefix $prefix (derived from Minecraft $mcVersion)")
   }
   return matching.maxWithOrNull { a, b ->
-    org.gradle.util.VersionNumber.parse(a).compareTo(org.gradle.util.VersionNumber.parse(b))
+    compareVersionStrings(a, b)
   } ?: matching.last()
 }
 
@@ -466,6 +466,22 @@ private fun parseMavenVersions(doc: org.w3c.dom.Document): List<String> {
   return out
 }
 
+private fun compareVersionStrings(a: String, b: String): Int {
+  val aParts = a.split(Regex("[^0-9]+"))
+    .filter { it.isNotEmpty() }
+    .map { it.toIntOrNull() ?: 0 }
+  val bParts = b.split(Regex("[^0-9]+"))
+    .filter { it.isNotEmpty() }
+    .map { it.toIntOrNull() ?: 0 }
+  val max = maxOf(aParts.size, bParts.size)
+  for (i in 0 until max) {
+    val av = aParts.getOrElse(i) { 0 }
+    val bv = bParts.getOrElse(i) { 0 }
+    if (av != bv) return av.compareTo(bv)
+  }
+  return a.compareTo(b, ignoreCase = true)
+}
+
 private fun extraString(project: Project, key: String): String? {
   val extra = project.extensions.extraProperties
   if (!extra.has(key)) return null
@@ -526,6 +542,7 @@ private class McmetaResolver(
     val artifacts = gson.fromJson(gson.toJson(bundle.artifacts), Artifacts::class.java)
     val meta = gson.fromJson(gson.toJson(bundle.meta), MetaV1::class.java)
     applyBundle(loaderIndex, artifacts, meta, sanitized)
+    applyProxyFallbacks()
     applyLoom(fetchLoomIndex())
     if (extension.enableManifoldPreprocessor) {
       configureManifoldPreprocessor(artifacts, extension.minecraftVersion)
@@ -610,6 +627,17 @@ private class McmetaResolver(
     connection.setRequestProperty("User-Agent", "mcmeta-gradle/0.1")
     connection.inputStream.bufferedReader().use { reader ->
       return gson.fromJson(reader, Any::class.java)
+    }
+  }
+
+  private fun fetchProxyArtifacts(branch: String): Artifacts? {
+    val artifactsUrl = "${extension.rawBase}/${extension.repo}/${branch}/artifacts.json"
+    return try {
+      val payload = fetchText(artifactsUrl)
+      gson.fromJson(payload, Artifacts::class.java)
+    } catch (err: Exception) {
+      project.logger.warn("mcmeta: proxy artifacts fetch failed: ${err.message}")
+      null
     }
   }
 
@@ -701,6 +729,65 @@ private class McmetaResolver(
     )
     extra.set("mcmetaFoliaVersions", artifacts.artifacts?.folia?.versions ?: emptyList<String>())
     extra.set("mcmetaPurpurVersions", artifacts.artifacts?.purpur?.versions ?: emptyList<String>())
+  }
+
+  private fun applyProxyFallbacks() {
+    val extra = project.extensions.extraProperties
+    val velocityVersion = extra.get("mcmetaVelocityVersion")?.toString()?.trim()
+    val bungeecordVersion = extra.get("mcmetaBungeeCordVersion")?.toString()?.trim()
+    if (!velocityVersion.isNullOrEmpty() && !bungeecordVersion.isNullOrEmpty()) {
+      return
+    }
+
+    val proxyArtifacts = fetchProxyArtifacts("proxy/velocity-latest") ?: return
+    val velocityGroups = proxyArtifacts.artifacts?.proxies?.velocity?.groups ?: emptyList()
+    val bungeecordGroups = proxyArtifacts.artifacts?.proxies?.bungeecord?.groups ?: emptyList()
+    val velocityVersions = if (velocityGroups.isNotEmpty()) {
+      velocityGroups.flatMap { it.versions ?: emptyList() }
+    } else {
+      proxyArtifacts.artifacts?.velocity?.versions ?: emptyList()
+    }
+    val bungeecordVersions = bungeecordGroups.flatMap { it.versions ?: emptyList() }
+
+    if (velocityVersion.isNullOrEmpty()) {
+      val resolved = velocityVersions.firstOrNull()
+      if (!resolved.isNullOrEmpty()) {
+        extra.set("mcmetaVelocityVersion", resolved)
+      }
+      extra.set("mcmetaVelocityVersions", velocityVersions)
+      extra.set("mcmetaVelocityApiVersions", velocityGroups.mapNotNull { it.api })
+      extra.set(
+        "mcmetaVelocityVersionGroups",
+        velocityGroups.associate { group -> group.api to (group.versions ?: emptyList()) }
+      )
+      extra.set(
+        "mcmetaVelocityVersionRanges",
+        velocityGroups.mapNotNull { group ->
+          val range = group.range ?: return@mapNotNull null
+          group.api to range
+        }.toMap()
+      )
+    }
+
+    if (bungeecordVersion.isNullOrEmpty()) {
+      val resolved = bungeecordVersions.firstOrNull()
+      if (!resolved.isNullOrEmpty()) {
+        extra.set("mcmetaBungeeCordVersion", resolved)
+      }
+      extra.set("mcmetaBungeeCordVersions", bungeecordVersions)
+      extra.set("mcmetaBungeeCordApiVersions", bungeecordGroups.mapNotNull { it.api })
+      extra.set(
+        "mcmetaBungeeCordVersionGroups",
+        bungeecordGroups.associate { group -> group.api to (group.versions ?: emptyList()) }
+      )
+      extra.set(
+        "mcmetaBungeeCordVersionRanges",
+        bungeecordGroups.mapNotNull { group ->
+          val range = group.range ?: return@mapNotNull null
+          group.api to range
+        }.toMap()
+      )
+    }
   }
 
   private fun applyLoom(loom: LoomIndex?) {

@@ -12,6 +12,14 @@ repositories {
   mavenCentral()
 }
 
+java {
+  toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+}
+
+kotlin {
+  jvmToolchain(21)
+}
+
 dependencies {
   implementation("com.google.code.gson:gson:2.11.0")
 }
