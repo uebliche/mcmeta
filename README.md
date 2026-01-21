@@ -45,9 +45,9 @@ Files:
 - Quilt versions: 1
   - 0.30.0-beta.0
 - Forge versions: 1
-  - 1.21.11-61.0.6
+  - 1.21.11-61.0.7
 - NeoForge versions: 1
-  - 21.11.35-beta
+  - 21.11.36-beta
 
 ## Artifacts index
 - Schema: mcmeta/v1
@@ -117,70 +117,14 @@ Files:
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 58
-  - 97
-  - 96
-  - 95
-  - 94
-  - 93
-  - 92
-  - 91
-  - 90
-  - 89
-  - 88
-  - 87
-  - 86
-  - 85
-  - 82
-  - 81
-  - 80
-  - 79
-  - 78
-  - 77
-  - 76
-  - 75
-  - 74
-  - 73
-  - 72
-  - 71
-  - 70
-  - 69
-  - 68
-  - 67
-  - 66
-  - 65
-  - 64
-  - 63
-  - 62
-  - 61
-  - 60
-  - 59
-  - 58
-  - 57
-  - 56
-  - 55
-  - 54
-  - 53
-  - 52
-  - 51
-  - 49
-  - 48
-  - 47
-  - 46
-  - 45
-  - 44
-  - 43
-  - 42
-  - 39
-  - 38
-  - 37
-  - 35
-  - 34
+- Versions: 1
+  - 1.21.11-R0.1-SNAPSHOT
 
 ### Folia
 - Type: papermc
 - Project: folia
-- Versions: 10
+- Versions: 11
+  - 11
   - 10
   - 9
   - 8
@@ -195,7 +139,8 @@ Files:
 ### Purpur
 - Type: purpur
 - Project: purpur
-- Versions: 23
+- Versions: 24
+  - 2559
   - 2558
   - 2557
   - 2556
