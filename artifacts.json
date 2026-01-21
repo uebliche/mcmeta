@@ -63,6 +63,32 @@
       "type": "papermc",
       "project": "paper",
       "versions": [
+        "1.21.9-R0.1-SNAPSHOT",
+        "59",
+        "58",
+        "57",
+        "56",
+        "55",
+        "53",
+        "52",
+        "51",
+        "50",
+        "49",
+        "48",
+        "47",
+        "46",
+        "45",
+        "44",
+        "42",
+        "41",
+        "40",
+        "38",
+        "37"
+      ],
+      "api_versions": [
+        "1.21.9-R0.1-SNAPSHOT"
+      ],
+      "build_ids": [
         "59",
         "58",
         "57",
@@ -106,7 +132,7 @@
     },
     "minecraft": {
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/f613fbbaf8688c9b01cdfda81b2dc4583ed3173e/1.21.9.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/515231d2beb2505ccbb3c91b263dd25714ac70bc/1.21.9.json"
       },
       "client": {
         "url": "https://piston-data.mojang.com/v1/objects/ce92fd8d1b2460c41ceda07ae7b3fe863a80d045/client.jar",
