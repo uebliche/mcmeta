@@ -28,7 +28,7 @@ Files:
 - Minestom: partial
 - Mojang: ok
 - Neoforge: partial
-- Paper: error
+- Paper: partial
 - Purpur: error
 - Quilt: ok
 - Yarn: ok
@@ -72,8 +72,8 @@ Files:
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 0
-  - n/a
+- Versions: 1
+  - 1.20.3-R0.1-SNAPSHOT
 
 ### Folia
 - Type: papermc
@@ -89,7 +89,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/064ee74bfc06c4694773b942dedda189a4569796/1.20.3.json](https://piston-meta.mojang.com/v1/packages/064ee74bfc06c4694773b942dedda189a4569796/1.20.3.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/b625492fa11f8f7aab38f328ef19092b49d48e33/1.20.3.json](https://piston-meta.mojang.com/v1/packages/b625492fa11f8f7aab38f328ef19092b49d48e33/1.20.3.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/b178a327a96f2cf1c9f98a45e5588d654a3e4369/client.jar](https://piston-data.mojang.com/v1/objects/b178a327a96f2cf1c9f98a45e5588d654a3e4369/client.jar)
   - sha1: b178a327a96f2cf1c9f98a45e5588d654a3e4369
