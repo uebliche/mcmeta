@@ -1,9 +1,9 @@
 {
   "schema": "mcmeta/loom/v1",
   "fabric": {
-    "latest": "1.14-SNAPSHOT",
+    "latest": "1.15.0-alpha.25",
     "stable": "1.14.10",
-    "snapshot": "1.14-SNAPSHOT",
+    "snapshot": "1.15.0-alpha.25",
     "versions": [
       "1.15.0-alpha.25",
       "1.15.0-alpha.24",
