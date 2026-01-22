@@ -597,6 +597,19 @@ private class McmetaResolver(
     }
     val cacheFile = File(cacheDir, "loom-index.json")
     var payload: String? = if (cacheFile.exists()) cacheFile.readText() else null
+    if (payload == null) {
+      val localCandidates = listOf(
+        File(project.rootDir, "web/mcmeta/loom-index.json"),
+        File(project.rootDir, "../web/mcmeta/loom-index.json"),
+        File(project.rootDir, "../../web/mcmeta/loom-index.json"),
+        File(project.rootDir, "../../../web/mcmeta/loom-index.json"),
+      )
+      val localFile = localCandidates.firstOrNull { it.exists() }
+      if (localFile != null) {
+        payload = localFile.readText()
+        cacheFile.writeText(payload)
+      }
+    }
     val expired = cacheFile.exists() && isExpired(cacheFile)
     if (payload == null || expired) {
       try {
