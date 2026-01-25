@@ -510,8 +510,8 @@ private class McmetaResolver(
   private val cacheDir = File(project.gradle.gradleUserHomeDir, "caches/mcmeta").apply { mkdirs() }
 
   fun resolve() {
-    val resolvedVersion = resolveRequestedVersion()
-    val sanitized = sanitizeVersion(resolvedVersion)
+    var resolvedVersion = resolveRequestedVersion()
+    var sanitized = sanitizeVersion(resolvedVersion)
     if (sanitized.isBlank()) {
       throw IllegalStateException("mcmeta: invalid minecraftVersion")
     }
@@ -532,7 +532,23 @@ private class McmetaResolver(
         if (payload != null) {
           project.logger.warn("mcmeta: fetch failed, using cached data: ${err.message}")
         } else {
-          throw IllegalStateException("mcmeta: unable to fetch data and no cache available", err)
+          val localBundle = loadLocalBundle(sanitized)
+          if (localBundle != null) {
+            cacheFile.writeText(localBundle.payload)
+            payload = localBundle.payload
+            if (!localBundle.exactMatch) {
+              project.logger.warn(
+                "mcmeta: fetch failed, using local backup ${localBundle.version} for requested $sanitized"
+              )
+              resolvedVersion = localBundle.version
+              sanitized = localBundle.version
+              extension.minecraftVersion = resolvedVersion
+            } else {
+              project.logger.warn("mcmeta: fetch failed, using local mcmeta backup for $sanitized")
+            }
+          } else {
+            throw IllegalStateException("mcmeta: unable to fetch data and no cache available", err)
+          }
         }
       }
     }
@@ -588,6 +604,102 @@ private class McmetaResolver(
         meta = meta,
       )
     )
+  }
+
+  private data class LocalBundle(
+    val payload: String,
+    val version: String,
+    val exactMatch: Boolean,
+  )
+
+  private fun loadLocalBundle(version: String): LocalBundle? {
+    val backupDirs = listBackupDirs()
+    val exactMatch = backupDirs.firstNotNullOfOrNull { dir ->
+      readLocalBundle(dir, version, exactOnly = true)
+    }
+    if (exactMatch != null) {
+      return exactMatch
+    }
+    val prefix = majorMinorPrefix(version) ?: return null
+    val prefixMatch = backupDirs.firstNotNullOfOrNull { dir ->
+      readLocalBundle(dir, prefix, exactOnly = false)
+    }
+    if (prefixMatch != null) {
+      return prefixMatch
+    }
+    return backupDirs.firstNotNullOfOrNull { dir ->
+      readLocalBundle(dir, version, exactOnly = false, ignorePrefix = true)
+    }
+  }
+
+  private fun readLocalBundle(
+    dir: File,
+    version: String,
+    exactOnly: Boolean,
+    ignorePrefix: Boolean = false,
+  ): LocalBundle? {
+    val metaFile = File(dir, "meta.json")
+    val artifactsFile = File(dir, "artifacts.json")
+    val loaderFile = File(dir, "loader-index.json")
+    if (!metaFile.exists() || !artifactsFile.exists() || !loaderFile.exists()) {
+      return null
+    }
+    val metaText = metaFile.readText()
+    val meta = gson.fromJson(metaText, MetaV1::class.java)
+    val metaVersion = meta.minecraft?.trim().orEmpty()
+    if (metaVersion.isEmpty()) {
+      return null
+    }
+    if (exactOnly) {
+      if (metaVersion != version) {
+        return null
+      }
+    } else if (!ignorePrefix && !metaVersion.startsWith("$version.")) {
+      return null
+    }
+    val loader = gson.fromJson(loaderFile.readText(), Any::class.java)
+    val artifacts = gson.fromJson(artifactsFile.readText(), Any::class.java)
+    val metaJson = gson.fromJson(metaText, Any::class.java)
+    val payload = gson.toJson(
+      McmetaBundle(
+        loaderIndex = loader,
+        artifacts = artifacts,
+        meta = metaJson,
+      )
+    )
+    return LocalBundle(
+      payload = payload,
+      version = metaVersion,
+      exactMatch = exactOnly,
+    )
+  }
+
+  private fun listBackupDirs(): List<File> {
+    val baseCandidates = listOf(
+      File(project.rootDir, "tools/mcmeta-harvest-backup"),
+      File(project.rootDir, "../tools/mcmeta-harvest-backup"),
+      File(project.rootDir, "../../tools/mcmeta-harvest-backup"),
+      File(project.rootDir, "../../../tools/mcmeta-harvest-backup"),
+    )
+    return baseCandidates
+      .filter { it.exists() && it.isDirectory }
+      .flatMap { base ->
+        base.listFiles()
+          ?.filter { it.isDirectory }
+          ?.sortedByDescending { it.name }
+          ?: emptyList()
+      }
+  }
+
+  private fun majorMinorPrefix(version: String): String? {
+    val parts = version.trim().split('.')
+    if (parts.size < 2) {
+      return null
+    }
+    if (!parts[0].all { it.isDigit() } || !parts[1].all { it.isDigit() }) {
+      return null
+    }
+    return "${parts[0]}.${parts[1]}"
   }
 
   private fun fetchLoomIndex(): LoomIndex? {
