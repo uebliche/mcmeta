@@ -133,6 +133,16 @@ private fun applyOptions(project: Project, extension: McmetaExtension) {
   configureRepositories(project, extension.repositories)
   configureDependencies(project, extension)
   configureNeoForgeRuns(project, extension)
+  project.afterEvaluate {
+    configureLoomRuns(project)
+  }
+  if (project.subprojects.isNotEmpty()) {
+    project.subprojects.forEach { subproject ->
+      subproject.afterEvaluate {
+        configureLoomRuns(subproject)
+      }
+    }
+  }
 }
 
 private fun configureRepositories(project: Project, options: McmetaRepositories) {
@@ -338,9 +348,45 @@ private fun configureNeoForgeRuns(project: Project, mcVersion: String, neoForgeV
   InvokerHelper.invokeMethod(neoForge, "mods", arrayOf(modsClosure))
 }
 
+private fun configureLoomRuns(project: Project) {
+  val loom = project.extensions.findByName("loom") ?: return
+  val programArgs = resolveMinecraftProgramArgs(project)
+  if (programArgs.isEmpty()) return
+  val runs = InvokerHelper.getProperty(loom, "runs") ?: return
+  InvokerHelper.invokeMethod(
+    runs,
+    "configureEach",
+    arrayOf(groovyClosure(runs) { run ->
+      val name = InvokerHelper.getProperty(run, "name")?.toString()?.lowercase()
+      if (name == "client") {
+        applyLoomProgramArguments(run, programArgs)
+      }
+    })
+  )
+  configureLoomRunClientTask(project, programArgs)
+}
+
+private fun configureLoomRunClientTask(project: Project, programArgs: List<String>) {
+  if (programArgs.isEmpty()) return
+  project.tasks.matching { it.name == "runClient" }.configureEach { task ->
+    try {
+      if (task is org.gradle.api.tasks.JavaExec) {
+        task.args(programArgs)
+        return@configureEach
+      }
+    } catch (err: Exception) {
+    }
+    try {
+      InvokerHelper.invokeMethod(task, "args", arrayOf(programArgs))
+    } catch (err: Exception) {
+    }
+  }
+}
+
 private fun resolveMinecraftProgramArgs(project: Project): List<String> {
-  val raw = project.findProperty("minecraftArgs")?.toString()?.trim()
-    ?: project.findProperty("mcArgs")?.toString()?.trim()
+  val rawMinecraft = project.findProperty("minecraftArgs")?.toString()?.trim()
+  val rawMcArgs = project.findProperty("mcArgs")?.toString()?.trim()
+  val raw = rawMinecraft ?: rawMcArgs
   if (raw.isNullOrEmpty()) return emptyList()
   return parseCommandLineArgs(raw)
 }
@@ -349,6 +395,33 @@ private fun applyProgramArguments(run: Any, args: List<String>) {
   if (args.isEmpty()) return
   for (arg in args) {
     InvokerHelper.invokeMethod(run, "programArgument", arrayOf(arg))
+  }
+}
+
+private fun applyLoomProgramArguments(run: Any, args: List<String>) {
+  if (args.isEmpty()) return
+  try {
+    InvokerHelper.invokeMethod(run, "programArgs", arrayOf(args))
+    return
+  } catch (err: Exception) {
+  }
+  try {
+    InvokerHelper.invokeMethod(run, "programArgs", arrayOf(args.toTypedArray()))
+    return
+  } catch (err: Exception) {
+  }
+  try {
+    for (arg in args) {
+      InvokerHelper.invokeMethod(run, "programArgument", arrayOf(arg))
+    }
+    return
+  } catch (err: Exception) {
+  }
+  for (arg in args) {
+    try {
+      InvokerHelper.invokeMethod(run, "programArg", arrayOf(arg))
+    } catch (err: Exception) {
+    }
   }
 }
 
