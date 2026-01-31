@@ -45,9 +45,9 @@ Files:
 - Quilt versions: 1
   - 0.30.0-beta.0
 - Forge versions: 1
-  - 1.21.11-61.0.7
+  - 1.21.11-61.0.8
 - NeoForge versions: 1
-  - 21.11.36-beta
+  - 21.11.37-beta
 
 ## Artifacts index
 - Schema: mcmeta/v1
@@ -58,7 +58,16 @@ Files:
 - Project id: P7dR8mSH
 - Loaders: 1
   - fabric
-- Versions: 6
+- Versions: 7
+  - 0.141.2+1.21.11
+    - Game versions: 1
+      - 1.21.11
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/L34yYPTD/fabric-api-0.141.2%2B1.21.11.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/L34yYPTD/fabric-api-0.141.2%2B1.21.11.jar)
+        - sha1: 24e3ebda918036771748ce6a965e5948e1fd4def
+        - sha512: 3c1e7991ae72304a997bdbecc34a4bc742d4601349f000a7d9816b376a2e341c700f519cebb224f565d9b79d9c9492e1d7f918ec3f86e4f363e15df0c07f4b7e
   - 0.141.1+1.21.11
     - Game versions: 1
       - 1.21.11
@@ -117,8 +126,9 @@ Files:
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 61
+- Versions: 62
   - 1.21.11-R0.1-SNAPSHOT
+  - 100
   - 99
   - 98
   - 97
@@ -227,7 +237,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/30bb79802dcf36de95322ef6a055960c88131d2b/1.21.11.json](https://piston-meta.mojang.com/v1/packages/30bb79802dcf36de95322ef6a055960c88131d2b/1.21.11.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/bf5e8f406d7c6f4515cd8e10f7f9ec77d8d520b9/1.21.11.json](https://piston-meta.mojang.com/v1/packages/bf5e8f406d7c6f4515cd8e10f7f9ec77d8d520b9/1.21.11.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/ba2df812c2d12e0219c489c4cd9a5e1f0760f5bd/client.jar](https://piston-data.mojang.com/v1/objects/ba2df812c2d12e0219c489c4cd9a5e1f0760f5bd/client.jar)
   - sha1: ba2df812c2d12e0219c489c4cd9a5e1f0760f5bd
