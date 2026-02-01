@@ -20,6 +20,7 @@
     "forge maven metadata has no versions for minecraft c0.0.13a",
     "minestom maven metadata has no versions for minecraft c0.0.13a",
     "mojang downloads incomplete",
-    "neoforge maven metadata has no versions for minecraft c0.0.13a"
+    "neoforge maven metadata has no versions for minecraft c0.0.13a",
+    "paper-api maven metadata has no versions for c0.0.13a"
   ]
 }
