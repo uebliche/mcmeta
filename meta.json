@@ -7,13 +7,20 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "partial",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "error"
+    "purpur": "error",
+    "quilt": "error",
+    "yarn": "error"
   },
+  "jdk": 8,
+  "release_time": "2016-06-02T14:45:16+00:00",
   "notes": [
     "forge maven metadata has no versions for minecraft 1.10-pre1",
     "minestom maven metadata has no versions for minecraft 1.10-pre1",
-    "neoforge maven metadata has no versions for minecraft 1.10-pre1"
+    "mojang server metadata missing",
+    "neoforge maven metadata has no versions for minecraft 1.10-pre1",
+    "paper-api maven metadata has no versions for 1.10-pre1"
   ]
 }
