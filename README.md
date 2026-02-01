@@ -29,7 +29,7 @@ Files:
 - Minestom: partial
 - Mojang: ok
 - Neoforge: partial
-- Paper: error
+- Paper: partial
 - Purpur: error
 - Quilt: ok
 - Yarn: ok
@@ -78,8 +78,8 @@ Files:
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 0
-  - n/a
+- Versions: 1
+  - 1.18-rc3-R0.1-SNAPSHOT
 
 ### Folia
 - Type: papermc

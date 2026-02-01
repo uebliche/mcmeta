@@ -34,7 +34,12 @@
     "paper": {
       "type": "papermc",
       "project": "paper",
-      "versions": []
+      "versions": [
+        "1.18-rc3-R0.1-SNAPSHOT"
+      ],
+      "api_versions": [
+        "1.18-rc3-R0.1-SNAPSHOT"
+      ]
     },
     "folia": {
       "type": "papermc",
