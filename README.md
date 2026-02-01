@@ -37,6 +37,7 @@ Files:
 - forge maven metadata has no versions for minecraft 1.20.5-pre4
 - minestom maven metadata has no versions for minecraft 1.20.5-pre4
 - neoforge maven metadata has no versions for minecraft 1.20.5-pre4
+- paper-api maven metadata has no versions for 1.20.5-pre4
 
 ## Loader index
 - Schema: mcmeta/v1
@@ -90,7 +91,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/703922c1ebee484c7b28b3d5d6d778c1bc4c6938/1.20.5-pre4.json](https://piston-meta.mojang.com/v1/packages/703922c1ebee484c7b28b3d5d6d778c1bc4c6938/1.20.5-pre4.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/0bb22a880ddf2fa619be6236a02cfd94f6dfba36/1.20.5-pre4.json](https://piston-meta.mojang.com/v1/packages/0bb22a880ddf2fa619be6236a02cfd94f6dfba36/1.20.5-pre4.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/65c8e74e25a8c2e566188baa9090c0febd07b054/client.jar](https://piston-data.mojang.com/v1/objects/65c8e74e25a8c2e566188baa9090c0febd07b054/client.jar)
   - sha1: 65c8e74e25a8c2e566188baa9090c0febd07b054
