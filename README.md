@@ -31,6 +31,7 @@ Files:
 - minestom maven metadata has no versions for minecraft a1.2.2a
 - mojang downloads incomplete
 - neoforge maven metadata has no versions for minecraft a1.2.2a
+- paper-api maven metadata has no versions for a1.2.2a
 
 ## Loader index
 - Schema: mcmeta/v1
