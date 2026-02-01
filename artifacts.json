@@ -33,6 +33,8 @@
           {
             "api": "3.0.0",
             "versions": [
+              "3.5.0-SNAPSHOT",
+              "3.4.0",
               "3.4.0-SNAPSHOT",
               "3.3.0-SNAPSHOT",
               "3.2.0-SNAPSHOT",
@@ -42,7 +44,7 @@
               "3.1.0"
             ],
             "range": {
-              "newest": "3.4.0-SNAPSHOT",
+              "newest": "3.5.0-SNAPSHOT",
               "oldest": "3.1.0"
             }
           }
