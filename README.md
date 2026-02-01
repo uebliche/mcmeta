@@ -43,6 +43,7 @@ Files:
 - forge maven metadata has no versions for minecraft 20w17a
 - minestom maven metadata has no versions for minecraft 20w17a
 - neoforge maven metadata has no versions for minecraft 20w17a
+- paper-api maven metadata has no versions for 20w17a
 
 ## Loader index
 - Schema: mcmeta/v1
