@@ -130,6 +130,7 @@ Files:
 - forge maven metadata has no versions for minecraft 18w50a
 - minestom maven metadata has no versions for minecraft 18w50a
 - neoforge maven metadata has no versions for minecraft 18w50a
+- paper-api maven metadata has no versions for 18w50a
 
 ## Loader index
 - Schema: mcmeta/v1
