@@ -39,6 +39,7 @@ Files:
 - forge maven metadata has no versions for minecraft 19w04a
 - minestom maven metadata has no versions for minecraft 19w04a
 - neoforge maven metadata has no versions for minecraft 19w04a
+- paper-api maven metadata has no versions for 19w04a
 
 ## Loader index
 - Schema: mcmeta/v1
