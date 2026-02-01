@@ -30,6 +30,7 @@ Files:
 - minestom maven metadata has no versions for minecraft 18w03a
 - mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 18w03a
+- paper-api maven metadata has no versions for 18w03a
 
 ## Loader index
 - Schema: mcmeta/v1
