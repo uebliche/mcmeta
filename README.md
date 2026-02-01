@@ -30,6 +30,7 @@ Files:
 - minestom maven metadata has no versions for minecraft rd-132328
 - mojang downloads incomplete
 - neoforge maven metadata has no versions for minecraft rd-132328
+- paper-api maven metadata has no versions for rd-132328
 
 ## Loader index
 - Schema: mcmeta/v1
