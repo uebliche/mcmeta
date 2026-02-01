@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "26.1-snapshot-5",
+  "minecraft": "26.1-snapshot-4",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
@@ -15,13 +15,13 @@
     "yarn": "error"
   },
   "jdk": 21,
-  "release_time": "2026-01-27T13:01:17+00:00",
-  "protocol_version": 1073742115,
-  "data_version": 4770,
+  "release_time": "2026-01-20T14:15:37+00:00",
+  "protocol_version": 1073742114,
+  "data_version": 4768,
   "notes": [
-    "forge maven metadata has no versions for minecraft 26.1-snapshot-5",
-    "minestom maven metadata has no versions for minecraft 26.1-snapshot-5",
-    "neoforge maven metadata has no versions for minecraft 26.1-snapshot-5",
-    "paper-api maven metadata has no versions for 26.1-snapshot-5"
+    "forge maven metadata has no versions for minecraft 26.1-snapshot-4",
+    "minestom maven metadata has no versions for minecraft 26.1-snapshot-4",
+    "neoforge maven metadata has no versions for minecraft 26.1-snapshot-4",
+    "paper-api maven metadata has no versions for 26.1-snapshot-4"
   ]
 }
