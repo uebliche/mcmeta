@@ -7,13 +7,30 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "jdk": 8,
+  "yarn": {
+    "latest": "1.15-pre7+build.2",
+    "versions": [
+      "1.15-pre7+build.2",
+      "1.15-pre7+build.1"
+    ]
+  },
+  "release_time": "2019-12-09T12:14:11+00:00",
+  "protocol_version": 572,
+  "data_version": 2224,
+  "resource_pack_format": 5,
+  "data_pack_format": 5,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.15-pre7",
     "minestom maven metadata has no versions for minecraft 1.15-pre7",
-    "neoforge maven metadata has no versions for minecraft 1.15-pre7"
+    "neoforge maven metadata has no versions for minecraft 1.15-pre7",
+    "paper-api maven metadata has no versions for 1.15-pre7"
   ]
 }
