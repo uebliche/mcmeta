@@ -32,6 +32,7 @@ Files:
 - forge maven metadata has no versions for minecraft 26.1-snapshot-2
 - minestom maven metadata has no versions for minecraft 26.1-snapshot-2
 - neoforge maven metadata has no versions for minecraft 26.1-snapshot-2
+- paper-api maven metadata has no versions for 26.1-snapshot-2
 
 ## Loader index
 - Schema: mcmeta/v1
@@ -85,7 +86,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/efc60012cc6b2bb359c6808bb1a64c6cf7fd9a38/26.1-snapshot-2.json](https://piston-meta.mojang.com/v1/packages/efc60012cc6b2bb359c6808bb1a64c6cf7fd9a38/26.1-snapshot-2.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/9a05ec2793d19a37627fe83e16d6cbfe660d40cb/26.1-snapshot-2.json](https://piston-meta.mojang.com/v1/packages/9a05ec2793d19a37627fe83e16d6cbfe660d40cb/26.1-snapshot-2.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/2443ba7d3c92457e00e75a4363a601461ebd3ed4/client.jar](https://piston-data.mojang.com/v1/objects/2443ba7d3c92457e00e75a4363a601461ebd3ed4/client.jar)
   - sha1: 2443ba7d3c92457e00e75a4363a601461ebd3ed4
