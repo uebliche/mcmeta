@@ -48,6 +48,7 @@ Files:
 - forge maven metadata has no versions for minecraft 20w13b
 - minestom maven metadata has no versions for minecraft 20w13b
 - neoforge maven metadata has no versions for minecraft 20w13b
+- paper-api maven metadata has no versions for 20w13b
 
 ## Loader index
 - Schema: mcmeta/v1
