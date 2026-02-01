@@ -7,13 +7,39 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "error"
+    "purpur": "error",
+    "quilt": "error",
+    "yarn": "ok"
   },
+  "jdk": 8,
+  "yarn": {
+    "latest": "1.14 Pre-Release 1+build.9",
+    "versions": [
+      "1.14 Pre-Release 1+build.9",
+      "1.14 Pre-Release 1+build.8",
+      "1.14 Pre-Release 1+build.7",
+      "1.14 Pre-Release 1+build.6",
+      "1.14 Pre-Release 1+build.5",
+      "1.14 Pre-Release 1+build.4",
+      "1.14 Pre-Release 1+build.3",
+      "1.14 Pre-Release 1+build.2",
+      "1.14 Pre-Release 1+build.12",
+      "1.14 Pre-Release 1+build.11",
+      "1.14 Pre-Release 1+build.10"
+    ]
+  },
+  "release_time": "2019-04-10T14:24:16+00:00",
+  "protocol_version": 472,
+  "data_version": 1947,
+  "resource_pack_format": 4,
+  "data_pack_format": 4,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.14 Pre-Release 1",
     "minestom maven metadata has no versions for minecraft 1.14 Pre-Release 1",
-    "neoforge maven metadata has no versions for minecraft 1.14 Pre-Release 1"
+    "neoforge maven metadata has no versions for minecraft 1.14 Pre-Release 1",
+    "paper-api maven metadata has no versions for 1.14 Pre-Release 1"
   ]
 }
