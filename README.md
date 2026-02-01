@@ -38,6 +38,7 @@ Files:
 - forge maven metadata has no versions for minecraft 20w14infinite
 - minestom maven metadata has no versions for minecraft 20w14infinite
 - neoforge maven metadata has no versions for minecraft 20w14infinite
+- paper-api maven metadata has no versions for 20w14infinite
 
 ## Loader index
 - Schema: mcmeta/v1
