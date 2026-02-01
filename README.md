@@ -33,6 +33,7 @@ Files:
 - forge maven metadata has no versions for minecraft 18w48b
 - minestom maven metadata has no versions for minecraft 18w48b
 - neoforge maven metadata has no versions for minecraft 18w48b
+- paper-api maven metadata has no versions for 18w48b
 
 ## Loader index
 - Schema: mcmeta/v1
