@@ -27,7 +27,7 @@
     },
     "minecraft": {
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/3684aa08487e3ae0314c5f7a684e527921ae3b30/1.20.2-pre3.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/caa93a69d1515073c86e5122d0700b427f2b14aa/1.20.2-pre3.json"
       },
       "client": {
         "url": "https://piston-data.mojang.com/v1/objects/b04c6a6bd4c7360779f32571058452198136d805/client.jar",
