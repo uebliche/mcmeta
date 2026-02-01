@@ -7,13 +7,57 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "jdk": 8,
+  "yarn": {
+    "latest": "1.16-pre2+build.9",
+    "versions": [
+      "1.16-pre2+build.9",
+      "1.16-pre2+build.8",
+      "1.16-pre2+build.7",
+      "1.16-pre2+build.6",
+      "1.16-pre2+build.5",
+      "1.16-pre2+build.4",
+      "1.16-pre2+build.3",
+      "1.16-pre2+build.29",
+      "1.16-pre2+build.28",
+      "1.16-pre2+build.27",
+      "1.16-pre2+build.26",
+      "1.16-pre2+build.25",
+      "1.16-pre2+build.24",
+      "1.16-pre2+build.23",
+      "1.16-pre2+build.22",
+      "1.16-pre2+build.21",
+      "1.16-pre2+build.20",
+      "1.16-pre2+build.2",
+      "1.16-pre2+build.19",
+      "1.16-pre2+build.18",
+      "1.16-pre2+build.17",
+      "1.16-pre2+build.16",
+      "1.16-pre2+build.15",
+      "1.16-pre2+build.14",
+      "1.16-pre2+build.13",
+      "1.16-pre2+build.12",
+      "1.16-pre2+build.11",
+      "1.16-pre2+build.10",
+      "1.16-pre2+build.1"
+    ]
+  },
+  "release_time": "2020-06-05T10:47:59+00:00",
+  "protocol_version": 722,
+  "data_version": 2557,
+  "resource_pack_format": 5,
+  "data_pack_format": 5,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.16-pre2",
     "minestom maven metadata has no versions for minecraft 1.16-pre2",
-    "neoforge maven metadata has no versions for minecraft 1.16-pre2"
+    "neoforge maven metadata has no versions for minecraft 1.16-pre2",
+    "paper-api maven metadata has no versions for 1.16-pre2"
   ]
 }
