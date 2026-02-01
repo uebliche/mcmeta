@@ -15,6 +15,9 @@
       "project": "paper",
       "versions": [
         "2025"
+      ],
+      "build_ids": [
+        "2025"
       ]
     },
     "folia": {
