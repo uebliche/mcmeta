@@ -43,6 +43,7 @@ Files:
 - forge maven metadata has no versions for minecraft 21w05a
 - minestom maven metadata has no versions for minecraft 21w05a
 - neoforge maven metadata has no versions for minecraft 21w05a
+- paper-api maven metadata has no versions for 21w05a
 
 ## Loader index
 - Schema: mcmeta/v1
