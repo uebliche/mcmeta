@@ -31,6 +31,7 @@ Files:
 - minestom maven metadata has no versions for minecraft 1.10.1
 - mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 1.10.1
+- paper-api maven metadata has no versions for 1.10.1
 
 ## Loader index
 - Schema: mcmeta/v1
