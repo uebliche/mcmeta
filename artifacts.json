@@ -1,6 +1,6 @@
 {
   "schema": "mcmeta/v1",
-  "minecraft": "26.1-snapshot-2",
+  "minecraft": "26.1-snapshot-5",
   "artifacts": {
     "fabric-api": {
       "type": "modrinth",
@@ -10,18 +10,34 @@
       ],
       "versions": [
         {
-          "version_number": "0.141.2+26.1",
+          "version_number": "0.143.0+26.1",
           "game_versions": [
-            "26.1-snapshot-2"
+            "26.1-snapshot-5"
           ],
           "loaders": [
             "fabric"
           ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/sMoLaQCd/fabric-api-0.141.2%2B26.1.jar",
-              "sha1": "d9962b5ca656775c74351b30960ee25f0297a41c",
-              "sha512": "8e8dc982e80a78a74cba9eed870ee72c6dd50b381cc55a02c9749d3a41f3317a9ae6c8d8a50383c146dee7ee3bc530d61dc20b905a30e01279960838cbc31cfd"
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/nTESnhP0/fabric-api-0.143.0%2B26.1.jar",
+              "sha1": "77b983596d08c774cc2831114d34dce07fd4e1f6",
+              "sha512": "21cd12760721290e898fdc4e86b3ea2fd8e47d155c5f7b6cb04c5ddae6a60fb0934f67f707cc6b2b77c486f3c56054ed8c01025150a5abb53f3296777e871111"
+            }
+          ]
+        },
+        {
+          "version_number": "0.142.3+26.1",
+          "game_versions": [
+            "26.1-snapshot-5"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/vHlPCTc1/fabric-api-0.142.3%2B26.1.jar",
+              "sha1": "3f56d467d2b22de2999b2fd72a28fef9dcd0cd30",
+              "sha512": "b3b1009e21f982f24da198e02eff01cfb1562780a73e746e51f0698e0b8a804f46ede16ff23a3385fd85aaf3d2dfd943f784a3abd4ed3df990e0b095d1f87346"
             }
           ]
         }
@@ -42,106 +58,19 @@
       "project": "purpur",
       "versions": []
     },
-    "proxies": {
-      "velocity": {
-        "type": "papermc",
-        "project": "velocity",
-        "groups": [
-          {
-            "api": "3.0.0",
-            "versions": [
-              "3.4.0-SNAPSHOT",
-              "3.3.0-SNAPSHOT",
-              "3.2.0-SNAPSHOT",
-              "3.1.2-SNAPSHOT",
-              "3.1.1",
-              "3.1.1-SNAPSHOT",
-              "3.1.0"
-            ],
-            "range": {
-              "newest": "3.4.0-SNAPSHOT",
-              "oldest": "3.1.0"
-            }
-          },
-          {
-            "api": "1.1.0",
-            "versions": [
-              "1.1.9"
-            ],
-            "range": {
-              "newest": "1.1.9",
-              "oldest": "1.1.9"
-            }
-          },
-          {
-            "api": "1.0.0",
-            "versions": [
-              "1.0.10"
-            ],
-            "range": {
-              "newest": "1.0.10",
-              "oldest": "1.0.10"
-            }
-          }
-        ]
-      },
-      "bungeecord": {
-        "type": "maven",
-        "project": "bungeecord",
-        "groups": [
-          {
-            "api": "1.21",
-            "versions": [
-              "1.21-R0.4",
-              "1.21-R0.3",
-              "1.21-R0.2",
-              "1.21-R0.1"
-            ],
-            "range": {
-              "newest": "1.21-R0.4",
-              "oldest": "1.21-R0.1"
-            }
-          },
-          {
-            "api": "1.20",
-            "versions": [
-              "1.20-R0.2",
-              "1.20-R0.1"
-            ],
-            "range": {
-              "newest": "1.20-R0.2",
-              "oldest": "1.20-R0.1"
-            }
-          },
-          {
-            "api": "1.16",
-            "versions": [
-              "1.16-R0.4",
-              "1.16-R0.3",
-              "1.16-R0.2",
-              "1.16-R0.1"
-            ],
-            "range": {
-              "newest": "1.16-R0.4",
-              "oldest": "1.16-R0.1"
-            }
-          }
-        ]
-      }
-    },
     "minecraft": {
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/fff9c832e266d274b723b83fd18a0b64a5ee3ef7/26.1-snapshot-2.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/9c477d4d399b38c4c85d6d10f5fb3e16dd2142f7/26.1-snapshot-5.json"
       },
       "client": {
-        "url": "https://piston-data.mojang.com/v1/objects/2443ba7d3c92457e00e75a4363a601461ebd3ed4/client.jar",
-        "sha1": "2443ba7d3c92457e00e75a4363a601461ebd3ed4",
-        "size": 37283304
+        "url": "https://piston-data.mojang.com/v1/objects/4c938df4f6ce3138ab38b488f3add8693918a7a0/client.jar",
+        "sha1": "4c938df4f6ce3138ab38b488f3add8693918a7a0",
+        "size": 37474887
       },
       "server": {
-        "url": "https://piston-data.mojang.com/v1/objects/165c30e5076a13848404f41692ff1e0126d0a6f3/server.jar",
-        "sha1": "165c30e5076a13848404f41692ff1e0126d0a6f3",
-        "size": 60053273
+        "url": "https://piston-data.mojang.com/v1/objects/4e79b5742a989ae384d9bb032ecfe30ee55f0c48/server.jar",
+        "sha1": "4e79b5742a989ae384d9bb032ecfe30ee55f0c48",
+        "size": 60145486
       }
     }
   },
