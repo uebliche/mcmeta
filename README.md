@@ -48,7 +48,7 @@ Files:
 - Forge versions: 1
   - 1.21.1-52.1.10
 - NeoForge versions: 1
-  - 21.1.218
+  - 21.1.219
 
 ## Artifacts index
 - Schema: mcmeta/v1
@@ -59,7 +59,16 @@ Files:
 - Project id: P7dR8mSH
 - Loaders: 1
   - fabric
-- Versions: 26
+- Versions: 27
+  - 0.116.8+1.21.1
+    - Game versions: 1
+      - 1.21.1
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/3wZtvzew/fabric-api-0.116.8%2B1.21.1.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/3wZtvzew/fabric-api-0.116.8%2B1.21.1.jar)
+        - sha1: 7bb69655470af3afa456bb2b6e984c87fdfacf47
+        - sha512: 5a4b29861e9526ce1ccb3a856acf0053397d43fd0756786f3188147f0892c216370bc85b692a8293a9e129538293a087ec9eff4fdbe8b6e43608a7e56b226364
   - 0.116.7+1.21.1
     - Game versions: 1
       - 1.21.1
@@ -487,7 +496,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/59292d2118e2f06f836d8bdc8248225f914e1ee9/1.21.1.json](https://piston-meta.mojang.com/v1/packages/59292d2118e2f06f836d8bdc8248225f914e1ee9/1.21.1.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/44d9cc2011ee7a1372c8cb372903982de2ca9c90/1.21.1.json](https://piston-meta.mojang.com/v1/packages/44d9cc2011ee7a1372c8cb372903982de2ca9c90/1.21.1.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar](https://piston-data.mojang.com/v1/objects/30c73b1c5da787909b2f73340419fdf13b9def88/client.jar)
   - sha1: 30c73b1c5da787909b2f73340419fdf13b9def88
