@@ -147,7 +147,8 @@ Files:
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 76
+- Versions: 77
+  - 1.19-R0.1-SNAPSHOT
   - 81
   - 79
   - 78
