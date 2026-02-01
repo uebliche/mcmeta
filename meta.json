@@ -11,9 +11,19 @@
     "neoforge": "ok",
     "paper": "ok",
     "purpur": "ok",
-    "quilt": "ok"
+    "quilt": "ok",
+    "yarn": "ok"
   },
   "jdk": 21,
+  "yarn": {
+    "latest": "1.21.11+build.4",
+    "versions": [
+      "1.21.11+build.4",
+      "1.21.11+build.3",
+      "1.21.11+build.2",
+      "1.21.11+build.1"
+    ]
+  },
   "release_time": "2025-12-09T12:23:30+00:00",
   "protocol_version": 774,
   "data_version": 4671

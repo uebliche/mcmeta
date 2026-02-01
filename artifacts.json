@@ -10,6 +10,22 @@
       ],
       "versions": [
         {
+          "version_number": "0.141.2+1.21.11",
+          "game_versions": [
+            "1.21.11"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "files": [
+            {
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/L34yYPTD/fabric-api-0.141.2%2B1.21.11.jar",
+              "sha1": "24e3ebda918036771748ce6a965e5948e1fd4def",
+              "sha512": "3c1e7991ae72304a997bdbecc34a4bc742d4601349f000a7d9816b376a2e341c700f519cebb224f565d9b79d9c9492e1d7f918ec3f86e4f363e15df0c07f4b7e"
+            }
+          ]
+        },
+        {
           "version_number": "0.141.1+1.21.11",
           "game_versions": [
             "1.21.11"
@@ -111,6 +127,85 @@
       "type": "papermc",
       "project": "paper",
       "versions": [
+        "1.21.11-R0.1-SNAPSHOT",
+        "100",
+        "99",
+        "98",
+        "97",
+        "96",
+        "95",
+        "94",
+        "93",
+        "92",
+        "91",
+        "90",
+        "89",
+        "88",
+        "87",
+        "86",
+        "85",
+        "82",
+        "81",
+        "80",
+        "79",
+        "78",
+        "77",
+        "76",
+        "75",
+        "74",
+        "73",
+        "72",
+        "71",
+        "70",
+        "69",
+        "68",
+        "67",
+        "66",
+        "65",
+        "64",
+        "63",
+        "62",
+        "61",
+        "60",
+        "59",
+        "58",
+        "57",
+        "56",
+        "55",
+        "54",
+        "53",
+        "52",
+        "51",
+        "49",
+        "48",
+        "47",
+        "46",
+        "45",
+        "44",
+        "43",
+        "42",
+        "39",
+        "38",
+        "37",
+        "35",
+        "34"
+      ],
+      "api_versions": [
+        "1.21.11-R0.1-SNAPSHOT"
+      ],
+      "build_ids": [
+        "100",
+        "99",
+        "98",
+        "97",
+        "96",
+        "95",
+        "94",
+        "93",
+        "92",
+        "91",
+        "90",
+        "89",
         "88",
         "87",
         "86",
@@ -166,6 +261,7 @@
       "type": "papermc",
       "project": "folia",
       "versions": [
+        "11",
         "10",
         "9",
         "8",
@@ -182,6 +278,11 @@
       "type": "purpur",
       "project": "purpur",
       "versions": [
+        "2559",
+        "2558",
+        "2557",
+        "2556",
+        "2555",
         "2554",
         "2553",
         "2552",
@@ -203,70 +304,9 @@
         "2536"
       ]
     },
-    "proxies": {
-      "velocity": {
-        "type": "papermc",
-        "project": "velocity",
-        "groups": [
-          {
-            "api": "3.0.0",
-            "versions": [
-              "3.4.0-SNAPSHOT"
-            ],
-            "range": {
-              "newest": "3.4.0-SNAPSHOT",
-              "oldest": "3.4.0-SNAPSHOT"
-            }
-          }
-        ]
-      },
-      "bungeecord": {
-        "type": "maven",
-        "project": "bungeecord",
-        "groups": [
-          {
-            "api": "1.21",
-            "versions": [
-              "1.21-R0.4",
-              "1.21-R0.3",
-              "1.21-R0.2",
-              "1.21-R0.1"
-            ],
-            "range": {
-              "newest": "1.21-R0.4",
-              "oldest": "1.21-R0.1"
-            }
-          },
-          {
-            "api": "1.20",
-            "versions": [
-              "1.20-R0.2",
-              "1.20-R0.1"
-            ],
-            "range": {
-              "newest": "1.20-R0.2",
-              "oldest": "1.20-R0.1"
-            }
-          },
-          {
-            "api": "1.16",
-            "versions": [
-              "1.16-R0.4",
-              "1.16-R0.3",
-              "1.16-R0.2",
-              "1.16-R0.1"
-            ],
-            "range": {
-              "newest": "1.16-R0.4",
-              "oldest": "1.16-R0.1"
-            }
-          }
-        ]
-      }
-    },
     "minecraft": {
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/30bb79802dcf36de95322ef6a055960c88131d2b/1.21.11.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/bf5e8f406d7c6f4515cd8e10f7f9ec77d8d520b9/1.21.11.json"
       },
       "client": {
         "url": "https://piston-data.mojang.com/v1/objects/ba2df812c2d12e0219c489c4cd9a5e1f0760f5bd/client.jar",
