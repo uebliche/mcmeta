@@ -30,6 +30,7 @@ Files:
 - minestom maven metadata has no versions for minecraft 14w19a
 - mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 14w19a
+- paper-api maven metadata has no versions for 14w19a
 
 ## Loader index
 - Schema: mcmeta/v1
