@@ -72,7 +72,8 @@ Files:
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 16
+- Versions: 17
+  - 1.20-R0.1-SNAPSHOT
   - 17
   - 16
   - 14
@@ -108,7 +109,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/104aacad1e32d74ca8c8ab90b8cd6c23770e4770/1.20.json](https://piston-meta.mojang.com/v1/packages/104aacad1e32d74ca8c8ab90b8cd6c23770e4770/1.20.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/6a6ba241d6d041e9f38788ad8a65aa8300aea211/1.20.json](https://piston-meta.mojang.com/v1/packages/6a6ba241d6d041e9f38788ad8a65aa8300aea211/1.20.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/e575a48efda46cf88111ba05b624ef90c520eef1/client.jar](https://piston-data.mojang.com/v1/objects/e575a48efda46cf88111ba05b624ef90c520eef1/client.jar)
   - sha1: e575a48efda46cf88111ba05b624ef90c520eef1
