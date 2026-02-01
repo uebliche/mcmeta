@@ -31,6 +31,7 @@ Files:
 - minestom maven metadata has no versions for minecraft 1.9-pre3
 - mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 1.9-pre3
+- paper-api maven metadata has no versions for 1.9-pre3
 
 ## Loader index
 - Schema: mcmeta/v1
