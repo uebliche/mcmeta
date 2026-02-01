@@ -31,6 +31,7 @@ Files:
 - minestom maven metadata has no versions for minecraft 1.7.8
 - mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 1.7.8
+- paper-api maven metadata has no versions for 1.7.8
 
 ## Loader index
 - Schema: mcmeta/v1
