@@ -37,6 +37,7 @@ Files:
 - forge maven metadata has no versions for minecraft 1.21-rc1
 - minestom maven metadata has no versions for minecraft 1.21-rc1
 - neoforge maven metadata has no versions for minecraft 1.21-rc1
+- paper-api maven metadata has no versions for 1.21-rc1
 
 ## Loader index
 - Schema: mcmeta/v1
@@ -82,7 +83,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/708fac609f16dfd2ecf316d5bec9cddd30e644f5/1.21-rc1.json](https://piston-meta.mojang.com/v1/packages/708fac609f16dfd2ecf316d5bec9cddd30e644f5/1.21-rc1.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/05bdbacb6bbb99eda02d803851cf8a242a6be85d/1.21-rc1.json](https://piston-meta.mojang.com/v1/packages/05bdbacb6bbb99eda02d803851cf8a242a6be85d/1.21-rc1.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/4ad5ef18f48b5e901de19fa1767933255e35c5f2/client.jar](https://piston-data.mojang.com/v1/objects/4ad5ef18f48b5e901de19fa1767933255e35c5f2/client.jar)
   - sha1: 4ad5ef18f48b5e901de19fa1767933255e35c5f2
