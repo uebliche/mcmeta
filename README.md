@@ -41,6 +41,7 @@ Files:
 - forge maven metadata has no versions for minecraft 1.14.4-pre6
 - minestom maven metadata has no versions for minecraft 1.14.4-pre6
 - neoforge maven metadata has no versions for minecraft 1.14.4-pre6
+- paper-api maven metadata has no versions for 1.14.4-pre6
 
 ## Loader index
 - Schema: mcmeta/v1
