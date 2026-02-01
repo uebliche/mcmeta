@@ -21,7 +21,7 @@ Files:
 - Minestom: partial
 - Mojang: partial
 - Neoforge: partial
-- Paper: ok
+- Paper: partial
 - Purpur: error
 - Quilt: error
 - Yarn: error
@@ -30,6 +30,7 @@ Files:
 - minestom maven metadata has no versions for minecraft 1.9.4
 - mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 1.9.4
+- paper-api maven metadata has no versions for 1.9.4
 
 ## Loader index
 - Schema: mcmeta/v1
