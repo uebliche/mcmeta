@@ -395,7 +395,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/bbac4081a03d67d7cbd6b93f231c083101f068a8/1.21.5.json](https://piston-meta.mojang.com/v1/packages/bbac4081a03d67d7cbd6b93f231c083101f068a8/1.21.5.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/1d764f0a0003458309a80505e454f6598dd2c549/1.21.5.json](https://piston-meta.mojang.com/v1/packages/1d764f0a0003458309a80505e454f6598dd2c549/1.21.5.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/b88808bbb3da8d9f453694b5d8f74a3396f1a533/client.jar](https://piston-data.mojang.com/v1/objects/b88808bbb3da8d9f453694b5d8f74a3396f1a533/client.jar)
   - sha1: b88808bbb3da8d9f453694b5d8f74a3396f1a533
