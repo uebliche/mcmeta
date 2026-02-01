@@ -19,6 +19,7 @@
     "forge maven metadata has no versions for minecraft rd-132211",
     "minestom maven metadata has no versions for minecraft rd-132211",
     "mojang downloads incomplete",
-    "neoforge maven metadata has no versions for minecraft rd-132211"
+    "neoforge maven metadata has no versions for minecraft rd-132211",
+    "paper-api maven metadata has no versions for rd-132211"
   ]
 }
