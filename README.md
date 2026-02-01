@@ -21,7 +21,7 @@ Files:
 - Minestom: partial
 - Mojang: partial
 - Neoforge: partial
-- Paper: ok
+- Paper: partial
 - Purpur: error
 - Quilt: error
 - Yarn: error
@@ -31,6 +31,7 @@ Files:
 - minestom maven metadata has no versions for minecraft 1.13.1
 - mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 1.13.1
+- paper-api maven metadata has no versions for 1.13.1
 
 ## Loader index
 - Schema: mcmeta/v1
