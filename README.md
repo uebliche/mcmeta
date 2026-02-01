@@ -1,154 +1,116 @@
-# mcmeta
+# mcmeta data for Minecraft 26.1-snapshot-5
 
-Published metadata per Minecraft version lives on branches `mc/<mcVersion>`.
-This repository is updated by the harvester action in `uebliche/mcmeta-harvest`.
+This branch contains generated metadata for Minecraft 26.1-snapshot-5.
 
-Two convenience branches exist:
+Files:
+- loader-index.json
+- artifacts.json
+- meta.json
 
-- `latest` (newest release from Mojang manifest)
-- `latest-snapshot` (newest non-release, including snapshots/betas)
+## Meta
+- Schema: mcmeta/v1
+- Minecraft: 26.1-snapshot-5
+- JDK: 21
+- Release time: 2026-01-27T13:01:17+00:00
+- Protocol version: 1073742115
+- Data version: 4770
 
-Proxy branches (Velocity):
+## Sources
+- Fabric: ok
+- Fabric-api: ok
+- Folia: error
+- Forge: partial
+- Minestom: partial
+- Mojang: partial
+- Neoforge: partial
+- Paper: error
+- Purpur: error
+- Quilt: error
+- Yarn: error
 
-- `proxy/velocity-<api>`
-- `proxy/velocity-latest`
+## Notes
+- forge maven metadata has no versions for minecraft 26.1-snapshot-5
+- minestom maven metadata has no versions for minecraft 26.1-snapshot-5
+- neoforge maven metadata has no versions for minecraft 26.1-snapshot-5
+- paper-api maven metadata has no versions for 26.1-snapshot-5
 
-Proxy branches (BungeeCord):
+## Loader index
+- Schema: mcmeta/v1
+- Minecraft: 26.1-snapshot-5
+- Fabric versions: 1
+  - 0.18.4
+- Quilt versions: 0
+  - n/a
+- Forge versions: 0
+  - n/a
+- NeoForge versions: 0
+  - n/a
 
-- `proxy/bungeecord-<api>`
-- `proxy/bungeecord-latest`
+## Artifacts index
+- Schema: mcmeta/v1
+- Minecraft: 26.1-snapshot-5
 
-## Web viewer
+### Fabric API (Modrinth)
+- Type: modrinth
+- Project id: P7dR8mSH
+- Loaders: 1
+  - fabric
+- Versions: 2
+  - 0.143.0+26.1
+    - Game versions: 1
+      - 26.1-snapshot-5
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/nTESnhP0/fabric-api-0.143.0%2B26.1.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/nTESnhP0/fabric-api-0.143.0%2B26.1.jar)
+        - sha1: 77b983596d08c774cc2831114d34dce07fd4e1f6
+        - sha512: 21cd12760721290e898fdc4e86b3ea2fd8e47d155c5f7b6cb04c5ddae6a60fb0934f67f707cc6b2b77c486f3c56054ed8c01025150a5abb53f3296777e871111
+  - 0.142.3+26.1
+    - Game versions: 1
+      - 26.1-snapshot-5
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/vHlPCTc1/fabric-api-0.142.3%2B26.1.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/vHlPCTc1/fabric-api-0.142.3%2B26.1.jar)
+        - sha1: 3f56d467d2b22de2999b2fd72a28fef9dcd0cd30
+        - sha512: b3b1009e21f982f24da198e02eff01cfb1562780a73e746e51f0698e0b8a804f46ede16ff23a3385fd85aaf3d2dfd943f784a3abd4ed3df990e0b095d1f87346
 
-The web viewer now lives in the uebliche docs under `/mcmeta/viewer`.
+### Paper
+- Type: papermc
+- Project: paper
+- Versions: 0
+  - n/a
 
-## Gradle plugin (local include)
+### Folia
+- Type: papermc
+- Project: folia
+- Versions: 0
+  - n/a
 
-A small Gradle plugin is available in `gradle-plugin/`. It loads mcmeta
-versions and exposes them as Gradle extra properties.
+### Purpur
+- Type: purpur
+- Project: purpur
+- Versions: 0
+  - n/a
 
-The `includeBuild("gradle-plugin")` line only points Gradle at the local
-plugin build. The plugin ID is still `net.uebliche.mcmeta`.
+### Minecraft downloads
+- Version JSON:
+  - Url: [https://piston-meta.mojang.com/v1/packages/9c477d4d399b38c4c85d6d10f5fb3e16dd2142f7/26.1-snapshot-5.json](https://piston-meta.mojang.com/v1/packages/9c477d4d399b38c4c85d6d10f5fb3e16dd2142f7/26.1-snapshot-5.json)
+- Client jar:
+  - Url: [https://piston-data.mojang.com/v1/objects/4c938df4f6ce3138ab38b488f3add8693918a7a0/client.jar](https://piston-data.mojang.com/v1/objects/4c938df4f6ce3138ab38b488f3add8693918a7a0/client.jar)
+  - sha1: 4c938df4f6ce3138ab38b488f3add8693918a7a0
+  - Size: 37474887
+- Server jar:
+  - Url: [https://piston-data.mojang.com/v1/objects/4e79b5742a989ae384d9bb032ecfe30ee55f0c48/server.jar](https://piston-data.mojang.com/v1/objects/4e79b5742a989ae384d9bb032ecfe30ee55f0c48/server.jar)
+  - sha1: 4e79b5742a989ae384d9bb032ecfe30ee55f0c48
+  - Size: 60145486
 
-Example `settings.gradle.kts`:
+## Runtimes
+### Minestom
+- Type: maven
+- Coordinates: 1
+  - net.minestom:minestom
+- Versions: 0
+  - n/a
 
-```kotlin
-pluginManagement {
-  includeBuild("gradle-plugin")
-}
-```
-
-Example `build.gradle.kts`:
-
-```kotlin
-plugins {
-  id("net.uebliche.mcmeta")
-}
-
-mcmeta {
-  minecraftVersion = "1.21.4"
-}
-
-dependencies {
-  val fabricLoader = extra["mcmetaFabricLoaderVersion"] as String?
-  val yarnMappings = extra["mcmetaYarnVersion"] as String?
-  val paperBuild = extra["mcmetaPaperVersion"] as String?
-  val velocityVersion = extra["mcmetaVelocityVersion"] as String?
-  val foliaBuild = extra["mcmetaFoliaVersion"] as String?
-  val jdk = extra["mcmetaJdkVersion"] as Int?
-  // use versions in your dependencies
-}
-```
-
-### Optional: auto repositories + dependencies
-
-Enable repository and dependency wiring explicitly in the extension:
-
-```kotlin
-mcmeta {
-  minecraftVersion = "1.21.4"
-  repositories {
-    all()
-  }
-  dependencies {
-    enabled = true
-    fabricLoader = true
-    fabricApi = true
-    neoForge = true
-    paperApi = true
-    velocityApi = true
-    velocityAnnotationProcessor = true
-  }
-}
-```
-
-Override dependency configurations if your project uses custom names:
-
-```kotlin
-mcmeta {
-  dependencies {
-    enabled = true
-    fabricLoader = true
-    configurations {
-      fabricLoader = "modImplementation"
-      fabricApi = "modImplementation"
-      paperApi = "compileOnly"
-      velocityApi = "compileOnly"
-      velocityAnnotationProcessor = "annotationProcessor"
-    }
-  }
-}
-```
-
-### Example project
-
-Platform examples live in:
-
-- `examples/platforms`
-
-### Manifold preprocessor (optional)
-
-Enable Manifold preprocessor support to get numeric symbols for all Mojang
-versions (including snapshots) and a `MC_VER` value for the requested
-Minecraft version. This allows expressions like:
-
-```java
-#if MC_VER >= MC_1_20_5
-// code for 1.20.5+
-#endif
-```
-
-Gradle example:
-
-```kotlin
-mcmeta {
-  minecraftVersion = "1.21.4"
-  enableManifoldPreprocessor = true
-  // optional override
-  // manifoldPreprocessorVersion = "2025.1.22"
-}
-```
-
-### Publishing (GitHub Packages)
-
-The same workflow also publishes to GitHub Packages:
-
-- `https://maven.pkg.github.com/uebliche/mcmeta`
-- Uses `GITHUB_TOKEN` with `packages:write` permission.
-
-To consume via Gradle Plugin DSL, add the repo in `settings.gradle.kts`:
-
-```kotlin
-pluginManagement {
-  repositories {
-    maven {
-      url = uri("https://maven.pkg.github.com/uebliche/mcmeta")
-      credentials {
-        username = System.getenv("GITHUB_ACTOR")
-        password = System.getenv("GITHUB_TOKEN")
-      }
-    }
-    gradlePluginPortal()
-  }
-}
-```
+Generated by mcmeta-harvest.
