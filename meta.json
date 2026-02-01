@@ -37,6 +37,7 @@
   "notes": [
     "forge maven metadata has no versions for minecraft 23w32a",
     "minestom maven metadata has no versions for minecraft 23w32a",
-    "neoforge maven metadata has no versions for minecraft 23w32a"
+    "neoforge maven metadata has no versions for minecraft 23w32a",
+    "paper-api maven metadata has no versions for 23w32a"
   ]
 }
