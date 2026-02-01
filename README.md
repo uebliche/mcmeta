@@ -14,7 +14,7 @@ Files:
 
 ## Sources
 - Fabric: error
-- Fabric-api: error
+- Fabric-api: ok
 - Folia: error
 - Forge: partial
 - Minestom: partial

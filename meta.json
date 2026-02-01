@@ -3,7 +3,7 @@
   "minecraft": "15w41a",
   "sources": {
     "fabric": "error",
-    "fabric-api": "error",
+    "fabric-api": "ok",
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
