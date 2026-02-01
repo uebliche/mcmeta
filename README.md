@@ -36,6 +36,7 @@ Files:
 - forge maven metadata has no versions for minecraft 3D Shareware v1.34
 - minestom maven metadata has no versions for minecraft 3D Shareware v1.34
 - neoforge maven metadata has no versions for minecraft 3D Shareware v1.34
+- paper-api maven metadata has no versions for 3D Shareware v1.34
 
 ## Loader index
 - Schema: mcmeta/v1
