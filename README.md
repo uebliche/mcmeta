@@ -30,6 +30,7 @@ Files:
 - minestom maven metadata has no versions for minecraft 1.4.4
 - mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 1.4.4
+- paper-api maven metadata has no versions for 1.4.4
 
 ## Loader index
 - Schema: mcmeta/v1
