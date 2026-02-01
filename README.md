@@ -40,6 +40,7 @@ Files:
 - forge maven metadata has no versions for minecraft 24w36a
 - minestom maven metadata has no versions for minecraft 24w36a
 - neoforge maven metadata has no versions for minecraft 24w36a
+- paper-api maven metadata has no versions for 24w36a
 
 ## Loader index
 - Schema: mcmeta/v1
@@ -102,7 +103,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/1e6860956681e28475d3abb4f554f8eb6ddceab8/24w36a.json](https://piston-meta.mojang.com/v1/packages/1e6860956681e28475d3abb4f554f8eb6ddceab8/24w36a.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/83456e44ea5dc767802395a43f1ef4d2f6b3519e/24w36a.json](https://piston-meta.mojang.com/v1/packages/83456e44ea5dc767802395a43f1ef4d2f6b3519e/24w36a.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/28ff7dc5f3a5e1759bfc4e05eab3590b23c30c6f/client.jar](https://piston-data.mojang.com/v1/objects/28ff7dc5f3a5e1759bfc4e05eab3590b23c30c6f/client.jar)
   - sha1: 28ff7dc5f3a5e1759bfc4e05eab3590b23c30c6f
