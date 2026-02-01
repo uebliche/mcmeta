@@ -41,6 +41,7 @@ Files:
 - forge maven metadata has no versions for minecraft 19w45b
 - minestom maven metadata has no versions for minecraft 19w45b
 - neoforge maven metadata has no versions for minecraft 19w45b
+- paper-api maven metadata has no versions for 19w45b
 
 ## Loader index
 - Schema: mcmeta/v1
