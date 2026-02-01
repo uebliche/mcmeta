@@ -43,6 +43,7 @@ Files:
 - forge maven metadata has no versions for minecraft 1.18.2-pre2
 - minestom maven metadata has no versions for minecraft 1.18.2-pre2
 - neoforge maven metadata has no versions for minecraft 1.18.2-pre2
+- paper-api maven metadata has no versions for 1.18.2-pre2
 
 ## Loader index
 - Schema: mcmeta/v1
