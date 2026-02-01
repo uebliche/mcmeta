@@ -7,13 +7,36 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
-    "quilt": "ok"
+    "purpur": "error",
+    "quilt": "ok",
+    "yarn": "ok"
   },
+  "jdk": 17,
+  "yarn": {
+    "latest": "1.18-pre4+build.9",
+    "versions": [
+      "1.18-pre4+build.9",
+      "1.18-pre4+build.8",
+      "1.18-pre4+build.7",
+      "1.18-pre4+build.6",
+      "1.18-pre4+build.5",
+      "1.18-pre4+build.4",
+      "1.18-pre4+build.3",
+      "1.18-pre4+build.2"
+    ]
+  },
+  "release_time": "2021-11-17T18:07:56+00:00",
+  "protocol_version": 1073741876,
+  "data_version": 2850,
+  "resource_pack_format": 8,
+  "data_pack_format": 8,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.18-pre4",
     "minestom maven metadata has no versions for minecraft 1.18-pre4",
-    "neoforge maven metadata has no versions for minecraft 1.18-pre4"
+    "neoforge maven metadata has no versions for minecraft 1.18-pre4",
+    "paper-api maven metadata has no versions for 1.18-pre4"
   ]
 }
