@@ -37,6 +37,7 @@ Files:
 - forge maven metadata has no versions for minecraft 1.19.4-rc1
 - minestom maven metadata has no versions for minecraft 1.19.4-rc1
 - neoforge maven metadata has no versions for minecraft 1.19.4-rc1
+- paper-api maven metadata has no versions for 1.19.4-rc1
 
 ## Loader index
 - Schema: mcmeta/v1
@@ -82,7 +83,7 @@ Files:
 
 ### Minecraft downloads
 - Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/de2273b3db1684552540a4da0ab12466050d3756/1.19.4-rc1.json](https://piston-meta.mojang.com/v1/packages/de2273b3db1684552540a4da0ab12466050d3756/1.19.4-rc1.json)
+  - Url: [https://piston-meta.mojang.com/v1/packages/0ca43fca24a2719f1ab2ffd871abe2aeebf48912/1.19.4-rc1.json](https://piston-meta.mojang.com/v1/packages/0ca43fca24a2719f1ab2ffd871abe2aeebf48912/1.19.4-rc1.json)
 - Client jar:
   - Url: [https://piston-data.mojang.com/v1/objects/d516cfa228f59e4b6f829a1742efe36b72065e8c/client.jar](https://piston-data.mojang.com/v1/objects/d516cfa228f59e4b6f829a1742efe36b72065e8c/client.jar)
   - sha1: d516cfa228f59e4b6f829a1742efe36b72065e8c
