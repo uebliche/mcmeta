@@ -30,6 +30,7 @@ Files:
 - minestom maven metadata has no versions for minecraft b1.3b
 - mojang downloads incomplete
 - neoforge maven metadata has no versions for minecraft b1.3b
+- paper-api maven metadata has no versions for b1.3b
 
 ## Loader index
 - Schema: mcmeta/v1
