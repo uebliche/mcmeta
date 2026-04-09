@@ -1,9 +1,0 @@
-node_modules/
-.vite/
-dist/
-docs/
-.gradle/
-**/build/
-
-.gradle-cache/
-gradle-plugin/.kotlin/
