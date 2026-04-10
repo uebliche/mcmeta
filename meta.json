@@ -1,5 +1,6 @@
 {
-  "schema": "mcmeta/v1",
+  "schema": "mcmeta/v2",
+  "schema_version": 2,
   "minecraft": "26.1.2",
   "sources": {
     "fabric": "ok",
