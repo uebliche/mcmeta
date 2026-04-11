@@ -25,7 +25,7 @@ The web viewer now lives in the uebliche docs under `/mcmeta/viewer`.
 ## Gradle plugin (local include)
 
 A small Gradle plugin is available in `gradle-plugin/`. It loads mcmeta
-versions and exposes them as Gradle extra properties.
+versions, buildability metadata, and exposes them as Gradle extra properties.
 
 The `includeBuild("gradle-plugin")` line only points Gradle at the local
 plugin build. The plugin ID is still `net.uebliche.mcmeta`.
@@ -52,6 +52,9 @@ mcmeta {
 dependencies {
   val fabricLoader = extra["mcmetaFabricLoaderVersion"] as String?
   val yarnMappings = extra["mcmetaYarnVersion"] as String?
+  val fabricBuildable = extra["mcmetaFabricBuildable"] as Boolean?
+  val fabricMappingChannel = extra["mcmetaFabricMappingChannel"] as String?
+  val fabricBlockedBy = extra["mcmetaFabricBlockedBy"] as String?
   val paperBuild = extra["mcmetaPaperVersion"] as String?
   val velocityVersion = extra["mcmetaVelocityVersion"] as String?
   val foliaBuild = extra["mcmetaFoliaVersion"] as String?
@@ -59,6 +62,32 @@ dependencies {
   // use versions in your dependencies
 }
 ```
+
+For Fabric projects, the plugin also exposes a shared mapping resolver object:
+
+```groovy
+dependencies {
+  minecraft "com.mojang:minecraft:${resolvedMinecraftVersion}"
+  (project.ext.has("mcmetaFabricSupport")
+      ? project.ext.mcmetaFabricSupport
+      : project.rootProject.ext.mcmetaFabricSupport)
+      .applyMappings(project, delegate)
+}
+```
+
+`applyMappings(...)` enforces the shared policy `mojang -> yarn -> intermediary`
+and fails early when `buildability.json` (or the derived fallback data on older
+branches) marks the selected Minecraft version as blocked.
+
+Additional extras now include:
+
+- `mcmetaFabricBuildable`
+- `mcmetaFabricBlockedBy`
+- `mcmetaFabricMappingChannel`
+- `mcmetaFabricMappingVersion`
+- `mcmetaFabricAvailableMappingChannels`
+- `mcmeta<Loader>Buildable`
+- `mcmeta<Loader>BlockedBy`
 
 ### Optional: auto repositories + dependencies
 

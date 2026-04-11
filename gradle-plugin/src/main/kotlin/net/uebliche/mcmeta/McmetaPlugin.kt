@@ -1,13 +1,17 @@
 package net.uebliche.mcmeta
 
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.google.gson.annotations.SerializedName
 import org.gradle.api.Action
+import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.JavaVersion
 import groovy.lang.Closure
 import org.codehaus.groovy.runtime.InvokerHelper
+import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.api.plugins.ExtraPropertiesExtension
 import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.api.artifacts.repositories.MavenArtifactRepository
@@ -126,6 +130,83 @@ open class McmetaDependencies {
 
   fun configurations(action: Action<McmetaDependencyConfigurations>) {
     action.execute(configurations)
+  }
+}
+
+private data class FabricBuildInfo(
+  val minecraftVersion: String,
+  val loaderVersion: String?,
+  val fabricApiVersion: String?,
+  val buildable: Boolean,
+  val blockedBy: String?,
+  val mappingChannel: String?,
+  val mappingVersion: String?,
+  val availableMappingChannels: List<String>,
+)
+
+private class McmetaFabricSupport(private val owner: Project) {
+  fun resolve(project: Project, requestedMinecraftVersion: String): FabricBuildInfo {
+    val extra = preferredExtraProperties(owner, "mcmetaMinecraftVersion")
+    val resolvedVersion = extraStringOrNull(extra, "mcmetaMinecraftVersion").orEmpty()
+    if (requestedMinecraftVersion.isNotBlank()
+      && resolvedVersion.isNotBlank()
+      && requestedMinecraftVersion != resolvedVersion
+    ) {
+      throw GradleException(
+        "mcmeta Fabric runtime resolved for $resolvedVersion, but build requested $requestedMinecraftVersion"
+      )
+    }
+
+    val loaderVersion = extraStringOrNull(extra, "mcmetaFabricLoaderVersion")
+    val fabricApiVersion = extraStringOrNull(extra, "mcmetaFabricApiVersion")
+    val mappingChannel = extraStringOrNull(extra, "mcmetaFabricMappingChannel")
+    val mappingVersion = extraStringOrNull(extra, "mcmetaFabricMappingVersion")
+    val blockedBy = extraStringOrNull(extra, "mcmetaFabricBlockedBy")
+    val availableChannels = extraList(extra, "mcmetaFabricAvailableMappingChannels")
+    val buildable = extraBoolean(extra, "mcmetaFabricBuildable")
+
+    return FabricBuildInfo(
+      minecraftVersion = if (resolvedVersion.isNotBlank()) resolvedVersion else requestedMinecraftVersion,
+      loaderVersion = loaderVersion,
+      fabricApiVersion = fabricApiVersion,
+      buildable = buildable,
+      blockedBy = blockedBy,
+      mappingChannel = mappingChannel,
+      mappingVersion = mappingVersion,
+      availableMappingChannels = availableChannels,
+    )
+  }
+
+  fun applyMappings(project: Project, dependencyHandler: DependencyHandler) {
+    val info = resolve(project, resolveRequestedMinecraftVersion(project))
+    if (!info.buildable) {
+      val detail = info.blockedBy ?: "unknown"
+      throw GradleException(
+        "mcmeta: Fabric build blocked for ${info.minecraftVersion}: ${detail}"
+      )
+    }
+
+    when (info.mappingChannel) {
+      "mojang" -> {
+        val loom = project.extensions.findByName("loom")
+          ?: throw GradleException("mcmeta: Fabric Loom extension missing for official Mojang mappings")
+        val mappings = InvokerHelper.invokeMethod(loom, "officialMojangMappings", emptyArray<Any>())
+        dependencyHandler.add("mappings", mappings)
+      }
+      "yarn" -> {
+        val version = info.mappingVersion
+          ?: throw GradleException("mcmeta: Yarn mapping version missing for ${info.minecraftVersion}")
+        dependencyHandler.add("mappings", "net.fabricmc:yarn:${version}:v2")
+      }
+      "intermediary" -> {
+        val version = info.mappingVersion
+          ?: throw GradleException("mcmeta: Intermediary mapping version missing for ${info.minecraftVersion}")
+        dependencyHandler.add("mappings", "net.fabricmc:intermediary:${version}:v2")
+      }
+      else -> throw GradleException(
+        "mcmeta: unsupported Fabric mapping channel '${info.mappingChannel ?: "missing"}' for ${info.minecraftVersion}"
+      )
+    }
   }
 }
 
@@ -252,11 +333,8 @@ private fun shouldConfigureNeoForge(project: Project): Boolean {
 private fun resolveRequestedMinecraftVersion(project: Project): String {
   val propVersion = project.findProperty("mcVersion")?.toString()?.trim()
   if (!propVersion.isNullOrEmpty()) return propVersion
-  val extra = project.rootProject.extensions.extraProperties
-  if (extra.has("mcmetaMinecraftVersion")) {
-    val mcmeta = extra.get("mcmetaMinecraftVersion")?.toString()?.trim()
-    if (!mcmeta.isNullOrEmpty()) return mcmeta
-  }
+  val mcmeta = extraStringFromProjectOrRoot(project, "mcmetaMinecraftVersion")
+  if (!mcmeta.isNullOrEmpty()) return mcmeta
   val fallback = project.findProperty("minecraft_version")?.toString()?.trim()
   return fallback ?: ""
 }
@@ -265,13 +343,10 @@ private fun resolveNeoForgeVersion(project: Project, mcVersion: String): String 
   val override = project.findProperty("neoForgeVersion")?.toString()?.trim()
   if (!override.isNullOrEmpty()) return override
 
-  val extra = project.rootProject.extensions.extraProperties
-  if (extra.has("mcmetaMinecraftVersion") && extra.has("mcmetaNeoForgeVersion")) {
-    val mcmetaMc = extra.get("mcmetaMinecraftVersion")?.toString()?.trim()
-    val mcmetaVersion = extra.get("mcmetaNeoForgeVersion")?.toString()?.trim()
-    if (!mcmetaMc.isNullOrEmpty() && mcmetaMc == mcVersion && !mcmetaVersion.isNullOrEmpty()) {
-      return mcmetaVersion
-    }
+  val mcmetaMc = extraStringFromProjectOrRoot(project, "mcmetaMinecraftVersion")
+  val mcmetaVersion = extraStringFromProjectOrRoot(project, "mcmetaNeoForgeVersion")
+  if (!mcmetaMc.isNullOrEmpty() && mcmetaMc == mcVersion && !mcmetaVersion.isNullOrEmpty()) {
+    return mcmetaVersion
   }
 
   val xml = fetchText("https://maven.neoforged.net/releases/net/neoforged/neoforge/maven-metadata.xml")
@@ -630,7 +705,10 @@ private class McmetaResolver(
     val loaderIndex = gson.fromJson(gson.toJson(bundle.loaderIndex), LoaderIndex::class.java)
     val artifacts = gson.fromJson(gson.toJson(bundle.artifacts), Artifacts::class.java)
     val meta = gson.fromJson(gson.toJson(bundle.meta), MetaV1::class.java)
-    applyBundle(loaderIndex, artifacts, meta, sanitized)
+    val buildability = bundle.buildability?.let {
+      gson.fromJson(gson.toJson(it), BuildabilityV1::class.java)
+    }
+    applyBundle(loaderIndex, artifacts, meta, buildability, sanitized)
     applyProxyFallbacks()
     applyLoom(fetchLoomIndex())
     if (extension.enableManifoldPreprocessor) {
@@ -665,16 +743,19 @@ private class McmetaResolver(
     val loaderUrl = "${extension.rawBase}/${extension.repo}/mc/$version/loader-index.json"
     val artifactsUrl = "${extension.rawBase}/${extension.repo}/mc/$version/artifacts.json"
     val metaUrl = "${extension.rawBase}/${extension.repo}/mc/$version/meta.json"
+    val buildabilityUrl = "${extension.rawBase}/${extension.repo}/mc/$version/buildability.json"
 
     val loader = fetchJson(loaderUrl)
     val artifacts = fetchJson(artifactsUrl)
     val meta = fetchJson(metaUrl)
+    val buildability = fetchJsonOrNull(buildabilityUrl)
 
     return gson.toJson(
       McmetaBundle(
         loaderIndex = loader,
         artifacts = artifacts,
         meta = meta,
+        buildability = buildability,
       )
     )
   }
@@ -712,6 +793,7 @@ private class McmetaResolver(
     ignorePrefix: Boolean = false,
   ): LocalBundle? {
     val metaFile = File(dir, "meta.json")
+    val buildabilityFile = File(dir, "buildability.json")
     val artifactsFile = File(dir, "artifacts.json")
     val loaderFile = File(dir, "loader-index.json")
     if (!metaFile.exists() || !artifactsFile.exists() || !loaderFile.exists()) {
@@ -738,6 +820,11 @@ private class McmetaResolver(
         loaderIndex = loader,
         artifacts = artifacts,
         meta = metaJson,
+        buildability = if (buildabilityFile.exists()) {
+          gson.fromJson(buildabilityFile.readText(), Any::class.java)
+        } else {
+          null
+        },
       )
     )
     return LocalBundle(
@@ -828,6 +915,14 @@ private class McmetaResolver(
     }
   }
 
+  private fun fetchJsonOrNull(url: String): Any? {
+    return try {
+      fetchJson(url)
+    } catch (_: Exception) {
+      null
+    }
+  }
+
   private fun fetchProxyArtifacts(branch: String): Artifacts? {
     val artifactsUrl = "${extension.rawBase}/${extension.repo}/${branch}/artifacts.json"
     return try {
@@ -843,32 +938,51 @@ private class McmetaResolver(
     loaderIndex: LoaderIndex,
     artifacts: Artifacts,
     meta: MetaV1,
+    buildability: BuildabilityV1?,
     version: String,
   ) {
     val loaders = loaderIndex.loaders
-    val fabricLoader = loaders?.fabric?.loader?.firstOrNull()
-    val quiltLoader = loaders?.quilt?.loader?.firstOrNull()
-    val forgeLoader = loaders?.forge?.loader?.firstOrNull()
-    val neoforgeLoader = loaders?.neoforge?.loader?.firstOrNull()
+    val fabricLoader = loaders?.get("fabric")?.loader?.firstOrNull()
+    val quiltLoader = loaders?.get("quilt")?.loader?.firstOrNull()
+    val forgeLoader = loaders?.get("forge")?.loader?.firstOrNull()
+    val neoforgeLoader = loaders?.get("neoforge")?.loader?.firstOrNull()
 
-    val minestomVersion = artifacts.runtimes?.minestom?.versions?.firstOrNull()
-    val manifoldVersion = artifacts.artifacts?.manifold?.versions?.firstOrNull()
-    val fabricApiVersion = artifacts.artifacts?.fabricApi?.versions?.firstOrNull()?.versionNumber
-    val paperVersion = artifacts.artifacts?.paper?.versions?.firstOrNull()
-    val velocityGroups = artifacts.artifacts?.proxies?.velocity?.groups ?: emptyList()
-    val bungeecordGroups = artifacts.artifacts?.proxies?.bungeecord?.groups ?: emptyList()
+    val minestomRuntime = parseEntry(artifacts.runtimes, "minestom", MavenArtifact::class.java)
+    val manifoldArtifact = parseEntry(artifacts.artifacts, "manifold", MavenArtifact::class.java)
+    val fabricApiArtifact = parseEntry(artifacts.artifacts, "fabric-api", ModrinthArtifact::class.java)
+    val paperArtifact = parseEntry(artifacts.artifacts, "paper", ProjectArtifact::class.java)
+    val velocityArtifact = parseEntry(artifacts.artifacts, "velocity", ProjectArtifact::class.java)
+    val foliaArtifact = parseEntry(artifacts.artifacts, "folia", ProjectArtifact::class.java)
+    val purpurArtifact = parseEntry(artifacts.artifacts, "purpur", ProjectArtifact::class.java)
+    val proxies = parseEntry(artifacts.artifacts, "proxies", Proxies::class.java)
+
+    val minestomVersion = minestomRuntime?.versions?.firstOrNull()
+    val manifoldVersion = manifoldArtifact?.versions?.firstOrNull()
+    val fabricApiVersion = fabricApiArtifact?.versions?.firstOrNull()?.versionNumber
+    val paperVersion = paperArtifact?.versions?.firstOrNull()
+    val velocityGroups = proxies?.velocity?.groups ?: emptyList()
+    val bungeecordGroups = proxies?.bungeecord?.groups ?: emptyList()
     val velocityVersions = if (velocityGroups.isNotEmpty()) {
       velocityGroups.flatMap { it.versions ?: emptyList() }
     } else {
-      artifacts.artifacts?.velocity?.versions ?: emptyList()
+      velocityArtifact?.versions ?: emptyList()
     }
     val velocityVersion = velocityVersions.firstOrNull()
     val bungeecordVersions = bungeecordGroups.flatMap { it.versions ?: emptyList() }
     val bungeecordVersion = bungeecordVersions.firstOrNull()
-    val foliaVersion = artifacts.artifacts?.folia?.versions?.firstOrNull()
-    val purpurVersion = artifacts.artifacts?.purpur?.versions?.firstOrNull()
+    val foliaVersion = foliaArtifact?.versions?.firstOrNull()
+    val purpurVersion = purpurArtifact?.versions?.firstOrNull()
     val yarnLatest = meta.yarn?.latest
     val yarnVersions = meta.yarn?.versions ?: emptyList()
+    val minecraftArtifact = parseEntry(artifacts.artifacts, "minecraft", MinecraftArtifacts::class.java)
+    val derivedFabricBuildability = deriveFabricBuildability(
+      version,
+      fabricLoader,
+      fabricApiVersion,
+      yarnLatest,
+      minecraftArtifact,
+    )
+    val fabricTarget = buildability?.targets?.get("fabric")
 
     val extra = project.extensions.extraProperties
     extra.set("mcmetaMinecraftVersion", version)
@@ -886,18 +1000,38 @@ private class McmetaResolver(
     extra.set("mcmetaJdkVersion", meta.jdk)
     extra.set("mcmetaYarnVersion", yarnLatest)
     extra.set("mcmetaYarnVersions", yarnVersions)
+    extra.set(
+      "mcmetaFabricBuildable",
+      fabricTarget?.status?.equals("buildable", ignoreCase = true) ?: derivedFabricBuildability.buildable
+    )
+    extra.set(
+      "mcmetaFabricBlockedBy",
+      fabricTarget?.blockedBy ?: derivedFabricBuildability.blockedBy
+    )
+    extra.set(
+      "mcmetaFabricMappingChannel",
+      fabricTarget?.mappingChannel ?: derivedFabricBuildability.mappingChannel
+    )
+    extra.set(
+      "mcmetaFabricMappingVersion",
+      fabricTarget?.mappingVersion ?: derivedFabricBuildability.mappingVersion
+    )
+    extra.set(
+      "mcmetaFabricAvailableMappingChannels",
+      fabricTarget?.availableMappingChannels ?: derivedFabricBuildability.availableMappingChannels
+    )
 
-    extra.set("mcmetaFabricLoaderVersions", loaders?.fabric?.loader ?: emptyList<String>())
-    extra.set("mcmetaQuiltLoaderVersions", loaders?.quilt?.loader ?: emptyList<String>())
-    extra.set("mcmetaForgeVersions", loaders?.forge?.loader ?: emptyList<String>())
-    extra.set("mcmetaNeoForgeVersions", loaders?.neoforge?.loader ?: emptyList<String>())
-    extra.set("mcmetaMinestomVersions", artifacts.runtimes?.minestom?.versions ?: emptyList<String>())
-    extra.set("mcmetaManifoldVersions", artifacts.artifacts?.manifold?.versions ?: emptyList<String>())
+    extra.set("mcmetaFabricLoaderVersions", loaders?.get("fabric")?.loader ?: emptyList<String>())
+    extra.set("mcmetaQuiltLoaderVersions", loaders?.get("quilt")?.loader ?: emptyList<String>())
+    extra.set("mcmetaForgeVersions", loaders?.get("forge")?.loader ?: emptyList<String>())
+    extra.set("mcmetaNeoForgeVersions", loaders?.get("neoforge")?.loader ?: emptyList<String>())
+    extra.set("mcmetaMinestomVersions", minestomRuntime?.versions ?: emptyList<String>())
+    extra.set("mcmetaManifoldVersions", manifoldArtifact?.versions ?: emptyList<String>())
     extra.set(
       "mcmetaFabricApiVersions",
-      artifacts.artifacts?.fabricApi?.versions?.map { it.versionNumber } ?: emptyList<String>()
+      fabricApiArtifact?.versions?.map { it.versionNumber } ?: emptyList<String>()
     )
-    extra.set("mcmetaPaperVersions", artifacts.artifacts?.paper?.versions ?: emptyList<String>())
+    extra.set("mcmetaPaperVersions", paperArtifact?.versions ?: emptyList<String>())
     extra.set("mcmetaVelocityVersions", velocityVersions)
     extra.set("mcmetaVelocityApiVersions", velocityGroups.mapNotNull { it.api })
     extra.set(
@@ -925,8 +1059,26 @@ private class McmetaResolver(
         group.api to range
       }.toMap()
     )
-    extra.set("mcmetaFoliaVersions", artifacts.artifacts?.folia?.versions ?: emptyList<String>())
-    extra.set("mcmetaPurpurVersions", artifacts.artifacts?.purpur?.versions ?: emptyList<String>())
+    extra.set("mcmetaFoliaVersions", foliaArtifact?.versions ?: emptyList<String>())
+    extra.set("mcmetaPurpurVersions", purpurArtifact?.versions ?: emptyList<String>())
+    applyTargetBuildabilityExtras(extra, "mcmetaQuilt", buildability?.targets?.get("quilt"), quiltLoader != null)
+    applyTargetBuildabilityExtras(extra, "mcmetaForge", buildability?.targets?.get("forge"), forgeLoader != null)
+    applyTargetBuildabilityExtras(extra, "mcmetaNeoForge", buildability?.targets?.get("neoforge"), neoforgeLoader != null)
+    applyTargetBuildabilityExtras(extra, "mcmetaPaper", buildability?.targets?.get("paper"), paperVersion != null)
+    applyTargetBuildabilityExtras(extra, "mcmetaVelocity", buildability?.targets?.get("velocity"), velocityVersion != null)
+    applyTargetBuildabilityExtras(extra, "mcmetaFolia", buildability?.targets?.get("folia"), foliaVersion != null)
+    applyTargetBuildabilityExtras(extra, "mcmetaPurpur", buildability?.targets?.get("purpur"), purpurVersion != null)
+    applyTargetBuildabilityExtras(extra, "mcmetaMinestom", buildability?.targets?.get("minestom"), minestomVersion != null)
+    extra.set("mcmetaFabricSupport", McmetaFabricSupport(project))
+  }
+
+  private fun <T> parseEntry(
+    entries: Map<String, JsonObject>?,
+    key: String,
+    type: Class<T>,
+  ): T? {
+    val entry = entries?.get(key) ?: return null
+    return gson.fromJson(entry, type)
   }
 
   private fun applyProxyFallbacks() {
@@ -938,12 +1090,14 @@ private class McmetaResolver(
     }
 
     val proxyArtifacts = fetchProxyArtifacts("proxy/velocity-latest") ?: return
-    val velocityGroups = proxyArtifacts.artifacts?.proxies?.velocity?.groups ?: emptyList()
-    val bungeecordGroups = proxyArtifacts.artifacts?.proxies?.bungeecord?.groups ?: emptyList()
+    val proxies = parseEntry(proxyArtifacts.artifacts, "proxies", Proxies::class.java)
+    val velocityArtifact = parseEntry(proxyArtifacts.artifacts, "velocity", ProjectArtifact::class.java)
+    val velocityGroups = proxies?.velocity?.groups ?: emptyList()
+    val bungeecordGroups = proxies?.bungeecord?.groups ?: emptyList()
     val velocityVersions = if (velocityGroups.isNotEmpty()) {
       velocityGroups.flatMap { it.versions ?: emptyList() }
     } else {
-      proxyArtifacts.artifacts?.velocity?.versions ?: emptyList()
+      velocityArtifact?.versions ?: emptyList()
     }
     val bungeecordVersions = bungeecordGroups.flatMap { it.versions ?: emptyList() }
 
@@ -1031,7 +1185,7 @@ private class McmetaResolver(
 
   private fun configureManifoldPreprocessor(artifacts: Artifacts, requestedVersion: String) {
     val manifoldVersion = extension.manifoldPreprocessorVersion?.takeIf { it.isNotBlank() }
-      ?: artifacts.artifacts?.manifold?.versions?.firstOrNull()
+      ?: parseEntry(artifacts.artifacts, "manifold", MavenArtifact::class.java)?.versions?.firstOrNull()
     if (manifoldVersion.isNullOrBlank()) {
       project.logger.warn("mcmeta: manifold preprocessor enabled but no manifold version found")
       return
@@ -1215,10 +1369,109 @@ private fun sanitizeVersion(value: String): String {
   return out.toString().trim('.').trim('-')
 }
 
+private fun extraStringOrNull(extra: ExtraPropertiesExtension, key: String): String? {
+  if (!extra.has(key)) {
+    return null
+  }
+  val raw = extra.get(key)?.toString()?.trim()
+  return if (raw.isNullOrEmpty()) null else raw
+}
+
+private fun preferredExtraProperties(project: Project, key: String): ExtraPropertiesExtension {
+  val projectExtra = project.extensions.extraProperties
+  if (projectExtra.has(key)) {
+    return projectExtra
+  }
+  return project.rootProject.extensions.extraProperties
+}
+
+private fun extraStringFromProjectOrRoot(project: Project, key: String): String? {
+  val extra = preferredExtraProperties(project, key)
+  return extraStringOrNull(extra, key)
+}
+
+private fun extraBoolean(extra: ExtraPropertiesExtension, key: String): Boolean {
+  val value = extraStringOrNull(extra, key)
+  return value?.equals("true", ignoreCase = true) == true
+}
+
+private fun extraList(extra: ExtraPropertiesExtension, key: String): List<String> {
+  if (!extra.has(key)) {
+    return emptyList()
+  }
+  val raw = extra.get(key)
+  return when (raw) {
+    is Iterable<*> -> raw.mapNotNull { it?.toString()?.trim() }.filter { it.isNotEmpty() }
+    null -> emptyList()
+    else -> listOf(raw.toString().trim()).filter { it.isNotEmpty() }
+  }
+}
+
+private fun applyTargetBuildabilityExtras(
+  extra: ExtraPropertiesExtension,
+  prefix: String,
+  target: BuildabilityTarget?,
+  fallbackBuildable: Boolean,
+) {
+  val status = target?.status?.trim().orEmpty()
+  val buildable = if (status.isNotEmpty()) status.equals("buildable", ignoreCase = true) else fallbackBuildable
+  val blockedBy = target?.blockedBy?.trim().takeUnless { it.isNullOrEmpty() }
+  extra.set("${prefix}Buildable", buildable)
+  extra.set("${prefix}BlockedBy", blockedBy)
+}
+
+private fun deriveFabricBuildability(
+  minecraftVersion: String,
+  loaderVersion: String?,
+  fabricApiVersion: String?,
+  yarnVersion: String?,
+  minecraftArtifact: MinecraftArtifacts?,
+): DerivedFabricBuildability {
+  val channels = mutableListOf<String>()
+  val hasMojangMappings = minecraftArtifact?.clientMappings?.url?.isNotBlank() == true
+    && minecraftArtifact.serverMappings?.url?.isNotBlank() == true
+  if (hasMojangMappings) {
+    channels.add("mojang")
+  }
+  if (!yarnVersion.isNullOrBlank()) {
+    channels.add("yarn")
+  }
+
+  val selectedChannel = channels.firstOrNull()
+  val mappingVersion = when (selectedChannel) {
+    "mojang" -> minecraftVersion
+    "yarn" -> yarnVersion
+    else -> null
+  }
+  val blockedBy = when {
+    loaderVersion.isNullOrBlank() -> "missing-fabric-loader"
+    fabricApiVersion.isNullOrBlank() -> "missing-fabric-api"
+    selectedChannel == null -> "missing-fabric-mappings"
+    else -> null
+  }
+
+  return DerivedFabricBuildability(
+    buildable = blockedBy == null,
+    blockedBy = blockedBy,
+    mappingChannel = selectedChannel,
+    mappingVersion = mappingVersion,
+    availableMappingChannels = channels,
+  )
+}
+
 private data class McmetaBundle(
   val loaderIndex: Any,
   val artifacts: Any,
   val meta: Any,
+  val buildability: Any? = null,
+)
+
+private data class DerivedFabricBuildability(
+  val buildable: Boolean,
+  val blockedBy: String?,
+  val mappingChannel: String?,
+  val mappingVersion: String?,
+  val availableMappingChannels: List<String>,
 )
 
 private data class MojangManifest(
@@ -1228,11 +1481,31 @@ private data class MojangManifest(
 
 private data class MetaV1(
   val schema: String?,
+  @SerializedName("schema_version")
+  val schemaVersion: Int?,
   val minecraft: String?,
   val sources: Map<String, String>?,
   val notes: List<String>?,
   val jdk: Int?,
   val yarn: YarnMeta?,
+)
+
+private data class BuildabilityV1(
+  @SerializedName("schema_version")
+  val schemaVersion: Int?,
+  val targets: Map<String, BuildabilityTarget>?,
+)
+
+private data class BuildabilityTarget(
+  val status: String?,
+  @SerializedName("blocked_by")
+  val blockedBy: String?,
+  @SerializedName("mapping_channel")
+  val mappingChannel: String?,
+  @SerializedName("mapping_version")
+  val mappingVersion: String?,
+  @SerializedName("available_mapping_channels")
+  val availableMappingChannels: List<String>?,
 )
 
 private data class MojangVersion(
@@ -1245,14 +1518,9 @@ private data class MojangLatest(
 )
 
 private data class LoaderIndex(
-  val loaders: LoaderFamilies?,
-)
-
-private data class LoaderFamilies(
-  val fabric: LoaderFamily?,
-  val quilt: LoaderFamily?,
-  val forge: LoaderFamily?,
-  val neoforge: LoaderFamily?,
+  @SerializedName("schema_version")
+  val schemaVersion: Int?,
+  val loaders: Map<String, LoaderFamily>?,
 )
 
 private data class LoaderFamily(
@@ -1260,27 +1528,25 @@ private data class LoaderFamily(
 )
 
 private data class Artifacts(
-  val artifacts: ArtifactFamilies?,
-  val runtimes: RuntimeFamilies?,
-)
-
-private data class ArtifactFamilies(
-  @SerializedName("fabric-api")
-  val fabricApi: ModrinthArtifact?,
-  val manifold: MavenArtifact?,
-  val paper: ProjectArtifact?,
-  val velocity: ProjectArtifact?,
-  val folia: ProjectArtifact?,
-  val purpur: ProjectArtifact?,
-  val proxies: Proxies?,
-)
-
-private data class RuntimeFamilies(
-  val minestom: MavenArtifact?,
+  @SerializedName("schema_version")
+  val schemaVersion: Int?,
+  val artifacts: Map<String, JsonObject>?,
+  val runtimes: Map<String, JsonObject>?,
 )
 
 private data class MavenArtifact(
   val versions: List<String>?,
+)
+
+private data class MinecraftArtifacts(
+  @SerializedName("client_mappings")
+  val clientMappings: MinecraftDownload?,
+  @SerializedName("server_mappings")
+  val serverMappings: MinecraftDownload?,
+)
+
+private data class MinecraftDownload(
+  val url: String?,
 )
 
 private data class YarnMeta(
