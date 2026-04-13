@@ -1,7 +1,7 @@
 {
   "schema": "mcmeta/v2",
   "schema_version": 2,
-  "minecraft": "26.1.2",
+  "minecraft": "26.2-snapshot-2",
   "artifacts": {
     "fabric-api": {
       "loaders": [
@@ -13,36 +13,35 @@
         {
           "files": [
             {
-              "sha1": "f6a5958eae1644ce8e8622b513bc6a795594675b",
-              "sha512": "ffd5ef62a745f76cd2e5481252cb7bc67006c809b4f436827d05ea22c01d19279e94a3b24df3d57e127af1cd08440b5de6a92a4ea8f39b2dcbbe1681275564c3",
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/fm7UYECV/fabric-api-0.145.4%2B26.1.2.jar"
+              "sha1": "9ade7a111ae08b32f32968047116a0a3b098f9ff",
+              "sha512": "4b528faf897d61a43a3e9c37c9c914cb81b38cebb4661510347846baa3f23d9e10a109180139f5bf8f875f351ce92b369673f5a771793ebfad2cd1711f20ffbf",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/lJSz0pYX/fabric-api-0.145.5%2B26.2.jar"
             }
           ],
           "game_versions": [
-            "26.1",
-            "26.1.1",
-            "26.1.2"
+            "26.2-snapshot-1",
+            "26.2-snapshot-2"
           ],
           "loaders": [
             "fabric"
           ],
-          "version_number": "0.145.4+26.1.2"
+          "version_number": "0.145.5+26.2"
         }
       ]
     },
     "minecraft": {
       "client": {
-        "sha1": "4e618f09a0c649dde3fdf829df443ce0b8831e65",
-        "size": 38113927,
-        "url": "https://piston-data.mojang.com/v1/objects/4e618f09a0c649dde3fdf829df443ce0b8831e65/client.jar"
+        "sha1": "9578fe329bdf486d5f99896749a5f85c94d93b6a",
+        "size": 38539097,
+        "url": "https://piston-data.mojang.com/v1/objects/9578fe329bdf486d5f99896749a5f85c94d93b6a/client.jar"
       },
       "server": {
-        "sha1": "97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51",
-        "size": 60417480,
-        "url": "https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar"
+        "sha1": "e6cefea7bf62cb0cc044794d7ebfe8ea5ee672a3",
+        "size": 60537470,
+        "url": "https://piston-data.mojang.com/v1/objects/e6cefea7bf62cb0cc044794d7ebfe8ea5ee672a3/server.jar"
       },
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/dd6fd47eec3ac2d46b4f805e003f1a421ed8a3f7/26.1.2.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/1d134658cc380817ca1d3eaab4caa2825415a17e/26.2-snapshot-2.json"
       }
     }
   },
