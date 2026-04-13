@@ -10,8 +10,8 @@
     "minestom": "partial",
     "mojang": "partial",
     "neoforge": "partial",
-    "paper": "error",
-    "purpur": "error",
+    "paper": "partial",
+    "purpur": "ok",
     "quilt": "error",
     "yarn": "error"
   },

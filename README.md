@@ -6,6 +6,7 @@ Files:
 - loader-index.json
 - artifacts.json
 - meta.json
+- buildability.json
 - publish-state.json
 
 ## Meta
@@ -25,8 +26,8 @@ Files:
 - Minestom: partial
 - Mojang: partial
 - Neoforge: partial
-- Paper: error
-- Purpur: error
+- Paper: partial
+- Purpur: ok
 - Quilt: error
 - Yarn: error
 
@@ -35,6 +36,18 @@ Files:
 - neoforge maven metadata has no versions for minecraft 26.1.2
 - paper-api maven metadata has no versions for 26.1.2
 
+## Buildability
+- Bungeecord: partial (proxy-target-not-versioned)
+- Fabric: blocked (missing-fabric-mappings)
+- Folia: blocked (missing-folia-artifact)
+- Forge: buildable
+- Minestom: blocked (missing-minestom-runtime)
+- Neoforge: blocked (missing-neoforge-loader)
+- Paper: buildable
+- Purpur: buildable
+- Quilt: blocked (missing-quilt-loader)
+- Velocity: partial (proxy-target-not-versioned)
+
 ## Loader index
 - Schema: mcmeta/v2
 - Schema version: 2
@@ -42,7 +55,7 @@ Files:
 - Fabric versions: 1
   - 0.19.1
 - Forge versions: 1
-  - 26.1.2-64.0.0
+  - 26.1.2-64.0.1
 
 ## Artifacts index
 - Schema: mcmeta/v2
@@ -69,6 +82,27 @@ Files:
 - Version JSON: [https://piston-meta.mojang.com/v1/packages/dd6fd47eec3ac2d46b4f805e003f1a421ed8a3f7/26.1.2.json](https://piston-meta.mojang.com/v1/packages/dd6fd47eec3ac2d46b4f805e003f1a421ed8a3f7/26.1.2.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/4e618f09a0c649dde3fdf829df443ce0b8831e65/client.jar](https://piston-data.mojang.com/v1/objects/4e618f09a0c649dde3fdf829df443ce0b8831e65/client.jar) (sha1=4e618f09a0c649dde3fdf829df443ce0b8831e65, size=38113927)
 - Server jar: [https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar](https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar) (sha1=97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51, size=60417480)
+
+### Paper
+- Type: papermc
+- Project: paper
+- Versions: 4
+  - 5
+  - 4
+  - 3
+  - 2
+- Build ids: 4
+  - 5
+  - 4
+  - 3
+  - 2
+
+### Purpur
+- Type: purpur
+- Project: purpur
+- Versions: 2
+  - 2570
+  - 2569
 
 ## Runtimes
 - n/a

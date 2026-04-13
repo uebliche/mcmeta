@@ -44,6 +44,30 @@
       "version_json": {
         "url": "https://piston-meta.mojang.com/v1/packages/dd6fd47eec3ac2d46b4f805e003f1a421ed8a3f7/26.1.2.json"
       }
+    },
+    "paper": {
+      "build_ids": [
+        "5",
+        "4",
+        "3",
+        "2"
+      ],
+      "project": "paper",
+      "type": "papermc",
+      "versions": [
+        "5",
+        "4",
+        "3",
+        "2"
+      ]
+    },
+    "purpur": {
+      "project": "purpur",
+      "type": "purpur",
+      "versions": [
+        "2570",
+        "2569"
+      ]
     }
   },
   "runtimes": {}

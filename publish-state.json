@@ -9,12 +9,14 @@
     "minecraft-downloads",
     "fabric-loader",
     "forge-loader",
-    "fabric-api"
+    "fabric-api",
+    "paper-artifact",
+    "purpur-artifact"
   ],
   "source_fingerprints": {
     "fabric": {
       "status": "ok",
-      "fingerprint": "420f903aab9e19b0b4e4ab9b171347b80c41d408"
+      "fingerprint": "ca97030093d011c18980df30fea1511ea63f6bd2"
     },
     "fabric-api": {
       "status": "ok",
@@ -25,7 +27,7 @@
     },
     "forge": {
       "status": "ok",
-      "fingerprint": "30d6398635b6da523c18bb74fbc522cb553ddd85"
+      "fingerprint": "f7b930e01faf48b51b2cdc5a1c308927664c55ac"
     },
     "minestom": {
       "status": "partial",
@@ -40,10 +42,12 @@
       "fingerprint": "39f1bf25007e26000ce8478b2987cecf9999b477"
     },
     "paper": {
-      "status": "error"
+      "status": "partial",
+      "fingerprint": "32c5894f94f3813a6c3eba0bab68f833498f93f1"
     },
     "purpur": {
-      "status": "error"
+      "status": "ok",
+      "fingerprint": "49861a501757761c65c4d015619b577e6d145763"
     },
     "quilt": {
       "status": "error"
@@ -52,7 +56,7 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "3884566115276ba1dec5533cacaeee9ee967ff49",
+  "branch_fingerprint": "9758e20a29941382aa932835b2d184d2dd74a90e",
   "branch_inputs": {
     "version_kind": "release"
   }

@@ -1,0 +1,63 @@
+{
+  "schema": "mcmeta/buildability/v1",
+  "schema_version": 1,
+  "minecraft": "26.1.2",
+  "targets": {
+    "bungeecord": {
+      "status": "partial",
+      "blocked_by": "proxy-target-not-versioned"
+    },
+    "fabric": {
+      "status": "blocked",
+      "blocked_by": "missing-fabric-mappings",
+      "jdk": 21,
+      "loader_version": "0.19.1",
+      "artifact_versions": {
+        "fabric-api": "0.145.4+26.1.2"
+      }
+    },
+    "folia": {
+      "status": "blocked",
+      "blocked_by": "missing-folia-artifact",
+      "jdk": 21
+    },
+    "forge": {
+      "status": "buildable",
+      "jdk": 21,
+      "loader_version": "26.1.2-64.0.1"
+    },
+    "minestom": {
+      "status": "blocked",
+      "blocked_by": "missing-minestom-runtime",
+      "jdk": 21
+    },
+    "neoforge": {
+      "status": "blocked",
+      "blocked_by": "missing-neoforge-loader",
+      "jdk": 21
+    },
+    "paper": {
+      "status": "buildable",
+      "jdk": 21,
+      "artifact_versions": {
+        "paper": "5"
+      }
+    },
+    "purpur": {
+      "status": "buildable",
+      "jdk": 21,
+      "artifact_versions": {
+        "purpur": "2570"
+      }
+    },
+    "quilt": {
+      "status": "blocked",
+      "blocked_by": "missing-quilt-loader",
+      "jdk": 21
+    },
+    "velocity": {
+      "status": "partial",
+      "blocked_by": "proxy-target-not-versioned"
+    }
+  }
+}
