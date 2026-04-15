@@ -1,7 +1,7 @@
 {
   "schema": "mcmeta/v2",
   "schema_version": 2,
-  "minecraft": "26.1.1",
+  "minecraft": "26.1",
   "loaders": {
     "fabric": {
       "loader": [
@@ -10,7 +10,7 @@
     },
     "forge": {
       "loader": [
-        "26.1.1-63.0.2"
+        "26.1.2-64.0.1"
       ]
     }
   }
