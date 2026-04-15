@@ -1,7 +1,7 @@
 {
   "schema": "mcmeta/buildability/v1",
   "schema_version": 1,
-  "minecraft": "26.1.2",
+  "minecraft": "26.1.1",
   "targets": {
     "bungeecord": {
       "status": "partial",
@@ -24,7 +24,7 @@
     "forge": {
       "status": "buildable",
       "jdk": 21,
-      "loader_version": "26.1.2-64.0.1"
+      "loader_version": "26.1.1-63.0.2"
     },
     "minestom": {
       "status": "blocked",
@@ -40,15 +40,13 @@
       "status": "buildable",
       "jdk": 21,
       "artifact_versions": {
-        "paper": "5"
+        "paper": "29"
       }
     },
     "purpur": {
-      "status": "buildable",
-      "jdk": 21,
-      "artifact_versions": {
-        "purpur": "2570"
-      }
+      "status": "blocked",
+      "blocked_by": "missing-purpur-artifact",
+      "jdk": 21
     },
     "quilt": {
       "status": "blocked",
