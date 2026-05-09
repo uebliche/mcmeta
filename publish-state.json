@@ -18,14 +18,14 @@
     },
     "fabric-api": {
       "status": "ok",
-      "fingerprint": "50912ad2b8aba08396de78939d8018e394689ac5"
+      "fingerprint": "e8e942a6d1cb5453368c63b430864a5224e0ce79"
     },
     "folia": {
       "status": "error"
     },
     "forge": {
       "status": "ok",
-      "fingerprint": "f7b930e01faf48b51b2cdc5a1c308927664c55ac"
+      "fingerprint": "19edd6ba3aa012077cb298edf2ce755609db4756"
     },
     "minestom": {
       "status": "partial",
@@ -33,7 +33,7 @@
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "9099a829e02d1f05d8fc7abb1b2dd53b0cf4535e"
+      "fingerprint": "c66ec66913dc73a43f43812af2e10cac40113871"
     },
     "neoforge": {
       "status": "partial",
@@ -52,7 +52,7 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "729d90133b3f3013714825d65408d9e492977a3b",
+  "branch_fingerprint": "17b585f7c363b6a4e18f127cdd9c46e1bc3e408f",
   "branch_inputs": {
     "version_kind": "release"
   }

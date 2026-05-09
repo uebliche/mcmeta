@@ -38,7 +38,7 @@ Files:
 
 ## Buildability
 - Bungeecord: partial (proxy-target-not-versioned)
-- Fabric: blocked (missing-fabric-mappings)
+- Fabric: blocked (missing-fabric-intermediary)
 - Folia: blocked (missing-folia-artifact)
 - Forge: buildable
 - Minestom: blocked (missing-minestom-runtime)
@@ -55,7 +55,7 @@ Files:
 - Fabric versions: 1
   - 0.19.1
 - Forge versions: 1
-  - 26.1.2-64.0.1
+  - 26.1.2-64.0.8
 
 ## Artifacts index
 - Schema: mcmeta/v2
@@ -67,7 +67,43 @@ Files:
 - Project id: P7dR8mSH
 - Loaders: 1
   - fabric
-- Versions: 10
+- Versions: 14
+  - 0.148.0+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/KAvhN1it/fabric-api-0.148.0%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/KAvhN1it/fabric-api-0.148.0%2B26.1.2.jar) (sha1=7228d3145e8a6083bf5a15d1657eab9e33948eda, sha512=4e9d39150af43869f68b03e91c51618a0d0c34ec7bfd57b515a9031364d35e391985ca1e2349daaa8d6f8fc88e4b96cfa5793bb0f98932ce0b3683fe4a238ce4)
+  - 0.147.0+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/dZsorAUN/fabric-api-0.147.0%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/dZsorAUN/fabric-api-0.147.0%2B26.1.2.jar) (sha1=52c06c2ec10eec8c799724a43b5fa338afea2475, sha512=7e3c05dfde0d2c55d14ef68e4038ac1d3335ed48dfca4dbcfb29b873d698ae069ebd85f247d8a0b48437e484422549a17ff5cbbfe734d159153c3bc0e0037417)
+  - 0.146.1+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/tnmuHGZA/fabric-api-0.146.1%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/tnmuHGZA/fabric-api-0.146.1%2B26.1.2.jar) (sha1=d2ee4e810cc926a38758e7a0f6e1497382be557a, sha512=cd8a760ecb976127036f8047c1e968f264aea9cd9deca60e6e9cb57496b1b5cca79873c59b7ab46b92f49ac22f49a2b695bb6ebe61653c8df6954e97b8836890)
+  - 0.146.0+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/Jj2SOUMp/fabric-api-0.146.0%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/Jj2SOUMp/fabric-api-0.146.0%2B26.1.2.jar) (sha1=9476711a2863670fc038e084f295269706f706a4, sha512=b958fb84cf9af3590f6e942b25eefb1dcda5e670215b8d7377b6906ffa937525be22e19cd7f31dd7d280bff9453d488c09bf5dd32433d91fa45f128d57d0cea4)
   - 0.145.4+26.1.2
     - Game versions: 3
       - 26.1
@@ -146,7 +182,7 @@ Files:
       - [https://cdn.modrinth.com/data/P7dR8mSH/versions/bzzYBd3m/fabric-api-0.144.0%2B26.1.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/bzzYBd3m/fabric-api-0.144.0%2B26.1.jar) (sha1=99a6058a62dfa49eb656eb4e708f3fad5208e64b, sha512=ca9352d5f1023f160da23a127ee1c18438e65b28d6bdd429adc5c5a381bb497593f2d52d6516d1a51ed972f71878bdfa6dead216821baef3f4890420b5b5ccb6)
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/5c93751d6e4c054b9416ceb4697c4c8587ec130d/26.1.json](https://piston-meta.mojang.com/v1/packages/5c93751d6e4c054b9416ceb4697c4c8587ec130d/26.1.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/e9910725a78bb1c0392758125fb8dd79c3205a64/26.1.json](https://piston-meta.mojang.com/v1/packages/e9910725a78bb1c0392758125fb8dd79c3205a64/26.1.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/191771837687b766537a8c4607cb6fad79c533a1/client.jar](https://piston-data.mojang.com/v1/objects/191771837687b766537a8c4607cb6fad79c533a1/client.jar) (sha1=191771837687b766537a8c4607cb6fad79c533a1, size=38113398)
 - Server jar: [https://piston-data.mojang.com/v1/objects/3872a7f07a1a595e651aef8b058dfc2bb3772f46/server.jar](https://piston-data.mojang.com/v1/objects/3872a7f07a1a595e651aef8b058dfc2bb3772f46/server.jar) (sha1=3872a7f07a1a595e651aef8b058dfc2bb3772f46, size=60417588)
 
