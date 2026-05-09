@@ -1,5 +1,6 @@
 {
-  "schema": "mcmeta/v1",
+  "schema": "mcmeta/v2",
+  "schema_version": 2,
   "minecraft": "1.21.11",
   "sources": {
     "fabric": "ok",
@@ -16,8 +17,9 @@
   },
   "jdk": 21,
   "yarn": {
-    "latest": "1.21.11+build.4",
+    "latest": "1.21.11+build.5",
     "versions": [
+      "1.21.11+build.5",
       "1.21.11+build.4",
       "1.21.11+build.3",
       "1.21.11+build.2",

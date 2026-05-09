@@ -1,0 +1,80 @@
+{
+  "schema": "mcmeta/buildability/v1",
+  "schema_version": 1,
+  "minecraft": "1.21.11",
+  "targets": {
+    "bungeecord": {
+      "status": "partial",
+      "blocked_by": "proxy-target-not-versioned"
+    },
+    "fabric": {
+      "status": "buildable",
+      "jdk": 21,
+      "loader_version": "0.19.2",
+      "artifact_versions": {
+        "fabric-api": "0.141.3+1.21.11"
+      },
+      "mapping_channel": "mojang",
+      "mapping_version": "1.21.11",
+      "available_mapping_channels": [
+        "mojang",
+        "yarn",
+        "intermediary"
+      ]
+    },
+    "folia": {
+      "status": "buildable",
+      "jdk": 21,
+      "artifact_versions": {
+        "folia": "14"
+      }
+    },
+    "forge": {
+      "status": "buildable",
+      "jdk": 21,
+      "loader_version": "1.21.11-61.1.5"
+    },
+    "minestom": {
+      "status": "buildable",
+      "jdk": 21,
+      "artifact_versions": {
+        "minestom": "2026.04.13-1.21.11"
+      }
+    },
+    "neoforge": {
+      "status": "buildable",
+      "jdk": 21,
+      "loader_version": "21.11.42"
+    },
+    "paper": {
+      "status": "buildable",
+      "jdk": 21,
+      "artifact_versions": {
+        "paper": "1.21.11-R0.1-SNAPSHOT"
+      }
+    },
+    "purpur": {
+      "status": "buildable",
+      "jdk": 21,
+      "artifact_versions": {
+        "purpur": "2568"
+      }
+    },
+    "quilt": {
+      "status": "buildable",
+      "jdk": 21,
+      "loader_version": "0.30.0-beta.7",
+      "mapping_channel": "mojang",
+      "mapping_version": "1.21.11",
+      "available_mapping_channels": [
+        "mojang",
+        "yarn",
+        "intermediary"
+      ]
+    },
+    "velocity": {
+      "status": "partial",
+      "blocked_by": "proxy-target-not-versioned"
+    }
+  }
+}
