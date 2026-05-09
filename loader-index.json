@@ -1,25 +1,26 @@
 {
-  "schema": "mcmeta/v1",
+  "schema": "mcmeta/v2",
+  "schema_version": 2,
   "minecraft": "1.21.10",
   "loaders": {
     "fabric": {
       "loader": [
-        "0.18.4"
-      ]
-    },
-    "quilt": {
-      "loader": [
-        "0.30.0-beta.0"
+        "0.19.2"
       ]
     },
     "forge": {
       "loader": [
-        "1.21.10-60.1.8"
+        "1.21.10-60.1.9"
       ]
     },
     "neoforge": {
       "loader": [
         "21.10.64"
+      ]
+    },
+    "quilt": {
+      "loader": [
+        "0.30.0-beta.7"
       ]
     }
   }
