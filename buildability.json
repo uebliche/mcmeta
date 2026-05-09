@@ -9,7 +9,7 @@
     },
     "fabric": {
       "status": "blocked",
-      "blocked_by": "missing-fabric-mappings",
+      "blocked_by": "missing-fabric-intermediary",
       "jdk": 21,
       "loader_version": "0.19.1",
       "artifact_versions": {

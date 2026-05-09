@@ -38,7 +38,7 @@ Files:
 
 ## Buildability
 - Bungeecord: partial (proxy-target-not-versioned)
-- Fabric: blocked (missing-fabric-mappings)
+- Fabric: blocked (missing-fabric-intermediary)
 - Folia: buildable
 - Forge: buildable
 - Minestom: blocked (missing-minestom-runtime)
