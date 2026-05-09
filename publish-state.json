@@ -11,6 +11,7 @@
     "forge-loader",
     "fabric-api",
     "paper-artifact",
+    "folia-artifact",
     "purpur-artifact"
   ],
   "source_fingerprints": {
@@ -20,14 +21,15 @@
     },
     "fabric-api": {
       "status": "ok",
-      "fingerprint": "a9c8c5100b026804bc9577becec572a407fb1f8a"
+      "fingerprint": "17419486131bdab05734a80ef39ded1d92505906"
     },
     "folia": {
-      "status": "error"
+      "status": "ok",
+      "fingerprint": "6478dc2192b70b805b241d96d7ec6108ae0d2eab"
     },
     "forge": {
       "status": "ok",
-      "fingerprint": "f7b930e01faf48b51b2cdc5a1c308927664c55ac"
+      "fingerprint": "19edd6ba3aa012077cb298edf2ce755609db4756"
     },
     "minestom": {
       "status": "partial",
@@ -35,7 +37,7 @@
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "c9559f1b4d908d690c6c806833ee269505682a65"
+      "fingerprint": "1db85df63caf79242d68a05122e79e2fb6015798"
     },
     "neoforge": {
       "status": "partial",
@@ -43,11 +45,11 @@
     },
     "paper": {
       "status": "partial",
-      "fingerprint": "32c5894f94f3813a6c3eba0bab68f833498f93f1"
+      "fingerprint": "166020d677cda34146a8be4f8b4822453fe412f0"
     },
     "purpur": {
       "status": "ok",
-      "fingerprint": "49861a501757761c65c4d015619b577e6d145763"
+      "fingerprint": "d868b93630370ed2809cb23e7e65984f18df8dd5"
     },
     "quilt": {
       "status": "error"
@@ -56,7 +58,7 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "8771c491e294f78c625b936ae6814c0199b320c5",
+  "branch_fingerprint": "751912e40d452e545da32262db63248af3fae90a",
   "branch_inputs": {
     "version_kind": "release"
   }
