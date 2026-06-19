@@ -1,183 +1,130 @@
-# mcmeta
+# mcmeta data for Minecraft 26.2
 
-Published metadata per Minecraft version lives on branches `mc/<mcVersion>`.
-This repository is updated by the harvester action in `uebliche/mcmeta-harvest`.
+This branch contains generated metadata for Minecraft 26.2.
 
-Two convenience branches exist:
+Files:
+- loader-index.json
+- artifacts.json
+- meta.json
+- buildability.json
+- publish-state.json
 
-- `latest` (newest release from Mojang manifest)
-- `latest-snapshot` (newest non-release, including snapshots/betas)
+## Meta
+- Schema: mcmeta/v2
+- Schema version: 2
+- Minecraft: 26.2
+- JDK: 21
+- Release time: 2026-06-16T12:03:33+00:00
+- Protocol version: 776
+- Data version: 4903
 
-Proxy branches (Velocity):
+## Sources
+- Fabric: ok
+- Fabric-api: ok
+- Folia: error
+- Forge: ok
+- Minestom: partial
+- Mojang: partial
+- Neoforge: partial
+- Paper: partial
+- Purpur: ok
+- Quilt: error
+- Yarn: error
 
-- `proxy/velocity-<api>`
-- `proxy/velocity-latest`
+## Notes
+- minestom maven metadata has no versions for minecraft 26.2
+- neoforge maven metadata has no versions for minecraft 26.2
+- paper-api maven metadata has no versions for 26.2
 
-Proxy branches (BungeeCord):
+## Buildability
+- Bungeecord: partial (proxy-target-not-versioned)
+- Fabric: blocked (missing-fabric-intermediary)
+- Folia: blocked (missing-folia-artifact)
+- Forge: buildable
+- Minestom: blocked (missing-minestom-runtime)
+- Neoforge: blocked (missing-neoforge-loader)
+- Paper: buildable
+- Purpur: buildable
+- Quilt: blocked (missing-quilt-loader)
+- Velocity: partial (proxy-target-not-versioned)
 
-- `proxy/bungeecord-<api>`
-- `proxy/bungeecord-latest`
+## Loader index
+- Schema: mcmeta/v2
+- Schema version: 2
+- Minecraft: 26.2
+- Fabric versions: 1
+  - 0.19.3
+- Forge versions: 1
+  - 26.2-65.0.0
 
-## Web viewer
+## Artifacts index
+- Schema: mcmeta/v2
+- Schema version: 2
+- Minecraft: 26.2
 
-The web viewer now lives in the uebliche docs under `/mcmeta/viewer`.
+### Fabric Api
+- Type: modrinth
+- Project id: P7dR8mSH
+- Loaders: 1
+  - fabric
+- Versions: 2
+  - 0.152.2+26.2
+    - Game versions: 1
+      - 26.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/vodPC30d/fabric-api-0.152.2%2B26.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/vodPC30d/fabric-api-0.152.2%2B26.2.jar) (sha1=484396ad53550c267dfe577332e6a56a9cbe9612, sha512=9a2619168ee55e5ba0473efcd9c765b668ffa0e3a0cd858e877fff42fe68f9644c9ec3222c73e5734c59fc2cbb0ea01f3ba976ca7a2f009872c9c0885da4a713)
+  - 0.152.1+26.2
+    - Game versions: 1
+      - 26.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/3kB7XVBv/fabric-api-0.152.1%2B26.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/3kB7XVBv/fabric-api-0.152.1%2B26.2.jar) (sha1=8c5317d4ba22dcc5def1c691c346595769ba3304, sha512=8dcbcabcb71443e57bf5b7da4c2b4fb0e3b98cd576146db989cb6886484b2422c802624082215e23e10e8e67441cd894744aa68d4d9b68ea1bd182afb15dd22b)
 
-## Gradle plugin (local include)
+### Minecraft
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/4c3cd3500ce8b9ea104c358a784634fedb2a610f/26.2.json](https://piston-meta.mojang.com/v1/packages/4c3cd3500ce8b9ea104c358a784634fedb2a610f/26.2.json)
+- Client jar: [https://piston-data.mojang.com/v1/objects/2dc72797acbc1b63fc16a11c4ac393605f453754/client.jar](https://piston-data.mojang.com/v1/objects/2dc72797acbc1b63fc16a11c4ac393605f453754/client.jar) (sha1=2dc72797acbc1b63fc16a11c4ac393605f453754, size=39193383)
+- Server jar: [https://piston-data.mojang.com/v1/objects/823e2250d24b3ddac457a60c92a6a941943fcd6a/server.jar](https://piston-data.mojang.com/v1/objects/823e2250d24b3ddac457a60c92a6a941943fcd6a/server.jar) (sha1=823e2250d24b3ddac457a60c92a6a941943fcd6a, size=60894273)
 
-A small Gradle plugin is available in `gradle-plugin/`. It loads mcmeta
-versions, buildability metadata, and exposes them as Gradle extra properties.
+### Paper
+- Type: papermc
+- Project: paper
+- Versions: 12
+  - 23
+  - 22
+  - 21
+  - 20
+  - 19
+  - 18
+  - 17
+  - 16
+  - 15
+  - 12
+  - 11
+  - 10
+- Build ids: 12
+  - 23
+  - 22
+  - 21
+  - 20
+  - 19
+  - 18
+  - 17
+  - 16
+  - 15
+  - 12
+  - 11
+  - 10
 
-The `includeBuild("gradle-plugin")` line only points Gradle at the local
-plugin build. The plugin ID is still `net.uebliche.mcmeta`.
+### Purpur
+- Type: purpur
+- Project: purpur
+- Versions: 1
+  - 2593
 
-Example `settings.gradle.kts`:
+## Runtimes
+- n/a
 
-```kotlin
-pluginManagement {
-  includeBuild("gradle-plugin")
-}
-```
-
-Example `build.gradle.kts`:
-
-```kotlin
-plugins {
-  id("net.uebliche.mcmeta")
-}
-
-mcmeta {
-  minecraftVersion = "1.21.4"
-}
-
-dependencies {
-  val fabricLoader = extra["mcmetaFabricLoaderVersion"] as String?
-  val yarnMappings = extra["mcmetaYarnVersion"] as String?
-  val fabricBuildable = extra["mcmetaFabricBuildable"] as Boolean?
-  val fabricMappingChannel = extra["mcmetaFabricMappingChannel"] as String?
-  val fabricBlockedBy = extra["mcmetaFabricBlockedBy"] as String?
-  val paperBuild = extra["mcmetaPaperVersion"] as String?
-  val velocityVersion = extra["mcmetaVelocityVersion"] as String?
-  val foliaBuild = extra["mcmetaFoliaVersion"] as String?
-  val jdk = extra["mcmetaJdkVersion"] as Int?
-  // use versions in your dependencies
-}
-```
-
-For Fabric projects, the plugin also exposes a shared mapping resolver object:
-
-```groovy
-dependencies {
-  minecraft "com.mojang:minecraft:${resolvedMinecraftVersion}"
-  (project.ext.has("mcmetaFabricSupport")
-      ? project.ext.mcmetaFabricSupport
-      : project.rootProject.ext.mcmetaFabricSupport)
-      .applyMappings(project, delegate)
-}
-```
-
-`applyMappings(...)` enforces the shared policy `mojang -> yarn -> intermediary`
-and fails early when `buildability.json` (or the derived fallback data on older
-branches) marks the selected Minecraft version as blocked.
-
-Additional extras now include:
-
-- `mcmetaFabricBuildable`
-- `mcmetaFabricBlockedBy`
-- `mcmetaFabricMappingChannel`
-- `mcmetaFabricMappingVersion`
-- `mcmetaFabricAvailableMappingChannels`
-- `mcmeta<Loader>Buildable`
-- `mcmeta<Loader>BlockedBy`
-
-### Optional: auto repositories + dependencies
-
-Enable repository and dependency wiring explicitly in the extension:
-
-```kotlin
-mcmeta {
-  minecraftVersion = "1.21.4"
-  repositories {
-    all()
-  }
-  dependencies {
-    enabled = true
-    fabricLoader = true
-    fabricApi = true
-    neoForge = true
-    paperApi = true
-    velocityApi = true
-    velocityAnnotationProcessor = true
-  }
-}
-```
-
-Override dependency configurations if your project uses custom names:
-
-```kotlin
-mcmeta {
-  dependencies {
-    enabled = true
-    fabricLoader = true
-    configurations {
-      fabricLoader = "modImplementation"
-      fabricApi = "modImplementation"
-      paperApi = "compileOnly"
-      velocityApi = "compileOnly"
-      velocityAnnotationProcessor = "annotationProcessor"
-    }
-  }
-}
-```
-
-### Example project
-
-Platform examples live in:
-
-- `examples/platforms`
-
-### Manifold preprocessor (optional)
-
-Enable Manifold preprocessor support to get numeric symbols for all Mojang
-versions (including snapshots) and a `MC_VER` value for the requested
-Minecraft version. This allows expressions like:
-
-```java
-#if MC_VER >= MC_1_20_5
-// code for 1.20.5+
-#endif
-```
-
-Gradle example:
-
-```kotlin
-mcmeta {
-  minecraftVersion = "1.21.4"
-  enableManifoldPreprocessor = true
-  // optional override
-  // manifoldPreprocessorVersion = "2025.1.22"
-}
-```
-
-### Publishing (GitHub Packages)
-
-The same workflow also publishes to GitHub Packages:
-
-- `https://maven.pkg.github.com/uebliche/mcmeta`
-- Uses `GITHUB_TOKEN` with `packages:write` permission.
-
-To consume via Gradle Plugin DSL, add the repo in `settings.gradle.kts`:
-
-```kotlin
-pluginManagement {
-  repositories {
-    maven {
-      url = uri("https://maven.pkg.github.com/uebliche/mcmeta")
-      credentials {
-        username = System.getenv("GITHUB_ACTOR")
-        password = System.getenv("GITHUB_TOKEN")
-      }
-    }
-    gradlePluginPortal()
-  }
-}
-```
+Generated by mcmeta-harvest.

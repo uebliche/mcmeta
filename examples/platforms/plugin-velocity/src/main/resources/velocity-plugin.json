@@ -1,6 +1,0 @@
-{
-  "id": "mcmeta_velocity_example",
-  "name": "mcmeta Velocity Example",
-  "version": "1.0.0",
-  "main": "net.uebliche.mcmeta.example.VelocityExamplePlugin"
-}
