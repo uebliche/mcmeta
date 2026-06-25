@@ -25,7 +25,7 @@ jobs:
       - name: Build platform examples
         run: ./examples/platforms/gradlew -p examples/platforms build -Pmcmeta.minecraftVersion=${{ matrix.mc }}
       - name: Upload example jars
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: platform-jars-${{ matrix.mc }}
           path: |
