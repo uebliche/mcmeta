@@ -1,0 +1,82 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "gradle"
+    directory: "/examples/platforms"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:10"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "gradle"
+    directory: "/examples/platforms/common"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:20"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "gradle"
+    directory: "/examples/platforms/mod-fabric"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:30"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "gradle"
+    directory: "/examples/platforms/mod-forge"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:40"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "gradle"
+    directory: "/examples/platforms/plugin-bungeecord"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:50"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "gradle"
+    directory: "/examples/platforms/plugin-paper"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "gradle"
+    directory: "/examples/platforms/plugin-velocity"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:10"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "gradle"
+    directory: "/gradle-plugin"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:20"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
