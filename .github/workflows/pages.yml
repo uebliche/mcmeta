@@ -19,19 +19,33 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
+      - name: Check for site package
+        id: site
+        shell: bash
+        run: |
+          if [[ -f package.json ]]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "No package.json found; skipping Pages build."
+          fi
       - name: Setup Node
-        uses: actions/setup-node@v4
+        if: steps.site.outputs.present == 'true'
+        uses: actions/setup-node@v6
         with:
           node-version: 20
           cache: npm
       - name: Install
+        if: steps.site.outputs.present == 'true'
         run: npm ci
       - name: Build
+        if: steps.site.outputs.present == 'true'
         run: npm run build
       - name: Deploy to gh-pages
+        if: steps.site.outputs.present == 'true'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
