@@ -1089,16 +1089,19 @@ private class McmetaResolver(
       return
     }
 
-    val proxyArtifacts = fetchProxyArtifacts("proxy/velocity-latest") ?: return
-    val proxies = parseEntry(proxyArtifacts.artifacts, "proxies", Proxies::class.java)
-    val velocityArtifact = parseEntry(proxyArtifacts.artifacts, "velocity", ProjectArtifact::class.java)
-    val velocityGroups = proxies?.velocity?.groups ?: emptyList()
-    val bungeecordGroups = proxies?.bungeecord?.groups ?: emptyList()
+    val velocityArtifacts = fetchProxyArtifacts("proxy/velocity-latest")
+    val velocityProxies = parseEntry(velocityArtifacts?.artifacts, "proxies", Proxies::class.java)
+    val velocityArtifact = parseEntry(velocityArtifacts?.artifacts, "velocity", ProjectArtifact::class.java)
+    val velocityGroups = velocityProxies?.velocity?.groups ?: emptyList()
     val velocityVersions = if (velocityGroups.isNotEmpty()) {
       velocityGroups.flatMap { it.versions ?: emptyList() }
     } else {
       velocityArtifact?.versions ?: emptyList()
     }
+
+    val bungeecordArtifacts = fetchProxyArtifacts("proxy/bungeecord-latest")
+    val bungeecordProxies = parseEntry(bungeecordArtifacts?.artifacts, "proxies", Proxies::class.java)
+    val bungeecordGroups = bungeecordProxies?.bungeecord?.groups ?: emptyList()
     val bungeecordVersions = bungeecordGroups.flatMap { it.versions ?: emptyList() }
 
     if (velocityVersion.isNullOrEmpty()) {

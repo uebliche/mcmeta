@@ -15,9 +15,9 @@ jobs:
         mc: ["1.21.11", "1.21.4", "1.20.1"]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "21"
@@ -25,7 +25,7 @@ jobs:
       - name: Build platform examples
         run: ./examples/platforms/gradlew -p examples/platforms build -Pmcmeta.minecraftVersion=${{ matrix.mc }}
       - name: Upload example jars
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: platform-jars-${{ matrix.mc }}
           path: |
