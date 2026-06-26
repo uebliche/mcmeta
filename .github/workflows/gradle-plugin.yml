@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '21'
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
@@ -35,4 +35,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MCMETA_PLUGIN_VERSION: ${{ env.MCMETA_PLUGIN_VERSION }}
-        run: ./gradlew publish
+        run: ../examples/platforms/gradlew -p . publish
