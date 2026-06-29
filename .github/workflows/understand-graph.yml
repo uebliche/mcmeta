@@ -1,0 +1,70 @@
+name: Understand Graph
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '.understand-anything/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: understand-graph-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  update-understand-graph:
+    name: Update Understand Anything graph
+    if: ${{ !contains(github.event.head_commit.message || '', '[skip ci]') }}
+    runs-on: [self-hosted, studio, linux]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Understand Anything plugin
+        shell: bash
+        run: |
+          set -euo pipefail
+          corepack enable
+          mkdir -p "$HOME/.understand-anything"
+          if [ ! -d "$HOME/.understand-anything/repo/.git" ]; then
+            git clone --depth 1 https://github.com/Lum1104/Understand-Anything.git "$HOME/.understand-anything/repo"
+          else
+            git -C "$HOME/.understand-anything/repo" fetch --depth 1 origin main
+            git -C "$HOME/.understand-anything/repo" checkout FETCH_HEAD
+          fi
+          cd "$HOME/.understand-anything/repo/understand-anything-plugin"
+          pnpm install --frozen-lockfile
+          pnpm --filter @understand-anything/core build
+
+      - name: Refresh knowledge graph
+        shell: bash
+        env:
+          UNDERSTAND_PLUGIN_ROOT: ${{ runner.temp }}/unused
+        run: |
+          set -euo pipefail
+          export UNDERSTAND_PLUGIN_ROOT="$HOME/.understand-anything/repo/understand-anything-plugin"
+          python3 scripts/update-understand-graph.py
+
+      - name: Commit graph update
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- .understand-anything; then
+            echo "Understand graph is already current."
+            exit 0
+          fi
+          git config user.name "luna-freddi"
+          git config user.email "286682110+luna-freddi@users.noreply.github.com"
+          git add .understand-anything
+          git commit -m "chore: update Understand Anything graph [skip ci]"
+          git push
