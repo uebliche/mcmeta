@@ -21,11 +21,11 @@
   "source_fingerprints": {
     "fabric": {
       "status": "ok",
-      "fingerprint": "c0e0905bcab25d2f0f4d9ba1ce4dbcd2cd590443"
+      "fingerprint": "5350353b67d6ea65c5fa4be1eaed634dd4091396"
     },
     "fabric-api": {
       "status": "ok",
-      "fingerprint": "73cd7ba3173fdd368cc067c79ffc27d7f1f8dd2e"
+      "fingerprint": "fd4f68886ab430f93794842950122f4ab4047748"
     },
     "folia": {
       "status": "ok",
@@ -33,23 +33,23 @@
     },
     "forge": {
       "status": "ok",
-      "fingerprint": "d6a13672c483d85b75f01ec7763ec14ec43f3dbb"
+      "fingerprint": "744216661a8a4fb42036383b1434a8ff71111d39"
     },
     "minestom": {
       "status": "ok",
-      "fingerprint": "66381a2ebb9b3ee29c26df4020344366bba4afb8"
+      "fingerprint": "f497bcc9bb720094f782835e3c4d2588770f1a01"
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "cfd70638fd10ac112f2ba399e3705d5cebd24629"
+      "fingerprint": "31f7cdd4cd4ccd87434ec92bf246d760ca4914ed"
     },
     "neoforge": {
       "status": "ok",
-      "fingerprint": "dd6667659f4d1ede00cc4f9fb6a9446e59de1d0b"
+      "fingerprint": "52b68ed400bc46756f4d9730e0588bf265bc1e26"
     },
     "paper": {
       "status": "ok",
-      "fingerprint": "86113405de052b9b41611717a7852f4ce3c9ab5d"
+      "fingerprint": "5961c178cdee2d40ad2b07145d5244035e382dea"
     },
     "purpur": {
       "status": "ok",
@@ -57,14 +57,14 @@
     },
     "quilt": {
       "status": "ok",
-      "fingerprint": "95a0170cde9530d11a4bc9984d876ad41b1ac765"
+      "fingerprint": "0ac820f746d6e36afcbaa3c8b0e2be484be7f67e"
     },
     "yarn": {
       "status": "ok",
-      "fingerprint": "5c468358e165c23ffae52248e0aa009f51a7142f"
+      "fingerprint": "e64b0c79e225aead4c90a7596edc701767f531b1"
     }
   },
-  "branch_fingerprint": "7be63426e9b2d43e1c207000108745f84f96c62d",
+  "branch_fingerprint": "b1d240d92f56b86ab280d841d542ea8249623b32",
   "branch_inputs": {
     "version_kind": "release"
   }

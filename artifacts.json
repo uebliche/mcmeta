@@ -13,6 +13,38 @@
         {
           "files": [
             {
+              "sha1": "f56956fc14c6e1af380e80fce7e9cfd4db050eef",
+              "sha512": "66f9ac506a269fbd3738dd22a21ca8995d3a56b97ee1514392ab8058abb6187851a5ac51dbffd71744ba0c904dfea65497593b5e357f30ac266c01f4b9b323ee",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/zGF3drOQ/fabric-api-0.141.5%2B1.21.11.jar"
+            }
+          ],
+          "game_versions": [
+            "1.21.11"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "version_number": "0.141.5+1.21.11"
+        },
+        {
+          "files": [
+            {
+              "sha1": "13d3885dfec40313e2b3bf9ee639353272b9b48a",
+              "sha512": "c092d48c6453bec3264f80f6a35bb334aba3112b5cd6c0e0b2676ce4d81e702cb1e522337f3a732348e757cc2226da3c601a314ae8766334f16af71a13bcc98d",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/5zJNhXV2/fabric-api-0.141.4%2B1.21.11.jar"
+            }
+          ],
+          "game_versions": [
+            "1.21.11"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "version_number": "0.141.4+1.21.11"
+        },
+        {
+          "files": [
+            {
               "sha1": "50de67eb221f0b38216da8668b09ca311327040e",
               "sha512": "c20c017e23d6d2774690d0dd774cec84c16bfac5461da2d9345a1cd95eee495b1954333c421e3d1c66186284d24a433f6b0cced8021f62e0bfa617d2384d0471",
               "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/i5tSkVBH/fabric-api-0.141.3%2B1.21.11.jar"
@@ -182,7 +214,7 @@
         "url": "https://piston-data.mojang.com/v1/objects/5621e9253f05fd57872bbe7f8ddf5f9a7d525955/server.txt"
       },
       "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/b8e7e6ddb3ca94298c38391fbda1455e29b42949/1.21.11.json"
+        "url": "https://piston-meta.mojang.com/v1/packages/fb498c3c1beff5c406e71b776d8457499670cb3f/1.21.11.json"
       }
     },
     "paper": {
@@ -190,6 +222,7 @@
         "1.21.11-R0.1-SNAPSHOT"
       ],
       "build_ids": [
+        "132",
         "131",
         "130",
         "129",
@@ -286,6 +319,7 @@
       "type": "papermc",
       "versions": [
         "1.21.11-R0.1-SNAPSHOT",
+        "132",
         "131",
         "130",
         "129",
@@ -426,7 +460,7 @@
       ],
       "type": "maven",
       "versions": [
-        "2026.04.13-1.21.11"
+        "2026.05.17-1.21.11"
       ]
     }
   }

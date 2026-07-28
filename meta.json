@@ -17,8 +17,9 @@
   },
   "jdk": 21,
   "yarn": {
-    "latest": "1.21.11+build.5",
+    "latest": "1.21.11+build.6",
     "versions": [
+      "1.21.11+build.6",
       "1.21.11+build.5",
       "1.21.11+build.4",
       "1.21.11+build.3",
