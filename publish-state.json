@@ -25,7 +25,7 @@
     },
     "fabric-api": {
       "status": "ok",
-      "fingerprint": "fd4f68886ab430f93794842950122f4ab4047748"
+      "fingerprint": "5f650cf7a4a9628f61dff0843cbfabe4ca951cd7"
     },
     "folia": {
       "status": "ok",
@@ -64,7 +64,7 @@
       "fingerprint": "e64b0c79e225aead4c90a7596edc701767f531b1"
     }
   },
-  "branch_fingerprint": "b1d240d92f56b86ab280d841d542ea8249623b32",
+  "branch_fingerprint": "defee1fbdd125965273497497e31e84c7b9ae9ef",
   "branch_inputs": {
     "version_kind": "release"
   }
