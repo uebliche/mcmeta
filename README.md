@@ -23,29 +23,27 @@ Files:
 - Fabric-api: ok
 - Folia: ok
 - Forge: ok
-- Minestom: partial
+- Minestom: ok
 - Mojang: partial
-- Neoforge: partial
+- Neoforge: ok
 - Paper: partial
 - Purpur: ok
-- Quilt: error
+- Quilt: ok
 - Yarn: error
 
 ## Notes
-- minestom maven metadata has no versions for minecraft 26.1.2
-- neoforge maven metadata has no versions for minecraft 26.1.2
 - paper-api maven metadata has no versions for 26.1.2
 
 ## Buildability
 - Bungeecord: partial (proxy-target-not-versioned)
-- Fabric: blocked (missing-fabric-intermediary)
+- Fabric: buildable via unobfuscated
 - Folia: buildable
 - Forge: buildable
-- Minestom: blocked (missing-minestom-runtime)
-- Neoforge: blocked (missing-neoforge-loader)
+- Minestom: buildable
+- Neoforge: buildable
 - Paper: buildable
 - Purpur: buildable
-- Quilt: blocked (missing-quilt-loader)
+- Quilt: blocked (missing-quilt-mappings)
 - Velocity: partial (proxy-target-not-versioned)
 
 ## Loader index
@@ -53,9 +51,13 @@ Files:
 - Schema version: 2
 - Minecraft: 26.1.2
 - Fabric versions: 1
-  - 0.19.1
+  - 0.19.3
 - Forge versions: 1
-  - 26.1.2-64.0.8
+  - 26.1.2-64.1.0
+- Neoforge versions: 1
+  - 26.1.2.9-beta
+- Quilt versions: 1
+  - 0.30.1-beta.2
 
 ## Artifacts index
 - Schema: mcmeta/v2
@@ -67,7 +69,106 @@ Files:
 - Project id: P7dR8mSH
 - Loaders: 1
   - fabric
-- Versions: 5
+- Versions: 16
+  - 0.155.2+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/uLkEd5dr/fabric-api-0.155.2%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/uLkEd5dr/fabric-api-0.155.2%2B26.1.2.jar) (sha1=5fe5204ccc96a17340570db66a5b4127b8176246, sha512=e07d2e525037e3ce2d6fa18ddc9d4970263a85fd0718fdbd41a1a42c93ec861307d0f5d1461f020ff941bdd5b981a82b5717ee2d6b5c400124bf0171fb21e998)
+  - 0.155.0+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/v0WpqBBM/fabric-api-0.155.0%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/v0WpqBBM/fabric-api-0.155.0%2B26.1.2.jar) (sha1=faa840ed76d277ba2dce144bdb86fe384bf3b6ec, sha512=e0dcf7e461de2ce62951e40769348be88b965e6a50b0ebd08df10c94e5e85102c30c5298f18a691c4224299fa1112f101ddaee755c4213de6d01019cb670e903)
+  - 0.154.2+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/lOQ4tyDD/fabric-api-0.154.2%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/lOQ4tyDD/fabric-api-0.154.2%2B26.1.2.jar) (sha1=03e3870e2f4955faafb0b0076ae85175d7fa198f, sha512=8e1b48a2bd10ddd6f1ea59a603a1f28255c2c2f9a2dda93fc196505dee0823eaded2da69d4f154ef654f9faa98e2340ed2b65557ec98637ffe888edc1072912e)
+  - 0.154.0+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/1F9Sl2ke/fabric-api-0.154.0%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/1F9Sl2ke/fabric-api-0.154.0%2B26.1.2.jar) (sha1=6ece84e474f695024879b240b3f507d2790395d4, sha512=0f5885ca80716dee547e8e8ec6c2eda137b5591d40d8fb424d9d1d99a3e5c7a6d861ef11590903f9fa18838806de8876e51285c5d830cfa50f518c0217139e78)
+  - 0.153.0+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/WC1KT7Yg/fabric-api-0.153.0%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/WC1KT7Yg/fabric-api-0.153.0%2B26.1.2.jar) (sha1=5d984764e54f1f1db397d3f76429a0f15e591845, sha512=4e31da3c796714d25ca079e5277980c5439bb09dcad33d1224cccdfec6000b776ba5d16323a9c312682e773bddedae75aa697a7c0f4ad2b77b5b11ba679b480a)
+  - 0.152.1+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/NqRnXk9x/fabric-api-0.152.1%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/NqRnXk9x/fabric-api-0.152.1%2B26.1.2.jar) (sha1=e48e773ec41ec1267fd8833fe90c256648cf74d0, sha512=f3005eb44c15361e2278ac770459efd3c9b57329dcf7a2ff9be53615f5bb187542836258d59cab8a9d2e093257b32abf3de1381d387ecbd344dfb50943fc7671)
+  - 0.151.0+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/yALY9gHM/fabric-api-0.151.0%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/yALY9gHM/fabric-api-0.151.0%2B26.1.2.jar) (sha1=f44f652ecb5e95d20d67aa6e49a312c058a4de09, sha512=d087349842b962414ba89248f9ef7bc75f537848f4d783435de633ddae8924cd50fd9bffc606aae0f1c2c3ed9b4339623244e1fd34c6b9c17f977528d1303cdd)
+  - 0.150.0+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/E1mjhYMF/fabric-api-0.150.0%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/E1mjhYMF/fabric-api-0.150.0%2B26.1.2.jar) (sha1=1389f2a2bf506996be33ae8633ee25472ad8d9c2, sha512=238c793b720ed21d2d5b564eca88c714cf2188f7b0fb1fd30864660f80901e2b4dad273994b6f77de3c0aa365f930ed8aaccffac49b36c6456b153b52d5d21dc)
+  - 0.149.1+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/BLz7ETCw/fabric-api-0.149.1%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/BLz7ETCw/fabric-api-0.149.1%2B26.1.2.jar) (sha1=f07ace934b02896a8b77727efd03ce2ad32dc5da, sha512=47ffa18369260c88ea847f6694ccb431a5aa9051c64e8d361186a767bb762dd9fcfbf4742ac65505eb60862900a1a3f1490994e7435376607de811eab8be4461)
+  - 0.149.0+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/Sy2Bq7Xc/fabric-api-0.149.0%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/Sy2Bq7Xc/fabric-api-0.149.0%2B26.1.2.jar) (sha1=1d3aa9049af831d4d7ed7fbf1b5f0fbb37d7fab4, sha512=c7589aa4deeaa6dbefc13247eb5e0d4e257c152ef039937f54d6ee28282d3c84ccc96483d9c3950286fed6e3dcc546709898c8a446ab143d1663bc7d49649c54)
+  - 0.148.2+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/q87Wssd1/fabric-api-0.148.2%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/q87Wssd1/fabric-api-0.148.2%2B26.1.2.jar) (sha1=2ae5145d7e6e8d6221f3df7855f6f3b020fa89df, sha512=6a576d8975b705937c035e9b290dd0138fedd4ab106a54e238f37e343916dec96dbaeeef66578d5293be83e10c9d7a5b8be3aef93ae384d2b8fe7e52cdee5df2)
   - 0.148.0+26.1.2
     - Game versions: 3
       - 26.1
@@ -123,14 +224,27 @@ Files:
   - 6
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/77e9459d6354bc55cded19e10f87364c13110b49/26.1.2.json](https://piston-meta.mojang.com/v1/packages/77e9459d6354bc55cded19e10f87364c13110b49/26.1.2.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/8228875b88ad88b4bc0dc7a2afbc6903bccf93b1/26.1.2.json](https://piston-meta.mojang.com/v1/packages/8228875b88ad88b4bc0dc7a2afbc6903bccf93b1/26.1.2.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/4e618f09a0c649dde3fdf829df443ce0b8831e65/client.jar](https://piston-data.mojang.com/v1/objects/4e618f09a0c649dde3fdf829df443ce0b8831e65/client.jar) (sha1=4e618f09a0c649dde3fdf829df443ce0b8831e65, size=38113927)
 - Server jar: [https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar](https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar) (sha1=97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51, size=60417480)
 
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 58
+- Versions: 71
+  - 74
+  - 73
+  - 72
+  - 71
+  - 70
+  - 69
+  - 68
+  - 67
+  - 66
+  - 65
+  - 64
+  - 63
+  - 62
   - 61
   - 60
   - 59
@@ -189,7 +303,20 @@ Files:
   - 4
   - 3
   - 2
-- Build ids: 58
+- Build ids: 71
+  - 74
+  - 73
+  - 72
+  - 71
+  - 70
+  - 69
+  - 68
+  - 67
+  - 66
+  - 65
+  - 64
+  - 63
+  - 62
   - 61
   - 60
   - 59
@@ -252,7 +379,14 @@ Files:
 ### Purpur
 - Type: purpur
 - Project: purpur
-- Versions: 17
+- Versions: 24
+  - 2592
+  - 2591
+  - 2590
+  - 2589
+  - 2588
+  - 2587
+  - 2586
   - 2585
   - 2584
   - 2583
@@ -272,6 +406,11 @@ Files:
   - 2569
 
 ## Runtimes
-- n/a
+### Minestom
+- Type: maven
+- Coordinates: 1
+  - net.minestom:minestom
+- Versions: 1
+  - 2026.07.01-26.1.2
 
 Generated by mcmeta-harvest.

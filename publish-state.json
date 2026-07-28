@@ -8,7 +8,10 @@
   "active_plugins": [
     "minecraft-downloads",
     "fabric-loader",
+    "quilt-loader",
     "forge-loader",
+    "neoforge-loader",
+    "minestom-runtime",
     "fabric-api",
     "paper-artifact",
     "folia-artifact",
@@ -17,11 +20,11 @@
   "source_fingerprints": {
     "fabric": {
       "status": "ok",
-      "fingerprint": "ca97030093d011c18980df30fea1511ea63f6bd2"
+      "fingerprint": "807a574f451157158955a975448bd2227063463a"
     },
     "fabric-api": {
       "status": "ok",
-      "fingerprint": "17419486131bdab05734a80ef39ded1d92505906"
+      "fingerprint": "ddee5303febc97508eb50959647993166b0fef57"
     },
     "folia": {
       "status": "ok",
@@ -29,36 +32,37 @@
     },
     "forge": {
       "status": "ok",
-      "fingerprint": "19edd6ba3aa012077cb298edf2ce755609db4756"
+      "fingerprint": "10c4d11adfff8f478ae3e8e61cd6486542d2a8a1"
     },
     "minestom": {
-      "status": "partial",
-      "fingerprint": "b3aab62d641471ffbf9ea1048d0c2bfdf132a213"
+      "status": "ok",
+      "fingerprint": "710d8f87efb98be5ed1df516a44acb57b5d6a212"
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "1db85df63caf79242d68a05122e79e2fb6015798"
+      "fingerprint": "3c2c6618f0dc5618f590d12e91226866ca0ccf8a"
     },
     "neoforge": {
-      "status": "partial",
-      "fingerprint": "39f1bf25007e26000ce8478b2987cecf9999b477"
+      "status": "ok",
+      "fingerprint": "9c29f7874ec8dd22454e593175f8414c8bcdef23"
     },
     "paper": {
       "status": "partial",
-      "fingerprint": "166020d677cda34146a8be4f8b4822453fe412f0"
+      "fingerprint": "e33ebad0c8560285966255360487c5dc02dc9f62"
     },
     "purpur": {
       "status": "ok",
-      "fingerprint": "d868b93630370ed2809cb23e7e65984f18df8dd5"
+      "fingerprint": "4ab2ea34a6c3f8c22257e5229f23d6b4fff374a0"
     },
     "quilt": {
-      "status": "error"
+      "status": "ok",
+      "fingerprint": "0ac820f746d6e36afcbaa3c8b0e2be484be7f67e"
     },
     "yarn": {
       "status": "error"
     }
   },
-  "branch_fingerprint": "d7366691376a4fcf8f943134f54945b896b2559e",
+  "branch_fingerprint": "f97c7e948739b9aa1efff47705ab63cf28705b0f",
   "branch_inputs": {
     "version_kind": "release"
   }
