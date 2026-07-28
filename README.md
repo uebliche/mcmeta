@@ -21,7 +21,7 @@ Files:
 ## Sources
 - Fabric: ok
 - Fabric-api: ok
-- Folia: error
+- Folia: ok
 - Forge: ok
 - Minestom: ok
 - Mojang: partial
@@ -37,7 +37,7 @@ Files:
 ## Buildability
 - Bungeecord: partial (proxy-target-not-versioned)
 - Fabric: buildable via unobfuscated
-- Folia: blocked (missing-folia-artifact)
+- Folia: buildable
 - Forge: buildable
 - Minestom: buildable
 - Neoforge: buildable
@@ -126,6 +126,12 @@ Files:
       - fabric
     - Files: 1
       - [https://cdn.modrinth.com/data/P7dR8mSH/versions/3kB7XVBv/fabric-api-0.152.1%2B26.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/3kB7XVBv/fabric-api-0.152.1%2B26.2.jar) (sha1=8c5317d4ba22dcc5def1c691c346595769ba3304, sha512=8dcbcabcb71443e57bf5b7da4c2b4fb0e3b98cd576146db989cb6886484b2422c802624082215e23e10e8e67441cd894744aa68d4d9b68ea1bd182afb15dd22b)
+
+### Folia
+- Type: papermc
+- Project: folia
+- Versions: 1
+  - 1
 
 ### Minecraft
 - Version JSON: [https://piston-meta.mojang.com/v1/packages/d98675ecc24364e90b18dbea80390b1345c3f71f/26.2.json](https://piston-meta.mojang.com/v1/packages/d98675ecc24364e90b18dbea80390b1345c3f71f/26.2.json)

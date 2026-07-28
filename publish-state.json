@@ -14,6 +14,7 @@
     "minestom-runtime",
     "fabric-api",
     "paper-artifact",
+    "folia-artifact",
     "purpur-artifact"
   ],
   "source_fingerprints": {
@@ -26,7 +27,8 @@
       "fingerprint": "2e7ccf7ccc1ab09395cb984115049cab1411f45a"
     },
     "folia": {
-      "status": "error"
+      "status": "ok",
+      "fingerprint": "5b1db3240c004d4a9dcc842f488a14d121a360c4"
     },
     "forge": {
       "status": "ok",
@@ -60,7 +62,7 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "c702efb0b2b91311f3c9f5e6644f4efb080d4aad",
+  "branch_fingerprint": "fb0f25049d709c00b821bb26de96169b6203287b",
   "branch_inputs": {
     "version_kind": "release"
   }

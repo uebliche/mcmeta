@@ -5,7 +5,7 @@
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
-    "folia": "error",
+    "folia": "ok",
     "forge": "ok",
     "minestom": "ok",
     "mojang": "partial",

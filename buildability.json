@@ -21,9 +21,11 @@
       ]
     },
     "folia": {
-      "status": "blocked",
-      "blocked_by": "missing-folia-artifact",
-      "jdk": 21
+      "status": "buildable",
+      "jdk": 21,
+      "artifact_versions": {
+        "folia": "1"
+      }
     },
     "forge": {
       "status": "buildable",
