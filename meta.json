@@ -7,12 +7,12 @@
     "fabric-api": "ok",
     "folia": "error",
     "forge": "ok",
-    "minestom": "partial",
+    "minestom": "ok",
     "mojang": "partial",
-    "neoforge": "partial",
+    "neoforge": "ok",
     "paper": "partial",
     "purpur": "error",
-    "quilt": "error",
+    "quilt": "ok",
     "yarn": "error"
   },
   "jdk": 21,
@@ -20,8 +20,6 @@
   "protocol_version": 775,
   "data_version": 4788,
   "notes": [
-    "minestom maven metadata has no versions for minecraft 26.1.1",
-    "neoforge maven metadata has no versions for minecraft 26.1.1",
     "paper-api maven metadata has no versions for 26.1.1"
   ]
 }

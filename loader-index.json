@@ -5,12 +5,22 @@
   "loaders": {
     "fabric": {
       "loader": [
-        "0.19.1"
+        "0.19.3"
       ]
     },
     "forge": {
       "loader": [
         "26.1.1-63.0.2"
+      ]
+    },
+    "neoforge": {
+      "loader": [
+        "26.1.1.8-beta"
+      ]
+    },
+    "quilt": {
+      "loader": [
+        "0.30.1-beta.2"
       ]
     }
   }

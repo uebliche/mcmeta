@@ -8,18 +8,21 @@
   "active_plugins": [
     "minecraft-downloads",
     "fabric-loader",
+    "quilt-loader",
     "forge-loader",
+    "neoforge-loader",
+    "minestom-runtime",
     "fabric-api",
     "paper-artifact"
   ],
   "source_fingerprints": {
     "fabric": {
       "status": "ok",
-      "fingerprint": "ca97030093d011c18980df30fea1511ea63f6bd2"
+      "fingerprint": "807a574f451157158955a975448bd2227063463a"
     },
     "fabric-api": {
       "status": "ok",
-      "fingerprint": "f8bf44417b9fd2d13d9079e88edc253b0ba70251"
+      "fingerprint": "b51dfed883ed28e62f26cad629e271073f9542aa"
     },
     "folia": {
       "status": "error"
@@ -29,16 +32,16 @@
       "fingerprint": "ce9d00df05ae1f91f38fa9dd6deab09597608357"
     },
     "minestom": {
-      "status": "partial",
-      "fingerprint": "b3aab62d641471ffbf9ea1048d0c2bfdf132a213"
+      "status": "ok",
+      "fingerprint": "fa04bb9b39b1e573b311ee00a2be63fe95d8e551"
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "c33f167b1f3eead85fdfb1953c8bb4ef5bb63c34"
+      "fingerprint": "7e97acaef74887008f9d41930d7bef4ec7337453"
     },
     "neoforge": {
-      "status": "partial",
-      "fingerprint": "39f1bf25007e26000ce8478b2987cecf9999b477"
+      "status": "ok",
+      "fingerprint": "fee7404102990b9a13bb2b561abe528ea431ee7f"
     },
     "paper": {
       "status": "partial",
@@ -48,13 +51,14 @@
       "status": "error"
     },
     "quilt": {
-      "status": "error"
+      "status": "ok",
+      "fingerprint": "0ac820f746d6e36afcbaa3c8b0e2be484be7f67e"
     },
     "yarn": {
       "status": "error"
     }
   },
-  "branch_fingerprint": "4af6caf3100970eaa64d7e4de275a5fedf2943ea",
+  "branch_fingerprint": "dce0254ee6e1a423215cd0a9c9cb6102e2e60647",
   "branch_inputs": {
     "version_kind": "release"
   }
