@@ -10,7 +10,7 @@
     "fabric": {
       "status": "buildable",
       "jdk": 21,
-      "loader_version": "0.18.4",
+      "loader_version": "0.19.3",
       "artifact_versions": {
         "fabric-api": "0.134.1+1.21.9"
       },
@@ -59,7 +59,7 @@
     "quilt": {
       "status": "buildable",
       "jdk": 21,
-      "loader_version": "0.30.0-beta.7",
+      "loader_version": "0.30.1-beta.2",
       "mapping_channel": "mojang",
       "mapping_version": "1.21.9",
       "available_mapping_channels": [
