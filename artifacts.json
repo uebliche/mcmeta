@@ -1,293 +1,198 @@
 {
-  "schema": "mcmeta/v1",
+  "schema": "mcmeta/v2",
+  "schema_version": 2,
   "minecraft": "1.20.6",
   "artifacts": {
     "fabric-api": {
-      "type": "modrinth",
-      "project_id": "P7dR8mSH",
       "loaders": [
         "fabric"
       ],
+      "project_id": "P7dR8mSH",
+      "type": "modrinth",
       "versions": [
         {
-          "version_number": "0.100.8+1.20.6",
-          "game_versions": [
-            "1.20.6"
-          ],
-          "loaders": [
-            "fabric"
-          ],
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/ocg4hG3t/fabric-api-0.100.8%2B1.20.6.jar",
               "sha1": "f8a4b3a551fc5bde9a2d3e4bcac9cb21a081c828",
-              "sha512": "414f19f903a093c39006e1919a81bea43c3b6728b88e358dc2611ab44b8087e25abc504c66926f245342fa2a245c07462ed62897f15d6c84006b7acf6214ca46"
+              "sha512": "414f19f903a093c39006e1919a81bea43c3b6728b88e358dc2611ab44b8087e25abc504c66926f245342fa2a245c07462ed62897f15d6c84006b7acf6214ca46",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/ocg4hG3t/fabric-api-0.100.8%2B1.20.6.jar"
             }
-          ]
-        },
-        {
-          "version_number": "0.100.4+1.20.6",
+          ],
           "game_versions": [
             "1.20.6"
           ],
           "loaders": [
             "fabric"
           ],
+          "version_number": "0.100.8+1.20.6"
+        },
+        {
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/GT0R5Mz7/fabric-api-0.100.4%2B1.20.6.jar",
               "sha1": "bfadb1bd7a159fa2b3c9833c32716db1db7c4a02",
-              "sha512": "4039d851149a2b825ed85a6a9ba4bf1e29005866b2a0080eacb3579e166fc4e9bc28a3f12e19ee1281e0393f33a37f650b30aea5bd3c5b602f33205887eedc73"
+              "sha512": "4039d851149a2b825ed85a6a9ba4bf1e29005866b2a0080eacb3579e166fc4e9bc28a3f12e19ee1281e0393f33a37f650b30aea5bd3c5b602f33205887eedc73",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/GT0R5Mz7/fabric-api-0.100.4%2B1.20.6.jar"
             }
-          ]
-        },
-        {
-          "version_number": "0.100.2+1.20.6",
+          ],
           "game_versions": [
             "1.20.6"
           ],
           "loaders": [
             "fabric"
           ],
+          "version_number": "0.100.4+1.20.6"
+        },
+        {
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/MiIndOKP/fabric-api-0.100.2%2B1.20.6.jar",
               "sha1": "605ddd5311a420c716877ba7e12e1e8217b17ee3",
-              "sha512": "7b80dea452ef87f98f2d60f448b357274e5ff20de0302d63276bc530c481a53e01231fb16c69c6f54adc3bba99cdedc228f21d621fe6cdd24d35886f65636ec2"
+              "sha512": "7b80dea452ef87f98f2d60f448b357274e5ff20de0302d63276bc530c481a53e01231fb16c69c6f54adc3bba99cdedc228f21d621fe6cdd24d35886f65636ec2",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/MiIndOKP/fabric-api-0.100.2%2B1.20.6.jar"
             }
-          ]
-        },
-        {
-          "version_number": "0.100.0+1.20.6",
+          ],
           "game_versions": [
             "1.20.6"
           ],
           "loaders": [
             "fabric"
           ],
+          "version_number": "0.100.2+1.20.6"
+        },
+        {
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/IdbZAPPF/fabric-api-0.100.0%2B1.20.6.jar",
               "sha1": "b5ae408855e08e91650b5791cdc6fee478494534",
-              "sha512": "b15fca46eb1b15b085b7c0f6389fbb69129a6abe49afa1e6fab93339f07e47f80f5878aa235e698e501e53c3e9791f55cee90ee751aa82b779a4c511a5ba60bb"
+              "sha512": "b15fca46eb1b15b085b7c0f6389fbb69129a6abe49afa1e6fab93339f07e47f80f5878aa235e698e501e53c3e9791f55cee90ee751aa82b779a4c511a5ba60bb",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/IdbZAPPF/fabric-api-0.100.0%2B1.20.6.jar"
             }
-          ]
-        },
-        {
-          "version_number": "0.99.4+1.20.6",
+          ],
           "game_versions": [
             "1.20.6"
           ],
           "loaders": [
             "fabric"
           ],
+          "version_number": "0.100.0+1.20.6"
+        },
+        {
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/MtIGbixh/fabric-api-0.99.4%2B1.20.6.jar",
               "sha1": "43154bdc2096c5d5e4b3769ac11bd0e0c2b88fbb",
-              "sha512": "8a016df8989b082694d484f51c7d2207eca3af722cfe573dad093f2087832117e7a4c89a969eb84aaa6460956dec6352494a425a7e6e46c26eb8d5bc779da2bf"
+              "sha512": "8a016df8989b082694d484f51c7d2207eca3af722cfe573dad093f2087832117e7a4c89a969eb84aaa6460956dec6352494a425a7e6e46c26eb8d5bc779da2bf",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/MtIGbixh/fabric-api-0.99.4%2B1.20.6.jar"
             }
-          ]
-        },
-        {
-          "version_number": "0.99.3+1.20.6",
+          ],
           "game_versions": [
             "1.20.6"
           ],
           "loaders": [
             "fabric"
           ],
+          "version_number": "0.99.4+1.20.6"
+        },
+        {
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/1uMtrDCU/fabric-api-0.99.3%2B1.20.6.jar",
               "sha1": "953df785a5eed75a439395324945240e70283647",
-              "sha512": "708e7421b98d26d252bd7072b44a8d782d236bd1091ce30c5d7b7b6f1049cdc3e2b6e5c3911d9897afdd157f82b38201a6de866535510877e0c823489f7b89bd"
+              "sha512": "708e7421b98d26d252bd7072b44a8d782d236bd1091ce30c5d7b7b6f1049cdc3e2b6e5c3911d9897afdd157f82b38201a6de866535510877e0c823489f7b89bd",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/1uMtrDCU/fabric-api-0.99.3%2B1.20.6.jar"
             }
-          ]
-        },
-        {
-          "version_number": "0.99.0+1.20.6",
+          ],
           "game_versions": [
             "1.20.6"
           ],
           "loaders": [
             "fabric"
           ],
+          "version_number": "0.99.3+1.20.6"
+        },
+        {
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/sswM8UzU/fabric-api-0.99.0%2B1.20.6.jar",
               "sha1": "32b13b08e6c6a4a4cd8a51515751e7bf15bf523d",
-              "sha512": "26c549a7c496fba00dc2c93d49948dc4fc015c9f912d1b41d24e138eb264b88b4143b010e28d82978a9c606b1ef671fe637854afcbfde7740c96c08ef6d354d2"
+              "sha512": "26c549a7c496fba00dc2c93d49948dc4fc015c9f912d1b41d24e138eb264b88b4143b010e28d82978a9c606b1ef671fe637854afcbfde7740c96c08ef6d354d2",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/sswM8UzU/fabric-api-0.99.0%2B1.20.6.jar"
             }
-          ]
-        },
-        {
-          "version_number": "0.98.0+1.20.6",
+          ],
           "game_versions": [
             "1.20.6"
           ],
           "loaders": [
             "fabric"
           ],
+          "version_number": "0.99.0+1.20.6"
+        },
+        {
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/191HCCtF/fabric-api-0.98.0%2B1.20.6.jar",
               "sha1": "e40b6bd8dacc35ef729544c823d118a6beb35987",
-              "sha512": "223fe31e5e55e9a027ca87e94d7e6df047528d172865b88997896ac70c6f0ebb360667edbdc96b6c9b57b30da8becb17dd7f17aefa0b8ed31431e7473d1f51a9"
+              "sha512": "223fe31e5e55e9a027ca87e94d7e6df047528d172865b88997896ac70c6f0ebb360667edbdc96b6c9b57b30da8becb17dd7f17aefa0b8ed31431e7473d1f51a9",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/191HCCtF/fabric-api-0.98.0%2B1.20.6.jar"
             }
-          ]
-        },
-        {
-          "version_number": "0.97.8+1.20.6",
+          ],
           "game_versions": [
             "1.20.6"
           ],
           "loaders": [
             "fabric"
           ],
+          "version_number": "0.98.0+1.20.6"
+        },
+        {
           "files": [
             {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/kAQqRNrK/fabric-api-0.97.8%2B1.20.6.jar",
               "sha1": "6d7a34b8448259688e0833c02be3e28763acec65",
-              "sha512": "41f19b2a7271c776b84c22e841c20acf12c5260b4a197a97f8afb84f04b408317a9488646d795ec613a6c98f2655339c2bba426007a1d38b42bc32c15ca6c642"
+              "sha512": "41f19b2a7271c776b84c22e841c20acf12c5260b4a197a97f8afb84f04b408317a9488646d795ec613a6c98f2655339c2bba426007a1d38b42bc32c15ca6c642",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/kAQqRNrK/fabric-api-0.97.8%2B1.20.6.jar"
             }
-          ]
+          ],
+          "game_versions": [
+            "1.20.6"
+          ],
+          "loaders": [
+            "fabric"
+          ],
+          "version_number": "0.97.8+1.20.6"
         }
       ]
     },
-    "paper": {
+    "folia": {
+      "project": "folia",
       "type": "papermc",
-      "project": "paper",
       "versions": [
-        "1.20.6-R0.1-SNAPSHOT",
-        "151",
-        "150",
-        "149",
-        "148",
-        "147",
-        "146",
-        "145",
-        "144",
-        "143",
-        "142",
-        "141",
-        "140",
-        "139",
-        "138",
-        "137",
-        "136",
-        "135",
-        "134",
-        "133",
-        "132",
-        "131",
-        "130",
-        "129",
-        "128",
-        "127",
-        "126",
-        "125",
-        "124",
-        "123",
-        "122",
-        "121",
-        "120",
-        "119",
-        "118",
-        "117",
-        "116",
-        "115",
-        "114",
-        "113",
-        "112",
-        "111",
-        "110",
-        "109",
-        "108",
-        "107",
-        "106",
-        "105",
-        "104",
-        "103",
-        "102",
-        "101",
-        "100",
-        "99",
-        "98",
-        "97",
-        "96",
-        "95",
-        "94",
-        "93",
-        "92",
-        "91",
-        "90",
-        "89",
-        "88",
-        "86",
-        "85",
-        "84",
-        "83",
-        "82",
-        "81",
-        "80",
-        "79",
-        "78",
-        "77",
-        "76",
-        "75",
-        "74",
-        "73",
-        "72",
-        "71",
-        "70",
-        "69",
-        "68",
-        "67",
-        "66",
-        "65",
-        "64",
-        "62",
-        "61",
-        "60",
-        "59",
-        "58",
-        "57",
-        "56",
-        "55",
-        "54",
-        "53",
-        "52",
-        "51",
-        "50",
-        "49",
-        "48",
-        "47",
-        "46",
-        "45",
-        "44",
-        "43",
-        "42",
-        "41",
-        "40",
-        "39",
-        "38",
-        "37",
-        "36",
-        "35",
-        "34",
-        "33",
-        "32",
-        "31",
-        "30",
-        "29",
-        "28",
-        "27",
-        "26",
-        "25",
-        "24",
-        "23"
-      ],
+        "6",
+        "5",
+        "4",
+        "3",
+        "2"
+      ]
+    },
+    "minecraft": {
+      "client": {
+        "sha1": "05b6f1c6b46a29d6ea82b4e0d42190e42402030f",
+        "size": 26565641,
+        "url": "https://piston-data.mojang.com/v1/objects/05b6f1c6b46a29d6ea82b4e0d42190e42402030f/client.jar"
+      },
+      "client_mappings": {
+        "sha1": "de46c8f33d7826eb83e8ef0e9f80dc1f08cb9498",
+        "size": 9422442,
+        "url": "https://piston-data.mojang.com/v1/objects/de46c8f33d7826eb83e8ef0e9f80dc1f08cb9498/client.txt"
+      },
+      "server": {
+        "sha1": "145ff0858209bcfc164859ba735d4199aafa1eea",
+        "size": 51420480,
+        "url": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar"
+      },
+      "server_mappings": {
+        "sha1": "9e96100f573a46ef44caab3e716d5eb974594bb7",
+        "size": 7283803,
+        "url": "https://piston-data.mojang.com/v1/objects/9e96100f573a46ef44caab3e716d5eb974594bb7/server.txt"
+      },
+      "version_json": {
+        "url": "https://piston-meta.mojang.com/v1/packages/959d1829dfc630d08a245294bcd78f7906e5d3d1/1.20.6.json"
+      }
+    },
+    "paper": {
       "api_versions": [
         "1.20.6-R0.1-SNAPSHOT"
       ],
@@ -419,22 +324,143 @@
         "25",
         "24",
         "23"
-      ]
-    },
-    "folia": {
+      ],
+      "project": "paper",
       "type": "papermc",
-      "project": "folia",
       "versions": [
-        "6",
-        "5",
-        "4",
-        "3",
-        "2"
+        "1.20.6-R0.1-SNAPSHOT",
+        "151",
+        "150",
+        "149",
+        "148",
+        "147",
+        "146",
+        "145",
+        "144",
+        "143",
+        "142",
+        "141",
+        "140",
+        "139",
+        "138",
+        "137",
+        "136",
+        "135",
+        "134",
+        "133",
+        "132",
+        "131",
+        "130",
+        "129",
+        "128",
+        "127",
+        "126",
+        "125",
+        "124",
+        "123",
+        "122",
+        "121",
+        "120",
+        "119",
+        "118",
+        "117",
+        "116",
+        "115",
+        "114",
+        "113",
+        "112",
+        "111",
+        "110",
+        "109",
+        "108",
+        "107",
+        "106",
+        "105",
+        "104",
+        "103",
+        "102",
+        "101",
+        "100",
+        "99",
+        "98",
+        "97",
+        "96",
+        "95",
+        "94",
+        "93",
+        "92",
+        "91",
+        "90",
+        "89",
+        "88",
+        "86",
+        "85",
+        "84",
+        "83",
+        "82",
+        "81",
+        "80",
+        "79",
+        "78",
+        "77",
+        "76",
+        "75",
+        "74",
+        "73",
+        "72",
+        "71",
+        "70",
+        "69",
+        "68",
+        "67",
+        "66",
+        "65",
+        "64",
+        "62",
+        "61",
+        "60",
+        "59",
+        "58",
+        "57",
+        "56",
+        "55",
+        "54",
+        "53",
+        "52",
+        "51",
+        "50",
+        "49",
+        "48",
+        "47",
+        "46",
+        "45",
+        "44",
+        "43",
+        "42",
+        "41",
+        "40",
+        "39",
+        "38",
+        "37",
+        "36",
+        "35",
+        "34",
+        "33",
+        "32",
+        "31",
+        "30",
+        "29",
+        "28",
+        "27",
+        "26",
+        "25",
+        "24",
+        "23"
       ]
     },
     "purpur": {
-      "type": "purpur",
       "project": "purpur",
+      "type": "purpur",
       "versions": [
         "2233",
         "2232",
@@ -494,40 +520,7 @@
         "2178",
         "2177"
       ]
-    },
-    "minecraft": {
-      "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/245a4a5a5cfe3db34135ff65a5f4d1cb66d3d6eb/1.20.6.json"
-      },
-      "client": {
-        "url": "https://piston-data.mojang.com/v1/objects/05b6f1c6b46a29d6ea82b4e0d42190e42402030f/client.jar",
-        "sha1": "05b6f1c6b46a29d6ea82b4e0d42190e42402030f",
-        "size": 26565641
-      },
-      "server": {
-        "url": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar",
-        "sha1": "145ff0858209bcfc164859ba735d4199aafa1eea",
-        "size": 51420480
-      },
-      "client_mappings": {
-        "url": "https://piston-data.mojang.com/v1/objects/de46c8f33d7826eb83e8ef0e9f80dc1f08cb9498/client.txt",
-        "sha1": "de46c8f33d7826eb83e8ef0e9f80dc1f08cb9498",
-        "size": 9422442
-      },
-      "server_mappings": {
-        "url": "https://piston-data.mojang.com/v1/objects/9e96100f573a46ef44caab3e716d5eb974594bb7/server.txt",
-        "sha1": "9e96100f573a46ef44caab3e716d5eb974594bb7",
-        "size": 7283803
-      }
     }
   },
-  "runtimes": {
-    "minestom": {
-      "type": "maven",
-      "coordinates": [
-        "net.minestom:minestom"
-      ],
-      "versions": []
-    }
-  }
+  "runtimes": {}
 }
