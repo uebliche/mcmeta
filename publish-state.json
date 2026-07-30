@@ -40,7 +40,7 @@
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "5d3295c2b88cb1423e2e58c921b09220a4bd721f"
+      "fingerprint": "8a8f2e7d38268e3ace0708875868e69a53e59933"
     },
     "neoforge": {
       "status": "ok",
@@ -48,11 +48,11 @@
     },
     "paper": {
       "status": "partial",
-      "fingerprint": "0f103ae0b5fcda9251dd86b10400750d4b861ef8"
+      "fingerprint": "d1862146605da15b0fdf16aad2eae4cb983414d9"
     },
     "purpur": {
       "status": "ok",
-      "fingerprint": "ed8141287ba29584d12a866377ec5e9759f5b28e"
+      "fingerprint": "c054b98c5f7992ac4fcc659d4139668c51b12a82"
     },
     "quilt": {
       "status": "ok",
@@ -62,7 +62,7 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "3123a2b694e08cae9a2e9e4771f882b4f0dbfd41",
+  "branch_fingerprint": "c11a676296a34b243f50c49e0e0f6c7f01510c78",
   "branch_inputs": {
     "version_kind": "release"
   }

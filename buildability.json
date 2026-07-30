@@ -48,14 +48,14 @@
       "status": "buildable",
       "jdk": 21,
       "artifact_versions": {
-        "paper": "84"
+        "paper": "87"
       }
     },
     "purpur": {
       "status": "buildable",
       "jdk": 21,
       "artifact_versions": {
-        "purpur": "2617"
+        "purpur": "2618"
       }
     },
     "quilt": {

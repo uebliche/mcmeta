@@ -141,14 +141,17 @@ Files:
   - 1
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/d98675ecc24364e90b18dbea80390b1345c3f71f/26.2.json](https://piston-meta.mojang.com/v1/packages/d98675ecc24364e90b18dbea80390b1345c3f71f/26.2.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/3457237902814cca3f5c6f20b0c5db1b1f341512/26.2.json](https://piston-meta.mojang.com/v1/packages/3457237902814cca3f5c6f20b0c5db1b1f341512/26.2.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/2dc72797acbc1b63fc16a11c4ac393605f453754/client.jar](https://piston-data.mojang.com/v1/objects/2dc72797acbc1b63fc16a11c4ac393605f453754/client.jar) (sha1=2dc72797acbc1b63fc16a11c4ac393605f453754, size=39193383)
 - Server jar: [https://piston-data.mojang.com/v1/objects/823e2250d24b3ddac457a60c92a6a941943fcd6a/server.jar](https://piston-data.mojang.com/v1/objects/823e2250d24b3ddac457a60c92a6a941943fcd6a/server.jar) (sha1=823e2250d24b3ddac457a60c92a6a941943fcd6a, size=60894273)
 
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 73
+- Versions: 76
+  - 87
+  - 86
+  - 85
   - 84
   - 83
   - 82
@@ -222,7 +225,10 @@ Files:
   - 12
   - 11
   - 10
-- Build ids: 73
+- Build ids: 76
+  - 87
+  - 86
+  - 85
   - 84
   - 83
   - 82
@@ -300,7 +306,8 @@ Files:
 ### Purpur
 - Type: purpur
 - Project: purpur
-- Versions: 25
+- Versions: 26
+  - 2618
   - 2617
   - 2616
   - 2615
