@@ -40,7 +40,7 @@
     "neoforge": {
       "status": "buildable",
       "jdk": 21,
-      "loader_version": "21.1.244"
+      "loader_version": "21.1.248"
     },
     "paper": {
       "status": "buildable",
