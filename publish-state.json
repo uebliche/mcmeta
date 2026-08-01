@@ -35,11 +35,11 @@
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "d8399658f506ec8ee907bb51652b99532addaec9"
+      "fingerprint": "30e303d4dfe1e332639fd030de8d5909ce94c504"
     },
     "neoforge": {
       "status": "ok",
-      "fingerprint": "9c29f7874ec8dd22454e593175f8414c8bcdef23"
+      "fingerprint": "b26335f2216f6ee0b348adda4d4e55f511774f2c"
     },
     "paper": {
       "status": "error"
@@ -55,7 +55,7 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "cb8979dc26921fac807a409b198b6fb947b06056",
+  "branch_fingerprint": "b42f4d186baf1932d56ab097fb05f1262dd033e2",
   "branch_inputs": {
     "version_kind": "release"
   }
