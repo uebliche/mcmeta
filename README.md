@@ -13,7 +13,7 @@ Files:
 - Schema: mcmeta/v2
 - Schema version: 2
 - Minecraft: 26.1.1
-- JDK: 21
+- JDK: 25
 - Release time: 2026-04-01T09:06:36+00:00
 - Protocol version: 775
 - Data version: 4788
@@ -248,7 +248,7 @@ Files:
       - [https://cdn.modrinth.com/data/P7dR8mSH/versions/Xsmcjuhk/fabric-api-0.144.4%2B26.1.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/Xsmcjuhk/fabric-api-0.144.4%2B26.1.jar) (sha1=3002eb45eccca8f81c620ceed4155a08c3f12120, sha512=bc3e9f2ccb62ff9c258124dc1cbf30623777a299d788fdd6c1f254c8921edc2376a2a33c374fd7cd775c206632fba25098a7abb68103ca49c44af2ade1eb81da)
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/06e0e05c144ccf6ae8c5f766093463b20d221631/26.1.1.json](https://piston-meta.mojang.com/v1/packages/06e0e05c144ccf6ae8c5f766093463b20d221631/26.1.1.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/9fe6323f54331ec6317019f80c64fecc88a2369b/26.1.1.json](https://piston-meta.mojang.com/v1/packages/9fe6323f54331ec6317019f80c64fecc88a2369b/26.1.1.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/377031a9e733ba8ab4d355959a8f6fb8eb707556/client.jar](https://piston-data.mojang.com/v1/objects/377031a9e733ba8ab4d355959a8f6fb8eb707556/client.jar) (sha1=377031a9e733ba8ab4d355959a8f6fb8eb707556, size=38113231)
 - Server jar: [https://piston-data.mojang.com/v1/objects/49c8195703ad0ba4f0a4efbccfd85a4a8ca57431/server.jar](https://piston-data.mojang.com/v1/objects/49c8195703ad0ba4f0a4efbccfd85a4a8ca57431/server.jar) (sha1=49c8195703ad0ba4f0a4efbccfd85a4a8ca57431, size=60417481)
 

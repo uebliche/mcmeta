@@ -15,7 +15,7 @@
     "quilt": "ok",
     "yarn": "error"
   },
-  "jdk": 21,
+  "jdk": 25,
   "release_time": "2026-04-01T09:06:36+00:00",
   "protocol_version": 775,
   "data_version": 4788,
