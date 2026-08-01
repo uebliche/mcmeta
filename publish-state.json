@@ -39,7 +39,7 @@
     },
     "mojang": {
       "status": "ok",
-      "fingerprint": "14c4f0556bf6d09b30d1351418b9726306a19bb5"
+      "fingerprint": "c3514f2970cc95a3522066ba553b2a2fbad9230a"
     },
     "neoforge": {
       "status": "ok",
@@ -62,7 +62,7 @@
       "fingerprint": "e54e4512e61d6352d09b029d0396d4d0c8acf188"
     }
   },
-  "branch_fingerprint": "312be56f90152428bdddcdcd758788f25c794529",
+  "branch_fingerprint": "cadc505eb9d957bf7a37ee8d0f728b8fe48668ea",
   "branch_inputs": {
     "version_kind": "release"
   }
