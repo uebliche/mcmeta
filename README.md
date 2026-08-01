@@ -13,7 +13,7 @@ Files:
 - Schema: mcmeta/v2
 - Schema version: 2
 - Minecraft: 26.2
-- JDK: 21
+- JDK: 25
 - Release time: 2026-06-16T12:03:33+00:00
 - Protocol version: 776
 - Data version: 4903

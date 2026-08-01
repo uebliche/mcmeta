@@ -9,7 +9,7 @@
     },
     "fabric": {
       "status": "buildable",
-      "jdk": 21,
+      "jdk": 25,
       "loader_version": "0.19.3",
       "artifact_versions": {
         "fabric-api": "0.156.0+26.2"
@@ -22,38 +22,38 @@
     },
     "folia": {
       "status": "buildable",
-      "jdk": 21,
+      "jdk": 25,
       "artifact_versions": {
         "folia": "1"
       }
     },
     "forge": {
       "status": "buildable",
-      "jdk": 21,
+      "jdk": 25,
       "loader_version": "26.2-65.1.0"
     },
     "minestom": {
       "status": "buildable",
-      "jdk": 21,
+      "jdk": 25,
       "artifact_versions": {
         "minestom": "2026.07.22-26.2"
       }
     },
     "neoforge": {
       "status": "buildable",
-      "jdk": 21,
+      "jdk": 25,
       "loader_version": "26.2.0.9-beta"
     },
     "paper": {
       "status": "buildable",
-      "jdk": 21,
+      "jdk": 25,
       "artifact_versions": {
         "paper": "87"
       }
     },
     "purpur": {
       "status": "buildable",
-      "jdk": 21,
+      "jdk": 25,
       "artifact_versions": {
         "purpur": "2618"
       }
@@ -61,7 +61,7 @@
     "quilt": {
       "status": "blocked",
       "blocked_by": "missing-quilt-mappings",
-      "jdk": 21,
+      "jdk": 25,
       "loader_version": "0.30.1-beta.2"
     },
     "velocity": {
