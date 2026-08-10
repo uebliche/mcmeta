@@ -203,6 +203,7 @@ private class McmetaFabricSupport(private val owner: Project) {
           ?: throw GradleException("mcmeta: Intermediary mapping version missing for ${info.minecraftVersion}")
         dependencyHandler.add("mappings", "net.fabricmc:intermediary:${version}:v2")
       }
+      "unobfuscated" -> Unit
       else -> throw GradleException(
         "mcmeta: unsupported Fabric mapping channel '${info.mappingChannel ?: "missing"}' for ${info.minecraftVersion}"
       )
