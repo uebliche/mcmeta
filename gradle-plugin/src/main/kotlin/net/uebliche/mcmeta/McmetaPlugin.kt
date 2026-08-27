@@ -16,9 +16,14 @@ import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.api.artifacts.repositories.MavenArtifactRepository
 import java.io.File
+import java.io.FileOutputStream
+import java.net.InetSocketAddress
 import java.net.HttpURLConnection
 import java.net.URL
 import java.time.Duration
+import java.util.zip.ZipEntry
+import java.util.zip.ZipOutputStream
+import com.sun.net.httpserver.HttpServer
 import javax.xml.parsers.DocumentBuilderFactory
 
 private const val DEFAULT_REPO = "uebliche/mcmeta"
@@ -203,12 +208,104 @@ private class McmetaFabricSupport(private val owner: Project) {
           ?: throw GradleException("mcmeta: Intermediary mapping version missing for ${info.minecraftVersion}")
         dependencyHandler.add("mappings", "net.fabricmc:intermediary:${version}:v2")
       }
-      "unobfuscated" -> Unit
+      "unobfuscated" -> applyUnobfuscatedMappings(project, dependencyHandler, info.minecraftVersion)
       else -> throw GradleException(
         "mcmeta: unsupported Fabric mapping channel '${info.mappingChannel ?: "missing"}' for ${info.minecraftVersion}"
       )
     }
   }
+}
+
+private fun applyUnobfuscatedMappings(
+  project: Project,
+  dependencyHandler: DependencyHandler,
+  minecraftVersion: String,
+) {
+  project.extensions.extraProperties.set("fabric.loom.disableObfuscation", "true")
+  val loom = project.extensions.findByName("loom")
+    ?: throw GradleException("mcmeta: Fabric Loom extension missing for unobfuscated mappings")
+  val generatedDir = File(project.layout.buildDirectory.get().asFile, "generated/mcmeta")
+  generatedDir.mkdirs()
+
+  val metadataFile = File(generatedDir, "minecraft-$minecraftVersion-identity-mappings.json")
+  if (!metadataFile.isFile) {
+    val targetMetadata = loadMojangVersionMetadata(minecraftVersion)
+    val mappingMetadata = loadMojangVersionMetadata("1.21.11")
+    val targetDownloads = targetMetadata.getAsJsonObject("downloads")
+      ?: throw GradleException("Minecraft $minecraftVersion has no download metadata.")
+    val mappingDownloads = mappingMetadata.getAsJsonObject("downloads")
+      ?: throw GradleException("Minecraft 1.21.11 has no download metadata.")
+    for (key in listOf("client_mappings", "server_mappings")) {
+      val mapping = mappingDownloads.get(key)
+        ?: throw GradleException("Minecraft 1.21.11 has no $key download.")
+      targetDownloads.add(key, mapping.deepCopy())
+    }
+    metadataFile.writeText(Gson().toJson(targetMetadata))
+  }
+
+  val mappingsFile = File(generatedDir, "unobfuscated-$minecraftVersion-mappings.jar")
+  writeTinyMappingsJar(mappingsFile, "tiny\t2\t0\tofficial\tnamed\n")
+  val intermediaryFile = File(generatedDir, "unobfuscated-$minecraftVersion-intermediary.jar")
+  writeTinyMappingsJar(intermediaryFile, "tiny\t2\t0\tofficial\tintermediary\n")
+
+  val metadataUrl = serveBuildFile(project, metadataFile, "application/json")
+  val intermediaryUrl = serveBuildFile(project, intermediaryFile, "application/java-archive")
+  setGradleProperty(loom, "customMinecraftMetadata", metadataUrl)
+  setGradleProperty(loom, "intermediaryUrl", intermediaryUrl)
+  setGradleProperty(loom, "productionNamespace", "official")
+  setGradleProperty(loom, "useIntermediateMappings", true)
+  if (project.configurations.findByName("mappings") != null) {
+    dependencyHandler.add("mappings", project.files(mappingsFile))
+  }
+  project.logger.lifecycle("Using Minecraft $minecraftVersion with identity Fabric mappings.")
+}
+
+private fun writeTinyMappingsJar(file: File, content: String) {
+  if (file.isFile) {
+    return
+  }
+  FileOutputStream(file).use { output ->
+    ZipOutputStream(output).use { zip ->
+      zip.putNextEntry(ZipEntry("mappings/mappings.tiny"))
+      zip.write(content.toByteArray(Charsets.UTF_8))
+      zip.closeEntry()
+    }
+  }
+}
+
+private fun loadMojangVersionMetadata(version: String): JsonObject {
+  val gson = Gson()
+  val manifest = URL(DEFAULT_MANIFEST).openStream().bufferedReader().use {
+    gson.fromJson(it, JsonObject::class.java)
+  }
+  val entry = manifest.getAsJsonArray("versions")
+    .mapNotNull { it.asJsonObject }
+    .firstOrNull { it.get("id")?.asString == version }
+    ?: throw GradleException("Minecraft $version is not present in the Mojang release manifest.")
+  val metadataUrl = entry.get("url")?.asString
+    ?: throw GradleException("Minecraft $version has no Mojang metadata URL.")
+  return URL(metadataUrl).openStream().bufferedReader().use {
+    gson.fromJson(it, JsonObject::class.java)
+  }
+}
+
+private fun serveBuildFile(project: Project, file: File, contentType: String): String {
+  val server = HttpServer.create(InetSocketAddress("127.0.0.1", 0), 0)
+  val path = "/${file.name}"
+  server.createContext(path) { exchange ->
+    val bytes = file.readBytes()
+    exchange.responseHeaders.add("Content-Type", contentType)
+    exchange.sendResponseHeaders(200, bytes.size.toLong())
+    exchange.responseBody.use { it.write(bytes) }
+  }
+  server.start()
+  project.gradle.buildFinished { server.stop(0) }
+  return "http://127.0.0.1:${server.address.port}$path"
+}
+
+private fun setGradleProperty(owner: Any, name: String, value: Any) {
+  val property = InvokerHelper.getProperty(owner, name)
+  InvokerHelper.invokeMethod(property, "set", arrayOf(value))
 }
 
 private fun applyOptions(project: Project, extension: McmetaExtension) {
