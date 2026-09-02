@@ -20,6 +20,8 @@ import java.io.FileOutputStream
 import java.net.InetSocketAddress
 import java.net.HttpURLConnection
 import java.net.URL
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 import java.time.Duration
 import java.util.zip.ZipEntry
 import java.util.zip.ZipOutputStream
@@ -29,6 +31,9 @@ import javax.xml.parsers.DocumentBuilderFactory
 private const val DEFAULT_REPO = "uebliche/mcmeta"
 private const val DEFAULT_RAW_BASE = "https://raw.githubusercontent.com"
 private const val DEFAULT_MANIFEST = "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json"
+private const val MCMETA_CONTEXT_SCHEMA_VERSION = 1
+private const val MCMETA_CONTEXT_FILE_PROPERTY = "mcmeta_context_file"
+private const val MCMETA_CONTEXT_OUTPUT_PROPERTY = "mcmeta_context_output"
 
 open class McmetaExtension {
   var minecraftVersion: String = ""
@@ -312,14 +317,20 @@ private fun applyOptions(project: Project, extension: McmetaExtension) {
   configureRepositories(project, extension.repositories)
   configureDependencies(project, extension)
   configureNeoForgeRuns(project, extension)
-  project.afterEvaluate {
-    configureLoomRuns(project)
-  }
+  configureLoomRunsWhenReady(project)
   if (project.subprojects.isNotEmpty()) {
     project.subprojects.forEach { subproject ->
-      subproject.afterEvaluate {
-        configureLoomRuns(subproject)
-      }
+      configureLoomRunsWhenReady(subproject)
+    }
+  }
+}
+
+private fun configureLoomRunsWhenReady(project: Project) {
+  if (project.state.executed) {
+    configureLoomRuns(project)
+  } else {
+    project.afterEvaluate {
+      configureLoomRuns(project)
     }
   }
 }
@@ -756,7 +767,14 @@ private class McmetaResolver(
   private val cacheDir = File(project.gradle.gradleUserHomeDir, "caches/mcmeta").apply { mkdirs() }
 
   fun resolve() {
-    var resolvedVersion = resolveRequestedVersion()
+    val inheritedContext = loadBootstrapContext()
+    if (inheritedContext != null) {
+      applyBootstrapContext(inheritedContext)
+      return
+    }
+
+    val requestedVersion = resolveRequestedVersion()
+    var resolvedVersion = requestedVersion
     var sanitized = sanitizeVersion(resolvedVersion)
     if (sanitized.isBlank()) {
       throw IllegalStateException("mcmeta: invalid minecraftVersion")
@@ -806,12 +824,117 @@ private class McmetaResolver(
     val buildability = bundle.buildability?.let {
       gson.fromJson(gson.toJson(it), BuildabilityV1::class.java)
     }
+    val loomIndex = fetchLoomIndex()
+    val manifest = bootstrapOutputFile()?.let { loadManifest() }
     applyBundle(loaderIndex, artifacts, meta, buildability, sanitized)
-    applyProxyFallbacks()
-    applyLoom(fetchLoomIndex())
+    val proxyFallbacks = fetchAndApplyProxyFallbacks()
+    applyLoom(loomIndex)
     if (extension.enableManifoldPreprocessor) {
-      configureManifoldPreprocessor(artifacts, extension.minecraftVersion)
+      configureManifoldPreprocessor(artifacts, extension.minecraftVersion, manifest ?: loadManifest())
     }
+    bootstrapOutputFile()?.let { output ->
+      writeBootstrapContext(
+        output,
+        McmetaBootstrapContext(
+          schemaVersion = MCMETA_CONTEXT_SCHEMA_VERSION,
+          requestedVersion = requestedVersion,
+          resolvedVersion = extension.minecraftVersion,
+          bundle = bundle,
+          loom = loomIndex,
+          manifest = manifest,
+          proxyFallbacks = proxyFallbacks,
+        )
+      )
+    }
+  }
+
+  private fun loadBootstrapContext(): McmetaBootstrapContext? {
+    val configured = project.findProperty(MCMETA_CONTEXT_FILE_PROPERTY)
+      ?.toString()
+      ?.trim()
+      ?.takeIf { it.isNotEmpty() }
+      ?: return null
+    val file = project.file(configured)
+    if (!file.isFile) {
+      throw GradleException("mcmeta: inherited context file missing: ${file.absolutePath}")
+    }
+    val context = try {
+      gson.fromJson(file.readText(), McmetaBootstrapContext::class.java)
+    } catch (err: Exception) {
+      throw GradleException("mcmeta: inherited context is invalid: ${file.absolutePath}", err)
+    }
+    if (context.schemaVersion != MCMETA_CONTEXT_SCHEMA_VERSION) {
+      throw GradleException(
+        "mcmeta: inherited context schema ${context.schemaVersion} is unsupported"
+      )
+    }
+    return context
+  }
+
+  private fun applyBootstrapContext(context: McmetaBootstrapContext) {
+    val configuredVersion = extension.minecraftVersion.trim()
+    if (configuredVersion.isNotEmpty()
+      && sanitizeVersion(configuredVersion) != sanitizeVersion(context.requestedVersion)
+    ) {
+      throw GradleException(
+        "mcmeta: inherited context targets ${context.requestedVersion}, not $configuredVersion"
+      )
+    }
+    extension.minecraftVersion = context.resolvedVersion
+    val loaderIndex = gson.fromJson(gson.toJson(context.bundle.loaderIndex), LoaderIndex::class.java)
+    val artifacts = gson.fromJson(gson.toJson(context.bundle.artifacts), Artifacts::class.java)
+    val meta = gson.fromJson(gson.toJson(context.bundle.meta), MetaV1::class.java)
+    val buildability = context.bundle.buildability?.let {
+      gson.fromJson(gson.toJson(it), BuildabilityV1::class.java)
+    }
+    applyBundle(
+      loaderIndex,
+      artifacts,
+      meta,
+      buildability,
+      sanitizeVersion(context.resolvedVersion),
+    )
+    applyProxyFallbacks(context.proxyFallbacks)
+    applyLoom(context.loom)
+    if (extension.enableManifoldPreprocessor) {
+      configureManifoldPreprocessor(artifacts, extension.minecraftVersion, context.manifest)
+    }
+    project.logger.info(
+      "mcmeta: inherited bootstrap context for ${context.resolvedVersion}"
+    )
+  }
+
+  private fun bootstrapOutputFile(): File? = project.findProperty(MCMETA_CONTEXT_OUTPUT_PROPERTY)
+    ?.toString()
+    ?.trim()
+    ?.takeIf { it.isNotEmpty() }
+    ?.let(project::file)
+
+  private fun writeBootstrapContext(file: File, context: McmetaBootstrapContext) {
+    file.parentFile?.mkdirs()
+    val temporary = File(file.parentFile, ".${file.name}.${System.nanoTime()}.tmp")
+    try {
+      temporary.writeText(gson.toJson(context))
+      Files.move(
+        temporary.toPath(),
+        file.toPath(),
+        StandardCopyOption.REPLACE_EXISTING,
+        StandardCopyOption.ATOMIC_MOVE,
+      )
+    } catch (atomicMoveError: Exception) {
+      try {
+        Files.move(temporary.toPath(), file.toPath(), StandardCopyOption.REPLACE_EXISTING)
+      } catch (fallbackError: Exception) {
+        fallbackError.addSuppressed(atomicMoveError)
+        throw GradleException(
+          "mcmeta: failed to write bootstrap context: ${file.absolutePath}",
+          fallbackError,
+        )
+      }
+    } finally {
+      temporary.delete()
+    }
+    project.logger.lifecycle("mcmeta: wrote bootstrap context ${file.absolutePath}")
   }
 
   private fun resolveRequestedVersion(): String {
@@ -1179,15 +1302,26 @@ private class McmetaResolver(
     return gson.fromJson(entry, type)
   }
 
-  private fun applyProxyFallbacks() {
+  private fun fetchAndApplyProxyFallbacks(): ProxyFallbackContext {
     val extra = project.extensions.extraProperties
     val velocityVersion = extra.get("mcmetaVelocityVersion")?.toString()?.trim()
     val bungeecordVersion = extra.get("mcmetaBungeeCordVersion")?.toString()?.trim()
     if (!velocityVersion.isNullOrEmpty() && !bungeecordVersion.isNullOrEmpty()) {
-      return
+      return ProxyFallbackContext(null, null)
     }
 
     val velocityArtifacts = fetchProxyArtifacts("proxy/velocity-latest")
+    val bungeecordArtifacts = fetchProxyArtifacts("proxy/bungeecord-latest")
+    val context = ProxyFallbackContext(velocityArtifacts, bungeecordArtifacts)
+    applyProxyFallbacks(context)
+    return context
+  }
+
+  private fun applyProxyFallbacks(context: ProxyFallbackContext) {
+    val extra = project.extensions.extraProperties
+    val velocityVersion = extra.get("mcmetaVelocityVersion")?.toString()?.trim()
+    val bungeecordVersion = extra.get("mcmetaBungeeCordVersion")?.toString()?.trim()
+    val velocityArtifacts = context.velocityArtifacts
     val velocityProxies = parseEntry(velocityArtifacts?.artifacts, "proxies", Proxies::class.java)
     val velocityArtifact = parseEntry(velocityArtifacts?.artifacts, "velocity", ProjectArtifact::class.java)
     val velocityGroups = velocityProxies?.velocity?.groups ?: emptyList()
@@ -1197,7 +1331,7 @@ private class McmetaResolver(
       velocityArtifact?.versions ?: emptyList()
     }
 
-    val bungeecordArtifacts = fetchProxyArtifacts("proxy/bungeecord-latest")
+    val bungeecordArtifacts = context.bungeecordArtifacts
     val bungeecordProxies = parseEntry(bungeecordArtifacts?.artifacts, "proxies", Proxies::class.java)
     val bungeecordGroups = bungeecordProxies?.bungeecord?.groups ?: emptyList()
     val bungeecordVersions = bungeecordGroups.flatMap { it.versions ?: emptyList() }
@@ -1284,7 +1418,11 @@ private class McmetaResolver(
     }
   }
 
-  private fun configureManifoldPreprocessor(artifacts: Artifacts, requestedVersion: String) {
+  private fun configureManifoldPreprocessor(
+    artifacts: Artifacts,
+    requestedVersion: String,
+    manifest: MojangManifest?,
+  ) {
     val manifoldVersion = extension.manifoldPreprocessorVersion?.takeIf { it.isNotBlank() }
       ?: parseEntry(artifacts.artifacts, "manifold", MavenArtifact::class.java)?.versions?.firstOrNull()
     if (manifoldVersion.isNullOrBlank()) {
@@ -1292,12 +1430,12 @@ private class McmetaResolver(
       return
     }
 
-    val manifest = loadManifest() ?: run {
+    val resolvedManifest = manifest ?: run {
       project.logger.warn("mcmeta: failed to load Mojang manifest for preprocessor symbols")
       return
     }
 
-    val symbols = buildPreprocessorSymbols(manifest, requestedVersion)
+    val symbols = buildPreprocessorSymbols(resolvedManifest, requestedVersion)
     if (symbols.isEmpty()) {
       project.logger.warn("mcmeta: no preprocessor symbols generated for $requestedVersion")
       return
@@ -1565,6 +1703,21 @@ private data class McmetaBundle(
   val artifacts: Any,
   val meta: Any,
   val buildability: Any? = null,
+)
+
+private data class McmetaBootstrapContext(
+  val schemaVersion: Int,
+  val requestedVersion: String,
+  val resolvedVersion: String,
+  val bundle: McmetaBundle,
+  val loom: LoomIndex?,
+  val manifest: MojangManifest?,
+  val proxyFallbacks: ProxyFallbackContext,
+)
+
+private data class ProxyFallbackContext(
+  val velocityArtifacts: Artifacts?,
+  val bungeecordArtifacts: Artifacts?,
 )
 
 private data class DerivedFabricBuildability(

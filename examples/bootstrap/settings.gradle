@@ -1,8 +1,9 @@
 pluginManagement {
+    includeBuild("../../gradle-plugin")
     repositories {
         gradlePluginPortal()
         mavenCentral()
     }
 }
 
-rootProject.name = 'mcmeta-gradle'
+rootProject.name = "mcmeta-bootstrap"

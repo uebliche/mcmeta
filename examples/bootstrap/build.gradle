@@ -1,0 +1,11 @@
+plugins {
+    id "net.uebliche.mcmeta"
+}
+
+mcmeta {
+    minecraftVersion = providers.gradleProperty("mcVersion")
+        .orElse(providers.gradleProperty("mcmeta.minecraftVersion"))
+        .orElse("1.21.4")
+        .get()
+    enableManifoldPreprocessor = false
+}

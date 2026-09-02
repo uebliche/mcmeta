@@ -8,6 +8,13 @@ plugins {
 group = 'net.uebliche'
 version = System.getenv('MCMETA_PLUGIN_VERSION') ?: '0.1.0'
 
+def externalBuildDir = providers.gradleProperty('mcmeta_plugin_build_dir')
+        .map { it.trim() }
+        .orNull
+if (externalBuildDir) {
+    layout.buildDirectory.set(file(externalBuildDir))
+}
+
 repositories {
     mavenCentral()
 }
@@ -33,6 +40,23 @@ gradlePlugin {
             implementationClass = 'net.uebliche.mcmeta.McmetaPlugin'
             displayName = 'mcmeta version helper'
             description = 'Loads mcmeta versions into Gradle properties.'
+        }
+    }
+}
+
+def usePrecompiledPlugin = providers.gradleProperty('mcmeta_plugin_precompiled')
+        .map { it.toBoolean() }
+        .orElse(false)
+if (usePrecompiledPlugin.get()) {
+    def precompiledJar = tasks.named('jar').flatMap { it.archiveFile }
+    gradle.projectsEvaluated {
+        if (!precompiledJar.get().asFile.isFile()) {
+            throw new GradleException("Precompiled mcmeta plugin is missing: ${precompiledJar.get().asFile}")
+        }
+    }
+    tasks.configureEach { task ->
+        if (task.name in ['compileKotlin', 'compileJava', 'pluginDescriptors', 'processResources', 'jar']) {
+            task.enabled = false
         }
     }
 }
