@@ -84,7 +84,7 @@ Files:
       - [https://cdn.modrinth.com/data/P7dR8mSH/versions/flEannHL/fabric-api-0.118.6%2B1.21.5.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/flEannHL/fabric-api-0.118.6%2B1.21.5.jar) (sha1=c85034251827dc9339ae068bd0a83fad3d0f405d, sha512=9e189274e30107fc788debd558185aff33f36bb99553208287b1f700dc0431861afef77bdc186d91eac2ed362ecb209606a209398866cf57088ee18b3a2aa021)
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/e409f81f9b643ffda995ce1f6f87abfe39d1bd69/1.21.5-pre1.json](https://piston-meta.mojang.com/v1/packages/e409f81f9b643ffda995ce1f6f87abfe39d1bd69/1.21.5-pre1.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/bb1ddb5a50c63cb06c59c209e099f54944106269/1.21.5-pre1.json](https://piston-meta.mojang.com/v1/packages/bb1ddb5a50c63cb06c59c209e099f54944106269/1.21.5-pre1.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/8b708817d1997e46bcdd03bdf106533d05ff1bfa/client.jar](https://piston-data.mojang.com/v1/objects/8b708817d1997e46bcdd03bdf106533d05ff1bfa/client.jar) (sha1=8b708817d1997e46bcdd03bdf106533d05ff1bfa, size=28982760)
 - Server jar: [https://piston-data.mojang.com/v1/objects/b663ce11b5951546a74947c1896e0d4713188833/server.jar](https://piston-data.mojang.com/v1/objects/b663ce11b5951546a74947c1896e0d4713188833/server.jar) (sha1=b663ce11b5951546a74947c1896e0d4713188833, size=57271485)
 - Client mappings: [https://piston-data.mojang.com/v1/objects/bbbdc77f9732e640f6a6d91de87a3836a93ce1b9/client.txt](https://piston-data.mojang.com/v1/objects/bbbdc77f9732e640f6a6d91de87a3836a93ce1b9/client.txt) (sha1=bbbdc77f9732e640f6a6d91de87a3836a93ce1b9, size=10669981)
