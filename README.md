@@ -15,10 +15,6 @@ Files:
 - Minecraft: 1.21.5-rc2
 - JDK: 21
 - Release time: 2025-03-24T13:07:03+00:00
-- Protocol version: 1073742067
-- Data version: 4324
-- Resource pack format: 55
-- Data pack format: 71
 - Yarn latest: 1.21.5-rc2+build.1
 - Yarn versions: 1
   - 1.21.5-rc2+build.1
@@ -29,7 +25,7 @@ Files:
 - Folia: error
 - Forge: partial
 - Minestom: partial
-- Mojang: ok
+- Mojang: partial
 - Neoforge: partial
 - Paper: error
 - Purpur: error
@@ -39,6 +35,7 @@ Files:
 ## Notes
 - forge maven metadata has no versions for minecraft 1.21.5-rc2
 - minestom maven metadata has no versions for minecraft 1.21.5-rc2
+- mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 1.21.5-rc2
 - paper-api maven metadata has no versions for 1.21.5-rc2
 
