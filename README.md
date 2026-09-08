@@ -51,13 +51,13 @@ Files:
 - Schema version: 2
 - Minecraft: 26.1.2
 - Fabric versions: 1
-  - 0.19.3
+  - 0.19.5
 - Forge versions: 1
-  - 26.1.2-64.1.0
+  - 26.1.2-64.1.3
 - Neoforge versions: 1
-  - 26.1.2.94
+  - 26.1.2.99
 - Quilt versions: 1
-  - 0.30.1-beta.2
+  - 0.31.0-beta.4
 
 ## Artifacts index
 - Schema: mcmeta/v2
@@ -69,7 +69,16 @@ Files:
 - Project id: P7dR8mSH
 - Loaders: 1
   - fabric
-- Versions: 16
+- Versions: 17
+  - 0.155.3+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/3dM0X6ou/fabric-api-0.155.3%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/3dM0X6ou/fabric-api-0.155.3%2B26.1.2.jar) (sha1=16c30dfcceaed1ac3b6ac84cbd348a906dc5093e, sha512=fa0308b42e9cd0dc3ff946f246d199d74547e0c946d7e3c9780a2537155307baf25129f69bd1349273babf879ffb4608b7e4af0740938f9c0f7b371b1c67d6ca)
   - 0.155.2+26.1.2
     - Game versions: 3
       - 26.1
@@ -224,7 +233,7 @@ Files:
   - 6
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/a5ba42111e0de7712d677c458bd0dbfc9f36482e/26.1.2.json](https://piston-meta.mojang.com/v1/packages/a5ba42111e0de7712d677c458bd0dbfc9f36482e/26.1.2.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/0936ffb5a6dd44735578d5785fa4b0022a2df64c/26.1.2.json](https://piston-meta.mojang.com/v1/packages/0936ffb5a6dd44735578d5785fa4b0022a2df64c/26.1.2.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/4e618f09a0c649dde3fdf829df443ce0b8831e65/client.jar](https://piston-data.mojang.com/v1/objects/4e618f09a0c649dde3fdf829df443ce0b8831e65/client.jar) (sha1=4e618f09a0c649dde3fdf829df443ce0b8831e65, size=38113927)
 - Server jar: [https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar](https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar) (sha1=97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51, size=60417480)
 
