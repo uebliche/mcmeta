@@ -1,18 +1,6 @@
 {
-  "schema": "mcmeta/v1",
+  "schema": "mcmeta/v2",
+  "schema_version": 2,
   "minecraft": "proxy/velocity-1.0.0",
-  "loaders": {
-    "fabric": {
-      "loader": []
-    },
-    "quilt": {
-      "loader": []
-    },
-    "forge": {
-      "loader": []
-    },
-    "neoforge": {
-      "loader": []
-    }
-  }
+  "loaders": {}
 }
