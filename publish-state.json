@@ -21,7 +21,7 @@
   "source_fingerprints": {
     "fabric": {
       "status": "ok",
-      "fingerprint": "32ab4e08bf20cc38b42c0347b89c9e56dfa1e903"
+      "fingerprint": "62277d078fb38bdc8a645a5d57e95cd3e87c5d5e"
     },
     "fabric-api": {
       "status": "ok",
@@ -33,7 +33,7 @@
     },
     "forge": {
       "status": "ok",
-      "fingerprint": "22c87c094a9d8765350252f227e30450e79d7b55"
+      "fingerprint": "a013eda54668afdfa6f505152138b287addefb2d"
     },
     "minestom": {
       "status": "ok",
@@ -41,7 +41,7 @@
     },
     "mojang": {
       "status": "ok",
-      "fingerprint": "817e3f8cec8dc97f0740af9cf78ddfbdd5345164"
+      "fingerprint": "b02ba49c9420c4bbb9ac9de4a30402e301a15866"
     },
     "neoforge": {
       "status": "ok",
@@ -57,14 +57,14 @@
     },
     "quilt": {
       "status": "ok",
-      "fingerprint": "0ac820f746d6e36afcbaa3c8b0e2be484be7f67e"
+      "fingerprint": "bc69b526b96c3dce518aa2fb1984d09e21863363"
     },
     "yarn": {
       "status": "ok",
       "fingerprint": "c5d01d221bf08cfbfa93d7d1245f6821cc14da4f"
     }
   },
-  "branch_fingerprint": "c405c85143e17b2d215b02547c4bf7ca9e7229ed",
+  "branch_fingerprint": "a971ea04a62c82d60e7896a12ed3c384a3cd507c",
   "branch_inputs": {
     "version_kind": "release"
   }
