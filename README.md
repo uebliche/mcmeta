@@ -6,9 +6,12 @@ Files:
 - loader-index.json
 - artifacts.json
 - meta.json
+- buildability.json
+- publish-state.json
 
 ## Meta
-- Schema: mcmeta/v1
+- Schema: mcmeta/v2
+- Schema version: 2
 - Minecraft: 1.21.11-pre3
 - JDK: 21
 - Release time: 2025-11-25T13:56:50+00:00
@@ -37,23 +40,33 @@ Files:
 - minestom maven metadata has no versions for minecraft 1.21.11-pre3
 - neoforge maven metadata has no versions for minecraft 1.21.11-pre3
 
+## Buildability
+- Bungeecord: partial (proxy-target-not-versioned)
+- Fabric: buildable via mojang
+- Folia: blocked (missing-folia-artifact)
+- Forge: blocked (missing-forge-loader)
+- Minestom: blocked (missing-minestom-runtime)
+- Neoforge: blocked (missing-neoforge-loader)
+- Paper: buildable
+- Purpur: blocked (missing-purpur-artifact)
+- Quilt: buildable via mojang
+- Velocity: partial (proxy-target-not-versioned)
+
 ## Loader index
-- Schema: mcmeta/v1
+- Schema: mcmeta/v2
+- Schema version: 2
 - Minecraft: 1.21.11-pre3
 - Fabric versions: 1
-  - 0.18.4
+  - 0.19.5
 - Quilt versions: 1
-  - 0.30.0-beta.0
-- Forge versions: 0
-  - n/a
-- NeoForge versions: 0
-  - n/a
+  - 0.31.0-beta.4
 
 ## Artifacts index
-- Schema: mcmeta/v1
+- Schema: mcmeta/v2
+- Schema version: 2
 - Minecraft: 1.21.11-pre3
 
-### Fabric API (Modrinth)
+### Fabric Api
 - Type: modrinth
 - Project id: P7dR8mSH
 - Loaders: 1
@@ -65,58 +78,16 @@ Files:
     - Loaders: 1
       - fabric
     - Files: 1
-      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/tb1sLrgP/fabric-api-0.139.3%2B1.21.11.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/tb1sLrgP/fabric-api-0.139.3%2B1.21.11.jar)
-        - sha1: a0dd32d7d45e6fc79657586617d6989489be181b
-        - sha512: 3f52b2907f950bbdc20c5ee1e882274109eccd34da94ad782531e35fcb3021788fdf02f7eb43edde04b1519ddbda8815994583ca9ac900d37b86dcec8ece7191
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/tb1sLrgP/fabric-api-0.139.3%2B1.21.11.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/tb1sLrgP/fabric-api-0.139.3%2B1.21.11.jar) (sha1=a0dd32d7d45e6fc79657586617d6989489be181b, sha512=3f52b2907f950bbdc20c5ee1e882274109eccd34da94ad782531e35fcb3021788fdf02f7eb43edde04b1519ddbda8815994583ca9ac900d37b86dcec8ece7191)
 
-### Paper
-- Type: papermc
-- Project: paper
-- Versions: 5
-  - 1.21.11-pre3-R0.1-SNAPSHOT
-  - 6
-  - 4
-  - 2
-  - 1
-
-### Folia
-- Type: papermc
-- Project: folia
-- Versions: 0
-  - n/a
-
-### Purpur
-- Type: purpur
-- Project: purpur
-- Versions: 0
-  - n/a
-
-### Minecraft downloads
-- Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/38c6ebd9dff4d45b37e8221b840614c673bb893c/1.21.11-pre3.json](https://piston-meta.mojang.com/v1/packages/38c6ebd9dff4d45b37e8221b840614c673bb893c/1.21.11-pre3.json)
-- Client jar:
-  - Url: [https://piston-data.mojang.com/v1/objects/70ab73433d42e46d3838462e724cdb3c0116b0c4/client.jar](https://piston-data.mojang.com/v1/objects/70ab73433d42e46d3838462e724cdb3c0116b0c4/client.jar)
-  - sha1: 70ab73433d42e46d3838462e724cdb3c0116b0c4
-  - Size: 31151189
-- Server jar:
-  - Url: [https://piston-data.mojang.com/v1/objects/51c894709733663dd6e20edd7fa254b904402cab/server.jar](https://piston-data.mojang.com/v1/objects/51c894709733663dd6e20edd7fa254b904402cab/server.jar)
-  - sha1: 51c894709733663dd6e20edd7fa254b904402cab
-  - Size: 56327133
-- Client mappings:
-  - Url: [https://piston-data.mojang.com/v1/objects/51bf53de8431f0da38ab7cd6b712b0379168b4a7/client.txt](https://piston-data.mojang.com/v1/objects/51bf53de8431f0da38ab7cd6b712b0379168b4a7/client.txt)
-  - sha1: 51bf53de8431f0da38ab7cd6b712b0379168b4a7
-  - Size: 11777800
-- Server mappings:
-  - Url: [https://piston-data.mojang.com/v1/objects/e46251ebad43bbe17a3e5702931803c6d597fea0/server.txt](https://piston-data.mojang.com/v1/objects/e46251ebad43bbe17a3e5702931803c6d597fea0/server.txt)
-  - sha1: e46251ebad43bbe17a3e5702931803c6d597fea0
-  - Size: 8677376
+### Minecraft
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/864bdab1ec48dd0e4e3c177d5321dfa179761556/1.21.11-pre3.json](https://piston-meta.mojang.com/v1/packages/864bdab1ec48dd0e4e3c177d5321dfa179761556/1.21.11-pre3.json)
+- Client jar: [https://piston-data.mojang.com/v1/objects/70ab73433d42e46d3838462e724cdb3c0116b0c4/client.jar](https://piston-data.mojang.com/v1/objects/70ab73433d42e46d3838462e724cdb3c0116b0c4/client.jar) (sha1=70ab73433d42e46d3838462e724cdb3c0116b0c4, size=31151189)
+- Server jar: [https://piston-data.mojang.com/v1/objects/51c894709733663dd6e20edd7fa254b904402cab/server.jar](https://piston-data.mojang.com/v1/objects/51c894709733663dd6e20edd7fa254b904402cab/server.jar) (sha1=51c894709733663dd6e20edd7fa254b904402cab, size=56327133)
+- Client mappings: [https://piston-data.mojang.com/v1/objects/51bf53de8431f0da38ab7cd6b712b0379168b4a7/client.txt](https://piston-data.mojang.com/v1/objects/51bf53de8431f0da38ab7cd6b712b0379168b4a7/client.txt) (sha1=51bf53de8431f0da38ab7cd6b712b0379168b4a7, size=11777800)
+- Server mappings: [https://piston-data.mojang.com/v1/objects/e46251ebad43bbe17a3e5702931803c6d597fea0/server.txt](https://piston-data.mojang.com/v1/objects/e46251ebad43bbe17a3e5702931803c6d597fea0/server.txt) (sha1=e46251ebad43bbe17a3e5702931803c6d597fea0, size=8677376)
 
 ## Runtimes
-### Minestom
-- Type: maven
-- Coordinates: 1
-  - net.minestom:minestom
-- Versions: 0
-  - n/a
+- n/a
 
 Generated by mcmeta-harvest.
