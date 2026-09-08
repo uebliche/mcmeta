@@ -1,28 +1,8 @@
 {
   "schema": "mcmeta/v2",
   "schema_version": 2,
-  "minecraft": "26.3-pre-2",
+  "minecraft": "proxy/velocity-4.0.0",
   "sources": {
-    "fabric": "ok",
-    "fabric-api": "ok",
-    "folia": "error",
-    "forge": "partial",
-    "minestom": "partial",
-    "mojang": "partial",
-    "neoforge": "partial",
-    "paper": "error",
-    "purpur": "error",
-    "quilt": "ok",
-    "yarn": "error"
-  },
-  "jdk": 25,
-  "release_time": "2026-09-04T11:54:52+00:00",
-  "protocol_version": 1073742158,
-  "data_version": 5018,
-  "notes": [
-    "forge maven metadata has no versions for minecraft 26.3-pre-2",
-    "minestom maven metadata has no versions for minecraft 26.3-pre-2",
-    "neoforge maven metadata has no versions for minecraft 26.3-pre-2",
-    "paper-api maven metadata has no versions for 26.3-pre-2"
-  ]
+    "velocity": "ok"
+  }
 }

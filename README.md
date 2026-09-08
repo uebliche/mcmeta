@@ -1,6 +1,6 @@
-# mcmeta data for Minecraft 26.3-pre-2
+# mcmeta proxy data
 
-This branch contains generated metadata for Minecraft 26.3-pre-2.
+This branch contains generated proxy metadata for `proxy/velocity-4.0.0`.
 
 Files:
 - loader-index.json
@@ -12,82 +12,42 @@ Files:
 ## Meta
 - Schema: mcmeta/v2
 - Schema version: 2
-- Minecraft: 26.3-pre-2
-- JDK: 25
-- Release time: 2026-09-04T11:54:52+00:00
-- Protocol version: 1073742158
-- Data version: 5018
+- Minecraft: proxy/velocity-4.0.0
 
 ## Sources
-- Fabric: ok
-- Fabric-api: ok
-- Folia: error
-- Forge: partial
-- Minestom: partial
-- Mojang: partial
-- Neoforge: partial
-- Paper: error
-- Purpur: error
-- Quilt: ok
-- Yarn: error
+- Velocity: ok
 
 ## Notes
-- forge maven metadata has no versions for minecraft 26.3-pre-2
-- minestom maven metadata has no versions for minecraft 26.3-pre-2
-- neoforge maven metadata has no versions for minecraft 26.3-pre-2
-- paper-api maven metadata has no versions for 26.3-pre-2
+- n/a
 
 ## Buildability
-- Bungeecord: partial (proxy-target-not-versioned)
-- Fabric: buildable via unobfuscated
-- Folia: blocked (missing-folia-artifact)
-- Forge: blocked (missing-forge-loader)
-- Minestom: blocked (missing-minestom-runtime)
-- Neoforge: blocked (missing-neoforge-loader)
-- Paper: blocked (missing-paper-artifact)
-- Purpur: blocked (missing-purpur-artifact)
-- Quilt: blocked (missing-quilt-mappings)
-- Velocity: partial (proxy-target-not-versioned)
+- n/a
 
 ## Loader index
 - Schema: mcmeta/v2
 - Schema version: 2
-- Minecraft: 26.3-pre-2
-- Fabric versions: 1
-  - 0.19.5
-- Quilt versions: 1
-  - 0.31.0-beta.4
+- Minecraft: proxy/velocity-4.0.0
+- n/a
 
 ## Artifacts index
 - Schema: mcmeta/v2
 - Schema version: 2
-- Minecraft: 26.3-pre-2
+- Minecraft: proxy/velocity-4.0.0
 
-### Fabric Api
-- Type: modrinth
-- Project id: P7dR8mSH
-- Loaders: 1
-  - fabric
-- Versions: 2
-  - 0.160.0+26.3
-    - Game versions: 1
-      - 26.3-pre-2
-    - Loaders: 1
-      - fabric
-    - Files: 1
-      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/o9uChmGq/fabric-api-0.160.0%2B26.3.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/o9uChmGq/fabric-api-0.160.0%2B26.3.jar) (sha1=b290eb13fa2728c9ac452e83ad87c3dbc555de12, sha512=0f9fb41ec3e480e7680e1640f90fb82a9298f5848c049ded3be47605615c3117fc17fc7acab59ec145dd4653422b742df5c5f137608d243d9aa4bf2d9ba2427d)
-  - 0.159.4+26.3
-    - Game versions: 1
-      - 26.3-pre-2
-    - Loaders: 1
-      - fabric
-    - Files: 1
-      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/7WKL9JPW/fabric-api-0.159.4%2B26.3.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/7WKL9JPW/fabric-api-0.159.4%2B26.3.jar) (sha1=a1c37794a31bf06e1d30cc98df51ce0c5281180b, sha512=d7063c83dd46cf732b8fb746ed3296d93e45ed5a6f7d98e07c993018cfea5c1716a8eb20bd73effefb9ac84fdefef665788dfe5e10dcf928b5e6621541a26a18)
-
-### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/168cea25a2a1cbbcd1a55ea40bf184b7c66a29f3/26.3-pre-2.json](https://piston-meta.mojang.com/v1/packages/168cea25a2a1cbbcd1a55ea40bf184b7c66a29f3/26.3-pre-2.json)
-- Client jar: [https://piston-data.mojang.com/v1/objects/4bf834bcf10e94999f0ee5f17f1b5a7388b9b679/client.jar](https://piston-data.mojang.com/v1/objects/4bf834bcf10e94999f0ee5f17f1b5a7388b9b679/client.jar) (sha1=4bf834bcf10e94999f0ee5f17f1b5a7388b9b679, size=41473220)
-- Server jar: [https://piston-data.mojang.com/v1/objects/1dcf227881b28b21cc1d03ba830273f0d2d26319/server.jar](https://piston-data.mojang.com/v1/objects/1dcf227881b28b21cc1d03ba830273f0d2d26319/server.jar) (sha1=1dcf227881b28b21cc1d03ba830273f0d2d26319, size=62292880)
+### Proxies
+- Velocity project: velocity
+- Groups: 1
+  - API 4.0.0
+    - Versions: 7
+      - 4.1.2-SNAPSHOT
+      - 4.1.1
+      - 4.1.1-SNAPSHOT
+      - 4.1.0
+      - 4.1.0-SNAPSHOT
+      - 4.0.0
+      - 4.0.0-SNAPSHOT
+    - Newest: 4.1.2-SNAPSHOT
+    - Oldest: 4.0.0-SNAPSHOT
 
 ## Runtimes
 - n/a

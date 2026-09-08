@@ -1,62 +1,30 @@
 {
   "schema": "mcmeta/v2",
   "schema_version": 2,
-  "minecraft": "26.3-pre-2",
+  "minecraft": "proxy/velocity-4.0.0",
   "artifacts": {
-    "fabric-api": {
-      "loaders": [
-        "fabric"
-      ],
-      "project_id": "P7dR8mSH",
-      "type": "modrinth",
-      "versions": [
-        {
-          "files": [
-            {
-              "sha1": "b290eb13fa2728c9ac452e83ad87c3dbc555de12",
-              "sha512": "0f9fb41ec3e480e7680e1640f90fb82a9298f5848c049ded3be47605615c3117fc17fc7acab59ec145dd4653422b742df5c5f137608d243d9aa4bf2d9ba2427d",
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/o9uChmGq/fabric-api-0.160.0%2B26.3.jar"
-            }
-          ],
-          "game_versions": [
-            "26.3-pre-2"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "version_number": "0.160.0+26.3"
-        },
-        {
-          "files": [
-            {
-              "sha1": "a1c37794a31bf06e1d30cc98df51ce0c5281180b",
-              "sha512": "d7063c83dd46cf732b8fb746ed3296d93e45ed5a6f7d98e07c993018cfea5c1716a8eb20bd73effefb9ac84fdefef665788dfe5e10dcf928b5e6621541a26a18",
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/7WKL9JPW/fabric-api-0.159.4%2B26.3.jar"
-            }
-          ],
-          "game_versions": [
-            "26.3-pre-2"
-          ],
-          "loaders": [
-            "fabric"
-          ],
-          "version_number": "0.159.4+26.3"
-        }
-      ]
-    },
-    "minecraft": {
-      "client": {
-        "sha1": "4bf834bcf10e94999f0ee5f17f1b5a7388b9b679",
-        "size": 41473220,
-        "url": "https://piston-data.mojang.com/v1/objects/4bf834bcf10e94999f0ee5f17f1b5a7388b9b679/client.jar"
-      },
-      "server": {
-        "sha1": "1dcf227881b28b21cc1d03ba830273f0d2d26319",
-        "size": 62292880,
-        "url": "https://piston-data.mojang.com/v1/objects/1dcf227881b28b21cc1d03ba830273f0d2d26319/server.jar"
-      },
-      "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/168cea25a2a1cbbcd1a55ea40bf184b7c66a29f3/26.3-pre-2.json"
+    "proxies": {
+      "velocity": {
+        "groups": [
+          {
+            "api": "4.0.0",
+            "range": {
+              "newest": "4.1.2-SNAPSHOT",
+              "oldest": "4.0.0-SNAPSHOT"
+            },
+            "versions": [
+              "4.1.2-SNAPSHOT",
+              "4.1.1",
+              "4.1.1-SNAPSHOT",
+              "4.1.0",
+              "4.1.0-SNAPSHOT",
+              "4.0.0",
+              "4.0.0-SNAPSHOT"
+            ]
+          }
+        ],
+        "project": "velocity",
+        "type": "papermc"
       }
     }
   },
