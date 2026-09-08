@@ -15,6 +15,10 @@ Files:
 - Minecraft: 1.21.4-pre3
 - JDK: 21
 - Release time: 2024-11-26T15:07:29+00:00
+- Protocol version: 1073742049
+- Data version: 4183
+- Resource pack format: 46
+- Data pack format: 61
 - Yarn latest: 1.21.4-pre3+build.2
 - Yarn versions: 1
   - 1.21.4-pre3+build.2
@@ -25,7 +29,7 @@ Files:
 - Folia: error
 - Forge: partial
 - Minestom: partial
-- Mojang: partial
+- Mojang: ok
 - Neoforge: partial
 - Paper: error
 - Purpur: error
@@ -35,7 +39,6 @@ Files:
 ## Notes
 - forge maven metadata has no versions for minecraft 1.21.4-pre3
 - minestom maven metadata has no versions for minecraft 1.21.4-pre3
-- mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 1.21.4-pre3
 - paper-api maven metadata has no versions for 1.21.4-pre3
 

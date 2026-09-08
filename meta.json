@@ -8,7 +8,7 @@
     "folia": "error",
     "forge": "partial",
     "minestom": "partial",
-    "mojang": "partial",
+    "mojang": "ok",
     "neoforge": "partial",
     "paper": "error",
     "purpur": "error",
@@ -23,10 +23,13 @@
     ]
   },
   "release_time": "2024-11-26T15:07:29+00:00",
+  "protocol_version": 1073742049,
+  "data_version": 4183,
+  "resource_pack_format": 46,
+  "data_pack_format": 61,
   "notes": [
     "forge maven metadata has no versions for minecraft 1.21.4-pre3",
     "minestom maven metadata has no versions for minecraft 1.21.4-pre3",
-    "mojang server metadata missing",
     "neoforge maven metadata has no versions for minecraft 1.21.4-pre3",
     "paper-api maven metadata has no versions for 1.21.4-pre3"
   ]
