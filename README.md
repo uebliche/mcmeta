@@ -56,13 +56,13 @@ Files:
 - Schema version: 2
 - Minecraft: 1.21.6
 - Fabric versions: 1
-  - 0.19.3
+  - 0.19.5
 - Forge versions: 1
   - 1.21.6-56.0.9
 - Neoforge versions: 1
   - 21.6.20-beta
 - Quilt versions: 1
-  - 0.30.1-beta.2
+  - 0.31.0-beta.4
 
 ## Artifacts index
 - Schema: mcmeta/v2
@@ -123,7 +123,7 @@ Files:
   - 1
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/5ebab31ed34f5b548782cfc187b6d0b7a028195d/1.21.6.json](https://piston-meta.mojang.com/v1/packages/5ebab31ed34f5b548782cfc187b6d0b7a028195d/1.21.6.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/3eb2aedf46c4803c3c0b89c373ef435af3f1314c/1.21.6.json](https://piston-meta.mojang.com/v1/packages/3eb2aedf46c4803c3c0b89c373ef435af3f1314c/1.21.6.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/740a125b83dd3447feaa3c5e891ead7fbb21ae28/client.jar](https://piston-data.mojang.com/v1/objects/740a125b83dd3447feaa3c5e891ead7fbb21ae28/client.jar) (sha1=740a125b83dd3447feaa3c5e891ead7fbb21ae28, size=29516555)
 - Server jar: [https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar](https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar) (sha1=6e64dcabba3c01a7271b4fa6bd898483b794c59b, size=57554576)
 - Client mappings: [https://piston-data.mojang.com/v1/objects/848855615bc81e3db1c85e69b6afb150807a1261/client.txt](https://piston-data.mojang.com/v1/objects/848855615bc81e3db1c85e69b6afb150807a1261/client.txt) (sha1=848855615bc81e3db1c85e69b6afb150807a1261, size=10987575)
