@@ -33,7 +33,7 @@
     },
     "mojang": {
       "status": "ok",
-      "fingerprint": "00396d9006bc383244426d530bbfea2194ba01b3"
+      "fingerprint": "a073fe09a736ea20950e89fc9e44bd0157229f40"
     },
     "neoforge": {
       "status": "partial",
@@ -54,7 +54,7 @@
       "fingerprint": "f7cf8b2aefac7992dc962748eb912b4e14eaf4b3"
     }
   },
-  "branch_fingerprint": "7f63667b7a5dc7ab6384830d10488066396f679b",
+  "branch_fingerprint": "fae96d9b3486048966ffce29f5169af6d02901e5",
   "branch_inputs": {
     "version_kind": "non-release"
   }
