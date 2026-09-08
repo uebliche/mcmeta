@@ -6,15 +6,15 @@ This repository is updated by the Uebliche.dev harvester actions in `uebliche/mc
 ## Uebliche.dev builds and publishing
 
 The repository's `uebliche.dev` manifest owns plugin builds, the complete platform
-example matrix (1.21.11, 1.21.4, 1.20.1), and Maven publishing. Actions use the
+example matrix (1.21.11, 1.21.4, 1.20.1), and local Maven installation. Actions use the
 managed JDK 21 and work on Windows and Unix hosts.
 
 - **Build Gradle plugin** runs the plugin build and checks.
 - **Test example matrix** builds every platform for each of the three versions.
 - **Publish Gradle plugin locally** builds and installs the Maven publications locally.
-- **Publish Gradle plugin to GitHub Packages** builds and publishes the UTC date and
-  source revision version. Configure `MCMETA_PACKAGES_USER` and the secret
-  `MCMETA_PACKAGES_TOKEN` with package write access in Uebliche.dev first.
+
+The plugin is consumed through the local `includeBuild` setup below or the local
+Maven repository. These actions require no package registry credentials.
 
 Metadata reconciliation remains in the `mcmeta-harvest` project. Use its managed
 reconcile runner for repeated updates. The viewer lives in the docs project;
@@ -173,29 +173,5 @@ mcmeta {
   enableManifoldPreprocessor = true
   // optional override
   // manifoldPreprocessorVersion = "2025.1.22"
-}
-```
-
-### Publishing (GitHub Packages)
-
-The same workflow also publishes to GitHub Packages:
-
-- `https://maven.pkg.github.com/uebliche/mcmeta`
-- Uses `GITHUB_TOKEN` with `packages:write` permission.
-
-To consume via Gradle Plugin DSL, add the repo in `settings.gradle.kts`:
-
-```kotlin
-pluginManagement {
-  repositories {
-    maven {
-      url = uri("https://maven.pkg.github.com/uebliche/mcmeta")
-      credentials {
-        username = System.getenv("GITHUB_ACTOR")
-        password = System.getenv("GITHUB_TOKEN")
-      }
-    }
-    gradlePluginPortal()
-  }
 }
 ```

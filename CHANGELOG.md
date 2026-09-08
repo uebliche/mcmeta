@@ -1,5 +1,15 @@
 # Changelog
 
+## [2026.09.08-1bf43f0] - Remove GitHub Packages Publishing
+
+### Removed
+
+- Remove the GitHub Packages action, credential fields, build-script mode, Maven destination, and registry consumption instructions.
+
+### Changed
+
+- Use local included builds or local Maven installation for the Gradle plugin.
+
 ## [2026.09.08-8862220] - Manage Builds in Uebliche.dev
 
 ### Added
