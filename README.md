@@ -233,7 +233,7 @@ Files:
   - 6
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/0936ffb5a6dd44735578d5785fa4b0022a2df64c/26.1.2.json](https://piston-meta.mojang.com/v1/packages/0936ffb5a6dd44735578d5785fa4b0022a2df64c/26.1.2.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/6a52e36bc9bf022a2eddb907dc4e725d87f33e4f/26.1.2.json](https://piston-meta.mojang.com/v1/packages/6a52e36bc9bf022a2eddb907dc4e725d87f33e4f/26.1.2.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/4e618f09a0c649dde3fdf829df443ce0b8831e65/client.jar](https://piston-data.mojang.com/v1/objects/4e618f09a0c649dde3fdf829df443ce0b8831e65/client.jar) (sha1=4e618f09a0c649dde3fdf829df443ce0b8831e65, size=38113927)
 - Server jar: [https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar](https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar) (sha1=97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51, size=60417480)
 
