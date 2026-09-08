@@ -1,0 +1,61 @@
+{
+  "schema": "mcmeta/publish-state/v1",
+  "schema_version": 1,
+  "branch": "mc/1.21.2-pre5",
+  "branch_kind": "mc-version",
+  "minecraft": "1.21.2-pre5",
+  "tool_version": "0.1.0",
+  "active_plugins": [
+    "minecraft-downloads",
+    "fabric-loader",
+    "quilt-loader",
+    "yarn-meta"
+  ],
+  "source_fingerprints": {
+    "fabric": {
+      "status": "ok",
+      "fingerprint": "adb00d46aa55796bd0aaf819a84f60369cb65316"
+    },
+    "fabric-api": {
+      "status": "ok",
+      "fingerprint": "aef2ec961201b6631552043042106c19af9dcfc2"
+    },
+    "folia": {
+      "status": "error"
+    },
+    "forge": {
+      "status": "partial",
+      "fingerprint": "39f1bf25007e26000ce8478b2987cecf9999b477"
+    },
+    "minestom": {
+      "status": "partial",
+      "fingerprint": "b3aab62d641471ffbf9ea1048d0c2bfdf132a213"
+    },
+    "mojang": {
+      "status": "ok",
+      "fingerprint": "00396d9006bc383244426d530bbfea2194ba01b3"
+    },
+    "neoforge": {
+      "status": "partial",
+      "fingerprint": "39f1bf25007e26000ce8478b2987cecf9999b477"
+    },
+    "paper": {
+      "status": "error"
+    },
+    "purpur": {
+      "status": "error"
+    },
+    "quilt": {
+      "status": "ok",
+      "fingerprint": "bc69b526b96c3dce518aa2fb1984d09e21863363"
+    },
+    "yarn": {
+      "status": "ok",
+      "fingerprint": "f7cf8b2aefac7992dc962748eb912b4e14eaf4b3"
+    }
+  },
+  "branch_fingerprint": "7f63667b7a5dc7ab6384830d10488066396f679b",
+  "branch_inputs": {
+    "version_kind": "non-release"
+  }
+}
