@@ -1,0 +1,22 @@
+{
+  "schema": "mcmeta/publish-state/v1",
+  "schema_version": 1,
+  "branch": "loom/latest",
+  "branch_kind": "loom",
+  "minecraft": "loom/latest",
+  "tool_version": "0.1.0",
+  "active_plugins": [
+    "loom-index"
+  ],
+  "source_fingerprints": {
+    "fabric-loom": {
+      "status": "ok",
+      "fingerprint": "34e43a26e660a66ace9f676577172587d9c44fe5"
+    },
+    "quilt-loom": {
+      "status": "ok",
+      "fingerprint": "77dcac1775896165e536597bae8fbe5de4cb0b24"
+    }
+  },
+  "branch_fingerprint": "6dc9fbfb686edea530da0e4442126ec6e3c4463e"
+}

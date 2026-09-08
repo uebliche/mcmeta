@@ -1,14 +1,17 @@
 # mcmeta loom data
 
-This branch contains generated Fabric/Quilt Loom versions.
+This branch contains generated loom metadata.
 
-## Fabric Loom
-- Latest: 1.15-SNAPSHOT
-- Stable: 1.15.3
-- Snapshot: 1.15-SNAPSHOT
+Files:
+- loom-index.json
+- publish-state.json
 
-## Quilt Loom
-- Latest: 1.15-SNAPSHOT
+## Fabric
+- Latest: 0.3.0-SNAPSHOT
+- Stable: 1.17.20
+- Snapshot: 0.3.0-SNAPSHOT
+
+## Quilt
+- Latest: 1.15.1
 - Stable: 1.15.1
-- Snapshot: 1.15-SNAPSHOT
-
+- Snapshot: n/a
