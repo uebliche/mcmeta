@@ -1,56 +1,26 @@
 {
-  "schema": "mcmeta/v1",
+  "schema": "mcmeta/v2",
+  "schema_version": 2,
   "minecraft": "proxy/velocity-1.1.0",
   "artifacts": {
-    "fabric-api": {
-      "type": "modrinth",
-      "project_id": "P7dR8mSH",
-      "loaders": [
-        "fabric"
-      ],
-      "versions": []
-    },
-    "paper": {
-      "type": "papermc",
-      "project": "paper",
-      "versions": []
-    },
-    "folia": {
-      "type": "papermc",
-      "project": "folia",
-      "versions": []
-    },
-    "purpur": {
-      "type": "purpur",
-      "project": "purpur",
-      "versions": []
-    },
     "proxies": {
       "velocity": {
-        "type": "papermc",
-        "project": "velocity",
         "groups": [
           {
             "api": "1.1.0",
-            "versions": [
-              "1.1.9"
-            ],
             "range": {
               "newest": "1.1.9",
               "oldest": "1.1.9"
-            }
+            },
+            "versions": [
+              "1.1.9"
+            ]
           }
-        ]
+        ],
+        "project": "velocity",
+        "type": "papermc"
       }
     }
   },
-  "runtimes": {
-    "minestom": {
-      "type": "maven",
-      "coordinates": [
-        "net.minestom:minestom"
-      ],
-      "versions": []
-    }
-  }
+  "runtimes": {}
 }
