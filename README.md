@@ -1,19 +1,22 @@
-# mcmeta data for Minecraft 26.1-snapshot-5
+# mcmeta data for Minecraft 26.3-pre-2
 
-This branch contains generated metadata for Minecraft 26.1-snapshot-5.
+This branch contains generated metadata for Minecraft 26.3-pre-2.
 
 Files:
 - loader-index.json
 - artifacts.json
 - meta.json
+- buildability.json
+- publish-state.json
 
 ## Meta
-- Schema: mcmeta/v1
-- Minecraft: 26.1-snapshot-5
-- JDK: 21
-- Release time: 2026-01-27T13:01:17+00:00
-- Protocol version: 1073742115
-- Data version: 4770
+- Schema: mcmeta/v2
+- Schema version: 2
+- Minecraft: 26.3-pre-2
+- JDK: 25
+- Release time: 2026-09-04T11:54:52+00:00
+- Protocol version: 1073742158
+- Data version: 5018
 
 ## Sources
 - Fabric: ok
@@ -25,92 +28,68 @@ Files:
 - Neoforge: partial
 - Paper: error
 - Purpur: error
-- Quilt: error
+- Quilt: ok
 - Yarn: error
 
 ## Notes
-- forge maven metadata has no versions for minecraft 26.1-snapshot-5
-- minestom maven metadata has no versions for minecraft 26.1-snapshot-5
-- neoforge maven metadata has no versions for minecraft 26.1-snapshot-5
-- paper-api maven metadata has no versions for 26.1-snapshot-5
+- forge maven metadata has no versions for minecraft 26.3-pre-2
+- minestom maven metadata has no versions for minecraft 26.3-pre-2
+- neoforge maven metadata has no versions for minecraft 26.3-pre-2
+- paper-api maven metadata has no versions for 26.3-pre-2
+
+## Buildability
+- Bungeecord: partial (proxy-target-not-versioned)
+- Fabric: buildable via unobfuscated
+- Folia: blocked (missing-folia-artifact)
+- Forge: blocked (missing-forge-loader)
+- Minestom: blocked (missing-minestom-runtime)
+- Neoforge: blocked (missing-neoforge-loader)
+- Paper: blocked (missing-paper-artifact)
+- Purpur: blocked (missing-purpur-artifact)
+- Quilt: blocked (missing-quilt-mappings)
+- Velocity: partial (proxy-target-not-versioned)
 
 ## Loader index
-- Schema: mcmeta/v1
-- Minecraft: 26.1-snapshot-5
+- Schema: mcmeta/v2
+- Schema version: 2
+- Minecraft: 26.3-pre-2
 - Fabric versions: 1
-  - 0.18.4
-- Quilt versions: 0
-  - n/a
-- Forge versions: 0
-  - n/a
-- NeoForge versions: 0
-  - n/a
+  - 0.19.5
+- Quilt versions: 1
+  - 0.31.0-beta.4
 
 ## Artifacts index
-- Schema: mcmeta/v1
-- Minecraft: 26.1-snapshot-5
+- Schema: mcmeta/v2
+- Schema version: 2
+- Minecraft: 26.3-pre-2
 
-### Fabric API (Modrinth)
+### Fabric Api
 - Type: modrinth
 - Project id: P7dR8mSH
 - Loaders: 1
   - fabric
 - Versions: 2
-  - 0.143.0+26.1
+  - 0.160.0+26.3
     - Game versions: 1
-      - 26.1-snapshot-5
+      - 26.3-pre-2
     - Loaders: 1
       - fabric
     - Files: 1
-      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/nTESnhP0/fabric-api-0.143.0%2B26.1.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/nTESnhP0/fabric-api-0.143.0%2B26.1.jar)
-        - sha1: 77b983596d08c774cc2831114d34dce07fd4e1f6
-        - sha512: 21cd12760721290e898fdc4e86b3ea2fd8e47d155c5f7b6cb04c5ddae6a60fb0934f67f707cc6b2b77c486f3c56054ed8c01025150a5abb53f3296777e871111
-  - 0.142.3+26.1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/o9uChmGq/fabric-api-0.160.0%2B26.3.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/o9uChmGq/fabric-api-0.160.0%2B26.3.jar) (sha1=b290eb13fa2728c9ac452e83ad87c3dbc555de12, sha512=0f9fb41ec3e480e7680e1640f90fb82a9298f5848c049ded3be47605615c3117fc17fc7acab59ec145dd4653422b742df5c5f137608d243d9aa4bf2d9ba2427d)
+  - 0.159.4+26.3
     - Game versions: 1
-      - 26.1-snapshot-5
+      - 26.3-pre-2
     - Loaders: 1
       - fabric
     - Files: 1
-      - Url: [https://cdn.modrinth.com/data/P7dR8mSH/versions/vHlPCTc1/fabric-api-0.142.3%2B26.1.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/vHlPCTc1/fabric-api-0.142.3%2B26.1.jar)
-        - sha1: 3f56d467d2b22de2999b2fd72a28fef9dcd0cd30
-        - sha512: b3b1009e21f982f24da198e02eff01cfb1562780a73e746e51f0698e0b8a804f46ede16ff23a3385fd85aaf3d2dfd943f784a3abd4ed3df990e0b095d1f87346
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/7WKL9JPW/fabric-api-0.159.4%2B26.3.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/7WKL9JPW/fabric-api-0.159.4%2B26.3.jar) (sha1=a1c37794a31bf06e1d30cc98df51ce0c5281180b, sha512=d7063c83dd46cf732b8fb746ed3296d93e45ed5a6f7d98e07c993018cfea5c1716a8eb20bd73effefb9ac84fdefef665788dfe5e10dcf928b5e6621541a26a18)
 
-### Paper
-- Type: papermc
-- Project: paper
-- Versions: 0
-  - n/a
-
-### Folia
-- Type: papermc
-- Project: folia
-- Versions: 0
-  - n/a
-
-### Purpur
-- Type: purpur
-- Project: purpur
-- Versions: 0
-  - n/a
-
-### Minecraft downloads
-- Version JSON:
-  - Url: [https://piston-meta.mojang.com/v1/packages/9c477d4d399b38c4c85d6d10f5fb3e16dd2142f7/26.1-snapshot-5.json](https://piston-meta.mojang.com/v1/packages/9c477d4d399b38c4c85d6d10f5fb3e16dd2142f7/26.1-snapshot-5.json)
-- Client jar:
-  - Url: [https://piston-data.mojang.com/v1/objects/4c938df4f6ce3138ab38b488f3add8693918a7a0/client.jar](https://piston-data.mojang.com/v1/objects/4c938df4f6ce3138ab38b488f3add8693918a7a0/client.jar)
-  - sha1: 4c938df4f6ce3138ab38b488f3add8693918a7a0
-  - Size: 37474887
-- Server jar:
-  - Url: [https://piston-data.mojang.com/v1/objects/4e79b5742a989ae384d9bb032ecfe30ee55f0c48/server.jar](https://piston-data.mojang.com/v1/objects/4e79b5742a989ae384d9bb032ecfe30ee55f0c48/server.jar)
-  - sha1: 4e79b5742a989ae384d9bb032ecfe30ee55f0c48
-  - Size: 60145486
+### Minecraft
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/168cea25a2a1cbbcd1a55ea40bf184b7c66a29f3/26.3-pre-2.json](https://piston-meta.mojang.com/v1/packages/168cea25a2a1cbbcd1a55ea40bf184b7c66a29f3/26.3-pre-2.json)
+- Client jar: [https://piston-data.mojang.com/v1/objects/4bf834bcf10e94999f0ee5f17f1b5a7388b9b679/client.jar](https://piston-data.mojang.com/v1/objects/4bf834bcf10e94999f0ee5f17f1b5a7388b9b679/client.jar) (sha1=4bf834bcf10e94999f0ee5f17f1b5a7388b9b679, size=41473220)
+- Server jar: [https://piston-data.mojang.com/v1/objects/1dcf227881b28b21cc1d03ba830273f0d2d26319/server.jar](https://piston-data.mojang.com/v1/objects/1dcf227881b28b21cc1d03ba830273f0d2d26319/server.jar) (sha1=1dcf227881b28b21cc1d03ba830273f0d2d26319, size=62292880)
 
 ## Runtimes
-### Minestom
-- Type: maven
-- Coordinates: 1
-  - net.minestom:minestom
-- Versions: 0
-  - n/a
+- n/a
 
 Generated by mcmeta-harvest.
