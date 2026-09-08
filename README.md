@@ -64,7 +64,7 @@ Files:
 - Minecraft: 26.1.2-rc-1
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/a8783d61799fdbfc97b0b985c446db8e798c0ac5/26.1.2-rc-1.json](https://piston-meta.mojang.com/v1/packages/a8783d61799fdbfc97b0b985c446db8e798c0ac5/26.1.2-rc-1.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/f5138ad0d92006b38d29f2308bcf549100d19600/26.1.2-rc-1.json](https://piston-meta.mojang.com/v1/packages/f5138ad0d92006b38d29f2308bcf549100d19600/26.1.2-rc-1.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/fd223c7acd6bef1dfa2003f7a3b92a75ea9855c8/client.jar](https://piston-data.mojang.com/v1/objects/fd223c7acd6bef1dfa2003f7a3b92a75ea9855c8/client.jar) (sha1=fd223c7acd6bef1dfa2003f7a3b92a75ea9855c8, size=38113962)
 - Server jar: [https://piston-data.mojang.com/v1/objects/fe4d20eceabf011b9e29c565db82d0ba0f3289ca/server.jar](https://piston-data.mojang.com/v1/objects/fe4d20eceabf011b9e29c565db82d0ba0f3289ca/server.jar) (sha1=fe4d20eceabf011b9e29c565db82d0ba0f3289ca, size=60417787)
 
