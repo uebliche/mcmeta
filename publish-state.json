@@ -40,7 +40,7 @@
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "39c784983781112e5c87baec8dc030d2209ccf20"
+      "fingerprint": "cc6d2b77d16ed6b5af38b781e34fdb618663ec5f"
     },
     "neoforge": {
       "status": "ok",
@@ -62,7 +62,7 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "13a27c5b725282e6b7ca6588b6b468eb5263d030",
+  "branch_fingerprint": "492309b7fecfea9edb84061a42d2372601e6a9bb",
   "branch_inputs": {
     "resolved_minecraft": "26.2"
   }
