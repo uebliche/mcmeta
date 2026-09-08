@@ -1,21 +1,14 @@
 {
   "schema": "mcmeta/publish-state/v1",
   "schema_version": 1,
-  "branch": "mc/26.1.2",
+  "branch": "mc/26.1.2-rc-1",
   "branch_kind": "mc-version",
-  "minecraft": "26.1.2",
+  "minecraft": "26.1.2-rc-1",
   "tool_version": "0.1.0",
   "active_plugins": [
     "minecraft-downloads",
     "fabric-loader",
-    "quilt-loader",
-    "forge-loader",
-    "neoforge-loader",
-    "minestom-runtime",
-    "fabric-api",
-    "paper-artifact",
-    "folia-artifact",
-    "purpur-artifact"
+    "quilt-loader"
   ],
   "source_fingerprints": {
     "fabric": {
@@ -24,35 +17,32 @@
     },
     "fabric-api": {
       "status": "ok",
-      "fingerprint": "fc44f4cebbcfea441319188e35eb875cf5abe929"
+      "fingerprint": "aef2ec961201b6631552043042106c19af9dcfc2"
     },
     "folia": {
-      "status": "ok",
-      "fingerprint": "6478dc2192b70b805b241d96d7ec6108ae0d2eab"
+      "status": "error"
     },
     "forge": {
-      "status": "ok",
-      "fingerprint": "ac81940280a95a897a9dab7b0339dd1003b2cda0"
+      "status": "partial",
+      "fingerprint": "39f1bf25007e26000ce8478b2987cecf9999b477"
     },
     "minestom": {
-      "status": "ok",
-      "fingerprint": "710d8f87efb98be5ed1df516a44acb57b5d6a212"
+      "status": "partial",
+      "fingerprint": "b3aab62d641471ffbf9ea1048d0c2bfdf132a213"
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "f9b16acb72895e161a26b6cdeaa89b5f26e2088f"
+      "fingerprint": "8cce4dcc6c58c4760eeca90fcf93975c3dc46e6c"
     },
     "neoforge": {
-      "status": "ok",
-      "fingerprint": "722e4c797ee262120ca252fe569cbc3131cc90f2"
+      "status": "partial",
+      "fingerprint": "39f1bf25007e26000ce8478b2987cecf9999b477"
     },
     "paper": {
-      "status": "partial",
-      "fingerprint": "e33ebad0c8560285966255360487c5dc02dc9f62"
+      "status": "error"
     },
     "purpur": {
-      "status": "ok",
-      "fingerprint": "4ab2ea34a6c3f8c22257e5229f23d6b4fff374a0"
+      "status": "error"
     },
     "quilt": {
       "status": "ok",
@@ -62,8 +52,8 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "3a6dd9e15a49cd98fe51fc973440eba5a8b13894",
+  "branch_fingerprint": "2a8f560c4ef1740ff35eb41784dd9e7a30951f2d",
   "branch_inputs": {
-    "version_kind": "release"
+    "version_kind": "non-release"
   }
 }

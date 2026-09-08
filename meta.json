@@ -1,25 +1,28 @@
 {
   "schema": "mcmeta/v2",
   "schema_version": 2,
-  "minecraft": "26.1.2",
+  "minecraft": "26.1.2-rc-1",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
-    "folia": "ok",
-    "forge": "ok",
-    "minestom": "ok",
+    "folia": "error",
+    "forge": "partial",
+    "minestom": "partial",
     "mojang": "partial",
-    "neoforge": "ok",
-    "paper": "partial",
-    "purpur": "ok",
+    "neoforge": "partial",
+    "paper": "error",
+    "purpur": "error",
     "quilt": "ok",
     "yarn": "error"
   },
   "jdk": 25,
-  "release_time": "2026-04-09T10:12:23+00:00",
-  "protocol_version": 775,
-  "data_version": 4790,
+  "release_time": "2026-04-08T12:47:45+00:00",
+  "protocol_version": 1073742131,
+  "data_version": 4789,
   "notes": [
-    "paper-api maven metadata has no versions for 26.1.2"
+    "forge maven metadata has no versions for minecraft 26.1.2-rc-1",
+    "minestom maven metadata has no versions for minecraft 26.1.2-rc-1",
+    "neoforge maven metadata has no versions for minecraft 26.1.2-rc-1",
+    "paper-api maven metadata has no versions for 26.1.2-rc-1"
   ]
 }

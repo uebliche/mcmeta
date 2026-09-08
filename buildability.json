@@ -1,62 +1,47 @@
 {
   "schema": "mcmeta/buildability/v1",
   "schema_version": 1,
-  "minecraft": "26.1.2",
+  "minecraft": "26.1.2-rc-1",
   "targets": {
     "bungeecord": {
       "status": "partial",
       "blocked_by": "proxy-target-not-versioned"
     },
     "fabric": {
-      "status": "buildable",
+      "status": "blocked",
+      "blocked_by": "missing-fabric-api",
       "jdk": 25,
-      "loader_version": "0.19.5",
-      "artifact_versions": {
-        "fabric-api": "0.155.3+26.1.2"
-      },
-      "mapping_channel": "unobfuscated",
-      "mapping_version": "26.1.2",
-      "available_mapping_channels": [
-        "unobfuscated"
-      ]
+      "loader_version": "0.19.5"
     },
     "folia": {
-      "status": "buildable",
-      "jdk": 25,
-      "artifact_versions": {
-        "folia": "8"
-      }
+      "status": "blocked",
+      "blocked_by": "missing-folia-artifact",
+      "jdk": 25
     },
     "forge": {
-      "status": "buildable",
-      "jdk": 25,
-      "loader_version": "26.1.2-64.1.3"
+      "status": "blocked",
+      "blocked_by": "missing-forge-loader",
+      "jdk": 25
     },
     "minestom": {
-      "status": "buildable",
-      "jdk": 25,
-      "artifact_versions": {
-        "minestom": "2026.07.01-26.1.2"
-      }
+      "status": "blocked",
+      "blocked_by": "missing-minestom-runtime",
+      "jdk": 25
     },
     "neoforge": {
-      "status": "buildable",
-      "jdk": 25,
-      "loader_version": "26.1.2.99"
+      "status": "blocked",
+      "blocked_by": "missing-neoforge-loader",
+      "jdk": 25
     },
     "paper": {
-      "status": "buildable",
-      "jdk": 25,
-      "artifact_versions": {
-        "paper": "74"
-      }
+      "status": "blocked",
+      "blocked_by": "missing-paper-artifact",
+      "jdk": 25
     },
     "purpur": {
-      "status": "buildable",
-      "jdk": 25,
-      "artifact_versions": {
-        "purpur": "2592"
-      }
+      "status": "blocked",
+      "blocked_by": "missing-purpur-artifact",
+      "jdk": 25
     },
     "quilt": {
       "status": "blocked",
