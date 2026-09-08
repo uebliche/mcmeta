@@ -1,80 +1,58 @@
 {
-  "schema": "mcmeta/v1",
+  "schema": "mcmeta/v2",
+  "schema_version": 2,
   "minecraft": "1.21.11-pre2",
   "artifacts": {
     "fabric-api": {
-      "type": "modrinth",
-      "project_id": "P7dR8mSH",
       "loaders": [
         "fabric"
       ],
+      "project_id": "P7dR8mSH",
+      "type": "modrinth",
       "versions": [
         {
-          "version_number": "0.139.2+1.21.11",
+          "files": [
+            {
+              "sha1": "de3a879944ffb557a45a5e63c8166743c835b94d",
+              "sha512": "145d0f0c3904ad3fb2e7ae0aa05d45434a8a543b6488f325d289f8c6dfb8047b1b4e919a3af66c33ac4fbe435882b120dea3c466015027aae04c112400d4f0f5",
+              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/rqG1ZEU6/fabric-api-0.139.2%2B1.21.11.jar"
+            }
+          ],
           "game_versions": [
             "1.21.11-pre2"
           ],
           "loaders": [
             "fabric"
           ],
-          "files": [
-            {
-              "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/rqG1ZEU6/fabric-api-0.139.2%2B1.21.11.jar",
-              "sha1": "de3a879944ffb557a45a5e63c8166743c835b94d",
-              "sha512": "145d0f0c3904ad3fb2e7ae0aa05d45434a8a543b6488f325d289f8c6dfb8047b1b4e919a3af66c33ac4fbe435882b120dea3c466015027aae04c112400d4f0f5"
-            }
-          ]
+          "version_number": "0.139.2+1.21.11"
         }
       ]
     },
-    "paper": {
-      "type": "papermc",
-      "project": "paper",
-      "versions": []
-    },
-    "folia": {
-      "type": "papermc",
-      "project": "folia",
-      "versions": []
-    },
-    "purpur": {
-      "type": "purpur",
-      "project": "purpur",
-      "versions": []
-    },
     "minecraft": {
-      "version_json": {
-        "url": "https://piston-meta.mojang.com/v1/packages/c6955c9f17dd15bb1d5d783e042308bea19fc589/1.21.11-pre2.json"
-      },
       "client": {
-        "url": "https://piston-data.mojang.com/v1/objects/d27328fcee29decc1870917b8f4e6377accb2fe8/client.jar",
         "sha1": "d27328fcee29decc1870917b8f4e6377accb2fe8",
-        "size": 31149257
-      },
-      "server": {
-        "url": "https://piston-data.mojang.com/v1/objects/7f997b55094aa7754f25173aafef657449f02bec/server.jar",
-        "sha1": "7f997b55094aa7754f25173aafef657449f02bec",
-        "size": 56329659
+        "size": 31149257,
+        "url": "https://piston-data.mojang.com/v1/objects/d27328fcee29decc1870917b8f4e6377accb2fe8/client.jar"
       },
       "client_mappings": {
-        "url": "https://piston-data.mojang.com/v1/objects/00c87b93bfa0cf3428fbe6289a171f219dd5877b/client.txt",
         "sha1": "00c87b93bfa0cf3428fbe6289a171f219dd5877b",
-        "size": 11776899
+        "size": 11776899,
+        "url": "https://piston-data.mojang.com/v1/objects/00c87b93bfa0cf3428fbe6289a171f219dd5877b/client.txt"
+      },
+      "server": {
+        "sha1": "7f997b55094aa7754f25173aafef657449f02bec",
+        "size": 56329659,
+        "url": "https://piston-data.mojang.com/v1/objects/7f997b55094aa7754f25173aafef657449f02bec/server.jar"
       },
       "server_mappings": {
-        "url": "https://piston-data.mojang.com/v1/objects/96bf7fccb05bb77f0daedd29ab9e49127a0d2dbc/server.txt",
         "sha1": "96bf7fccb05bb77f0daedd29ab9e49127a0d2dbc",
-        "size": 8677039
+        "size": 8677039,
+        "url": "https://piston-data.mojang.com/v1/objects/96bf7fccb05bb77f0daedd29ab9e49127a0d2dbc/server.txt"
+      },
+      "version_json": {
+        "url": "https://piston-meta.mojang.com/v1/packages/b565ff13934b252c839d22d651e429e1d80f7c3f/1.21.11-pre2.json"
       }
     }
   },
-  "runtimes": {
-    "minestom": {
-      "type": "maven",
-      "coordinates": [
-        "net.minestom:minestom"
-      ],
-      "versions": []
-    }
-  }
+  "runtimes": {}
 }
