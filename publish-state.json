@@ -1,0 +1,18 @@
+{
+  "schema": "mcmeta/publish-state/v1",
+  "schema_version": 1,
+  "branch": "proxy/bungeecord-1.16",
+  "branch_kind": "bungeecord",
+  "minecraft": "proxy/bungeecord-1.16",
+  "tool_version": "0.1.0",
+  "active_plugins": [
+    "proxy-bungeecord"
+  ],
+  "source_fingerprints": {
+    "bungeecord": {
+      "status": "ok",
+      "fingerprint": "5eb5ece901e1067c2a21769fa470d5419bed2e7a"
+    }
+  },
+  "branch_fingerprint": "8cf3909777435b3d48eeb31dd7d0c025ba14a08a"
+}

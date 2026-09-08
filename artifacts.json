@@ -1,59 +1,29 @@
 {
-  "schema": "mcmeta/v1",
+  "schema": "mcmeta/v2",
+  "schema_version": 2,
   "minecraft": "proxy/bungeecord-1.16",
   "artifacts": {
-    "fabric-api": {
-      "type": "modrinth",
-      "project_id": "P7dR8mSH",
-      "loaders": [
-        "fabric"
-      ],
-      "versions": []
-    },
-    "paper": {
-      "type": "papermc",
-      "project": "paper",
-      "versions": []
-    },
-    "folia": {
-      "type": "papermc",
-      "project": "folia",
-      "versions": []
-    },
-    "purpur": {
-      "type": "purpur",
-      "project": "purpur",
-      "versions": []
-    },
     "proxies": {
       "bungeecord": {
-        "type": "maven",
-        "project": "bungeecord",
         "groups": [
           {
             "api": "1.16",
+            "range": {
+              "newest": "1.16-R0.4",
+              "oldest": "1.16-R0.1"
+            },
             "versions": [
               "1.16-R0.4",
               "1.16-R0.3",
               "1.16-R0.2",
               "1.16-R0.1"
-            ],
-            "range": {
-              "newest": "1.16-R0.4",
-              "oldest": "1.16-R0.1"
-            }
+            ]
           }
-        ]
+        ],
+        "project": "bungeecord",
+        "type": "maven"
       }
     }
   },
-  "runtimes": {
-    "minestom": {
-      "type": "maven",
-      "coordinates": [
-        "net.minestom:minestom"
-      ],
-      "versions": []
-    }
-  }
+  "runtimes": {}
 }
