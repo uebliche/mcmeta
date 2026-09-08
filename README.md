@@ -1,6 +1,6 @@
-# mcmeta data for Minecraft 26.3-pre-2
+# mcmeta data for Minecraft 26.3-pre-3
 
-This branch contains generated metadata for Minecraft 26.3-pre-2.
+This branch contains generated metadata for Minecraft 26.3-pre-3.
 
 Files:
 - loader-index.json
@@ -12,11 +12,11 @@ Files:
 ## Meta
 - Schema: mcmeta/v2
 - Schema version: 2
-- Minecraft: 26.3-pre-2
+- Minecraft: 26.3-pre-3
 - JDK: 25
-- Release time: 2026-09-04T11:54:52+00:00
-- Protocol version: 1073742158
-- Data version: 5018
+- Release time: 2026-09-08T13:04:44+00:00
+- Protocol version: 1073742159
+- Data version: 5019
 
 ## Sources
 - Fabric: ok
@@ -28,14 +28,14 @@ Files:
 - Neoforge: partial
 - Paper: error
 - Purpur: error
-- Quilt: ok
+- Quilt: error
 - Yarn: error
 
 ## Notes
-- forge maven metadata has no versions for minecraft 26.3-pre-2
-- minestom maven metadata has no versions for minecraft 26.3-pre-2
-- neoforge maven metadata has no versions for minecraft 26.3-pre-2
-- paper-api maven metadata has no versions for 26.3-pre-2
+- forge maven metadata has no versions for minecraft 26.3-pre-3
+- minestom maven metadata has no versions for minecraft 26.3-pre-3
+- neoforge maven metadata has no versions for minecraft 26.3-pre-3
+- paper-api maven metadata has no versions for 26.3-pre-3
 
 ## Buildability
 - Bungeecord: partial (proxy-target-not-versioned)
@@ -46,48 +46,39 @@ Files:
 - Neoforge: blocked (missing-neoforge-loader)
 - Paper: blocked (missing-paper-artifact)
 - Purpur: blocked (missing-purpur-artifact)
-- Quilt: blocked (missing-quilt-mappings)
+- Quilt: blocked (missing-quilt-loader)
 - Velocity: partial (proxy-target-not-versioned)
 
 ## Loader index
 - Schema: mcmeta/v2
 - Schema version: 2
-- Minecraft: 26.3-pre-2
+- Minecraft: 26.3-pre-3
 - Fabric versions: 1
   - 0.19.5
-- Quilt versions: 1
-  - 0.31.0-beta.4
 
 ## Artifacts index
 - Schema: mcmeta/v2
 - Schema version: 2
-- Minecraft: 26.3-pre-2
+- Minecraft: 26.3-pre-3
 
 ### Fabric Api
 - Type: modrinth
 - Project id: P7dR8mSH
 - Loaders: 1
   - fabric
-- Versions: 2
-  - 0.160.0+26.3
+- Versions: 1
+  - 0.160.1+26.3
     - Game versions: 1
-      - 26.3-pre-2
+      - 26.3-pre-3
     - Loaders: 1
       - fabric
     - Files: 1
-      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/o9uChmGq/fabric-api-0.160.0%2B26.3.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/o9uChmGq/fabric-api-0.160.0%2B26.3.jar) (sha1=b290eb13fa2728c9ac452e83ad87c3dbc555de12, sha512=0f9fb41ec3e480e7680e1640f90fb82a9298f5848c049ded3be47605615c3117fc17fc7acab59ec145dd4653422b742df5c5f137608d243d9aa4bf2d9ba2427d)
-  - 0.159.4+26.3
-    - Game versions: 1
-      - 26.3-pre-2
-    - Loaders: 1
-      - fabric
-    - Files: 1
-      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/7WKL9JPW/fabric-api-0.159.4%2B26.3.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/7WKL9JPW/fabric-api-0.159.4%2B26.3.jar) (sha1=a1c37794a31bf06e1d30cc98df51ce0c5281180b, sha512=d7063c83dd46cf732b8fb746ed3296d93e45ed5a6f7d98e07c993018cfea5c1716a8eb20bd73effefb9ac84fdefef665788dfe5e10dcf928b5e6621541a26a18)
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/nJUuh2dv/fabric-api-0.160.1%2B26.3.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/nJUuh2dv/fabric-api-0.160.1%2B26.3.jar) (sha1=b5c81d30de6cfe379688a56e1931a34c520560d8, sha512=8d562900908da5bd80f6ca0e86ffc95c5332ed3c4e9f420a210a8a96434a659b6396d86ee59ade0ca744b71eea0d6dd75daffe0d4e09d373f439716b6f43c409)
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/168cea25a2a1cbbcd1a55ea40bf184b7c66a29f3/26.3-pre-2.json](https://piston-meta.mojang.com/v1/packages/168cea25a2a1cbbcd1a55ea40bf184b7c66a29f3/26.3-pre-2.json)
-- Client jar: [https://piston-data.mojang.com/v1/objects/4bf834bcf10e94999f0ee5f17f1b5a7388b9b679/client.jar](https://piston-data.mojang.com/v1/objects/4bf834bcf10e94999f0ee5f17f1b5a7388b9b679/client.jar) (sha1=4bf834bcf10e94999f0ee5f17f1b5a7388b9b679, size=41473220)
-- Server jar: [https://piston-data.mojang.com/v1/objects/1dcf227881b28b21cc1d03ba830273f0d2d26319/server.jar](https://piston-data.mojang.com/v1/objects/1dcf227881b28b21cc1d03ba830273f0d2d26319/server.jar) (sha1=1dcf227881b28b21cc1d03ba830273f0d2d26319, size=62292880)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/2e91e5a1e95ad1e9b364607eef471d349c8ee853/26.3-pre-3.json](https://piston-meta.mojang.com/v1/packages/2e91e5a1e95ad1e9b364607eef471d349c8ee853/26.3-pre-3.json)
+- Client jar: [https://piston-data.mojang.com/v1/objects/50c9b4d653476352609b6a0e052fb203323220fa/client.jar](https://piston-data.mojang.com/v1/objects/50c9b4d653476352609b6a0e052fb203323220fa/client.jar) (sha1=50c9b4d653476352609b6a0e052fb203323220fa, size=41483280)
+- Server jar: [https://piston-data.mojang.com/v1/objects/74b30963f532fa08c5f32311cc7caa0de41bf29e/server.jar](https://piston-data.mojang.com/v1/objects/74b30963f532fa08c5f32311cc7caa0de41bf29e/server.jar) (sha1=74b30963f532fa08c5f32311cc7caa0de41bf29e, size=62294799)
 
 ## Runtimes
 - n/a

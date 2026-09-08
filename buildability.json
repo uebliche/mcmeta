@@ -1,7 +1,7 @@
 {
   "schema": "mcmeta/buildability/v1",
   "schema_version": 1,
-  "minecraft": "26.3-pre-2",
+  "minecraft": "26.3-pre-3",
   "targets": {
     "bungeecord": {
       "status": "partial",
@@ -12,10 +12,10 @@
       "jdk": 25,
       "loader_version": "0.19.5",
       "artifact_versions": {
-        "fabric-api": "0.160.0+26.3"
+        "fabric-api": "0.160.1+26.3"
       },
       "mapping_channel": "unobfuscated",
-      "mapping_version": "26.3-pre-2",
+      "mapping_version": "26.3-pre-3",
       "available_mapping_channels": [
         "unobfuscated"
       ]
@@ -52,9 +52,8 @@
     },
     "quilt": {
       "status": "blocked",
-      "blocked_by": "missing-quilt-mappings",
-      "jdk": 25,
-      "loader_version": "0.31.0-beta.4"
+      "blocked_by": "missing-quilt-loader",
+      "jdk": 25
     },
     "velocity": {
       "status": "partial",

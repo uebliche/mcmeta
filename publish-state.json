@@ -3,12 +3,11 @@
   "schema_version": 1,
   "branch": "latest-snapshot",
   "branch_kind": "latest-snapshot",
-  "minecraft": "26.3-pre-2",
+  "minecraft": "26.3-pre-3",
   "tool_version": "0.1.0",
   "active_plugins": [
     "minecraft-downloads",
     "fabric-loader",
-    "quilt-loader",
     "fabric-api"
   ],
   "source_fingerprints": {
@@ -18,7 +17,7 @@
     },
     "fabric-api": {
       "status": "ok",
-      "fingerprint": "3eb9d5e35d7ee4a22f1b2b2f0c320e44808a16c9"
+      "fingerprint": "c1b5544cdf8da21991a7fb9e67ff79d16f423933"
     },
     "folia": {
       "status": "error"
@@ -33,7 +32,7 @@
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "787e629389501ac844b416c7154504af2304ce16"
+      "fingerprint": "35b6b281040f9702d916600293bfd5ccb2823cdd"
     },
     "neoforge": {
       "status": "partial",
@@ -46,15 +45,14 @@
       "status": "error"
     },
     "quilt": {
-      "status": "ok",
-      "fingerprint": "bc69b526b96c3dce518aa2fb1984d09e21863363"
+      "status": "error"
     },
     "yarn": {
       "status": "error"
     }
   },
-  "branch_fingerprint": "ba2059b70091df52b5d0f99b69997f61344ee3cc",
+  "branch_fingerprint": "93866577bb8fa9718020b33797f54ffc53b4b2ba",
   "branch_inputs": {
-    "resolved_minecraft": "26.3-pre-2"
+    "resolved_minecraft": "26.3-pre-3"
   }
 }
