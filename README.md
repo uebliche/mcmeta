@@ -51,13 +51,13 @@ Files:
 - Schema version: 2
 - Minecraft: 26.1.1
 - Fabric versions: 1
-  - 0.19.3
+  - 0.19.5
 - Forge versions: 1
   - 26.1.1-63.0.2
 - Neoforge versions: 1
   - 26.1.1.8-beta
 - Quilt versions: 1
-  - 0.30.1-beta.2
+  - 0.31.0-beta.4
 
 ## Artifacts index
 - Schema: mcmeta/v2
@@ -69,7 +69,16 @@ Files:
 - Project id: P7dR8mSH
 - Loaders: 1
   - fabric
-- Versions: 20
+- Versions: 21
+  - 0.155.3+26.1.2
+    - Game versions: 3
+      - 26.1
+      - 26.1.1
+      - 26.1.2
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/3dM0X6ou/fabric-api-0.155.3%2B26.1.2.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/3dM0X6ou/fabric-api-0.155.3%2B26.1.2.jar) (sha1=16c30dfcceaed1ac3b6ac84cbd348a906dc5093e, sha512=fa0308b42e9cd0dc3ff946f246d199d74547e0c946d7e3c9780a2537155307baf25129f69bd1349273babf879ffb4608b7e4af0740938f9c0f7b371b1c67d6ca)
   - 0.155.2+26.1.2
     - Game versions: 3
       - 26.1
@@ -248,7 +257,7 @@ Files:
       - [https://cdn.modrinth.com/data/P7dR8mSH/versions/Xsmcjuhk/fabric-api-0.144.4%2B26.1.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/Xsmcjuhk/fabric-api-0.144.4%2B26.1.jar) (sha1=3002eb45eccca8f81c620ceed4155a08c3f12120, sha512=bc3e9f2ccb62ff9c258124dc1cbf30623777a299d788fdd6c1f254c8921edc2376a2a33c374fd7cd775c206632fba25098a7abb68103ca49c44af2ade1eb81da)
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/9fe6323f54331ec6317019f80c64fecc88a2369b/26.1.1.json](https://piston-meta.mojang.com/v1/packages/9fe6323f54331ec6317019f80c64fecc88a2369b/26.1.1.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/85b9aa10ec2ecef8f401958f4109b71af164bf38/26.1.1.json](https://piston-meta.mojang.com/v1/packages/85b9aa10ec2ecef8f401958f4109b71af164bf38/26.1.1.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/377031a9e733ba8ab4d355959a8f6fb8eb707556/client.jar](https://piston-data.mojang.com/v1/objects/377031a9e733ba8ab4d355959a8f6fb8eb707556/client.jar) (sha1=377031a9e733ba8ab4d355959a8f6fb8eb707556, size=38113231)
 - Server jar: [https://piston-data.mojang.com/v1/objects/49c8195703ad0ba4f0a4efbccfd85a4a8ca57431/server.jar](https://piston-data.mojang.com/v1/objects/49c8195703ad0ba4f0a4efbccfd85a4a8ca57431/server.jar) (sha1=49c8195703ad0ba4f0a4efbccfd85a4a8ca57431, size=60417481)
 
