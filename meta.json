@@ -1,5 +1,6 @@
 {
-  "schema": "mcmeta/v1",
+  "schema": "mcmeta/v2",
+  "schema_version": 2,
   "minecraft": "proxy/velocity-3.0.0",
   "sources": {
     "velocity": "ok"

@@ -1,0 +1,18 @@
+{
+  "schema": "mcmeta/publish-state/v1",
+  "schema_version": 1,
+  "branch": "proxy/velocity-3.0.0",
+  "branch_kind": "velocity",
+  "minecraft": "proxy/velocity-3.0.0",
+  "tool_version": "0.1.0",
+  "active_plugins": [
+    "proxy-velocity"
+  ],
+  "source_fingerprints": {
+    "velocity": {
+      "status": "ok",
+      "fingerprint": "6007e911386435c1622f0ee8f863a8076915fd95"
+    }
+  },
+  "branch_fingerprint": "0ade4a71afc2d9596bcd94b2bbe764068f4b8945"
+}
