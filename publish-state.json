@@ -1,19 +1,14 @@
 {
   "schema": "mcmeta/publish-state/v1",
   "schema_version": 1,
-  "branch": "mc/26.1.1",
+  "branch": "mc/26.1.1-rc-1",
   "branch_kind": "mc-version",
-  "minecraft": "26.1.1",
+  "minecraft": "26.1.1-rc-1",
   "tool_version": "0.1.0",
   "active_plugins": [
     "minecraft-downloads",
     "fabric-loader",
-    "quilt-loader",
-    "forge-loader",
-    "neoforge-loader",
-    "minestom-runtime",
-    "fabric-api",
-    "paper-artifact"
+    "quilt-loader"
   ],
   "source_fingerprints": {
     "fabric": {
@@ -22,30 +17,29 @@
     },
     "fabric-api": {
       "status": "ok",
-      "fingerprint": "f288e098b562b0eda548e3bbdbd7ef68916078b7"
+      "fingerprint": "aef2ec961201b6631552043042106c19af9dcfc2"
     },
     "folia": {
       "status": "error"
     },
     "forge": {
-      "status": "ok",
-      "fingerprint": "ce9d00df05ae1f91f38fa9dd6deab09597608357"
+      "status": "partial",
+      "fingerprint": "39f1bf25007e26000ce8478b2987cecf9999b477"
     },
     "minestom": {
-      "status": "ok",
-      "fingerprint": "fa04bb9b39b1e573b311ee00a2be63fe95d8e551"
+      "status": "partial",
+      "fingerprint": "b3aab62d641471ffbf9ea1048d0c2bfdf132a213"
     },
     "mojang": {
       "status": "partial",
-      "fingerprint": "9c1cd9e07ff25f446240e0bda68b871453210d49"
+      "fingerprint": "3f043c85daf6872cd1a2431a005bdee3450cd511"
     },
     "neoforge": {
-      "status": "ok",
-      "fingerprint": "fee7404102990b9a13bb2b561abe528ea431ee7f"
+      "status": "partial",
+      "fingerprint": "39f1bf25007e26000ce8478b2987cecf9999b477"
     },
     "paper": {
-      "status": "partial",
-      "fingerprint": "2364d41048f55d07be65412adb8bee761bcdc3ba"
+      "status": "error"
     },
     "purpur": {
       "status": "error"
@@ -58,8 +52,8 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "99e3a886db8af3e17692bf4d83b74613f5b0a5b8",
+  "branch_fingerprint": "92da5cb3c626b22e255b9b2ead90d3b49513bed0",
   "branch_inputs": {
-    "version_kind": "release"
+    "version_kind": "non-release"
   }
 }

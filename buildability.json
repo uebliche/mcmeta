@@ -1,24 +1,17 @@
 {
   "schema": "mcmeta/buildability/v1",
   "schema_version": 1,
-  "minecraft": "26.1.1",
+  "minecraft": "26.1.1-rc-1",
   "targets": {
     "bungeecord": {
       "status": "partial",
       "blocked_by": "proxy-target-not-versioned"
     },
     "fabric": {
-      "status": "buildable",
+      "status": "blocked",
+      "blocked_by": "missing-fabric-api",
       "jdk": 25,
-      "loader_version": "0.19.5",
-      "artifact_versions": {
-        "fabric-api": "0.155.3+26.1.2"
-      },
-      "mapping_channel": "unobfuscated",
-      "mapping_version": "26.1.1",
-      "available_mapping_channels": [
-        "unobfuscated"
-      ]
+      "loader_version": "0.19.5"
     },
     "folia": {
       "status": "blocked",
@@ -26,28 +19,24 @@
       "jdk": 25
     },
     "forge": {
-      "status": "buildable",
-      "jdk": 25,
-      "loader_version": "26.1.1-63.0.2"
+      "status": "blocked",
+      "blocked_by": "missing-forge-loader",
+      "jdk": 25
     },
     "minestom": {
-      "status": "buildable",
-      "jdk": 25,
-      "artifact_versions": {
-        "minestom": "2026.05.17c-26.1.1"
-      }
+      "status": "blocked",
+      "blocked_by": "missing-minestom-runtime",
+      "jdk": 25
     },
     "neoforge": {
-      "status": "buildable",
-      "jdk": 25,
-      "loader_version": "26.1.1.8-beta"
+      "status": "blocked",
+      "blocked_by": "missing-neoforge-loader",
+      "jdk": 25
     },
     "paper": {
-      "status": "buildable",
-      "jdk": 25,
-      "artifact_versions": {
-        "paper": "29"
-      }
+      "status": "blocked",
+      "blocked_by": "missing-paper-artifact",
+      "jdk": 25
     },
     "purpur": {
       "status": "blocked",
