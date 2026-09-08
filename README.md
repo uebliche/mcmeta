@@ -70,7 +70,7 @@ Files:
 - Minecraft: 1.21.2-rc2
 
 ### Minecraft
-- Version JSON: [https://piston-meta.mojang.com/v1/packages/2d1580e8d13c6695c782fd838f865951c4c710e3/1.21.2-rc2.json](https://piston-meta.mojang.com/v1/packages/2d1580e8d13c6695c782fd838f865951c4c710e3/1.21.2-rc2.json)
+- Version JSON: [https://piston-meta.mojang.com/v1/packages/43075827a3bd1bf300319731527c7998285cf274/1.21.2-rc2.json](https://piston-meta.mojang.com/v1/packages/43075827a3bd1bf300319731527c7998285cf274/1.21.2-rc2.json)
 - Client jar: [https://piston-data.mojang.com/v1/objects/99a809aa269b700df95ba6d07ff07a43d5af4462/client.jar](https://piston-data.mojang.com/v1/objects/99a809aa269b700df95ba6d07ff07a43d5af4462/client.jar) (sha1=99a809aa269b700df95ba6d07ff07a43d5af4462, size=27843204)
 - Server jar: [https://piston-data.mojang.com/v1/objects/d0601b3f493bb5b4e421ef35b676d4cb9c1f606f/server.jar](https://piston-data.mojang.com/v1/objects/d0601b3f493bb5b4e421ef35b676d4cb9c1f606f/server.jar) (sha1=d0601b3f493bb5b4e421ef35b676d4cb9c1f606f, size=56122640)
 - Client mappings: [https://piston-data.mojang.com/v1/objects/5430e7e7eca6fadf5c123dea5e44e3ecff0efc3b/client.txt](https://piston-data.mojang.com/v1/objects/5430e7e7eca6fadf5c123dea5e44e3ecff0efc3b/client.txt) (sha1=5430e7e7eca6fadf5c123dea5e44e3ecff0efc3b, size=10178587)
