@@ -1,6 +1,7 @@
 {
-  "schema": "mcmeta/v1",
-  "minecraft": "1.21.11",
+  "schema": "mcmeta/v2",
+  "schema_version": 2,
+  "minecraft": "26.2",
   "sources": {
     "fabric": "ok",
     "fabric-api": "ok",
@@ -9,22 +10,16 @@
     "minestom": "ok",
     "mojang": "partial",
     "neoforge": "ok",
-    "paper": "ok",
+    "paper": "partial",
     "purpur": "ok",
     "quilt": "ok",
-    "yarn": "ok"
+    "yarn": "error"
   },
-  "jdk": 21,
-  "yarn": {
-    "latest": "1.21.11+build.4",
-    "versions": [
-      "1.21.11+build.4",
-      "1.21.11+build.3",
-      "1.21.11+build.2",
-      "1.21.11+build.1"
-    ]
-  },
-  "release_time": "2025-12-09T12:23:30+00:00",
-  "protocol_version": 774,
-  "data_version": 4671
+  "jdk": 25,
+  "release_time": "2026-06-16T12:03:33+00:00",
+  "protocol_version": 776,
+  "data_version": 4903,
+  "notes": [
+    "paper-api maven metadata has no versions for 26.2"
+  ]
 }
