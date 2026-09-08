@@ -1,7 +1,25 @@
 # mcmeta
 
 Published metadata per Minecraft version lives on branches `mc/<mcVersion>`.
-This repository is updated by the harvester action in `uebliche/mcmeta-harvest`.
+This repository is updated by the Uebliche.dev harvester actions in `uebliche/mcmeta-harvest`.
+
+## Uebliche.dev builds and publishing
+
+The repository's `uebliche.dev` manifest owns plugin builds, the complete platform
+example matrix (1.21.11, 1.21.4, 1.20.1), and Maven publishing. Actions use the
+managed JDK 21 and work on Windows and Unix hosts.
+
+- **Build Gradle plugin** runs the plugin build and checks.
+- **Test example matrix** builds every platform for each of the three versions.
+- **Publish Gradle plugin locally** builds and installs the Maven publications locally.
+- **Publish Gradle plugin to GitHub Packages** builds and publishes the UTC date and
+  source revision version. Configure `MCMETA_PACKAGES_USER` and the secret
+  `MCMETA_PACKAGES_TOKEN` with package write access in Uebliche.dev first.
+
+Metadata reconciliation remains in the `mcmeta-harvest` project. Use its managed
+reconcile runner for repeated updates. The viewer lives in the docs project;
+there is no standalone Pages application in this repository. Code graph indexing
+is available through Uebliche.dev's project-scoped `ast_build` capability.
 
 Two convenience branches exist:
 

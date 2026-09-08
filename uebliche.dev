@@ -1,0 +1,26 @@
+{
+  "kind": "project",
+  "name": "mcmeta",
+  "group": "uebliche/mcmeta",
+  "loaderSource": "none",
+  "javaMajor": 21,
+  "changelogPath": "CHANGELOG.md",
+  "actions": [
+    { "label": "Build Gradle plugin", "command": "node", "args": ["scripts/managed-build.mjs", "build"], "s3Select": false },
+    { "label": "Test example matrix", "command": "node", "args": ["scripts/managed-build.mjs", "examples"], "s3Select": false },
+    { "label": "Publish Gradle plugin locally", "command": "node", "args": ["scripts/managed-build.mjs", "publish-local"], "s3Select": false },
+    {
+      "label": "Publish Gradle plugin to GitHub Packages",
+      "command": "node",
+      "args": ["scripts/managed-build.mjs", "publish"],
+      "env": { "GITHUB_ACTOR": "{MCMETA_PACKAGES_USER}", "GITHUB_TOKEN": "{MCMETA_PACKAGES_TOKEN}" },
+      "s3Select": false
+    }
+  ],
+  "vars": [
+    { "key": "MCMETA_PACKAGES_USER", "label": "GitHub Packages username", "default": "" }
+  ],
+  "secrets": [
+    { "key": "MCMETA_PACKAGES_TOKEN", "label": "GitHub Packages write token" }
+  ]
+}

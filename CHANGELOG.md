@@ -1,5 +1,20 @@
 # Changelog
 
+## [2026.09.08-8862220] - Manage Builds in Uebliche.dev
+
+### Added
+
+- Add managed JDK 21 actions for plugin builds, the complete example matrix, local Maven installation, and GitHub Packages publishing.
+- Provide a Windows and Unix build entry point with publication credential checks and date/revision versions.
+
+### Changed
+
+- Route metadata reconciliation, viewer deployment, and code graph indexing through their Uebliche.dev projects and capabilities.
+
+### Removed
+
+- Remove GitHub Actions workflows superseded by managed builds, the docs viewer, and Uebliche.dev code graph indexing.
+
 ## [2026.08.31-bootstrap-context] - Add Shared Build Contexts
 
 ### Added
