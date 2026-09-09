@@ -48,7 +48,7 @@
     },
     "paper": {
       "status": "partial",
-      "fingerprint": "7fef503352755bb90e44edc09f5258d2ea85ea44"
+      "fingerprint": "6409ec762cf0d100641416e1b91166af686cf71c"
     },
     "purpur": {
       "status": "ok",
@@ -62,7 +62,7 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "492309b7fecfea9edb84061a42d2372601e6a9bb",
+  "branch_fingerprint": "71ef1b067632104076572423ae7659c9fc46f43f",
   "branch_inputs": {
     "resolved_minecraft": "26.2"
   }

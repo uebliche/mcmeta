@@ -48,7 +48,7 @@
       "status": "buildable",
       "jdk": 25,
       "artifact_versions": {
-        "paper": "121"
+        "paper": "123"
       }
     },
     "purpur": {

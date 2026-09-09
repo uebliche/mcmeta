@@ -181,7 +181,9 @@ Files:
 ### Paper
 - Type: papermc
 - Project: paper
-- Versions: 106
+- Versions: 108
+  - 123
+  - 122
   - 121
   - 120
   - 119
@@ -288,7 +290,9 @@ Files:
   - 12
   - 11
   - 10
-- Build ids: 106
+- Build ids: 108
+  - 123
+  - 122
   - 121
   - 120
   - 119
