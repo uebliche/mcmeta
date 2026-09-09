@@ -12,7 +12,7 @@
       "jdk": 25,
       "loader_version": "0.19.5",
       "artifact_versions": {
-        "fabric-api": "0.160.1+26.3"
+        "fabric-api": "0.160.2+26.3"
       },
       "mapping_channel": "unobfuscated",
       "mapping_version": "26.3-pre-3",

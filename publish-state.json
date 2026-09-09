@@ -17,7 +17,7 @@
     },
     "fabric-api": {
       "status": "ok",
-      "fingerprint": "c1b5544cdf8da21991a7fb9e67ff79d16f423933"
+      "fingerprint": "afe6dbf07c1f6ef6c4413db528d900fe0e50fc3b"
     },
     "folia": {
       "status": "error"
@@ -51,7 +51,7 @@
       "status": "error"
     }
   },
-  "branch_fingerprint": "93866577bb8fa9718020b33797f54ffc53b4b2ba",
+  "branch_fingerprint": "72275b8076b1c2334a749ac79df3829ae8b23835",
   "branch_inputs": {
     "resolved_minecraft": "26.3-pre-3"
   }

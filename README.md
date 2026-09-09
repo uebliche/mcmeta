@@ -66,7 +66,14 @@ Files:
 - Project id: P7dR8mSH
 - Loaders: 1
   - fabric
-- Versions: 1
+- Versions: 2
+  - 0.160.2+26.3
+    - Game versions: 1
+      - 26.3-pre-3
+    - Loaders: 1
+      - fabric
+    - Files: 1
+      - [https://cdn.modrinth.com/data/P7dR8mSH/versions/cFI1ZXnT/fabric-api-0.160.2%2B26.3.jar](https://cdn.modrinth.com/data/P7dR8mSH/versions/cFI1ZXnT/fabric-api-0.160.2%2B26.3.jar) (sha1=cab68347323dae750347aa5f18e404fefcbdf47b, sha512=d664db31bee0ac52e92d1010ee4600dae741ace5e0bc770d86b85fffdca52e63760635cd580675c175db805f2edc0815026953bf13e2660d0a6b5bca9f332e63)
   - 0.160.1+26.3
     - Game versions: 1
       - 26.3-pre-3
