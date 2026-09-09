@@ -15,8 +15,6 @@ Files:
 - Minecraft: 1.21.10-rc1
 - JDK: 21
 - Release time: 2025-10-02T12:09:16+00:00
-- Protocol version: 1073742098
-- Data version: 4555
 - Yarn latest: 1.21.10-rc1+build.2
 - Yarn versions: 2
   - 1.21.10-rc1+build.2
@@ -38,6 +36,7 @@ Files:
 ## Notes
 - forge maven metadata has no versions for minecraft 1.21.10-rc1
 - minestom maven metadata has no versions for minecraft 1.21.10-rc1
+- mojang server metadata missing
 - neoforge maven metadata has no versions for minecraft 1.21.10-rc1
 - paper-api maven metadata has no versions for 1.21.10-rc1
 
