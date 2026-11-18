@@ -1,5 +1,10 @@
 # Changelog
 
+## [2026.11.18-28f35eec] - Ignore Retained Stale Build Outputs
+
+### Changed
+- Ignore retained stale Gradle plugin build directories without removing local build data.
+
 ## [2026.09.08-1bf43f0] - Remove GitHub Packages Publishing
 
 ### Removed

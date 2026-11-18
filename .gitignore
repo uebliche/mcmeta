@@ -7,3 +7,6 @@ docs/
 
 .gradle-cache/
 gradle-plugin/.kotlin/
+
+# Retained local build outputs
+/gradle-plugin/build.stale-*/
